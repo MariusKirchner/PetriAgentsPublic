@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created by MonaLisa version MonaLisa R5 1.0.0  on 2023-11-12 at 16:47:58 CET with JSBML version 1.4. -->
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" layout:required="false" level="3" version="1" xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1">
+  <model id="MonaLisaExport">
+    <layout:listOfLayouts xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <layout:layout>
+        <layout:listOfSpeciesGlyphs>
+          <layout:speciesGlyph layout:id="SGP0" layout:species="P0">
+            <layout:boundingBox>
+              <layout:position layout:x="680" layout:y="450" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP1" layout:species="P1">
+            <layout:boundingBox>
+              <layout:position layout:x="680" layout:y="370" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP2" layout:species="P2">
+            <layout:boundingBox>
+              <layout:position layout:x="640" layout:y="340" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP3" layout:species="P3">
+            <layout:boundingBox>
+              <layout:position layout:x="720" layout:y="340" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP4" layout:species="P4">
+            <layout:boundingBox>
+              <layout:position layout:x="720" layout:y="280" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP5" layout:species="P5">
+            <layout:boundingBox>
+              <layout:position layout:x="760" layout:y="390" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP6" layout:species="P6">
+            <layout:boundingBox>
+              <layout:position layout:x="900" layout:y="500" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP7" layout:species="P7">
+            <layout:boundingBox>
+              <layout:position layout:x="900" layout:y="440" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP8" layout:species="P8">
+            <layout:boundingBox>
+              <layout:position layout:x="900" layout:y="380" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP10" layout:species="P10">
+            <layout:boundingBox>
+              <layout:position layout:x="760" layout:y="310" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP11" layout:species="P11">
+            <layout:boundingBox>
+              <layout:position layout:x="810" layout:y="340" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP12" layout:species="P12">
+            <layout:boundingBox>
+              <layout:position layout:x="860" layout:y="310" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP17" layout:species="P17">
+            <layout:boundingBox>
+              <layout:position layout:x="640" layout:y="400" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP18" layout:species="P18">
+            <layout:boundingBox>
+              <layout:position layout:x="580" layout:y="450" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+        </layout:listOfSpeciesGlyphs>
+        <layout:listOfReactionGlyphs>
+          <layout:reactionGlyph layout:id="RGT0" layout:reaction="T0">
+            <layout:boundingBox>
+              <layout:position layout:x="680" layout:y="410" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT1" layout:reaction="T1">
+            <layout:boundingBox>
+              <layout:position layout:x="720" layout:y="370" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT2" layout:reaction="T2">
+            <layout:boundingBox>
+              <layout:position layout:x="640" layout:y="370" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT3" layout:reaction="T3">
+            <layout:boundingBox>
+              <layout:position layout:x="720" layout:y="310" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT7" layout:reaction="T7">
+            <layout:boundingBox>
+              <layout:position layout:x="900" layout:y="470" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT8" layout:reaction="T8">
+            <layout:boundingBox>
+              <layout:position layout:x="900" layout:y="410" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT10" layout:reaction="T10">
+            <layout:boundingBox>
+              <layout:position layout:x="760" layout:y="340" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT11" layout:reaction="T11">
+            <layout:boundingBox>
+              <layout:position layout:x="860" layout:y="340" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT13" layout:reaction="T13">
+            <layout:boundingBox>
+              <layout:position layout:x="810" layout:y="310" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT16" layout:reaction="T16">
+            <layout:boundingBox>
+              <layout:position layout:x="640" layout:y="450" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT19" layout:reaction="T19">
+            <layout:boundingBox>
+              <layout:position layout:x="580" layout:y="400" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+        </layout:listOfReactionGlyphs>
+      </layout:layout>
+    </layout:listOfLayouts>
+    <listOfSpecies>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P0" initialAmount="0" name="Env_Nut" sboTerm="SBO:0000000"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P1" initialAmount="5" name="Nut" sboTerm="SBO:0000000"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P2" initialAmount="0" name="Beh_Move" sboTerm="SBO:0000000"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P3" initialAmount="0" name="Beh_Size" sboTerm="SBO:0000000"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P4" initialAmount="0" name="Beh_Repl" sboTerm="SBO:0000000"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P5" initialAmount="0" name="Env_Repl_Inhib" sboTerm="SBO:0000000"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P6" initialAmount="0" name="Env_Poison" sboTerm="SBO:0000000"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P7" initialAmount="0" name="Poison" sboTerm="SBO:0000000"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P8" initialAmount="0" name="Beh_Death" sboTerm="SBO:0000000"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P10" initialAmount="1" name="Repl_Activator" sboTerm="SBO:0000000"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P11" initialAmount="0" name="Repl_Inhibited" sboTerm="SBO:0000000"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P12" initialAmount="0" name="Repl_InhibitionTimer" sboTerm="SBO:0000000"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P17" initialAmount="1" name="Move_Activator"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P18" initialAmount="0" name="Move_Inhibited"/>
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction fast="false" id="T0" name="Intake_Nut" reversible="false" sboTerm="SBO:0000000">
+        <listOfReactants>
+          <speciesReference constant="true" species="P0" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P1" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T1" name="Nut_Size_Trans" reversible="false" sboTerm="SBO:0000000">
+        <listOfReactants>
+          <speciesReference constant="true" species="P1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P3" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T2" name="Nut_Move_Trans" reversible="false" sboTerm="SBO:0000000">
+        <listOfReactants>
+          <speciesReference constant="true" species="P1" stoichiometry="1"/>
+          <speciesReference constant="true" species="P17" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P2" stoichiometry="5"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T3" name="Repl" reversible="false" sboTerm="SBO:0000000">
+        <listOfReactants>
+          <speciesReference constant="true" species="P3" stoichiometry="10"/>
+          <speciesReference constant="true" species="P10" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P4" stoichiometry="1"/>
+          <speciesReference constant="true" species="P10" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T7" name="Intake_Poison" reversible="false" sboTerm="SBO:0000000">
+        <listOfReactants>
+          <speciesReference constant="true" species="P6" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P7" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T8" name="Poison_Death_Trans" reversible="false" sboTerm="SBO:0000000">
+        <listOfReactants>
+          <speciesReference constant="true" species="P7" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P8" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T10" name="Repl_InhibitorBinding_2" reversible="false" sboTerm="SBO:0000000">
+        <listOfReactants>
+          <speciesReference constant="true" species="P10" stoichiometry="1"/>
+          <speciesReference constant="true" species="P5" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P11" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T11" name="Repl_InhibitionTimerTrans" reversible="false" sboTerm="SBO:0000000">
+        <listOfReactants>
+          <speciesReference constant="true" species="P11" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P12" stoichiometry="1"/>
+          <speciesReference constant="true" species="P11" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T13" name="Repl_InhibitorRelease_1" reversible="false" sboTerm="SBO:0000000">
+        <listOfReactants>
+          <speciesReference constant="true" species="P12" stoichiometry="30"/>
+          <speciesReference constant="true" species="P11" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P10" stoichiometry="1"/>
+          <speciesReference constant="true" species="P5" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T16" name="Move_ActiveInhibition_2" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="P0" stoichiometry="1"/>
+          <speciesReference constant="true" species="P17" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P0" stoichiometry="1"/>
+          <speciesReference constant="true" species="P18" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T19" name="Move_PassiveUnInhibition_1" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="P18" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P17" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

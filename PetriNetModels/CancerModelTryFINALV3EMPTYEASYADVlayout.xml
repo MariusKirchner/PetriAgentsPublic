@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layoutdata>
+  <LogicalPlaces />
+  <BendEdges />
+  <AdditionalInformationAboutNodes>
+    <Node Name="Beh_Size">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=0,b=0]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T26">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Beh_Canc_Repl">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=0,b=0]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Everything">
+      <LabelPosition>S</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="NucleotideBiosynthesis">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=255,b=204]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T27">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Methylation">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=255,b=204]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T28">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="NADPH">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=255,b=204]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Size_Repl_Trans">
+      <LabelPosition>W</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LipidSynthesis">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=255,b=204]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T29">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="ProteinSynthesis">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=255,b=204]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T30">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Acytelation">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=255,b=204]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="End_Repl">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="OneCarbonMetabolism">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=153,b=153]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T31">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_Glucose">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=51,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T33">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glucose">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="GlutaminolysismTORC1">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="G6P">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T35">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="3-PG">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="GlutaminolysisNOmTORC1">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Pyruvate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T37">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="mtAcetylCoA">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T38">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Citrate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T39">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="alphaKG">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LipidSynthesisSREBP">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Succinate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T41">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Fumarate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LipidSynthesisNoSREBP">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Oxaloacetate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T43">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glutamate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T44">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="AcetylCoA">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T45">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Acetate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T46">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_Acetate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T47">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glutamine">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T48">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_Glutamine">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T49">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Serine">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T50">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_AminoAcids">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=51,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T51">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="AminoAcids">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T52">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_GrowthFactor">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=51,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="GlycolysisWithoutFactors">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="GrowthFactor">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T55">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="mTORC1">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=153,g=153,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="OneCarbonResultNomTORC1">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="PI3K">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=153,g=153,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="OneCarbonResultmTORC1">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Myc">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=153,g=153,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T18">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ras">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=153,g=153,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T19">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="AKT">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=153,g=153,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T20">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="SREBP">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=153,g=153,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T22">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="HIF1">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=153,g=153,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T23">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T24">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glycolysis">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+  </AdditionalInformationAboutNodes>
+  <AdditionalInformationAboutEdges>
+    <Edge Name="E0">
+      <Source>Beh_Size</Source>
+      <Target>Size_Repl_Trans</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E1">
+      <Source>T26</Source>
+      <Target>mtAcetylCoA</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E2">
+      <Source>Beh_Canc_Repl</Source>
+      <Target>End_Repl</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E3">
+      <Source>Everything</Source>
+      <Target>Beh_Size</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E4">
+      <Source>NucleotideBiosynthesis</Source>
+      <Target>Everything</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E5">
+      <Source>T27</Source>
+      <Target>Citrate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E6">
+      <Source>Methylation</Source>
+      <Target>Everything</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E7">
+      <Source>T28</Source>
+      <Target>alphaKG</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E8">
+      <Source>NADPH</Source>
+      <Target>Everything</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E9">
+      <Source>Size_Repl_Trans</Source>
+      <Target>Beh_Canc_Repl</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E10">
+      <Source>LipidSynthesis</Source>
+      <Target>Everything</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E11">
+      <Source>T29</Source>
+      <Target>Succinate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E12">
+      <Source>ProteinSynthesis</Source>
+      <Target>Everything</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E13">
+      <Source>T30</Source>
+      <Target>Fumarate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E14">
+      <Source>Acytelation</Source>
+      <Target>Everything</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E15">
+      <Source>OneCarbonMetabolism</Source>
+      <Target>T55</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E16">
+      <Source>OneCarbonMetabolism</Source>
+      <Target>OneCarbonResultNomTORC1</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E17">
+      <Source>OneCarbonMetabolism</Source>
+      <Target>OneCarbonResultmTORC1</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E18">
+      <Source>T31</Source>
+      <Target>Oxaloacetate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E19">
+      <Source>Env_Glucose</Source>
+      <Target>T19</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E20">
+      <Source>T33</Source>
+      <Target>alphaKG</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E21">
+      <Source>Glucose</Source>
+      <Target>T20</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E22">
+      <Source>GlutaminolysismTORC1</Source>
+      <Target>Glutamate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E23">
+      <Source>G6P</Source>
+      <Target>T22</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E24">
+      <Source>T35</Source>
+      <Target>Glutamine</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E25">
+      <Source>3-PG</Source>
+      <Target>GlycolysisWithoutFactors</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E26">
+      <Source>3-PG</Source>
+      <Target>T24</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E27">
+      <Source>3-PG</Source>
+      <Target>Glycolysis</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E28">
+      <Source>GlutaminolysisNOmTORC1</Source>
+      <Target>Glutamate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E29">
+      <Source>Pyruvate</Source>
+      <Target>T26</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E30">
+      <Source>T37</Source>
+      <Target>AcetylCoA</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E31">
+      <Source>mtAcetylCoA</Source>
+      <Target>T27</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E32">
+      <Source>T38</Source>
+      <Target>AcetylCoA</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E33">
+      <Source>Citrate</Source>
+      <Target>T28</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E34">
+      <Source>Citrate</Source>
+      <Target>T37</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E35">
+      <Source>T39</Source>
+      <Target>Acetate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E36">
+      <Source>alphaKG</Source>
+      <Target>T29</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E37">
+      <Source>LipidSynthesisSREBP</Source>
+      <Target>LipidSynthesis</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E38">
+      <Source>Succinate</Source>
+      <Target>T30</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E39">
+      <Source>T41</Source>
+      <Target>Acytelation</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E40">
+      <Source>Fumarate</Source>
+      <Target>T31</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E41">
+      <Source>LipidSynthesisNoSREBP</Source>
+      <Target>LipidSynthesis</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E42">
+      <Source>Oxaloacetate</Source>
+      <Target>T27</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E43">
+      <Source>Oxaloacetate</Source>
+      <Target>T18</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E44">
+      <Source>T43</Source>
+      <Target>AminoAcids</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E45">
+      <Source>Glutamate</Source>
+      <Target>T33</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E46">
+      <Source>T44</Source>
+      <Target>ProteinSynthesis</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E47">
+      <Source>AcetylCoA</Source>
+      <Target>LipidSynthesisSREBP</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E48">
+      <Source>AcetylCoA</Source>
+      <Target>T41</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E49">
+      <Source>AcetylCoA</Source>
+      <Target>LipidSynthesisNoSREBP</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E50">
+      <Source>T45</Source>
+      <Target>ProteinSynthesis</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E51">
+      <Source>Acetate</Source>
+      <Target>T38</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E52">
+      <Source>T46</Source>
+      <Target>GrowthFactor</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E53">
+      <Source>Env_Acetate</Source>
+      <Target>T39</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E54">
+      <Source>T47</Source>
+      <Target>PI3K</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E55">
+      <Source>Glutamine</Source>
+      <Target>GlutaminolysismTORC1</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E56">
+      <Source>Glutamine</Source>
+      <Target>GlutaminolysisNOmTORC1</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E57">
+      <Source>T48</Source>
+      <Target>AKT</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E58">
+      <Source>Env_Glutamine</Source>
+      <Target>T35</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E59">
+      <Source>T49</Source>
+      <Target>mTORC1</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E60">
+      <Source>Serine</Source>
+      <Target>T23</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E61">
+      <Source>T50</Source>
+      <Target>SREBP</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E62">
+      <Source>Env_AminoAcids</Source>
+      <Target>T43</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E63">
+      <Source>T51</Source>
+      <Target>HIF1</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E64">
+      <Source>AminoAcids</Source>
+      <Target>T44</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E65">
+      <Source>AminoAcids</Source>
+      <Target>T45</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E66">
+      <Source>T52</Source>
+      <Target>Myc</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E67">
+      <Source>Env_GrowthFactor</Source>
+      <Target>T46</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E68">
+      <Source>GlycolysisWithoutFactors</Source>
+      <Target>Pyruvate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E69">
+      <Source>GrowthFactor</Source>
+      <Target>T47</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E70">
+      <Source>T55</Source>
+      <Target>Methylation</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E71">
+      <Source>T55</Source>
+      <Target>NADPH</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E72">
+      <Source>mTORC1</Source>
+      <Target>GlutaminolysismTORC1</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E73">
+      <Source>mTORC1</Source>
+      <Target>T44</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E74">
+      <Source>mTORC1</Source>
+      <Target>T50</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E75">
+      <Source>mTORC1</Source>
+      <Target>T51</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E76">
+      <Source>mTORC1</Source>
+      <Target>OneCarbonResultmTORC1</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E77">
+      <Source>OneCarbonResultNomTORC1</Source>
+      <Target>NucleotideBiosynthesis</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E78">
+      <Source>PI3K</Source>
+      <Target>T48</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E79">
+      <Source>OneCarbonResultmTORC1</Source>
+      <Target>NucleotideBiosynthesis</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E80">
+      <Source>Myc</Source>
+      <Target>Glycolysis</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E81">
+      <Source>T18</Source>
+      <Target>NucleotideBiosynthesis</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E82">
+      <Source>Ras</Source>
+      <Target>T47</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E83">
+      <Source>Ras</Source>
+      <Target>T52</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E84">
+      <Source>T19</Source>
+      <Target>Glucose</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E85">
+      <Source>AKT</Source>
+      <Target>T49</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E86">
+      <Source>AKT</Source>
+      <Target>Glycolysis</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E87">
+      <Source>T20</Source>
+      <Target>G6P</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E88">
+      <Source>SREBP</Source>
+      <Target>LipidSynthesisSREBP</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E89">
+      <Source>T22</Source>
+      <Target>NADPH</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E90">
+      <Source>T22</Source>
+      <Target>3-PG</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E91">
+      <Source>HIF1</Source>
+      <Target>Glycolysis</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E92">
+      <Source>T23</Source>
+      <Target>OneCarbonMetabolism</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E93">
+      <Source>T24</Source>
+      <Target>Serine</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E94">
+      <Source>Glycolysis</Source>
+      <Target>Pyruvate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+  </AdditionalInformationAboutEdges>
+</Layoutdata>

@@ -1,0 +1,2114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layoutdata>
+  <LogicalPlaces>
+    <LogicalPlace Name="LogicalPlaceID0">
+      <MasterNode>N/S</MasterNode>
+      <IncomingEdges>
+        <IncomingEdgeFrom>Syn7_</IncomingEdgeFrom>
+      </IncomingEdges>
+      <OutgoingEdges />
+      <X>-20.0</X>
+      <Y>340.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID1">
+      <MasterNode>N/S</MasterNode>
+      <IncomingEdges />
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T26i</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>520.0</X>
+      <Y>320.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID2">
+      <MasterNode>N/S</MasterNode>
+      <IncomingEdges />
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T26</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>550.0</X>
+      <Y>200.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID3">
+      <MasterNode>N/S</MasterNode>
+      <IncomingEdges />
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T10</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>180.0</X>
+      <Y>170.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID4">
+      <MasterNode>E3_ligase</MasterNode>
+      <IncomingEdges />
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T2</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>280.0</X>
+      <Y>70.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID5">
+      <MasterNode>E3_ligase</MasterNode>
+      <IncomingEdges>
+        <IncomingEdgeFrom>Syn2_</IncomingEdgeFrom>
+      </IncomingEdges>
+      <OutgoingEdges />
+      <X>-20.0</X>
+      <Y>90.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID6">
+      <MasterNode>E3_ligase</MasterNode>
+      <IncomingEdges />
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T2i</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>150.0</X>
+      <Y>120.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID7">
+      <MasterNode>p62</MasterNode>
+      <IncomingEdges />
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T7</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>310.0</X>
+      <Y>110.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID8">
+      <MasterNode>p62</MasterNode>
+      <IncomingEdges />
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T19</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>460.0</X>
+      <Y>130.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID9">
+      <MasterNode>LRSAM1</MasterNode>
+      <IncomingEdges>
+        <IncomingEdgeFrom>Syn3_</IncomingEdgeFrom>
+      </IncomingEdges>
+      <OutgoingEdges />
+      <X>-20.0</X>
+      <Y>140.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID10">
+      <MasterNode>LRSAM1</MasterNode>
+      <IncomingEdges />
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T18</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>540.0</X>
+      <Y>100.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID11">
+      <MasterNode>LRSAM1</MasterNode>
+      <IncomingEdges />
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T2i</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>150.0</X>
+      <Y>140.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID12">
+      <MasterNode>Gal8</MasterNode>
+      <IncomingEdges />
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T1</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>220.0</X>
+      <Y>40.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID13">
+      <MasterNode>S:Gal8:Ub_</MasterNode>
+      <IncomingEdges>
+        <IncomingEdgeFrom>T8</IncomingEdgeFrom>
+        <IncomingEdgeFrom>T6</IncomingEdgeFrom>
+        <IncomingEdgeFrom>T4</IncomingEdgeFrom>
+      </IncomingEdges>
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T9</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>310.0</X>
+      <Y>230.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID14">
+      <MasterNode>S:Gal8:Ub_</MasterNode>
+      <IncomingEdges>
+        <IncomingEdgeFrom>T2</IncomingEdgeFrom>
+      </IncomingEdges>
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T5</OutgoingEdgeTo>
+        <OutgoingEdgeTo>T3</OutgoingEdgeTo>
+        <OutgoingEdgeTo>T7</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>250.0</X>
+      <Y>110.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID15">
+      <MasterNode>S:Ub_</MasterNode>
+      <IncomingEdges>
+        <IncomingEdgeFrom>T18</IncomingEdgeFrom>
+      </IncomingEdges>
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T23</OutgoingEdgeTo>
+        <OutgoingEdgeTo>T21</OutgoingEdgeTo>
+        <OutgoingEdgeTo>T19</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>490.0</X>
+      <Y>130.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID16">
+      <MasterNode>S:Ub_</MasterNode>
+      <IncomingEdges>
+        <IncomingEdgeFrom>T27</IncomingEdgeFrom>
+      </IncomingEdges>
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T28</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>590.0</X>
+      <Y>320.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID17">
+      <MasterNode>TBK1</MasterNode>
+      <IncomingEdges>
+        <IncomingEdgeFrom>Syn8_</IncomingEdgeFrom>
+      </IncomingEdges>
+      <OutgoingEdges />
+      <X>-20.0</X>
+      <Y>380.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID18">
+      <MasterNode>TBK1</MasterNode>
+      <IncomingEdges />
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T13i</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>250.0</X>
+      <Y>350.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID19">
+      <MasterNode>TBK1</MasterNode>
+      <IncomingEdges />
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T29</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>490.0</X>
+      <Y>380.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID20">
+      <MasterNode>TBK1</MasterNode>
+      <IncomingEdges />
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T29'</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>550.0</X>
+      <Y>380.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID21">
+      <MasterNode>OPTN_</MasterNode>
+      <IncomingEdges />
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T5</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>280.0</X>
+      <Y>110.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID22">
+      <MasterNode>OPTN_</MasterNode>
+      <IncomingEdges>
+        <IncomingEdgeFrom>Syn6_</IncomingEdgeFrom>
+      </IncomingEdges>
+      <OutgoingEdges />
+      <X>-20.0</X>
+      <Y>290.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID23">
+      <MasterNode>NDP52</MasterNode>
+      <IncomingEdges />
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T3</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>220.0</X>
+      <Y>110.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID24">
+      <MasterNode>NDP52</MasterNode>
+      <IncomingEdges />
+      <OutgoingEdges>
+        <OutgoingEdgeTo>T3i</OutgoingEdgeTo>
+      </OutgoingEdges>
+      <X>180.0</X>
+      <Y>70.0</Y>
+    </LogicalPlace>
+    <LogicalPlace Name="LogicalPlaceID25">
+      <MasterNode>NDP52</MasterNode>
+      <IncomingEdges>
+        <IncomingEdgeFrom>Syn5_</IncomingEdgeFrom>
+      </IncomingEdges>
+      <OutgoingEdges />
+      <X>-20.0</X>
+      <Y>240.0</Y>
+    </LogicalPlace>
+  </LogicalPlaces>
+  <BendEdges />
+  <AdditionalInformationAboutNodes>
+    <Node Name="mTORC1:ULK1comp_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Syn7_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S-cyt">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T34">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="N/S">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=128,g=128,b=128]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Syn5_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="E3_ligase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=128,g=128,b=128]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Syn6_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="p62">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=128,g=128,b=128]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="SCVdamage_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S-damagedSCV__">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T1">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LRSAM1">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=128,g=128,b=128]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T18">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Gal8">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=128,g=128,b=128]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Syn1">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Gal8">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T3i">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="SignalSCVdamage_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T2i">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Gal8:Ub:NDP52">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T33">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="NDP52'">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T2">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="SignalAutophagyInduction_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T3">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Gal8:Ub:p62_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T36">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Gal8:NDP52_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T7">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Gal8:Ub_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=128,g=128,b=128]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T4">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Gal8:Ub:NDP52:OPTN:p62:N/S__">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T9">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="OPTN'">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T8">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Gal8:Ub:OPTN_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T6">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="AA_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T35">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Gal8:Ub:NDP52:OPTN:p62__">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T14">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="mTORC1:ULK1comp:SCV__">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Syn9">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Gal8:Ub:NDP52:OPTN:p62:N/S:diTBK1__">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T13i">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="diTBK1'">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T14i">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="diTBK1'i">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T15">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="SCV_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Output">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Gal8:Ub:NDP52:OPTN:p62:N/S:diTBK1i__">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Inv">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Gal8:Ub:NDP52:N/S_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T10">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="N/S'">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Syn4_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Ub_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=128,g=128,b=128]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T11">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Ub:p62_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T10i">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Ub:OPTN_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T12">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Ub:NDP52_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T5">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="TBK1">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=128,g=128,b=128]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Syn2_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Ub:NDP52:OPTN:p62__">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T17">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Ub:NDP52:OPTN:p62:N/S__">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Syn3_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Ub:NDP52:OPTN:p62:N/S:diTBK1__">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T23">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Ub:NDP52:OPTN:p62:N/S:diTBK1i__">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Syn8_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="diTBK1'ii">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T21">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="diTBK1'iii">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T19">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Ub:NDP52:OPTN:p62:N/S:OligoTBK1__">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T25">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ap:Ub_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T26i">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ap:Ub:N/S__">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T29">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ap:Ub:OPTNp_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T29'">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="p62'">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T30">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="OPTN'i">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T30'">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="p62'i">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T31">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="NDP52'i">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T32ii">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Gal8:Ub:NDP52:p62:OPTNp.N/S:OligoTBK1__">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T32i">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="S:Ub:NDP52:N/S_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T32">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="N/S'i">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Deg3ii">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ap:Gal8:Ub:OPTNp_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Deg3i">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LC3/GABARAP_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Deg3">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ap:Gal8">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T20">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ap:Gal8:Ub:N/S_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T22">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ap:Gal8:Ub_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T24">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="AAstarvation_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T16">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="OPTN_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=128,g=128,b=128]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T26">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="mTORC1inactive">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Deg2">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="ULK1comp_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T27">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="NDP52">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=128,g=128,b=128]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T28">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T13">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T16i">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Deg2i_">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T37">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T16ii">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T16iii">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Deg2ii">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Deg1">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID4">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID5">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID6">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID9">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID10">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID11">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID23">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID24">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID0">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID1">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID2">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID3">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID21">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID22">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID13">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID14">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID7">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID17">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID18">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID19">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID20">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID15">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID8">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID25">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID16">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="LogicalPlaceID12">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=192,g=192,b=192]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+  </AdditionalInformationAboutNodes>
+  <AdditionalInformationAboutEdges>
+    <Edge Name="E0">
+      <Source>mTORC1:ULK1comp_</Source>
+      <Target>T34</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E1">
+      <Source>Syn7_</Source>
+      <Target>LogicalPlaceID0</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E2">
+      <Source>S-cyt</Source>
+      <Target>T18</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E3">
+      <Source>T34</Source>
+      <Target>mTORC1inactive</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E4">
+      <Source>T34</Source>
+      <Target>ULK1comp_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E5">
+      <Source>N/S</Source>
+      <Target>T10i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E6">
+      <Source>Syn5_</Source>
+      <Target>LogicalPlaceID25</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E7">
+      <Source>E3_ligase</Source>
+      <Target>T18</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E8">
+      <Source>Syn6_</Source>
+      <Target>LogicalPlaceID22</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E9">
+      <Source>SCVdamage_</Source>
+      <Target>S-damagedSCV__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E10">
+      <Source>SCVdamage_</Source>
+      <Target>SignalSCVdamage_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E11">
+      <Source>S-damagedSCV__</Source>
+      <Target>T1</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E12">
+      <Source>S-damagedSCV__</Source>
+      <Target>T17</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E13">
+      <Source>T1</Source>
+      <Target>S:Gal8</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E14">
+      <Source>LRSAM1</Source>
+      <Target>T2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E15">
+      <Source>T18</Source>
+      <Target>LogicalPlaceID15</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E16">
+      <Source>Syn1</Source>
+      <Target>Gal8</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E17">
+      <Source>S:Gal8</Source>
+      <Target>T3i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E18">
+      <Source>S:Gal8</Source>
+      <Target>T2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E19">
+      <Source>T3i</Source>
+      <Target>S:Gal8:NDP52_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E20">
+      <Source>SignalSCVdamage_</Source>
+      <Target>T33</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E21">
+      <Source>T2i</Source>
+      <Target>S:Gal8:Ub:NDP52</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E22">
+      <Source>S:Gal8:Ub:NDP52</Source>
+      <Target>T4</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E23">
+      <Source>S:Gal8:Ub:NDP52</Source>
+      <Target>T10</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E24">
+      <Source>T33</Source>
+      <Target>AAstarvation_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E25">
+      <Source>NDP52'</Source>
+      <Target>T9</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E26">
+      <Source>T2</Source>
+      <Target>LogicalPlaceID14</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E27">
+      <Source>SignalAutophagyInduction_</Source>
+      <Target>T37</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E28">
+      <Source>T3</Source>
+      <Target>S:Gal8:Ub:NDP52</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E29">
+      <Source>S:Gal8:Ub:p62_</Source>
+      <Target>T8</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E30">
+      <Source>T36</Source>
+      <Target>SignalAutophagyInduction_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E31">
+      <Source>S:Gal8:NDP52_</Source>
+      <Target>T2i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E32">
+      <Source>S:Gal8:NDP52_</Source>
+      <Target>T16iii</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E33">
+      <Source>T7</Source>
+      <Target>S:Gal8:Ub:p62_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E34">
+      <Source>S:Gal8:Ub_</Source>
+      <Target>T12</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E35">
+      <Source>T4</Source>
+      <Target>NDP52'</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E36">
+      <Source>T4</Source>
+      <Target>LogicalPlaceID13</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E37">
+      <Source>S:Gal8:Ub:NDP52:OPTN:p62:N/S__</Source>
+      <Target>T13i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E38">
+      <Source>S:Gal8:Ub:NDP52:OPTN:p62:N/S__</Source>
+      <Target>T15</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E39">
+      <Source>S:Gal8:Ub:NDP52:OPTN:p62:N/S__</Source>
+      <Target>T13</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E40">
+      <Source>S:Gal8:Ub:NDP52:OPTN:p62:N/S__</Source>
+      <Target>T16i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E41">
+      <Source>T9</Source>
+      <Target>S:Gal8:Ub:NDP52:OPTN:p62__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E42">
+      <Source>OPTN'</Source>
+      <Target>T9</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E43">
+      <Source>OPTN'</Source>
+      <Target>T12</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E44">
+      <Source>T8</Source>
+      <Target>p62'</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E45">
+      <Source>T8</Source>
+      <Target>LogicalPlaceID13</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E46">
+      <Source>S:Gal8:Ub:OPTN_</Source>
+      <Target>T6</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E47">
+      <Source>T6</Source>
+      <Target>OPTN'</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E48">
+      <Source>T6</Source>
+      <Target>LogicalPlaceID13</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E49">
+      <Source>AA_</Source>
+      <Target>T33</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E50">
+      <Source>T35</Source>
+      <Target>AA_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E51">
+      <Source>T35</Source>
+      <Target>mTORC1:ULK1comp:SCV__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E52">
+      <Source>S:Gal8:Ub:NDP52:OPTN:p62__</Source>
+      <Target>T10i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E53">
+      <Source>S:Gal8:Ub:NDP52:OPTN:p62__</Source>
+      <Target>T16ii</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E54">
+      <Source>T14</Source>
+      <Target>S:Gal8:Ub:NDP52:OPTN:p62:N/S__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E55">
+      <Source>T14</Source>
+      <Target>diTBK1'</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E56">
+      <Source>mTORC1:ULK1comp:SCV__</Source>
+      <Target>Output</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E57">
+      <Source>Syn9</Source>
+      <Target>mTORC1:ULK1comp_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E58">
+      <Source>S:Gal8:Ub:NDP52:OPTN:p62:N/S:diTBK1__</Source>
+      <Target>T14</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E59">
+      <Source>T13i</Source>
+      <Target>S:Gal8:Ub:NDP52:OPTN:p62:N/S:diTBK1i__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E60">
+      <Source>diTBK1'</Source>
+      <Target>T15</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E61">
+      <Source>T14i</Source>
+      <Target>S:Gal8:Ub:NDP52:OPTN:p62:N/S__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E62">
+      <Source>T14i</Source>
+      <Target>diTBK1'i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E63">
+      <Source>diTBK1'i</Source>
+      <Target>T15</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E64">
+      <Source>T15</Source>
+      <Target>S:Gal8:Ub:NDP52:p62:OPTNp.N/S:OligoTBK1__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E65">
+      <Source>SCV_</Source>
+      <Target>SCVdamage_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E66">
+      <Source>S:Gal8:Ub:NDP52:OPTN:p62:N/S:diTBK1i__</Source>
+      <Target>T14i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E67">
+      <Source>Inv</Source>
+      <Target>SCV_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E68">
+      <Source>S:Gal8:Ub:NDP52:N/S_</Source>
+      <Target>T11</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E69">
+      <Source>T10</Source>
+      <Target>S:Gal8:Ub:NDP52:N/S_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E70">
+      <Source>N/S'</Source>
+      <Target>T12</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E71">
+      <Source>Syn4_</Source>
+      <Target>p62</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E72">
+      <Source>S:Ub_</Source>
+      <Target>T25</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E73">
+      <Source>T11</Source>
+      <Target>N/S'</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E74">
+      <Source>T11</Source>
+      <Target>S:Gal8:Ub_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E75">
+      <Source>S:Ub:p62_</Source>
+      <Target>T20</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E76">
+      <Source>T10i</Source>
+      <Target>S:Gal8:Ub:NDP52:OPTN:p62:N/S__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E77">
+      <Source>S:Ub:OPTN_</Source>
+      <Target>T22</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E78">
+      <Source>T12</Source>
+      <Target>S:Gal8:Ub:NDP52:OPTN:p62:N/S__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E79">
+      <Source>S:Ub:NDP52_</Source>
+      <Target>T24</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E80">
+      <Source>S:Ub:NDP52_</Source>
+      <Target>T26</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E81">
+      <Source>T5</Source>
+      <Target>S:Gal8:Ub:OPTN_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E82">
+      <Source>TBK1</Source>
+      <Target>T13</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E83">
+      <Source>Syn2_</Source>
+      <Target>LogicalPlaceID5</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E84">
+      <Source>S:Ub:NDP52:OPTN:p62__</Source>
+      <Target>T26i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E85">
+      <Source>S:Ub:NDP52:OPTN:p62__</Source>
+      <Target>T32ii</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E86">
+      <Source>T17</Source>
+      <Target>S-cyt</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E87">
+      <Source>S:Ub:NDP52:OPTN:p62:N/S__</Source>
+      <Target>T29</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E88">
+      <Source>S:Ub:NDP52:OPTN:p62:N/S__</Source>
+      <Target>T29'</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E89">
+      <Source>S:Ub:NDP52:OPTN:p62:N/S__</Source>
+      <Target>T31</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E90">
+      <Source>S:Ub:NDP52:OPTN:p62:N/S__</Source>
+      <Target>T32i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E91">
+      <Source>Syn3_</Source>
+      <Target>LogicalPlaceID9</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E92">
+      <Source>S:Ub:NDP52:OPTN:p62:N/S:diTBK1__</Source>
+      <Target>T30</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E93">
+      <Source>T23</Source>
+      <Target>S:Ub:NDP52_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E94">
+      <Source>S:Ub:NDP52:OPTN:p62:N/S:diTBK1i__</Source>
+      <Target>T30'</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E95">
+      <Source>Syn8_</Source>
+      <Target>LogicalPlaceID17</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E96">
+      <Source>diTBK1'ii</Source>
+      <Target>T31</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E97">
+      <Source>T21</Source>
+      <Target>S:Ub:OPTN_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E98">
+      <Source>diTBK1'iii</Source>
+      <Target>T31</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E99">
+      <Source>T19</Source>
+      <Target>S:Ub:p62_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E100">
+      <Source>S:Ub:NDP52:OPTN:p62:N/S:OligoTBK1__</Source>
+      <Target>T32</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E101">
+      <Source>T25</Source>
+      <Target>S:Ub:NDP52:OPTN:p62__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E102">
+      <Source>Ap:Ub_</Source>
+      <Target>Deg3ii</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E103">
+      <Source>T26i</Source>
+      <Target>S:Ub:NDP52:OPTN:p62:N/S__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E104">
+      <Source>Ap:Ub:N/S__</Source>
+      <Target>Deg3i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E105">
+      <Source>T29</Source>
+      <Target>S:Ub:NDP52:OPTN:p62:N/S:diTBK1__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E106">
+      <Source>Ap:Ub:OPTNp_</Source>
+      <Target>Deg3</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E107">
+      <Source>T29'</Source>
+      <Target>S:Ub:NDP52:OPTN:p62:N/S:diTBK1i__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E108">
+      <Source>p62'</Source>
+      <Target>T9</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E109">
+      <Source>p62'</Source>
+      <Target>T12</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E110">
+      <Source>T30</Source>
+      <Target>S:Ub:NDP52:OPTN:p62:N/S__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E111">
+      <Source>T30</Source>
+      <Target>diTBK1'ii</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E112">
+      <Source>OPTN'i</Source>
+      <Target>T25</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E113">
+      <Source>OPTN'i</Source>
+      <Target>T28</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E114">
+      <Source>T30'</Source>
+      <Target>S:Ub:NDP52:OPTN:p62:N/S__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E115">
+      <Source>T30'</Source>
+      <Target>diTBK1'iii</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E116">
+      <Source>p62'i</Source>
+      <Target>T25</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E117">
+      <Source>p62'i</Source>
+      <Target>T28</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E118">
+      <Source>T31</Source>
+      <Target>S:Ub:NDP52:OPTN:p62:N/S:OligoTBK1__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E119">
+      <Source>NDP52'i</Source>
+      <Target>T25</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E120">
+      <Source>T32ii</Source>
+      <Target>Ap:Ub_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E121">
+      <Source>S:Gal8:Ub:NDP52:p62:OPTNp.N/S:OligoTBK1__</Source>
+      <Target>T16</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E122">
+      <Source>T32i</Source>
+      <Target>Ap:Ub:N/S__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E123">
+      <Source>S:Ub:NDP52:N/S_</Source>
+      <Target>T27</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E124">
+      <Source>T32</Source>
+      <Target>Ap:Ub:OPTNp_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E125">
+      <Source>N/S'i</Source>
+      <Target>T28</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E126">
+      <Source>Ap:Gal8:Ub:OPTNp_</Source>
+      <Target>Deg2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E127">
+      <Source>LC3/GABARAP_</Source>
+      <Target>T32ii</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E128">
+      <Source>LC3/GABARAP_</Source>
+      <Target>T32i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E129">
+      <Source>LC3/GABARAP_</Source>
+      <Target>T32</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E130">
+      <Source>LC3/GABARAP_</Source>
+      <Target>T16</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E131">
+      <Source>LC3/GABARAP_</Source>
+      <Target>T16i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E132">
+      <Source>LC3/GABARAP_</Source>
+      <Target>T16ii</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E133">
+      <Source>LC3/GABARAP_</Source>
+      <Target>T16iii</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E134">
+      <Source>Ap:Gal8</Source>
+      <Target>Deg1</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E135">
+      <Source>T20</Source>
+      <Target>S:Ub_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E136">
+      <Source>T20</Source>
+      <Target>p62'i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E137">
+      <Source>Ap:Gal8:Ub:N/S_</Source>
+      <Target>Deg2i_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E138">
+      <Source>T22</Source>
+      <Target>S:Ub_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E139">
+      <Source>T22</Source>
+      <Target>OPTN'i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E140">
+      <Source>Ap:Gal8:Ub_</Source>
+      <Target>Deg2ii</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E141">
+      <Source>T24</Source>
+      <Target>S:Ub_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E142">
+      <Source>T24</Source>
+      <Target>NDP52'i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E143">
+      <Source>AAstarvation_</Source>
+      <Target>T34</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E144">
+      <Source>T16</Source>
+      <Target>Ap:Gal8:Ub:OPTNp_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E145">
+      <Source>OPTN_</Source>
+      <Target>T21</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E146">
+      <Source>T26</Source>
+      <Target>S:Ub:NDP52:N/S_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E147">
+      <Source>mTORC1inactive</Source>
+      <Target>T35</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E148">
+      <Source>ULK1comp_</Source>
+      <Target>T36</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E149">
+      <Source>ULK1comp_</Source>
+      <Target>T35</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E150">
+      <Source>T27</Source>
+      <Target>N/S'i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E151">
+      <Source>T27</Source>
+      <Target>LogicalPlaceID16</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E152">
+      <Source>NDP52</Source>
+      <Target>T23</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E153">
+      <Source>T28</Source>
+      <Target>S:Ub:NDP52:OPTN:p62:N/S__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E154">
+      <Source>T13</Source>
+      <Target>S:Gal8:Ub:NDP52:OPTN:p62:N/S:diTBK1__</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E155">
+      <Source>T16i</Source>
+      <Target>Ap:Gal8:Ub:N/S_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E156">
+      <Source>T37</Source>
+      <Target>LC3/GABARAP_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E157">
+      <Source>T37</Source>
+      <Target>ULK1comp_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E158">
+      <Source>T16ii</Source>
+      <Target>Ap:Gal8:Ub_</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E159">
+      <Source>T16iii</Source>
+      <Target>Ap:Gal8</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E160">
+      <Source>LogicalPlaceID4</Source>
+      <Target>T2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E161">
+      <Source>LogicalPlaceID6</Source>
+      <Target>T2i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E162">
+      <Source>LogicalPlaceID10</Source>
+      <Target>T18</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E163">
+      <Source>LogicalPlaceID11</Source>
+      <Target>T2i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E164">
+      <Source>LogicalPlaceID23</Source>
+      <Target>T3</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E165">
+      <Source>LogicalPlaceID24</Source>
+      <Target>T3i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E166">
+      <Source>LogicalPlaceID1</Source>
+      <Target>T26i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E167">
+      <Source>LogicalPlaceID2</Source>
+      <Target>T26</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E168">
+      <Source>LogicalPlaceID3</Source>
+      <Target>T10</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E169">
+      <Source>LogicalPlaceID21</Source>
+      <Target>T5</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E170">
+      <Source>LogicalPlaceID13</Source>
+      <Target>T9</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E171">
+      <Source>LogicalPlaceID14</Source>
+      <Target>T5</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E172">
+      <Source>LogicalPlaceID14</Source>
+      <Target>T3</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E173">
+      <Source>LogicalPlaceID14</Source>
+      <Target>T7</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E174">
+      <Source>LogicalPlaceID7</Source>
+      <Target>T7</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E175">
+      <Source>LogicalPlaceID18</Source>
+      <Target>T13i</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E176">
+      <Source>LogicalPlaceID19</Source>
+      <Target>T29</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E177">
+      <Source>LogicalPlaceID20</Source>
+      <Target>T29'</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E178">
+      <Source>LogicalPlaceID15</Source>
+      <Target>T23</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E179">
+      <Source>LogicalPlaceID15</Source>
+      <Target>T21</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E180">
+      <Source>LogicalPlaceID15</Source>
+      <Target>T19</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E181">
+      <Source>LogicalPlaceID8</Source>
+      <Target>T19</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E182">
+      <Source>LogicalPlaceID16</Source>
+      <Target>T28</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E183">
+      <Source>LogicalPlaceID12</Source>
+      <Target>T1</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+  </AdditionalInformationAboutEdges>
+</Layoutdata>

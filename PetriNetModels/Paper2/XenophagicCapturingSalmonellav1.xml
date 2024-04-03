@@ -1,0 +1,3181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created by MonaLisa version MonaLisa R5 1.0.0  on 2024-02-21 at 16:53:47 CET with JSBML version 1.4. -->
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" layout:required="false" level="3" version="1" xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1">
+  <model id="MonaLisaExport" metaid="e7c7fdf7-66fc-446c-9055-3bafbd021653" name="Scheidel2016 - In Silico Knockout Studies of Xenophagy Capturing of Salmonella">
+    <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#e7c7fdf7-66fc-446c-9055-3bafbd021653">
+	<dc:creator>
+	<rdf:Bag>
+	<rdf:li rdf:parseType="Resource">
+	<vCard:N rdf:parseType="Resource">
+	<vCard:Family>Hannig (geb.scheidel)</vCard:Family>
+	<vCard:Given>Jennifer</vCard:Given>
+	</vCard:N>
+	<vCard:EMAIL>jennifer.hannig@kite.thm.de</vCard:EMAIL>
+	<vCard:ORG rdf:parseType="Resource">
+	<vCard:Orgname>KITE - Kompetenzzentrum für Informationstechnologie Technische Hochschule Mittelhessen, Friedberg, Germany</vCard:Orgname>
+	</vCard:ORG>
+	</rdf:li>
+	
+	
+	
+	<rdf:li rdf:parseType="Resource">
+	<vCard:N rdf:parseType="Resource">
+	<vCard:Family>Koch</vCard:Family>
+	<vCard:Given>Ina</vCard:Given>
+	</vCard:N>
+	<vCard:EMAIL>Ina.koch@bioinformatik.uni-frankfurt.de</vCard:EMAIL>
+	<vCard:ORG rdf:parseType="Resource">
+	<vCard:Orgname>Department of Molecular Bioinformatics, Institute of Computer Science, Johan Wolfgang Goethe-University, Frankfurt am Main, Germany  </vCard:Orgname>
+	</vCard:ORG>
+	</rdf:li>
+	<rdf:li rdf:parseType="Resource">
+	<vCard:N rdf:parseType="Resource">
+	<vCard:Family>Dikic</vCard:Family>
+	<vCard:Given>Ivan</vCard:Given>
+	</vCard:N>
+	<vCard:EMAIL>ivan.dikic@biochem2.de</vCard:EMAIL>
+	<vCard:ORG rdf:parseType="Resource">
+	<vCard:Orgname>Institute of Biochemistry 2, Johan Wolfgang Goethe-University Hospital Frankfurt am Main, Germany</vCard:Orgname>
+	</vCard:ORG>
+	</rdf:li>
+	<rdf:li rdf:parseType="Resource">
+	<vCard:N rdf:parseType="Resource">
+	<vCard:Family>Ackermann</vCard:Family>
+	<vCard:Given>Jörg </vCard:Given>
+	</vCard:N>
+	<vCard:EMAIL>J.Ackermann@bioinformatik.uni-frankfurt.de</vCard:EMAIL>
+	<vCard:ORG rdf:parseType="Resource">
+	<vCard:Orgname>Department of Molecular Bioinformatics, Institue of Computer Science, Johan Wolfgang Goethe-University, Frankfurt am Main, Germany</vCard:Orgname>
+	</vCard:ORG>
+	</rdf:li>
+	<rdf:li rdf:parseType="Resource">
+	<vCard:N rdf:parseType="Resource">
+	<vCard:Family>Amstein</vCard:Family>
+	<vCard:Given>Leonie</vCard:Given>
+	</vCard:N>
+	<vCard:EMAIL>L.Amstein@bioinformatik.uni-frankfurt.de</vCard:EMAIL>
+	<vCard:ORG rdf:parseType="Resource">
+	<vCard:Orgname>Department of Molecular Bioinformatics, Institute of Computer Science, Johann Wolfgang Goethe-University, Frankfurt am Main, Germany</vCard:Orgname>
+	</vCard:ORG>
+	</rdf:li>
+	</rdf:Bag>
+	</dc:creator>
+	<dcterms:created rdf:parseType="Resource">
+	<dcterms:W3CDTF>2016-12-01T11:00:00Z</dcterms:W3CDTF>
+	</dcterms:created>
+	<bqmodel:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/27906974"/>
+	</rdf:Bag>
+	</bqmodel:isDescribedBy>
+	<bqbiol:hasProperty>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/mamo/MAMO_0000025"/>
+	</rdf:Bag>
+	</bqbiol:hasProperty>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+      <layout:listOfLayouts xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <layout:layout>
+        <layout:listOfSpeciesGlyphs>
+          <layout:speciesGlyph layout:id="SGP0" layout:species="P0">
+            <layout:boundingBox>
+              <layout:position layout:x="590" layout:y="70" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP1" layout:species="P1">
+            <layout:boundingBox>
+              <layout:position layout:x="490" layout:y="70" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP2" layout:species="P2">
+            <layout:boundingBox>
+              <layout:position layout:x="210" layout:y="290" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP3" layout:species="P3">
+            <layout:boundingBox>
+              <layout:position layout:x="540" layout:y="80" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP4" layout:species="P4">
+            <layout:boundingBox>
+              <layout:position layout:x="-20" layout:y="190" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP5" layout:species="P5">
+            <layout:boundingBox>
+              <layout:position layout:x="350" layout:y="40" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP6" layout:species="P6">
+            <layout:boundingBox>
+              <layout:position layout:x="280" layout:y="90" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP7" layout:species="P7">
+            <layout:boundingBox>
+              <layout:position layout:x="-20" layout:y="40" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP8" layout:species="P8">
+            <layout:boundingBox>
+              <layout:position layout:x="250" layout:y="70" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP9" layout:species="P9">
+            <layout:boundingBox>
+              <layout:position layout:x="660" layout:y="10" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP10" layout:species="P10">
+            <layout:boundingBox>
+              <layout:position layout:x="220" layout:y="170" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP11" layout:species="P11">
+            <layout:boundingBox>
+              <layout:position layout:x="220" layout:y="230" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP12" layout:species="P12">
+            <layout:boundingBox>
+              <layout:position layout:x="630" layout:y="160" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP13" layout:species="P13">
+            <layout:boundingBox>
+              <layout:position layout:x="280" layout:y="170" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP14" layout:species="P14">
+            <layout:boundingBox>
+              <layout:position layout:x="180" layout:y="110" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP15" layout:species="P15">
+            <layout:boundingBox>
+              <layout:position layout:x="150" layout:y="270" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP16" layout:species="P16">
+            <layout:boundingBox>
+              <layout:position layout:x="210" layout:y="350" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP17" layout:species="P17">
+            <layout:boundingBox>
+              <layout:position layout:x="250" layout:y="230" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP18" layout:species="P18">
+            <layout:boundingBox>
+              <layout:position layout:x="250" layout:y="170" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP19" layout:species="P19">
+            <layout:boundingBox>
+              <layout:position layout:x="690" layout:y="40" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP20" layout:species="P20">
+            <layout:boundingBox>
+              <layout:position layout:x="250" layout:y="320" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP21" layout:species="P21">
+            <layout:boundingBox>
+              <layout:position layout:x="720" layout:y="70" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP22" layout:species="P22">
+            <layout:boundingBox>
+              <layout:position layout:x="170" layout:y="410" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP23" layout:species="P23">
+            <layout:boundingBox>
+              <layout:position layout:x="170" layout:y="460" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP24" layout:species="P24">
+            <layout:boundingBox>
+              <layout:position layout:x="250" layout:y="460" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP25" layout:species="P25">
+            <layout:boundingBox>
+              <layout:position layout:x="350" layout:y="-10" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP26" layout:species="P26">
+            <layout:boundingBox>
+              <layout:position layout:x="250" layout:y="410" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP27" layout:species="P27">
+            <layout:boundingBox>
+              <layout:position layout:x="180" layout:y="230" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP28" layout:species="P28">
+            <layout:boundingBox>
+              <layout:position layout:x="180" layout:y="270" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP29" layout:species="P29">
+            <layout:boundingBox>
+              <layout:position layout:x="430" layout:y="260" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP30" layout:species="P30">
+            <layout:boundingBox>
+              <layout:position layout:x="460" layout:y="200" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP31" layout:species="P31">
+            <layout:boundingBox>
+              <layout:position layout:x="490" layout:y="200" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP32" layout:species="P32">
+            <layout:boundingBox>
+              <layout:position layout:x="520" layout:y="200" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP33" layout:species="P33">
+            <layout:boundingBox>
+              <layout:position layout:x="170" layout:y="350" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP34" layout:species="P34">
+            <layout:boundingBox>
+              <layout:position layout:x="490" layout:y="320" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP35" layout:species="P35">
+            <layout:boundingBox>
+              <layout:position layout:x="520" layout:y="380" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP36" layout:species="P36">
+            <layout:boundingBox>
+              <layout:position layout:x="490" layout:y="420" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP37" layout:species="P37">
+            <layout:boundingBox>
+              <layout:position layout:x="550" layout:y="420" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP38" layout:species="P38">
+            <layout:boundingBox>
+              <layout:position layout:x="490" layout:y="460" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP39" layout:species="P39">
+            <layout:boundingBox>
+              <layout:position layout:x="550" layout:y="460" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP40" layout:species="P40">
+            <layout:boundingBox>
+              <layout:position layout:x="520" layout:y="490" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP41" layout:species="P41">
+            <layout:boundingBox>
+              <layout:position layout:x="410" layout:y="550" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP42" layout:species="P42">
+            <layout:boundingBox>
+              <layout:position layout:x="460" layout:y="550" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP43" layout:species="P43">
+            <layout:boundingBox>
+              <layout:position layout:x="520" layout:y="550" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP44" layout:species="P44">
+            <layout:boundingBox>
+              <layout:position layout:x="280" layout:y="230" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP45" layout:species="P45">
+            <layout:boundingBox>
+              <layout:position layout:x="490" layout:y="260" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP46" layout:species="P46">
+            <layout:boundingBox>
+              <layout:position layout:x="460" layout:y="260" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP47" layout:species="P47">
+            <layout:boundingBox>
+              <layout:position layout:x="520" layout:y="260" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP48" layout:species="P48">
+            <layout:boundingBox>
+              <layout:position layout:x="210" layout:y="490" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP49" layout:species="P49">
+            <layout:boundingBox>
+              <layout:position layout:x="550" layout:y="260" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP50" layout:species="P50">
+            <layout:boundingBox>
+              <layout:position layout:x="550" layout:y="320" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP51" layout:species="P51">
+            <layout:boundingBox>
+              <layout:position layout:x="210" layout:y="550" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP52" layout:species="P52">
+            <layout:boundingBox>
+              <layout:position layout:x="360" layout:y="490" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP53" layout:species="P53">
+            <layout:boundingBox>
+              <layout:position layout:x="90" layout:y="560" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP54" layout:species="P54">
+            <layout:boundingBox>
+              <layout:position layout:x="320" layout:y="550" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP55" layout:species="P55">
+            <layout:boundingBox>
+              <layout:position layout:x="360" layout:y="550" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP56" layout:species="P56">
+            <layout:boundingBox>
+              <layout:position layout:x="630" layout:y="40" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP57" layout:species="P57">
+            <layout:boundingBox>
+              <layout:position layout:x="520" layout:y="130" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP58" layout:species="P58">
+            <layout:boundingBox>
+              <layout:position layout:x="660" layout:y="70" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP59" layout:species="P59">
+            <layout:boundingBox>
+              <layout:position layout:x="630" layout:y="100" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="SGP60" layout:species="P60">
+            <layout:boundingBox>
+              <layout:position layout:x="550" layout:y="130" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+        </layout:listOfSpeciesGlyphs>
+        <layout:listOfReactionGlyphs>
+          <layout:reactionGlyph layout:id="RGT0" layout:reaction="T0">
+            <layout:boundingBox>
+              <layout:position layout:x="-20" layout:y="310" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT1" layout:reaction="T1">
+            <layout:boundingBox>
+              <layout:position layout:x="630" layout:y="70" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT2" layout:reaction="T2">
+            <layout:boundingBox>
+              <layout:position layout:x="-20" layout:y="210" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT3" layout:reaction="T3">
+            <layout:boundingBox>
+              <layout:position layout:x="-20" layout:y="260" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT4" layout:reaction="T4">
+            <layout:boundingBox>
+              <layout:position layout:x="350" layout:y="10" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT5" layout:reaction="T5">
+            <layout:boundingBox>
+              <layout:position layout:x="250" layout:y="40" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT6" layout:reaction="T6">
+            <layout:boundingBox>
+              <layout:position layout:x="490" layout:y="100" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT7" layout:reaction="T7">
+            <layout:boundingBox>
+              <layout:position layout:x="-20" layout:y="20" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT8" layout:reaction="T8">
+            <layout:boundingBox>
+              <layout:position layout:x="180" layout:y="90" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT9" layout:reaction="T9">
+            <layout:boundingBox>
+              <layout:position layout:x="180" layout:y="140" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT10" layout:reaction="T10">
+            <layout:boundingBox>
+              <layout:position layout:x="660" layout:y="40" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT11" layout:reaction="T11">
+            <layout:boundingBox>
+              <layout:position layout:x="250" layout:y="90" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT12" layout:reaction="T12">
+            <layout:boundingBox>
+              <layout:position layout:x="220" layout:y="140" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT13" layout:reaction="T13">
+            <layout:boundingBox>
+              <layout:position layout:x="630" layout:y="130" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT14" layout:reaction="T14">
+            <layout:boundingBox>
+              <layout:position layout:x="280" layout:y="140" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT15" layout:reaction="T15">
+            <layout:boundingBox>
+              <layout:position layout:x="220" layout:y="200" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT16" layout:reaction="T16">
+            <layout:boundingBox>
+              <layout:position layout:x="250" layout:y="290" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT17" layout:reaction="T17">
+            <layout:boundingBox>
+              <layout:position layout:x="280" layout:y="200" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT18" layout:reaction="T18">
+            <layout:boundingBox>
+              <layout:position layout:x="250" layout:y="200" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT19" layout:reaction="T19">
+            <layout:boundingBox>
+              <layout:position layout:x="690" layout:y="70" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT20" layout:reaction="T20">
+            <layout:boundingBox>
+              <layout:position layout:x="170" layout:y="440" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT21" layout:reaction="T21">
+            <layout:boundingBox>
+              <layout:position layout:x="590" layout:y="40" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT22" layout:reaction="T22">
+            <layout:boundingBox>
+              <layout:position layout:x="250" layout:y="380" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT23" layout:reaction="T23">
+            <layout:boundingBox>
+              <layout:position layout:x="250" layout:y="440" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT24" layout:reaction="T24">
+            <layout:boundingBox>
+              <layout:position layout:x="210" layout:y="460" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT25" layout:reaction="T25">
+            <layout:boundingBox>
+              <layout:position layout:x="720" layout:y="100" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT26" layout:reaction="T26">
+            <layout:boundingBox>
+              <layout:position layout:x="350" layout:y="-30" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT27" layout:reaction="T27">
+            <layout:boundingBox>
+              <layout:position layout:x="180" layout:y="200" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT28" layout:reaction="T28">
+            <layout:boundingBox>
+              <layout:position layout:x="-20" layout:y="160" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT29" layout:reaction="T29">
+            <layout:boundingBox>
+              <layout:position layout:x="180" layout:y="250" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT30" layout:reaction="T30">
+            <layout:boundingBox>
+              <layout:position layout:x="210" layout:y="320" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT31" layout:reaction="T31">
+            <layout:boundingBox>
+              <layout:position layout:x="180" layout:y="290" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT32" layout:reaction="T32">
+            <layout:boundingBox>
+              <layout:position layout:x="250" layout:y="140" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT33" layout:reaction="T33">
+            <layout:boundingBox>
+              <layout:position layout:x="-20" layout:y="60" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT34" layout:reaction="T34">
+            <layout:boundingBox>
+              <layout:position layout:x="490" layout:y="40" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT35" layout:reaction="T35">
+            <layout:boundingBox>
+              <layout:position layout:x="-20" layout:y="110" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT36" layout:reaction="T36">
+            <layout:boundingBox>
+              <layout:position layout:x="520" layout:y="160" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT37" layout:reaction="T37">
+            <layout:boundingBox>
+              <layout:position layout:x="-20" layout:y="360" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT38" layout:reaction="T38">
+            <layout:boundingBox>
+              <layout:position layout:x="490" layout:y="160" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT39" layout:reaction="T39">
+            <layout:boundingBox>
+              <layout:position layout:x="460" layout:y="160" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT40" layout:reaction="T40">
+            <layout:boundingBox>
+              <layout:position layout:x="490" layout:y="290" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT41" layout:reaction="T41">
+            <layout:boundingBox>
+              <layout:position layout:x="520" layout:y="350" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT42" layout:reaction="T42">
+            <layout:boundingBox>
+              <layout:position layout:x="490" layout:y="400" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT43" layout:reaction="T43">
+            <layout:boundingBox>
+              <layout:position layout:x="550" layout:y="400" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT44" layout:reaction="T44">
+            <layout:boundingBox>
+              <layout:position layout:x="490" layout:y="440" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT45" layout:reaction="T45">
+            <layout:boundingBox>
+              <layout:position layout:x="550" layout:y="440" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT46" layout:reaction="T46">
+            <layout:boundingBox>
+              <layout:position layout:x="520" layout:y="460" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT47" layout:reaction="T47">
+            <layout:boundingBox>
+              <layout:position layout:x="410" layout:y="520" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT48" layout:reaction="T48">
+            <layout:boundingBox>
+              <layout:position layout:x="460" layout:y="520" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT49" layout:reaction="T49">
+            <layout:boundingBox>
+              <layout:position layout:x="520" layout:y="520" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT50" layout:reaction="T50">
+            <layout:boundingBox>
+              <layout:position layout:x="410" layout:y="590" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT51" layout:reaction="T51">
+            <layout:boundingBox>
+              <layout:position layout:x="460" layout:y="590" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT52" layout:reaction="T52">
+            <layout:boundingBox>
+              <layout:position layout:x="520" layout:y="590" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT53" layout:reaction="T53">
+            <layout:boundingBox>
+              <layout:position layout:x="460" layout:y="230" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT54" layout:reaction="T54">
+            <layout:boundingBox>
+              <layout:position layout:x="490" layout:y="230" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT55" layout:reaction="T55">
+            <layout:boundingBox>
+              <layout:position layout:x="520" layout:y="230" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT56" layout:reaction="T56">
+            <layout:boundingBox>
+              <layout:position layout:x="210" layout:y="520" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT57" layout:reaction="T57">
+            <layout:boundingBox>
+              <layout:position layout:x="550" layout:y="230" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT58" layout:reaction="T58">
+            <layout:boundingBox>
+              <layout:position layout:x="210" layout:y="590" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT59" layout:reaction="T59">
+            <layout:boundingBox>
+              <layout:position layout:x="550" layout:y="290" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT60" layout:reaction="T60">
+            <layout:boundingBox>
+              <layout:position layout:x="550" layout:y="350" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT61" layout:reaction="T61">
+            <layout:boundingBox>
+              <layout:position layout:x="170" layout:y="380" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT62" layout:reaction="T62">
+            <layout:boundingBox>
+              <layout:position layout:x="320" layout:y="520" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT63" layout:reaction="T63">
+            <layout:boundingBox>
+              <layout:position layout:x="320" layout:y="590" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT64" layout:reaction="T64">
+            <layout:boundingBox>
+              <layout:position layout:x="700" layout:y="160" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT65" layout:reaction="T65">
+            <layout:boundingBox>
+              <layout:position layout:x="360" layout:y="520" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT66" layout:reaction="T66">
+            <layout:boundingBox>
+              <layout:position layout:x="90" layout:y="520" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT67" layout:reaction="T67">
+            <layout:boundingBox>
+              <layout:position layout:x="360" layout:y="590" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="RGT68" layout:reaction="T68">
+            <layout:boundingBox>
+              <layout:position layout:x="90" layout:y="590" layout:z="0"/>
+            </layout:boundingBox>
+          </layout:reactionGlyph>
+        </layout:listOfReactionGlyphs>
+      </layout:layout>
+    </layout:listOfLayouts>
+    <listOfSpecies>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P0" initialAmount="0" metaid="a144f815-5e83-435b-8603-d85de4f2cfca" name="mTORC1:ULK1comp_" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#a144f815-5e83-435b-8603-d85de4f2cfca">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/O75385"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q8TDY2"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/O75143"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9BSB4"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P42345"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q8N122"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9BVC4"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P1" initialAmount="0" metaid="ab43f162-acf1-41f6-bb76-3087ab133769" name="S-cyt" sboTerm="SBO:0000240">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#ab43f162-acf1-41f6-bb76-3087ab133769">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P2" initialAmount="0" metaid="_8aae5381-2152-4b55-8c76-7402a44185c6" name="N/S" sboTerm="SBO:0000014">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_8aae5381-2152-4b55-8c76-7402a44185c6">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/A7MCY6"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P3" initialAmount="0" metaid="_888b2c92-8350-45c4-95a4-5e2015c0404d" name="E3_ligase" sboTerm="SBO:0000224">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_888b2c92-8350-45c4-95a4-5e2015c0404d">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9Y4X5"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P4" initialAmount="0" metaid="bf8dc854-925e-4e2d-b6ad-52b4706ce1a4" name="p62" sboTerm="SBO:0000244">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#bf8dc854-925e-4e2d-b6ad-52b4706ce1a4">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K14381"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P5" initialAmount="0" metaid="_1e8b8ee4-3315-4426-a3df-4b1feb25f27f" name="S-damagedSCV__" sboTerm="SBO:0000240">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_1e8b8ee4-3315-4426-a3df-4b1feb25f27f">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P6" initialAmount="0" metaid="_3e94cb06-fa58-47e2-bab9-779ecf1fb39f" name="LRSAM1" sboTerm="SBO:0000224">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_3e94cb06-fa58-47e2-bab9-779ecf1fb39f">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q6UWE0"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P7" initialAmount="0" metaid="e8705843-5171-4801-a7f3-424516042570" name="Gal8" sboTerm="SBO:0000280">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#e8705843-5171-4801-a7f3-424516042570">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K06832"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P8" initialAmount="0" metaid="_89253762-589a-489f-9da4-dc7cd8b42e39" name="S:Gal8" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_89253762-589a-489f-9da4-dc7cd8b42e39">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K06832"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P9" initialAmount="0" metaid="_92bf52ce-d654-4400-9fd5-d0a853144a3a" name="SignalSCVdamage_" sboTerm="SBO:0000240">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_92bf52ce-d654-4400-9fd5-d0a853144a3a">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P10" initialAmount="0" metaid="d84e7b05-f655-43ac-84e5-27137a85e92d" name="S:Gal8:Ub:NDP52" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#d84e7b05-f655-43ac-84e5-27137a85e92d">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K06832"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P11" initialAmount="0" metaid="_206d52c7-7055-428f-aad2-56ca1385e1c4" name="NDP52'" sboTerm="SBO:0000244">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_206d52c7-7055-428f-aad2-56ca1385e1c4">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P12" initialAmount="0" metaid="_777144f4-0ccf-4e4f-9e89-16588aaaf902" name="SignalAutophagyInduction_" sboTerm="SBO:0000410">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_777144f4-0ccf-4e4f-9e89-16588aaaf902">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0005776"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P13" initialAmount="0" metaid="cf64a544-6373-4712-979e-c24ae76367ab" name="S:Gal8:Ub:p62_" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#cf64a544-6373-4712-979e-c24ae76367ab">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K06832"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K14381"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P14" initialAmount="0" metaid="_04644641-3746-4a9a-a3fa-21a3aef9bfd0" name="S:Gal8:NDP52_" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_04644641-3746-4a9a-a3fa-21a3aef9bfd0">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K06832"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P15" initialAmount="0" metaid="_6dff3a2e-8ea2-4e98-96f7-12e7d94a2c13" name="S:Gal8:Ub_" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_6dff3a2e-8ea2-4e98-96f7-12e7d94a2c13">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K06832"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P16" initialAmount="0" metaid="ce75b441-a555-4667-9851-fcf713408960" name="S:Gal8:Ub:NDP52:OPTN:p62:N/S__" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#ce75b441-a555-4667-9851-fcf713408960">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K06832"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q96CV9"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K14381"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/A7MCY6"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P17" initialAmount="0" metaid="_846bec3c-6be3-4517-beff-bf8d49b2d5fd" name="OPTN'" sboTerm="SBO:0000244">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_846bec3c-6be3-4517-beff-bf8d49b2d5fd">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q96CV9"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P18" initialAmount="0" metaid="ad57150f-5078-4db5-98bc-68b811584f87" name="S:Gal8:Ub:OPTN_" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#ad57150f-5078-4db5-98bc-68b811584f87">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K06832"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q96CV9"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P19" initialAmount="0" metaid="a353cb14-f810-4d02-b5bd-e7b402a847d7" name="AA_" sboTerm="SBO:0000240">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#a353cb14-f810-4d02-b5bd-e7b402a847d7">
+	<bqbiol:occursIn>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.compound/C00407"/>
+	</rdf:Bag>
+	</bqbiol:occursIn>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P20" initialAmount="0" metaid="_7a0496cd-ad53-4c1f-8bd0-76697a4d6dad" name="S:Gal8:Ub:NDP52:OPTN:p62__" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_7a0496cd-ad53-4c1f-8bd0-76697a4d6dad">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K06832"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q96CV9"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K14381"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P21" initialAmount="0" metaid="_8cf24f4f-a0d9-49d8-a89d-1ed635345d61" name="mTORC1:ULK1comp:SCV__" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_8cf24f4f-a0d9-49d8-a89d-1ed635345d61">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/O75385"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q8TDY2"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/O75143"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9BSB4"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P42345"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q8N122"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9BVC4"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P22" initialAmount="0" metaid="_179679c1-9ff8-4b34-9dc6-b2555748a002" name="S:Gal8:Ub:NDP52:OPTN:p62:N/S:diTBK1__" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_179679c1-9ff8-4b34-9dc6-b2555748a002">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K06832"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q96CV7"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K14381"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/A7MCY6"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9UHD2"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P23" initialAmount="0" metaid="_04c412d7-62dc-4489-806b-d939d257438b" name="diTBK1'" sboTerm="SBO:0000607">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_04c412d7-62dc-4489-806b-d939d257438b">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9UHD2"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P24" initialAmount="0" metaid="_69e23bff-65cc-474a-9c75-76ffaa383491" name="diTBK1'i" sboTerm="SBO:0000607">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_69e23bff-65cc-474a-9c75-76ffaa383491">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9UHD2"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P25" initialAmount="0" metaid="da1df8c5-6532-41a1-8fff-962c5504c123" name="SCV_" sboTerm="SBO:0000240">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#da1df8c5-6532-41a1-8fff-962c5504c123">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P26" initialAmount="0" metaid="d1ccd85c-5bcd-4894-add0-52f2b9d77ce5" name="S:Gal8:Ub:NDP52:OPTN:p62:N/S:diTBK1i__" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#d1ccd85c-5bcd-4894-add0-52f2b9d77ce5">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K06832"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q96CV9"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K14381"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/A7MCY6"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9UHD2"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P27" initialAmount="0" metaid="ff4bcbae-643a-4d8d-9e54-7aa0e958b0c1" name="S:Gal8:Ub:NDP52:N/S_" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#ff4bcbae-643a-4d8d-9e54-7aa0e958b0c1">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K06832"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/A7MCY6"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P28" initialAmount="0" metaid="_1a577da8-7d73-4bad-a54c-dc97453612a2" name="N/S'" sboTerm="SBO:0000607">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_1a577da8-7d73-4bad-a54c-dc97453612a2">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/A7MCY6"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P29" initialAmount="0" metaid="_7a46c05c-567f-4d5b-bf76-fdd2e6bcc896" name="S:Ub_" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_7a46c05c-567f-4d5b-bf76-fdd2e6bcc896">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P30" initialAmount="0" metaid="_55e8ffda-3cf5-4137-88c6-a2d95537a6d5" name="S:Ub:p62_" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_55e8ffda-3cf5-4137-88c6-a2d95537a6d5">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K14381"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P31" initialAmount="0" metaid="afa64a1d-9748-4412-92cd-f5b8b2e4a896" name="S:Ub:OPTN_" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#afa64a1d-9748-4412-92cd-f5b8b2e4a896">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q96CV9"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P32" initialAmount="0" metaid="a3499a1b-8d98-45df-908f-f70d6a2bc416" name="S:Ub:NDP52_" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#a3499a1b-8d98-45df-908f-f70d6a2bc416">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P33" initialAmount="0" metaid="_63a661b5-285f-450e-894d-1b106aed52ee" name="TBK1" sboTerm="SBO:0000607">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_63a661b5-285f-450e-894d-1b106aed52ee">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9UHD2"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P34" initialAmount="0" metaid="_91a2a4ea-20df-4c38-9ada-fbd941c8d4ac" name="S:Ub:NDP52:OPTN:p62__" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_91a2a4ea-20df-4c38-9ada-fbd941c8d4ac">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q96CV9"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K14381"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P35" initialAmount="0" metaid="d983b5c6-dba4-4e85-8c0d-dfa375931904" name="S:Ub:NDP52:OPTN:p62:N/S__" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#d983b5c6-dba4-4e85-8c0d-dfa375931904">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q96CV9"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K14381"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/A7MCY6"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P36" initialAmount="0" metaid="_82dabe54-de57-4714-a43c-aafc0510de97" name="S:Ub:NDP52:OPTN:p62:N/S:diTBK1__" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_82dabe54-de57-4714-a43c-aafc0510de97">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q96CV9"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K14381"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/A7MCY6"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P37" initialAmount="0" metaid="_86bef7da-c92b-4dd6-b19b-f73fa612493c" name="S:Ub:NDP52:OPTN:p62:N/S:diTBK1i__" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_86bef7da-c92b-4dd6-b19b-f73fa612493c">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q96CV9"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K14381"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/A7MCY6"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9UHD2"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P38" initialAmount="0" metaid="_803f6466-c427-4f4d-8b06-0cc3c140e0fc" name="diTBK1'ii" sboTerm="SBO:0000286">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_803f6466-c427-4f4d-8b06-0cc3c140e0fc">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9UHD2"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P39" initialAmount="0" metaid="b6f90141-d3d4-49f1-9354-bc013c043ac3" name="diTBK1'iii" sboTerm="SBO:0000286">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#b6f90141-d3d4-49f1-9354-bc013c043ac3">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9UHD2"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P40" initialAmount="0" metaid="_662c27f0-0193-4e49-8e88-902a8acf66b8" name="S:Ub:NDP52:OPTN:p62:N/S:OligoTBK1__" sboTerm="SBO:0000420">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_662c27f0-0193-4e49-8e88-902a8acf66b8">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q96CV9"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/A7MCY6"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9UHD2"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K14381"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P41" initialAmount="0" metaid="_1b64b89e-0b6b-4546-8bb4-47ce73517791" name="Ap:Ub_" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_1b64b89e-0b6b-4546-8bb4-47ce73517791">
+	<bqbiol:hasVersion>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0005776"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	</rdf:Bag>
+	</bqbiol:hasVersion>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P42" initialAmount="0" metaid="_963913be-3977-4d55-85a3-a2af4da69578" name="Ap:Ub:N/S__" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_963913be-3977-4d55-85a3-a2af4da69578">
+	<bqbiol:hasVersion>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0005776"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/A7MCY6"/>
+	</rdf:Bag>
+	</bqbiol:hasVersion>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P43" initialAmount="0" metaid="e995de18-4cdc-4c12-9acd-98eac8690cff" name="Ap:Ub:OPTNp_" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#e995de18-4cdc-4c12-9acd-98eac8690cff">
+	<bqbiol:hasVersion>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0005776"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q96CV9"/>
+	</rdf:Bag>
+	</bqbiol:hasVersion>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P44" initialAmount="0" metaid="a7117935-34d9-4e1c-aa2f-409d3f7eb828" name="p62'" sboTerm="SBO:0000244">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#a7117935-34d9-4e1c-aa2f-409d3f7eb828">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K14381"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P45" initialAmount="0" metaid="fb8b74cd-7f0b-4987-81ef-0a3d498f1f4f" name="OPTN'i" sboTerm="SBO:0000244">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#fb8b74cd-7f0b-4987-81ef-0a3d498f1f4f">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q96CV9"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P46" initialAmount="0" metaid="b92e5d38-07bd-4bab-834d-ff8ef192f70a" name="p62'i" sboTerm="SBO:0000244">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#b92e5d38-07bd-4bab-834d-ff8ef192f70a">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K14381"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P47" initialAmount="0" metaid="bcc87315-c541-41db-b829-19249bf3cebd" name="NDP52'i" sboTerm="SBO:0000244">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#bcc87315-c541-41db-b829-19249bf3cebd">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P48" initialAmount="0" metaid="_73f7aa04-889b-47e1-8d88-ee4504c5f8b2" name="S:Gal8:Ub:NDP52:p62:OPTNp.N/S:OligoTBK1__" sboTerm="SBO:0000420">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_73f7aa04-889b-47e1-8d88-ee4504c5f8b2">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K06832"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q96CV9"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K14381"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/A7MCY6"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9UHD2"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P49" initialAmount="0" metaid="_32226de9-8c83-4981-b22f-b984db976459" name="S:Ub:NDP52:N/S_" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_32226de9-8c83-4981-b22f-b984db976459">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/A7MCY6"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P50" initialAmount="0" metaid="_3dad4863-e139-4765-a790-48e1e2195bb0" name="N/S'i" sboTerm="SBO:0000607">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_3dad4863-e139-4765-a790-48e1e2195bb0">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/A7MCY6"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P51" initialAmount="0" metaid="eeb094a3-0fd5-4206-8edf-88833d620067" name="Ap:Gal8:Ub:OPTNp_" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#eeb094a3-0fd5-4206-8edf-88833d620067">
+	<bqbiol:hasVersion>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0005776"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K06832"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q96CV9"/>
+	</rdf:Bag>
+	</bqbiol:hasVersion>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P52" initialAmount="0" metaid="cc5afc49-7646-409e-be92-0313cc95e1ef" name="LC3/GABARAP_" sboTerm="SBO:0000245">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#cc5afc49-7646-409e-be92-0313cc95e1ef">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9H492"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9GZQ8"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9BXW4"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9H0R8"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/O95166"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P60520"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P53" initialAmount="0" metaid="_1a1224e6-d1bd-4d9b-86c3-0a4e075a1fa8" name="Ap:Gal8" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_1a1224e6-d1bd-4d9b-86c3-0a4e075a1fa8">
+	<bqbiol:hasVersion>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0005776"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K06832"/>
+	</rdf:Bag>
+	</bqbiol:hasVersion>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P54" initialAmount="0" metaid="_782eb22a-ee66-497d-b15c-c74a0f5be0bd" name="Ap:Gal8:Ub:N/S_" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_782eb22a-ee66-497d-b15c-c74a0f5be0bd">
+	<bqbiol:hasVersion>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0005776"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K06832"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/A7MCY6"/>
+	</rdf:Bag>
+	</bqbiol:hasVersion>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P55" initialAmount="0" metaid="c53e5ef6-f7ae-4a3f-a90f-8bd43eb53bab" name="Ap:Gal8:Ub_" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#c53e5ef6-f7ae-4a3f-a90f-8bd43eb53bab">
+	<bqbiol:hasVersion>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.genome/T00065"/>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0005776"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.orthology/K06832"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.pathway/hsa04120"/>
+	</rdf:Bag>
+	</bqbiol:hasVersion>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P56" initialAmount="0" metaid="c63f59c4-e805-44c4-977f-608841bd31cf" name="AAstarvation_" sboTerm="SBO:0000240">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#c63f59c4-e805-44c4-977f-608841bd31cf">
+	<bqbiol:occursIn>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.compound/C00407"/>
+	</rdf:Bag>
+	</bqbiol:occursIn>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P57" initialAmount="0" metaid="a4852945-e42e-488b-986b-5bfd11c907a6" name="OPTN_" sboTerm="SBO:0000244">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#a4852945-e42e-488b-986b-5bfd11c907a6">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q96CV9"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P58" initialAmount="0" metaid="_1ace8e33-4ce8-4749-a919-11d40b6079fc" name="mTORC1inactive" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_1ace8e33-4ce8-4749-a919-11d40b6079fc">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P42345"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q8N122"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9BVC4"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P59" initialAmount="0" metaid="ce527b6e-9dff-4be1-882d-46848a05cc32" name="ULK1comp_" sboTerm="SBO:0000296">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#ce527b6e-9dff-4be1-882d-46848a05cc32">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/O75385"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q8TDY2"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/O75143"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9BSB4"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P60" initialAmount="0" metaid="f0e08c05-f02b-49d2-aa89-ad812f18ec1f" name="NDP52" sboTerm="SBO:0000244">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#f0e08c05-f02b-49d2-aa89-ad812f18ec1f">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q13137"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction fast="false" id="T0" metaid="_69a24a22-fecc-4ee4-9258-829526e1eaa9" name="Syn7_" reversible="false" sboTerm="SBO:0000393">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_69a24a22-fecc-4ee4-9258-829526e1eaa9">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006412"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference constant="true" species="P2" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T1" metaid="_2780d50f-dd03-48c3-8d5c-4b7bbe64f0ed" name="T34" reversible="false" sboTerm="SBO:0000395">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_2780d50f-dd03-48c3-8d5c-4b7bbe64f0ed">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/reactome/R-HSA-5675790"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P0" stoichiometry="1"/>
+          <speciesReference constant="true" species="P56" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P59" stoichiometry="1"/>
+          <speciesReference constant="true" species="P58" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T2" metaid="_77eb13bd-7198-4a13-a2af-bad8666968fe" name="Syn5_" reversible="false" sboTerm="SBO:0000393">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_77eb13bd-7198-4a13-a2af-bad8666968fe">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006412"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference constant="true" species="P60" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T3" metaid="_371c1cae-c171-4203-b416-22f9d13cf276" name="Syn6_" reversible="false" sboTerm="SBO:0000393">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_371c1cae-c171-4203-b416-22f9d13cf276">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006412"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference constant="true" species="P57" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T4" metaid="aa240a20-4f18-415c-b6a8-a95c3ad9a8fd" name="SCVdamage_" reversible="false" sboTerm="SBO:0000357">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#aa240a20-4f18-415c-b6a8-a95c3ad9a8fd">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0051673"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P25" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P5" stoichiometry="1"/>
+          <speciesReference constant="true" species="P9" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T5" metaid="_64560bcf-7b5a-4ddd-a467-8da0c7260d08" name="T1" reversible="false" sboTerm="SBO:0000177">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_64560bcf-7b5a-4ddd-a467-8da0c7260d08">
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/22246324"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P5" stoichiometry="1"/>
+          <speciesReference constant="true" species="P7" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P8" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T6" metaid="_69819306-cc04-41c1-afc8-2d1ac5068806" name="T18" reversible="false" sboTerm="SBO:0000412">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_69819306-cc04-41c1-afc8-2d1ac5068806">
+	<bqbiol:hasVersion>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0085020"/>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0044314"/>
+	</rdf:Bag>
+	</bqbiol:hasVersion>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P1" stoichiometry="1"/>
+          <speciesReference constant="true" species="P3" stoichiometry="1"/>
+          <speciesReference constant="true" species="P6" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P29" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T7" metaid="a7b63c56-13ca-4b09-af72-42121a3aaf53" name="Syn1" reversible="false" sboTerm="SBO:0000393">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#a7b63c56-13ca-4b09-af72-42121a3aaf53">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006412"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference constant="true" species="P7" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T8" metaid="_32dd8a0c-cbc7-4498-ab40-beb5ecf480a8" name="T3i" reversible="false" sboTerm="SBO:0000177">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_32dd8a0c-cbc7-4498-ab40-beb5ecf480a8">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/4GXL"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P8" stoichiometry="1"/>
+          <speciesReference constant="true" species="P60" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P14" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T9" metaid="b598ab9b-172e-4c70-8166-85b878da5e86" name="T2i" reversible="false" sboTerm="SBO:0000224">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#b598ab9b-172e-4c70-8166-85b878da5e86">
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/23245322"/>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/20616063"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P3" stoichiometry="1"/>
+          <speciesReference constant="true" species="P6" stoichiometry="1"/>
+          <speciesReference constant="true" species="P14" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P10" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T10" metaid="_8c8bc635-2b5e-46ae-9047-84eaf8fbc9c4" name="T33" reversible="false" sboTerm="SBO:0000375">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_8c8bc635-2b5e-46ae-9047-84eaf8fbc9c4">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0034198"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P9" stoichiometry="1"/>
+          <speciesReference constant="true" species="P19" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P56" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T11" metaid="_32d8b97c-98d6-4a27-82d8-9406657fc6ee" name="T2" reversible="false" sboTerm="SBO:0000224">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_32d8b97c-98d6-4a27-82d8-9406657fc6ee">
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/23245322"/>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/20616063"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P3" stoichiometry="1"/>
+          <speciesReference constant="true" species="P6" stoichiometry="1"/>
+          <speciesReference constant="true" species="P8" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P15" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T12" metaid="_4daab39c-aebe-4a78-b513-db51c4a1f707" name="T3" reversible="false" sboTerm="SBO:0000177">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_4daab39c-aebe-4a78-b513-db51c4a1f707">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/4GXL"/>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/4XKL"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820708"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P15" stoichiometry="1"/>
+          <speciesReference constant="true" species="P60" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P10" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T13" metaid="_3bec0468-b5a7-4697-bc9a-5bfc3dce18e6" name="T36" reversible="false" sboTerm="SBO:0000412">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_3bec0468-b5a7-4697-bc9a-5bfc3dce18e6">
+	<bqbiol:isPartOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/reactome/R-HSA-5675868"/>
+	</rdf:Bag>
+	</bqbiol:isPartOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P59" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P12" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T14" metaid="_60113c4a-e006-4393-a7a3-c27d5e89bc8d" name="T7" reversible="false" sboTerm="SBO:0000412">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_60113c4a-e006-4393-a7a3-c27d5e89bc8d">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/2JY7"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19812211"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P4" stoichiometry="1"/>
+          <speciesReference constant="true" species="P15" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P13" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T15" metaid="_0543e57e-b3b3-444e-8a38-add4c55f215d" name="T4" reversible="false" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_0543e57e-b3b3-444e-8a38-add4c55f215d">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/4GXL"/>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/4XKL"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820708"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P10" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P11" stoichiometry="1"/>
+          <speciesReference constant="true" species="P15" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T16" metaid="_1c80b06b-48c9-4b78-9a2c-6ad592f7e8a9" name="T9" reversible="false" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_1c80b06b-48c9-4b78-9a2c-6ad592f7e8a9">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/2JY7"/>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5WQ4"/>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/4GXL"/>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/4XKL"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19812211"/>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/21617041"/>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820708"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P11" stoichiometry="1"/>
+          <speciesReference constant="true" species="P15" stoichiometry="1"/>
+          <speciesReference constant="true" species="P17" stoichiometry="1"/>
+          <speciesReference constant="true" species="P44" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P20" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T17" metaid="_57c4316b-4db2-4680-acb6-cacf6395b1fe" name="T8" reversible="false" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_57c4316b-4db2-4680-acb6-cacf6395b1fe">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/2JY7"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19812211"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P13" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P44" stoichiometry="1"/>
+          <speciesReference constant="true" species="P15" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T18" metaid="a5baebd6-2d6e-4c09-a623-fed7797dfa07" name="T6" reversible="false" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#a5baebd6-2d6e-4c09-a623-fed7797dfa07">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5B83"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/21617041"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P18" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P17" stoichiometry="1"/>
+          <speciesReference constant="true" species="P15" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T19" metaid="_3c6b2d8f-fc24-4932-a3bc-00fe2e259455" name="T35" reversible="false" sboTerm="SBO:0000656">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_3c6b2d8f-fc24-4932-a3bc-00fe2e259455">
+	<bqbiol:isPartOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/reactome/R-HSA-5672817"/>
+	</rdf:Bag>
+	</bqbiol:isPartOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P58" stoichiometry="1"/>
+          <speciesReference constant="true" species="P59" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P21" stoichiometry="1"/>
+          <speciesReference constant="true" species="P19" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T20" metaid="caf6f96a-b867-4a0d-bd52-ef05092d6029" name="T14" reversible="false" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#caf6f96a-b867-4a0d-bd52-ef05092d6029">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5Z7L"/>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-12521931"/>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-6115370"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820208"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P22" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P23" stoichiometry="1"/>
+          <speciesReference constant="true" species="P16" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T21" metaid="_6ec80a7f-3971-4d43-a1bf-e45f2baa392c" name="Syn9" reversible="false" sboTerm="SBO:0000393">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_6ec80a7f-3971-4d43-a1bf-e45f2baa392c">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/reactome/R-HSA-165680"/>
+	<rdf:li rdf:resource="http://identifiers.org/reactome/R-HSA-5683925"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference constant="true" species="P0" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T22" metaid="ff5a35c2-4c4d-4757-bab1-98717631ca32" name="T13i" reversible="false" sboTerm="SBO:0000205">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#ff5a35c2-4c4d-4757-bab1-98717631ca32">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5Z7L"/>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-12521931"/>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-6115370"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820208"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P16" stoichiometry="1"/>
+          <speciesReference constant="true" species="P33" stoichiometry="2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P26" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T23" metaid="_768b19b5-7f6c-4730-8d7e-e3a20217dd45" name="T14i" reversible="false" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_768b19b5-7f6c-4730-8d7e-e3a20217dd45">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5Z7L"/>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-12521931"/>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-6115370"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820208"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P26" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P24" stoichiometry="1"/>
+          <speciesReference constant="true" species="P16" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T24" metaid="cbaa42e4-bf40-4794-a20d-c308629b2886" name="T15" reversible="false" sboTerm="SBO:0000216">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#cbaa42e4-bf40-4794-a20d-c308629b2886">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5EOF"/>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0051259"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P16" stoichiometry="1"/>
+          <speciesReference constant="true" species="P23" stoichiometry="1"/>
+          <speciesReference constant="true" species="P24" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P48" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T25" metaid="b48117cb-e258-44bd-90e6-e7e8a223fe97" name="Output" reversible="false" sboTerm="SBO:0000588">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#b48117cb-e258-44bd-90e6-e7e8a223fe97">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/reactome/R-HSA-5675790"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P21" stoichiometry="1"/>
+        </listOfReactants>
+      </reaction>
+      <reaction fast="false" id="T26" metaid="b37f129c-1a75-4c94-bbb9-ed7a14d2a9cb" name="Inv" reversible="false" sboTerm="SBO:0000587">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#b37f129c-1a75-4c94-bbb9-ed7a14d2a9cb">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0097178"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference constant="true" species="P25" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T27" metaid="_3e331b5f-4e1d-4681-8083-fe4f0db6a08c" name="T10" reversible="false" sboTerm="SBO:0000412">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_3e331b5f-4e1d-4681-8083-fe4f0db6a08c">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5Z7L"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820708"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P2" stoichiometry="1"/>
+          <speciesReference constant="true" species="P10" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P27" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T28" metaid="d3ef32cd-b190-4bd7-84e0-39e107b13fcf" name="Syn4_" reversible="false" sboTerm="SBO:0000393">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#d3ef32cd-b190-4bd7-84e0-39e107b13fcf">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006412"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference constant="true" species="P4" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T29" metaid="_53c721ae-249a-4fa4-b8e8-78f1b1914c44" name="T11" reversible="false" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_53c721ae-249a-4fa4-b8e8-78f1b1914c44">
+	<bqbiol:isPartOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-6115370"/>
+	</rdf:Bag>
+	</bqbiol:isPartOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P27" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P28" stoichiometry="1"/>
+          <speciesReference constant="true" species="P15" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T30" metaid="_076a85cc-dec8-487e-b02d-c92da15d284f" name="T10i" reversible="false" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_076a85cc-dec8-487e-b02d-c92da15d284f">
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820708"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P2" stoichiometry="1"/>
+          <speciesReference constant="true" species="P20" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P16" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T31" metaid="_45e4eacd-21dc-49e3-8c78-e1a6ddef6a3c" name="T12" reversible="false" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_45e4eacd-21dc-49e3-8c78-e1a6ddef6a3c">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/2JY7"/>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5WQ4"/>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5Z7L"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19812211"/>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/21617041"/>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820708"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P15" stoichiometry="1"/>
+          <speciesReference constant="true" species="P17" stoichiometry="1"/>
+          <speciesReference constant="true" species="P28" stoichiometry="1"/>
+          <speciesReference constant="true" species="P44" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P16" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T32" metaid="_2266450e-615c-4f4b-9b45-c2a309ceecb2" name="T5" reversible="false" sboTerm="SBO:0000412">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_2266450e-615c-4f4b-9b45-c2a309ceecb2">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5WQ4"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/21617041"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P15" stoichiometry="1"/>
+          <speciesReference constant="true" species="P57" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P18" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T33" metaid="_35051996-fe5f-47b1-ac87-f94e1700cc17" name="Syn2_" reversible="false" sboTerm="SBO:0000393">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_35051996-fe5f-47b1-ac87-f94e1700cc17">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006412"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference constant="true" species="P3" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T34" metaid="c0db5056-bd3e-4ac8-9373-9b5bdc9db4a3" name="T17" reversible="false" sboTerm="SBO:0000205">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#c0db5056-bd3e-4ac8-9373-9b5bdc9db4a3">
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/24618251"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P5" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P1" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T35" metaid="_84e92a53-50bd-4890-9f48-e2d02aaea15e" name="Syn3_" reversible="false" sboTerm="SBO:0000393">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_84e92a53-50bd-4890-9f48-e2d02aaea15e">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006412"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference constant="true" species="P6" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T36" metaid="_2235e0e9-a364-43af-8f1c-c37c1bf9f9f6" name="T23" reversible="false" sboTerm="SBO:0000412">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_2235e0e9-a364-43af-8f1c-c37c1bf9f9f6">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/4XKL"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820708"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P29" stoichiometry="1"/>
+          <speciesReference constant="true" species="P60" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P32" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T37" metaid="aefa772f-2d4c-466b-860a-979b9a42cba2" name="Syn8_" reversible="false" sboTerm="SBO:0000393">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#aefa772f-2d4c-466b-860a-979b9a42cba2">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006412"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference constant="true" species="P33" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T38" metaid="cb54b0fa-55ca-4991-8f53-702b7b791c44" name="T21" reversible="false" sboTerm="SBO:0000412">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#cb54b0fa-55ca-4991-8f53-702b7b791c44">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5WQ4"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/21617041"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P29" stoichiometry="1"/>
+          <speciesReference constant="true" species="P57" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P31" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T39" metaid="_1ac975ed-61f7-4cce-baf9-796b5fd0d065" name="T19" reversible="false" sboTerm="SBO:0000412">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_1ac975ed-61f7-4cce-baf9-796b5fd0d065">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/2JY7"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19812211"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P4" stoichiometry="1"/>
+          <speciesReference constant="true" species="P29" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P30" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T40" metaid="fb1e9297-d337-425a-b49b-3c95fe04e520" name="T25" reversible="false" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#fb1e9297-d337-425a-b49b-3c95fe04e520">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/4XKL"/>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/2JY7"/>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5WQ4"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/12812211"/>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/21617041"/>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820708"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P29" stoichiometry="1"/>
+          <speciesReference constant="true" species="P45" stoichiometry="1"/>
+          <speciesReference constant="true" species="P46" stoichiometry="1"/>
+          <speciesReference constant="true" species="P47" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P34" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T41" metaid="_51016363-2de4-4367-ad3a-e37b2cf1c2d1" name="T26i" reversible="false" sboTerm="SBO:0000412">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_51016363-2de4-4367-ad3a-e37b2cf1c2d1">
+	<bqbiol:isPartOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-6115370"/>
+	</rdf:Bag>
+	</bqbiol:isPartOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P2" stoichiometry="1"/>
+          <speciesReference constant="true" species="P34" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P35" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T42" metaid="_09aa717c-c94e-46c3-8678-a11955fdaf60" name="T29" reversible="false" sboTerm="SBO:0000205">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_09aa717c-c94e-46c3-8678-a11955fdaf60">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/57ZL"/>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-12521931"/>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-6115370"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820208"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P33" stoichiometry="2"/>
+          <speciesReference constant="true" species="P35" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P36" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T43" metaid="_9ea878d0-be8a-4355-8ec2-ec7b9b0a31a3" name="T29'" reversible="false" sboTerm="SBO:0000205">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_9ea878d0-be8a-4355-8ec2-ec7b9b0a31a3">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5Z7L"/>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-12521931"/>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-6115370"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820208"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P33" stoichiometry="2"/>
+          <speciesReference constant="true" species="P35" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P37" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T44" metaid="_2fc37172-1005-4561-b032-9472145be638" name="T30" reversible="false" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_2fc37172-1005-4561-b032-9472145be638">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5Z7L"/>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-12521931"/>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-6115370"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820208"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P36" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P38" stoichiometry="1"/>
+          <speciesReference constant="true" species="P35" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T45" metaid="_503c9085-bad4-4729-bbcf-475f10668775" name="T30'" reversible="false" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_503c9085-bad4-4729-bbcf-475f10668775">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5Z7L"/>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-12521931"/>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-6115370"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820208"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P37" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P39" stoichiometry="1"/>
+          <speciesReference constant="true" species="P35" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T46" metaid="e35fcf39-b69d-433f-8d27-6e03e1526b6f" name="T31" reversible="false" sboTerm="SBO:0000216">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#e35fcf39-b69d-433f-8d27-6e03e1526b6f">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5EOF"/>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0051259"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P35" stoichiometry="1"/>
+          <speciesReference constant="true" species="P38" stoichiometry="1"/>
+          <speciesReference constant="true" species="P39" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P40" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T47" metaid="e2e38813-2042-4800-8ed4-9519ac77f654" name="T32ii" reversible="false" sboTerm="SBO:0000167">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#e2e38813-2042-4800-8ed4-9519ac77f654">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/reactome/R-HSA-5678490"/>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0000045"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P34" stoichiometry="1"/>
+          <speciesReference constant="true" species="P52" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P41" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T48" metaid="_04004ed8-e7df-4a35-b8e7-b1a6950a61c3" name="T32i" reversible="false" sboTerm="SBO:0000167">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_04004ed8-e7df-4a35-b8e7-b1a6950a61c3">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-6115370"/>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/3VVW"/>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0000045"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P35" stoichiometry="1"/>
+          <speciesReference constant="true" species="P52" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P42" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T49" metaid="_8cd22cda-1e98-478b-82b6-6481d5f9833c" name="T32" reversible="false" sboTerm="SBO:0000167">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_8cd22cda-1e98-478b-82b6-6481d5f9833c">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/2ULE"/>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0000045"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P40" stoichiometry="1"/>
+          <speciesReference constant="true" species="P52" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P43" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T50" metaid="_1b27e9a4-ea46-4031-be43-70e9e23b56b2" name="Deg3ii" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_1b27e9a4-ea46-4031-be43-70e9e23b56b2">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0016236"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P41" stoichiometry="1"/>
+        </listOfReactants>
+      </reaction>
+      <reaction fast="false" id="T51" metaid="_4b3d5e42-61d0-49ba-94a8-8349df61db23" name="Deg3i" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_4b3d5e42-61d0-49ba-94a8-8349df61db23">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0016236"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P42" stoichiometry="1"/>
+        </listOfReactants>
+      </reaction>
+      <reaction fast="false" id="T52" metaid="_624e042c-4f5d-4788-99af-42ecf7d649e0" name="Deg3" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_624e042c-4f5d-4788-99af-42ecf7d649e0">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0016236"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P43" stoichiometry="1"/>
+        </listOfReactants>
+      </reaction>
+      <reaction fast="false" id="T53" metaid="_36806011-aa5b-4cde-be62-a0d84c098f2d" name="T20" reversible="false" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_36806011-aa5b-4cde-be62-a0d84c098f2d">
+	<bqbiol:isPartOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-6999577"/>
+	</rdf:Bag>
+	</bqbiol:isPartOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P30" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P46" stoichiometry="1"/>
+          <speciesReference constant="true" species="P29" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T54" metaid="_77a97f1d-f80b-4dee-9f20-458fbab436bb" name="T22" reversible="false" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_77a97f1d-f80b-4dee-9f20-458fbab436bb">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5B83"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/21617041"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P31" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P45" stoichiometry="1"/>
+          <speciesReference constant="true" species="P29" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T55" metaid="_6e6a2b42-6a5e-40bd-88da-b8531a63b1c9" name="T24" reversible="false" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_6e6a2b42-6a5e-40bd-88da-b8531a63b1c9">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/4XKL"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820708"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P32" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P47" stoichiometry="1"/>
+          <speciesReference constant="true" species="P29" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T56" metaid="f940af94-dd74-4410-bdfe-4d56a288b74d" name="T16" reversible="false" sboTerm="SBO:0000167">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#f940af94-dd74-4410-bdfe-4d56a288b74d">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0000045"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P48" stoichiometry="1"/>
+          <speciesReference constant="true" species="P52" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P51" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T57" metaid="_1099f660-0864-4933-91eb-e864175f44b3" name="T26" reversible="false" sboTerm="SBO:0000412">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_1099f660-0864-4933-91eb-e864175f44b3">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-6115370"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P2" stoichiometry="1"/>
+          <speciesReference constant="true" species="P32" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P49" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T58" metaid="_9d9fab4f-8472-4b2b-a773-0883d6e91832" name="Deg2" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_9d9fab4f-8472-4b2b-a773-0883d6e91832">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0016236"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P51" stoichiometry="1"/>
+        </listOfReactants>
+      </reaction>
+      <reaction fast="false" id="T59" metaid="_3eb4a38c-12e2-4825-be60-2e09522c8d5b" name="T27" reversible="false" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_3eb4a38c-12e2-4825-be60-2e09522c8d5b">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5Z7L"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820708"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P49" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P50" stoichiometry="1"/>
+          <speciesReference constant="true" species="P29" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T60" metaid="aa63c166-c3a6-40fb-893d-52f7d32b56ee" name="T28" reversible="false" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#aa63c166-c3a6-40fb-893d-52f7d32b56ee">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-6999577"/>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5B83"/>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5Z7L"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/21617041"/>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820708"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P29" stoichiometry="1"/>
+          <speciesReference constant="true" species="P45" stoichiometry="1"/>
+          <speciesReference constant="true" species="P46" stoichiometry="1"/>
+          <speciesReference constant="true" species="P50" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P35" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T61" metaid="e8d7d8ed-9444-4e12-b2b0-7d26205ebb92" name="T13" reversible="false" sboTerm="SBO:0000205">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#e8d7d8ed-9444-4e12-b2b0-7d26205ebb92">
+              <bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pdb/5Z7L"/>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-12521931"/>
+	<rdf:li rdf:resource="http://identifiers.org/intact/EBI-6115370"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/19820208"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P16" stoichiometry="1"/>
+          <speciesReference constant="true" species="P33" stoichiometry="2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P22" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T62" metaid="ce05644e-bf9a-4888-a4d3-2aeea37cbcb2" name="T16i" reversible="false" sboTerm="SBO:0000167">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#ce05644e-bf9a-4888-a4d3-2aeea37cbcb2">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0000045"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P16" stoichiometry="1"/>
+          <speciesReference constant="true" species="P52" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P54" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T63" metaid="_28371d64-23c8-4328-9361-73338c87e367" name="Deg2i_" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_28371d64-23c8-4328-9361-73338c87e367">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0016236"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P54" stoichiometry="1"/>
+        </listOfReactants>
+      </reaction>
+      <reaction fast="false" id="T64" metaid="f638b66b-304f-4831-aaa6-f3a9670fc1b5" name="T37" reversible="false" sboTerm="SBO:0000412">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#f638b66b-304f-4831-aaa6-f3a9670fc1b5">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0034497"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P12" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P52" stoichiometry="1"/>
+          <speciesReference constant="true" species="P59" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T65" metaid="e7813575-8533-4e1e-9458-6d11a64e3ec5" name="T16ii" reversible="false" sboTerm="SBO:0000167">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#e7813575-8533-4e1e-9458-6d11a64e3ec5">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0000045"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P20" stoichiometry="1"/>
+          <speciesReference constant="true" species="P52" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P55" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T66" metaid="a5089a54-5591-4713-93b7-51bae4270794" name="T16iii" reversible="false" sboTerm="SBO:0000167">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#a5089a54-5591-4713-93b7-51bae4270794">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0000045"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P14" stoichiometry="1"/>
+          <speciesReference constant="true" species="P52" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="P53" stoichiometry="1"/>
+        </listOfProducts>
+      </reaction>
+      <reaction fast="false" id="T67" metaid="_390064dd-f66b-405e-8d1a-78ed8ad8deb8" name="Deg2ii" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#_390064dd-f66b-405e-8d1a-78ed8ad8deb8">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0016236"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P55" stoichiometry="1"/>
+        </listOfReactants>
+      </reaction>
+      <reaction fast="false" id="T68" metaid="f86e48b8-14d9-437f-9b89-1a6a612d924d" name="Deg1" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#f86e48b8-14d9-437f-9b89-1a6a612d924d">
+	<bqbiol:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0016236"/>
+	</rdf:Bag>
+	</bqbiol:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference constant="true" species="P53" stoichiometry="1"/>
+        </listOfReactants>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

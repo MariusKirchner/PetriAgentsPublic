@@ -18,9 +18,11 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
     print(platform.platform()[0:7:])
     if platform.platform()[0:7:] == "Windows":
         #homepc
-        nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
+        #nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
         #laptop
-        #nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
+        nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
+        #oldNLVersionTry
+        #nl4py.initialize(r"C:\Program Files\NetLogo6.2.2")
     else:
         nl4py.initialize('/home/MariusKirchner/Desktop/Randomstuff/NetLogo-6.2.2-64/NetLogo 6.2.2/')
 
@@ -91,7 +93,7 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
                 singleCommand.append(j)
                 for m in mainProject.bacteriaIDDict[k].listOfBehPlaceIDs:
                     if mainProject.bacteriaIDDict[k].dictOfBehPlaces[m] != "None":
-                        singleCommand.append(str(mainProject.bacteriaIDDict[k].dictOfIndividuals[j].petriNet.getPlaceByName("Beh_" + mainProject.bacteriaIDDict[k].dictOfBehPlaces[m]).tokens))
+                        singleCommand.append(str(mainProject.bacteriaIDDict[k].dictOfIndividuals[j].petriNet.placeDict[m].tokens))
                 totalCommandList.append(singleCommand)
             commandString = re.sub("'", "", str(totalCommandList))
             n.command("setBacteria" + str(k) + "BehAll " + re.sub(",", "", commandString))

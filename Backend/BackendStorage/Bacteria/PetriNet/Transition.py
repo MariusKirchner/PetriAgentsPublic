@@ -19,3 +19,12 @@ class Transition:
 
     def delPostPlace(self, placeID):
         self.postPlaceIDs.remove(placeID)
+
+    # Return prePlace
+    def getPrePlace(self):
+        return self.prePlaceIDs
+
+    # Return postPlace
+    def getProstPlace(self):
+        return self.postPlaceIDs
+

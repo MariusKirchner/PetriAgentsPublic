@@ -8,6 +8,7 @@ class Place:
         self.preTransitionsIDs = preTransitionIDs
         self.postTransitionIDs = postTransitionIDs
 
+
     def changeTokens(self, tokenChange):
         self.tokens = self.tokens + tokenChange
 
@@ -22,3 +23,8 @@ class Place:
 
     def delPostTransition(self, transitionID):
         self.postTransitionIDs.remove(transitionID)
+
+    # Retunr number of token
+    def getNumberOfToken(self):
+        print('In Method: ', self.tokens)
+        return self.tokens

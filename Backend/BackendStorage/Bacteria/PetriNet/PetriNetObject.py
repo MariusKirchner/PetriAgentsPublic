@@ -95,13 +95,30 @@ class PetriNet:
         print(name)
         return None
 
+    def getPlaceByID(self, placeID):
+        for i in self.placeIDList:
+            if i == placeID:
+                print("Place found: ", self.placeDict[i].name)
+                return self.placeDict[i]
+            else:
+                print("Place not found: ", i)
+
     def getTransitionByName(self, name):
         for i in self.transitionIDList:
             if name == self.transitionDict[i].name:
+                print( 'OBEN', self.transitionDict[i])
                 return self.transitionDict[i]
         print("Transition not found")
         print(name)
         return None
+
+    def getTransitionByID(self, transID):
+        for i in self.transitionIDList:
+            if transID == self.transitionDict[i].id:
+                print('TransID',transID)
+                return self.transitionDict[i]
+            else:
+                print("Transition ID not found")
 
     def deletePlace(self, id):
         #delete Edges (add references to edges in places and transitions)
@@ -167,6 +184,8 @@ class PetriNet:
 
 
 
+
+
         """tempPlaceList = copy.deepcopy(self.placeIDList)
         random.shuffle(tempPlaceList)
         totalFireList = []
@@ -191,3 +210,111 @@ class PetriNet:
             for x in self.transitionDict[i].postPlaceIDs:
                 self.placeDict[x].tokens = self.placeDict[x].tokens + self.edgeDict[(i, x, "TP")].weight
                 #print("I fired a transition and added tokens somewhere")"""
+
+    # Finds edge between
+    # TODO (0, 1, 'TP') gefunden gibt kein 0 1 PT. Nicht sicher verstanden
+    def findEdge(self, pre, post):
+        foundSource = [x[0] for x in self.edgeIDList]
+        foundSink = [y[1] for y in self.edgeIDList]
+        for i in range(len(foundSource)-1):
+            numSource = foundSource[i]
+            numSink = foundSink[i]
+            if numSource == pre and numSink == post:
+                print("Funktioniert: ", numSource, numSink)
+                print("Rückgabe: ", self.edgeIDList[i])
+                return self.edgeIDList[i]
+            else:
+                print("Edge not found")
+
+
+
+
+        return self.edgeDict
+
+    # this function simulates a single step
+    """Schritt für Schritt Transitionen. Alle Transitionen anschauen, 
+    bestimme welche aktiviert sind, 
+    wähle eine die schaltet, schalte diese, fange von vorne an.
+    Gleiche Transition kann mehrfach schalten, wenn sie weiter aktiviert ist, auch
+    wenn andere Transitionen ebenfalls aktiviert sind."""
+    #TODO priority ist für synchronen Schritt?
+    def simulateAsynchronousStep(self):
+        chooseToFire = []
+        # Go through all transitions and check if they're enabled.
+        # Append them to list, to choose randomly which fires.
+        #TODO is random choosing okay?
+        for transitionKey in self.transitionDict:
+            if self.isTransitionEnabled(transitionKey):
+                chooseToFire.append(transitionKey)
+                print('Transition:', transitionKey, " is enabled")
+            else:
+                print("Transition: ", transitionKey, " is disabled")
+
+        # Choose randomly? which transition fires.
+        print('Liste zu feuernde Transitions', chooseToFire)
+        transToFire = random.choice(chooseToFire)
+        chosenTrans = self.getTransitionByID(transToFire)
+        # Get pre- and post-place. Check is they're existing
+        print("ChosenOne: ", chosenTrans.prePlaceIDs)# returns List of places
+        try:
+            prePlace = self.getPlaceByID(chosenTrans.prePlaceIDs)
+            #pre2 = self.getPlaceByID(chosenTrans.prePlaceIDs[1])
+
+           # randomPrePlace = random.choice(prePlace)
+            print("Test auf Random Pre Place. ", prePlace)
+
+            print("Alle PrePlace IDs: ", chosenTrans.prePlaceIDs)
+            #print("Info zu allen PrePlaces: ", prePlace.tokens, pre2.tokens)
+
+        except IndexError:
+            prePlace = None
+            print("No prePlace available")
+        try:
+            postPlace = self.getPlaceByID(chosenTrans.postPlaceIDs[0])
+            post2 = self.getPlaceByID(chosenTrans.postPlaceIDs[1])
+
+            print("Alle post Places: ", chosenTrans.postPlaceIDs)
+            print("Info zu Allen postPlaces: ", postPlace.tokens, post2.tokens)
+
+
+        except IndexError:
+            postPlace = None
+            print("No postPlace available")
+
+        if(prePlace != None and postPlace != None) :
+            print("PrePlace: ", prePlace.name, " PostPlace: ", postPlace.name)
+            print("PrePlace Tokens: ", prePlace.tokens, " PostPlace Tokens: ", postPlace.tokens)
+        if(prePlace != None and postPlace == None):
+            print("PrePlace: ", prePlace.name, " PostPlace: Not available")
+            print("PrePlace Tokens: ", prePlace.tokens, " PostPlace Tokens: Not available")
+
+
+        # Everything that happens while firing.
+        # Get edge plus edge weight
+        sourcePlace = self.edgeDict.keys()
+
+        try:
+            edge = self.findEdge(prePlace.id, postPlace.id)
+            weight = self.edgeDict[edge].weight
+            print("Weightausgabe: ", weight)
+            # If edge weight <= prePlaceToken update pre- and post-place
+            if weight <= prePlace.tokens:
+                print("Bevore firing Pre", prePlace.tokens, " PostPlace", postPlace.tokens)
+                # Updating pre- and post-places
+                prePlace.tokens -= weight
+                postPlace.tokens += weight
+                print("After firing Pre", prePlace.tokens, " ", "PostPlace", postPlace.tokens)
+                return prePlace, postPlace
+        except (AttributeError, TypeError):
+            if AttributeError:
+                print("Attribute error")
+            if TypeError:
+                print("TypeError")
+
+
+
+
+
+
+
+

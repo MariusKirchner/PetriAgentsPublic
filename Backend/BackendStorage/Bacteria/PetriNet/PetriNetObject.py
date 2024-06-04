@@ -309,7 +309,7 @@ class PetriNet:
                 except IndexError:
                     prePlace = None
                     print("No prePlace available")
-            # If no PrePlace exists, choose new transition
+            # If no PrePlace exists, choose new transition.
             else:
                 chooseToFire.remove(transToFire)
                 print("No PrePlace found. New transition will be chosen.")

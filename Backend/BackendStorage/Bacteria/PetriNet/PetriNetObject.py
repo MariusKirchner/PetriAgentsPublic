@@ -248,67 +248,72 @@ class PetriNet:
                 print("Transition: ", transitionKey, " is disabled")
 
         # TODO: Choose randomly? which transition fires.
-        print('Liste zu feuernde Transitions', chooseToFire)
-        transToFire = random.choice(chooseToFire)
-        chosenTrans = self.getTransitionByID(transToFire)
-        # Get pre- and post-place. Check is they're existing
-        print("Transition ",chosenTrans.id , "PrePlaces : ", chosenTrans.prePlaceIDs)
-        # Query if PrePlace does exist, otherwise choose different transition
-        if len(chosenTrans.prePlaceIDs) >= 1:
 
-            try:
-                # Choose prePlace randomly
-                prePlace = self.getPlaceByID(random.choice(chosenTrans.prePlaceIDs))
-                print("PrePlace", prePlace.name,"has ", prePlace.tokens, " tokens")
-
-
-                # Check if PostPlace exists, otherwise choose new transition
-                if len(chosenTrans.postPlaceIDs) >= 1:
-                    try:
-                        # Choose random PostPlace and get place object
-                        postPlace = self.getPlaceByID(random.choice(chosenTrans.postPlaceIDs))
-                        print("PostPlace", postPlace.name, "has ", postPlace.tokens, " tokens")
-
-                        try:
-                            sourcePlace = self.edgeDict.keys()
-                           # print("All edges: ", sourcePlace)
-                            edge = self.findEdge(prePlace.id, postPlace.id)
-                            weight = self.edgeDict[edge].weight
-                            #print("TRY", edge)
-                            print("Weightausgabe: ", weight)
-                            # If edge weight <= prePlaceToken update pre- and post-place
-                            if weight <= prePlace.tokens:
-                                print("Bevore firing PrePlace", prePlace.tokens, " PostPlace", postPlace.tokens)
-                                # Updating pre- and post-places
-                                prePlace.tokens -= weight
-                                postPlace.tokens += weight
-                                print("After firing PrePlace", prePlace.tokens, " ", "PostPlace", postPlace.tokens)
-                                return prePlace, postPlace
-                            else:
-                                print("No firing possible.")
-                        except (AttributeError, TypeError):
-                            if AttributeError:
-                                print("Attribute error")
-                            if TypeError:
-                                print("TypeError")
-
-
-                    except IndexError:
-                        postPlace = None
-                        print("No postPlace available")
-                else:
-                    print("No PostPlace found. New transition will be chosen.")
-                    chooseToFire.remove(transToFire)
-                    print("Updated List: ", chooseToFire)
-
-            except IndexError:
-                prePlace = None
-                print("No prePlace available")
-        # If no PrePlace exists, choose new transition
+        if len(chooseToFire)==0:
+            print("No transition enabled. Firing not possible.")
+            print('List of enabled transitions: ', chooseToFire)
+            print("List with transitions is empty.")
         else:
-            chooseToFire.remove(transToFire)
-            print("No PrePlace found. New transition will be chosen.")
-            print("Updated List: ", chooseToFire)
+            transToFire = random.choice(chooseToFire)
+            chosenTrans = self.getTransitionByID(transToFire)
+            # Get pre- and post-place. Check is they're existing
+            print("Transition ",chosenTrans.id , "PrePlaces : ", chosenTrans.prePlaceIDs)
+            # Query if PrePlace does exist, otherwise choose different transition
+            if len(chosenTrans.prePlaceIDs) >= 1:
+
+                try:
+                    # Choose prePlace randomly
+                    prePlace = self.getPlaceByID(random.choice(chosenTrans.prePlaceIDs))
+                    print("PrePlace", prePlace.name,"has ", prePlace.tokens, " tokens")
+
+
+                    # Check if PostPlace exists, otherwise choose new transition
+                    if len(chosenTrans.postPlaceIDs) >= 1:
+                        try:
+                            # Choose random PostPlace and get place object
+                            postPlace = self.getPlaceByID(random.choice(chosenTrans.postPlaceIDs))
+                            print("PostPlace", postPlace.name, "has ", postPlace.tokens, " tokens")
+
+                            try:
+                                sourcePlace = self.edgeDict.keys()
+                               # print("All edges: ", sourcePlace)
+                                edge = self.findEdge(prePlace.id, postPlace.id)
+                                weight = self.edgeDict[edge].weight
+                                #print("TRY", edge)
+                                print("Weightausgabe: ", weight)
+                                # If edge weight <= prePlaceToken update pre- and post-place
+                                if weight <= prePlace.tokens:
+                                    print("Bevore firing PrePlace", prePlace.tokens, " PostPlace", postPlace.tokens)
+                                    # Updating pre- and post-places
+                                    prePlace.tokens -= weight
+                                    postPlace.tokens += weight
+                                    print("After firing PrePlace", prePlace.tokens, " ", "PostPlace", postPlace.tokens)
+                                    return prePlace, postPlace
+                                else:
+                                    print("No firing possible.")
+                            except (AttributeError, TypeError):
+                                if AttributeError:
+                                    print("Attribute error")
+                                if TypeError:
+                                    print("TypeError")
+
+
+                        except IndexError:
+                            postPlace = None
+                            print("No postPlace available")
+                    else:
+                        print("No PostPlace found. New transition will be chosen.")
+                        chooseToFire.remove(transToFire)
+                        print("Updated List: ", chooseToFire)
+
+                except IndexError:
+                    prePlace = None
+                    print("No prePlace available")
+            # If no PrePlace exists, choose new transition
+            else:
+                chooseToFire.remove(transToFire)
+                print("No PrePlace found. New transition will be chosen.")
+                print("Updated List: ", chooseToFire)
 
 
 

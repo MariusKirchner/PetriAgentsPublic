@@ -121,5 +121,6 @@ print("=")
 SecondPetri.simulateStep()
 SecondPetri.printPlaces()
 print("=")
+#
 MainPetri.simulateAsynchronousStep()
 SecondPetri.simulateAsynchronousStep()

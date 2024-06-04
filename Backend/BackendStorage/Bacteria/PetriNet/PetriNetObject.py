@@ -247,7 +247,7 @@ class PetriNet:
             else:
                 print("Transition: ", transitionKey, " is disabled")
 
-        # Choose randomly? which transition fires.
+        # TODO: Choose randomly? which transition fires.
         print('Liste zu feuernde Transitions', chooseToFire)
         transToFire = random.choice(chooseToFire)
         chosenTrans = self.getTransitionByID(transToFire)
@@ -310,31 +310,6 @@ class PetriNet:
             print("No PrePlace found. New transition will be chosen.")
             print("Updated List: ", chooseToFire)
 
-
-
-        # Everything that happens while firing.
-        # Get edge plus edge weight
-        sourcePlace = self.edgeDict.keys()
-
-        """try:
-            edge = self.findEdge(prePlace.id, postPlace.id)
-            weight = self.edgeDict[edge].weight
-            print("Weightausgabe: ", weight)
-            # If edge weight <= prePlaceToken update pre- and post-place
-            if weight <= prePlace.tokens:
-                print("Bevore firing PrePlace", prePlace.tokens, " PostPlace", postPlace.tokens)
-                # Updating pre- and post-places
-                prePlace.tokens -= weight
-                postPlace.tokens += weight
-                print("After firing PrePlace", prePlace.tokens, " ", "PostPlace", postPlace.tokens)
-                return prePlace, postPlace
-            else:
-                print("No firing possible.")
-        except (AttributeError, TypeError):
-            if AttributeError:
-                print("Attribute error")
-            if TypeError:
-                print("TypeError")"""
 
 
 

@@ -228,6 +228,7 @@ class PetriNet:
 
         return self.edgeDict
 
+
     # this function simulates a single step
     """Schritt für Schritt Transitionen. Alle Transitionen anschauen, 
     bestimme welche aktiviert sind, 
@@ -249,7 +250,7 @@ class PetriNet:
 
         # TODO: Choose randomly? which transition fires.
 
-        if len(chooseToFire)==0:
+        if len(chooseToFire) == 0:
             print("No transition enabled. Firing not possible.")
             print('List of enabled transitions: ', chooseToFire)
             print("List with transitions is empty.")
@@ -314,6 +315,9 @@ class PetriNet:
                 chooseToFire.remove(transToFire)
                 print("No PrePlace found. New transition will be chosen.")
                 print("Updated List: ", chooseToFire)
+
+
+    # TODO function just ends -> recursive call for transitionlist or implement function in an outside loop?
 
 
 

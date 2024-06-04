@@ -100,8 +100,8 @@ class PetriNet:
             if i == placeID:
                 print("Place found: ", self.placeDict[i].name)
                 return self.placeDict[i]
-            else:
-                print("Place not found: ", i)
+
+        print("Place not found: ", i)
 
     def getTransitionByName(self, name):
         for i in self.transitionIDList:
@@ -117,8 +117,8 @@ class PetriNet:
             if transID == self.transitionDict[i].id:
                 print('TransID',transID)
                 return self.transitionDict[i]
-            else:
-                print("Transition ID not found")
+
+            #return print("Transition ID not found")
 
     def deletePlace(self, id):
         #delete Edges (add references to edges in places and transitions)
@@ -220,14 +220,11 @@ class PetriNet:
             numSource = foundSource[i]
             numSink = foundSink[i]
             if numSource == pre and numSink == post:
-                print("Funktioniert: ", numSource, numSink)
-                print("Rückgabe: ", self.edgeIDList[i])
+                print("SourceID:", numSource," SinkID:", numSink)
+                print("Output: ", self.edgeIDList[i])
                 return self.edgeIDList[i]
-            else:
-                print("Edge not found")
 
-
-
+        print("Edge not found")
 
         return self.edgeDict
 
@@ -255,56 +252,89 @@ class PetriNet:
         transToFire = random.choice(chooseToFire)
         chosenTrans = self.getTransitionByID(transToFire)
         # Get pre- and post-place. Check is they're existing
-        print("ChosenOne: ", chosenTrans.prePlaceIDs)# returns List of places
-        try:
-            # Choose prePlace randomly
-            prePlace = self.getPlaceByID(random.choice(chosenTrans.prePlaceIDs))
-            print("PrePlace", prePlace.name,"has ", prePlace.tokens, " tokens")
+        print("Transition ",chosenTrans.id , "PrePlaces : ", chosenTrans.prePlaceIDs)
+        # Query if PrePlace does exist, otherwise choose different transition
+        if len(chosenTrans.prePlaceIDs) >= 1:
 
-        except IndexError:
-            prePlace = None
-            print("No prePlace available")
-        try:
-            # Choose random PostPlace and get place object
-            postPlace = self.getPlaceByID(random.choice(chosenTrans.postPlaceIDs))
-
-            print("PostPlace", postPlace.name, "has ", postPlace.tokens, " tokens")
+            try:
+                # Choose prePlace randomly
+                prePlace = self.getPlaceByID(random.choice(chosenTrans.prePlaceIDs))
+                print("PrePlace", prePlace.name,"has ", prePlace.tokens, " tokens")
 
 
-        except IndexError:
-            postPlace = None
-            print("No postPlace available")
+                # Check if PostPlace exists, otherwise choose new transition
+                if len(chosenTrans.postPlaceIDs) >= 1:
+                    try:
+                        # Choose random PostPlace and get place object
+                        postPlace = self.getPlaceByID(random.choice(chosenTrans.postPlaceIDs))
+                        print("PostPlace", postPlace.name, "has ", postPlace.tokens, " tokens")
 
-        if(prePlace != None and postPlace != None) :
-            #print("PrePlace: ", prePlace.name, " PostPlace: ", postPlace.name)
-            #print("PrePlace Tokens: ", prePlace.tokens, " PostPlace Tokens: ", postPlace.tokens)
-            pass
-        if(prePlace != None and postPlace == None):
-           # print("PrePlace: ", prePlace.name, " PostPlace: Not available")
-           # print("PrePlace Tokens: ", prePlace.tokens, " PostPlace Tokens: Not available")
-            pass
+                        try:
+                            sourcePlace = self.edgeDict.keys()
+                           # print("All edges: ", sourcePlace)
+                            edge = self.findEdge(prePlace.id, postPlace.id)
+                            weight = self.edgeDict[edge].weight
+                            #print("TRY", edge)
+                            print("Weightausgabe: ", weight)
+                            # If edge weight <= prePlaceToken update pre- and post-place
+                            if weight <= prePlace.tokens:
+                                print("Bevore firing PrePlace", prePlace.tokens, " PostPlace", postPlace.tokens)
+                                # Updating pre- and post-places
+                                prePlace.tokens -= weight
+                                postPlace.tokens += weight
+                                print("After firing PrePlace", prePlace.tokens, " ", "PostPlace", postPlace.tokens)
+                                return prePlace, postPlace
+                            else:
+                                print("No firing possible.")
+                        except (AttributeError, TypeError):
+                            if AttributeError:
+                                print("Attribute error")
+                            if TypeError:
+                                print("TypeError")
+
+
+                    except IndexError:
+                        postPlace = None
+                        print("No postPlace available")
+                else:
+                    print("No PostPlace found. New transition will be chosen.")
+                    chooseToFire.remove(transToFire)
+                    print("Updated List: ", chooseToFire)
+
+            except IndexError:
+                prePlace = None
+                print("No prePlace available")
+        # If no PrePlace exists, choose new transition
+        else:
+            chooseToFire.remove(transToFire)
+            print("No PrePlace found. New transition will be chosen.")
+            print("Updated List: ", chooseToFire)
+
+
 
         # Everything that happens while firing.
         # Get edge plus edge weight
         sourcePlace = self.edgeDict.keys()
 
-        try:
+        """try:
             edge = self.findEdge(prePlace.id, postPlace.id)
             weight = self.edgeDict[edge].weight
             print("Weightausgabe: ", weight)
             # If edge weight <= prePlaceToken update pre- and post-place
             if weight <= prePlace.tokens:
-                print("Bevore firing Pre", prePlace.tokens, " PostPlace", postPlace.tokens)
+                print("Bevore firing PrePlace", prePlace.tokens, " PostPlace", postPlace.tokens)
                 # Updating pre- and post-places
                 prePlace.tokens -= weight
                 postPlace.tokens += weight
-                print("After firing Pre", prePlace.tokens, " ", "PostPlace", postPlace.tokens)
+                print("After firing PrePlace", prePlace.tokens, " ", "PostPlace", postPlace.tokens)
                 return prePlace, postPlace
+            else:
+                print("No firing possible.")
         except (AttributeError, TypeError):
             if AttributeError:
                 print("Attribute error")
             if TypeError:
-                print("TypeError")
+                print("TypeError")"""
 
 
 

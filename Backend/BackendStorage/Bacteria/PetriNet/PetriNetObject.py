@@ -257,24 +257,18 @@ class PetriNet:
         # Get pre- and post-place. Check is they're existing
         print("ChosenOne: ", chosenTrans.prePlaceIDs)# returns List of places
         try:
-            prePlace = self.getPlaceByID(chosenTrans.prePlaceIDs)
-            #pre2 = self.getPlaceByID(chosenTrans.prePlaceIDs[1])
-
-           # randomPrePlace = random.choice(prePlace)
-            print("Test auf Random Pre Place. ", prePlace)
-
-            print("Alle PrePlace IDs: ", chosenTrans.prePlaceIDs)
-            #print("Info zu allen PrePlaces: ", prePlace.tokens, pre2.tokens)
+            # Choose prePlace randomly
+            prePlace = self.getPlaceByID(random.choice(chosenTrans.prePlaceIDs))
+            print("PrePlace", prePlace.name,"has ", prePlace.tokens, " tokens")
 
         except IndexError:
             prePlace = None
             print("No prePlace available")
         try:
-            postPlace = self.getPlaceByID(chosenTrans.postPlaceIDs[0])
-            post2 = self.getPlaceByID(chosenTrans.postPlaceIDs[1])
+            # Choose random PostPlace and get place object
+            postPlace = self.getPlaceByID(random.choice(chosenTrans.postPlaceIDs))
 
-            print("Alle post Places: ", chosenTrans.postPlaceIDs)
-            print("Info zu Allen postPlaces: ", postPlace.tokens, post2.tokens)
+            print("PostPlace", postPlace.name, "has ", postPlace.tokens, " tokens")
 
 
         except IndexError:
@@ -282,12 +276,13 @@ class PetriNet:
             print("No postPlace available")
 
         if(prePlace != None and postPlace != None) :
-            print("PrePlace: ", prePlace.name, " PostPlace: ", postPlace.name)
-            print("PrePlace Tokens: ", prePlace.tokens, " PostPlace Tokens: ", postPlace.tokens)
+            #print("PrePlace: ", prePlace.name, " PostPlace: ", postPlace.name)
+            #print("PrePlace Tokens: ", prePlace.tokens, " PostPlace Tokens: ", postPlace.tokens)
+            pass
         if(prePlace != None and postPlace == None):
-            print("PrePlace: ", prePlace.name, " PostPlace: Not available")
-            print("PrePlace Tokens: ", prePlace.tokens, " PostPlace Tokens: Not available")
-
+           # print("PrePlace: ", prePlace.name, " PostPlace: Not available")
+           # print("PrePlace Tokens: ", prePlace.tokens, " PostPlace Tokens: Not available")
+            pass
 
         # Everything that happens while firing.
         # Get edge plus edge weight

@@ -81,6 +81,7 @@ class PetriNet:
                     print("Edge", i, i[1])
                 else:
                     self.addEdge(1, self.placeDict[i], self.transitionDict[id], "PT")
+                    print("EdgeELSE", self.placeDict[i].name, self.transitionDict[id].name)
             else:
                 print("Edge2")
                 if type(i) is tuple:
@@ -247,7 +248,12 @@ class PetriNet:
     def findEdge(self, pre, post):
         foundSource = [x[0] for x in self.edgeIDList]
         foundSink = [y[1] for y in self.edgeIDList]
-        print("Pre ", pre, "post ", post)
+        if pre == None:
+            pass
+
+
+        print("In findEdge Pre ", pre, "post ", post)
+
         print(foundSource)
         print(foundSink)
         for i in range(len(foundSource)-1):
@@ -302,7 +308,7 @@ class PetriNet:
             # Query if PrePlace does exist, otherwise choose different transition
             if len(chosenTrans.prePlaceIDs) >= 1:
 
-                try:
+                #try:
                     # Choose prePlace randomly
                     prePlace = self.getPlaceByID(random.choice(chosenTrans.prePlaceIDs))
                     print("PrePlace", prePlace.name,"has ", prePlace.tokens, " tokens")
@@ -312,7 +318,7 @@ class PetriNet:
 
                     # Check if PostPlace exists, otherwise choose new transition
                     if len(chosenTrans.postPlaceIDs) >= 1:
-                        try:
+
                             # Choose random PostPlace and get place object
                             postPlace = self.getPlaceByID(random.choice(chosenTrans.postPlaceIDs))
                             print("PostPlace", postPlace.name, "has ", postPlace.tokens, " tokens")
@@ -341,32 +347,52 @@ class PetriNet:
                                     print("TypeError")
 
 
-                        except IndexError:
-                            postPlace = None
-                            print("No postPlace available")
+
                     else:
+                        print("No postPlace available")
 
                         # If no PostPlace exists, only update PrePlace
                         print("No PostPlace found. System is leaking.")
-                        print("PrePlace bevore update: ", prePlace.tokens)
+                        print("PrePlace before update: ", prePlace.tokens)
                         prePlace.tokens -=1
 
                         print("Updated PrePlace: ", prePlace.tokens)
 
-                except IndexError:
-                    prePlace = None
-                    print("No prePlace available")
+               # except IndexError:
+                   # print("No prePlace available")
             # If no PrePlace exists, transition is source.
             # Only update PostPlace
             else:
                 # Choose random PostPlace of transition
+                # Add query to check for edge weigh
+                print("No prePlace available")
+
                 postPlace = self.getPlaceByID(random.choice(chosenTrans.postPlaceIDs))
-                print("PostPlace token bevore: ", postPlace.tokens)
+                print("PostPlace token bevore: ", postPlace.tokens, postPlace.name)
                 # Update PostPlace token
-                postPlace.tokens += 1
-                #chooseToFire.remove(transToFire)
-                print("No PrePlace found. Only update postPlace")
-                print("PostPlace token: ", postPlace.tokens)
+                prePlace = None
+                #postPlace.tokens += 1
+                if prePlace is None:
+                    print("HIER")
+
+                    #edge = self.findEdge(postPlace.id, postPlace.id)
+                    # weight = self.edgeDict[edge].weight
+                    for j in self.edgeDict.keys():
+                        print("Key: ", j)
+                    #print("Try EDGE: ", edge.weight, edge.id)
+                    for i in self.edgeDict.values():
+                        print(i.weight)
+                        print(i.source, i.sink)
+                        if i.sink == postPlace.id:
+                            weight = i.weight
+                            print("PostPlace Token: ", postPlace.tokens)
+                            postPlace.tokens -= weight
+                            print("New PostPlace Token: ", postPlace.tokens)
+
+                    print("No PrePlace found. Only update postPlace")
+                    print("PostPlace token: ", postPlace.tokens)
+
+
 
 
                 # print("TRY", edge)

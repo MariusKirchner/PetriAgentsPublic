@@ -273,10 +273,56 @@ class PetriNet:
             print("Transition ",chosenTrans.id , "PrePlaces : ", chosenTrans.prePlaceIDs)
 
 
-            if len(chosenTrans.prePlaceIDs) >= 2:
-                print("2 PrePlaces")
+            #if len(chosenTrans.prePlaceIDs) >= 1:
+            for i in chosenTrans.prePlaceIDs:
+                for j in chosenTrans.postPlaceIDs:
+                    # 3 cases: Pre- and PostPlace exist, just PrePlace, just PostPlace
+                    if len(chosenTrans.prePlaceIDs) > 0 and len(chosenTrans.postPlaceIDs) > 0:
+                        prePlace = self.getPlaceByID(i)
+                        postPlace = self.getPlaceByID(j)
 
-                # check edges of all PrePlaces
+                        edgeTP = self.edgeDict[(chosenTrans.id, postPlace.id, 'TP')]
+                        edgePT = self.edgeDict[(prePlace.id, chosenTrans.id, 'PT')]
+
+                        #print("EDGE: ", edgeTP.id, edgeTP.weight)
+                        #print("EDGE: ", edgePT.id, edgePT.weight)
+                        weightTP = edgeTP.weight
+                        weightPT = edgePT.weight
+                        print("Test Token: ",prePlace.tokens, postPlace.tokens, "ID " ,prePlace.id, postPlace.id, "EdgeID",edgeTP.id, edgePT.id, "Weight",weightTP, weightPT)
+                        # Don't need to check if weight<= number of tokens -> function isEnabled
+                        prePlace.tokens -= weightPT
+                        postPlace.tokens += weightTP
+                        print("TestDanach Token: ",prePlace.tokens, postPlace.tokens,"PlaceID :", prePlace.id, postPlace.id,"EdgeID: ", edgeTP.id, edgePT.id,"Weight: ", weightTP, weightPT)
+
+                    if len(chosenTrans.prePlaceIDs) > 0 and len(chosenTrans.postPlaceIDs) == 0:
+                        print("TestIF2 TOKENS: ",prePlace.tokens, postPlace.tokens, "PlaceID: ", prePlace.id, postPlace.id,"EdgeID: ", edgeTP.id, edgePT.id,"Weight: ", weightTP, weightPT)
+
+                        prePlace = self.getPlaceByID(i)
+                        edgePT = self.edgeDict[(prePlace.id, chosenTrans.id, 'PT')]
+                        weightPT = edgePT.weight
+                        prePlace.tokens -= weightPT
+                        print("TestDanachIF2 Tokens: ",prePlace.tokens, postPlace.tokens,"PlaceID: ", prePlace.id, postPlace.id,"Edge: ", edgeTP.id, edgePT.id,"Weight: ", weightTP, weightPT)
+
+
+                if len(chosenTrans.prePlaceIDs) == 0 and len(chosenTrans.postPlaceIDs) > 0:
+                        print("TestIF3 TOkens: ",prePlace.tokens, postPlace.tokens, "placeID: ", prePlace.id, postPlace.id,"EdgeID: ", edgeTP.id, edgePT.id,"Weight: ", weightTP, weightPT)
+
+                        postPlace = self.getPlaceByID(j)
+                        edgeTP = self.edgeDict[(chosenTrans.id, postPlace.id, 'TP')]
+                        weightTP = edgeTP.weight
+                        postPlace.tokens += weightTP
+                        print("TestDanachIF3 Tokens: ",prePlace.tokens, postPlace.tokens, "placeID: ", prePlace.id, postPlace.id,"EdgeID: ", edgeTP.id, edgePT.id,"Weight: ", weightTP, weightPT)
+
+
+
+
+
+
+
+
+
+
+        # check edges of all PrePlaces
 
                 # fire what's possible
 
@@ -291,7 +337,7 @@ class PetriNet:
 
 
             # Query if 1 PrePlace exists
-            if len(chosenTrans.prePlaceIDs) == 1:
+            """if len(chosenTrans.prePlaceIDs) == 1:
                     # Choose prePlace randomly
                     prePlace = self.getPlaceByID(random.choice(chosenTrans.prePlaceIDs))
                     print("PrePlace", prePlace.name,"has ", prePlace.tokens, " tokens")
@@ -354,7 +400,7 @@ class PetriNet:
 
 
 
-                # print("TRY", edge)
+                # print("TRY", edge)"""
 
 
 

@@ -246,10 +246,15 @@ class PetriNet:
     # Finds edge between
     # TODO (0, 1, 'TP') gefunden gibt kein 0 1 PT. Nicht sicher verstanden
     def findEdge(self, pre, post):
-        foundSource = [x[0] for x in self.edgeIDList]
-        foundSink = [y[1] for y in self.edgeIDList]
+
         if pre == None:
             pass
+
+        if post == None:
+            pass
+
+        foundSource = [x[0] for x in self.edgeIDList]
+        foundSink = [y[1] for y in self.edgeIDList]
 
 
         print("In findEdge Pre ", pre, "post ", post)

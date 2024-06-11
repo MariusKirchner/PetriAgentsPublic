@@ -300,7 +300,7 @@ class PetriNet:
                         print("TestDanachIF2 Tokens: ",prePlace.tokens, postPlace.tokens,"PlaceID: ", prePlace.id, postPlace.id,"Edge: ", edgeTP.id, edgePT.id,"Weight: ", weightTP, weightPT)
 
 
-                if len(chosenTrans.prePlaceIDs) == 0 and len(chosenTrans.postPlaceIDs) > 0:
+                    if len(chosenTrans.prePlaceIDs) == 0 and len(chosenTrans.postPlaceIDs) > 0:
                         print("TestIF3 TOkens: ",prePlace.tokens, postPlace.tokens, "placeID: ", prePlace.id, postPlace.id,"EdgeID: ", edgeTP.id, edgePT.id,"Weight: ", weightTP, weightPT)
 
                         postPlace = self.getPlaceByID(j)

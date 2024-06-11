@@ -139,7 +139,7 @@ class PetriNet:
                 print('TransID', transID)
                 return self.transitionDict[i]
 
-            #return print("Transition ID not found")
+
 
     def deletePlace(self, id):
         #delete Edges (add references to edges in places and transitions)

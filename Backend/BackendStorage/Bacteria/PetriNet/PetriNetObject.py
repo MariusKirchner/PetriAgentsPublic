@@ -79,9 +79,6 @@ class PetriNet:
                     self.addEdge(1, self.placeDict[i], self.transitionDict[id], "PT")
                     place = self.getPlaceByID(i)
 
-                    print("ID: ", self.placeDict[place.id].name)
-
-
             else:
                 if type(i) is tuple:
                     self.addEdge(i[1], self.placeDict[i[0]], self.transitionDict[id], "PT")
@@ -100,7 +97,7 @@ class PetriNet:
                 else:
                     self.addEdge(1, self.transitionDict[id], self.placeDict[i], "TP")
 
-        print("AddTransition: ", tempprePlaceIDs)
+
 
     def addEdge(self, weight, source, sink, edgeType):
         self.edgeIDList.append((source.id, sink.id, edgeType))

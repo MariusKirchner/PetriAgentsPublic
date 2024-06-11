@@ -299,8 +299,6 @@ class PetriNet:
                     prePlace = self.getPlaceByID(random.choice(chosenTrans.prePlaceIDs))
                     print("PrePlace", prePlace.name,"has ", prePlace.tokens, " tokens")
 
-
-
                     # TODO check for more than one PrePlace
                     # If only one postplace exists
                     if len(chosenTrans.postPlaceIDs) == 1:
@@ -312,10 +310,11 @@ class PetriNet:
                             edgeTP = self.edgeDict[(chosenTrans.id, postPlace.id, 'TP')]
                             edgePT = self.edgeDict[(prePlace.id, chosenTrans.id, 'PT')]
                             print("EDGE: ", edgeTP.id, edgeTP.weight)
+                            print("EDGE: ", edgePT.id, edgePT.weight)
                             weightTP = edgeTP.weight
                             weightPT = edgePT.weight
 
-                            # TODO
+
                             if weightPT <= prePlace.tokens:
                                 print("Bevore firing PrePlace", prePlace.tokens, " PostPlace", postPlace.tokens)
                                 # Updating pre- and post-places
@@ -326,26 +325,21 @@ class PetriNet:
                             else:
                                 print("No firing possible.")
 
-
-
-
                     else:
                         print("No postPlace available")
-
+                        edgePT = self.edgeDict[(prePlace.id, chosenTrans.id, 'PT')]
+                        weightPT = edgePT.weight
                         # If no PostPlace exists, only update PrePlace
                         print("No PostPlace found. System is leaking.")
                         print("PrePlace before update: ", prePlace.tokens)
-                        prePlace.tokens -=1
+                        prePlace.tokens -= weightPT
 
                         print("Updated PrePlace: ", prePlace.tokens)
 
-
-
-               # except IndexError:
-                   # print("No prePlace available")
             # If no PrePlace exists, transition is source.
             # Only update PostPlace
             else:
+
                 # Choose random PostPlace of transition
                 # Add query to check for edge weigh
                 print("No prePlace available")
@@ -353,28 +347,12 @@ class PetriNet:
                 postPlace = self.getPlaceByID(random.choice(chosenTrans.postPlaceIDs))
                 print("PostPlace token bevore: ", postPlace.tokens, postPlace.name)
                 print("TEST: ", postPlace.preTransitionsIDs)
+                edgeTP = self.edgeDict[(chosenTrans.id, postPlace.id, 'TP')]
                 # Update PostPlace token
-                prePlace = None
-                #postPlace.tokens += 1
-                if prePlace is None:
-                    print("HIER")
+                postPlace.tokens += edgeTP.weight
 
-
-                    # TODO only get right edge
-                    for i in self.edgeDict.keys():
-                        print("DICT: ", i)
-
-                    for i in self.edgeDict.values():
-                        print(i.weight)
-                        print(i.source, i.sink)
-                        if i.sink == postPlace.id:
-                            weight = i.weight
-                            print("PostPlace Token: ", postPlace.tokens)
-                            postPlace.tokens += weight
-                            print("New PostPlace Token: ", postPlace.tokens)
-
-                    print("No PrePlace found. Only update postPlace")
-                    print("PostPlace token: ", postPlace.tokens)
+                print("No PrePlace found. Only update postPlace")
+                print("PostPlace token: ", postPlace.tokens)
 
 
 

@@ -20,8 +20,8 @@ MainPetri.addPlace(4, "PlaceFour", 10, [], [])
 
 #put transitions
 MainPetri.addTransition(0, "TransitionZero", [0], [(1, 2), (2, 2)]) # [1, 2]
-MainPetri.addTransition(1, "TransitionOne", [1], [(3, 2)]) #pos: empty
-MainPetri.addTransition(2, "TransitionTwo", [0], [(3, 2)]) # [3], pre: empty
+MainPetri.addTransition(1, "TransitionOne", [1], [(3, 2), (2, 2)]) #pos: empty
+MainPetri.addTransition(2, "TransitionTwo", [0], [(3, 2), (2, 2)]) # [3], pre: empty
 #MainPetri.addTransition(3, "TransitionThree", [2, (3, 2)], [(4, 2)])#[4]
 MainPetri.addTransition(3, "TransitionThree", [(2, 2), (3, 2)], [4])#[4]
 

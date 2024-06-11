@@ -272,8 +272,6 @@ class PetriNet:
             # Get pre- and post-place. Check if they're existing
             print("Transition ",chosenTrans.id , "PrePlaces : ", chosenTrans.prePlaceIDs)
 
-
-            #if len(chosenTrans.prePlaceIDs) >= 1:
             for i in chosenTrans.prePlaceIDs:
                 for j in chosenTrans.postPlaceIDs:
                     # 3 cases: Pre- and PostPlace exist, just PrePlace, just PostPlace
@@ -284,8 +282,6 @@ class PetriNet:
                         edgeTP = self.edgeDict[(chosenTrans.id, postPlace.id, 'TP')]
                         edgePT = self.edgeDict[(prePlace.id, chosenTrans.id, 'PT')]
 
-                        #print("EDGE: ", edgeTP.id, edgeTP.weight)
-                        #print("EDGE: ", edgePT.id, edgePT.weight)
                         weightTP = edgeTP.weight
                         weightPT = edgePT.weight
                         print("Test Token: ",prePlace.tokens, postPlace.tokens, "ID " ,prePlace.id, postPlace.id, "EdgeID",edgeTP.id, edgePT.id, "Weight",weightTP, weightPT)
@@ -312,96 +308,6 @@ class PetriNet:
                         weightTP = edgeTP.weight
                         postPlace.tokens += weightTP
                         print("TestDanachIF3 Tokens: ",prePlace.tokens, postPlace.tokens, "placeID: ", prePlace.id, postPlace.id,"EdgeID: ", edgeTP.id, edgePT.id,"Weight: ", weightTP, weightPT)
-
-
-
-
-
-
-
-
-
-
-        # check edges of all PrePlaces
-
-                # fire what's possible
-
-                # update PrePlace
-
-                # check number of Postplaces
-
-                # if 1 PostPlace and edge weight is okay, update PostPlace
-
-                # if more PostPlaces: check all edgeweights
-
-
-
-            # Query if 1 PrePlace exists
-            """if len(chosenTrans.prePlaceIDs) == 1:
-                    # Choose prePlace randomly
-                    prePlace = self.getPlaceByID(random.choice(chosenTrans.prePlaceIDs))
-                    print("PrePlace", prePlace.name,"has ", prePlace.tokens, " tokens")
-
-                    # TODO check for more than one PrePlace
-                    # If only one postplace exists
-                    if len(chosenTrans.postPlaceIDs) == 1:
-                            # Choose random PostPlace and get place object
-                            postPlace = self.getPlaceByID(random.choice(chosenTrans.postPlaceIDs))
-                            print("PostPlace", postPlace.name, "has ", postPlace.tokens, " tokens")
-
-                            # weight transID placeID, type
-                            edgeTP = self.edgeDict[(chosenTrans.id, postPlace.id, 'TP')]
-                            edgePT = self.edgeDict[(prePlace.id, chosenTrans.id, 'PT')]
-                            print("EDGE: ", edgeTP.id, edgeTP.weight)
-                            print("EDGE: ", edgePT.id, edgePT.weight)
-                            weightTP = edgeTP.weight
-                            weightPT = edgePT.weight
-
-
-                            if weightPT <= prePlace.tokens:
-                                print("Bevore firing PrePlace", prePlace.tokens, " PostPlace", postPlace.tokens)
-                                # Updating pre- and post-places
-                                prePlace.tokens -= weightPT
-                                postPlace.tokens += weightTP
-                                print("After firing PrePlace", prePlace.tokens, " ", "PostPlace", postPlace.tokens)
-                                return prePlace, postPlace
-                            else:
-                                print("No firing possible.")
-
-                    else:
-                        print("No postPlace available")
-                        edgePT = self.edgeDict[(prePlace.id, chosenTrans.id, 'PT')]
-                        weightPT = edgePT.weight
-                        # If no PostPlace exists, only update PrePlace
-                        print("No PostPlace found. System is leaking.")
-                        print("PrePlace before update: ", prePlace.tokens)
-                        prePlace.tokens -= weightPT
-
-                        print("Updated PrePlace: ", prePlace.tokens)
-
-            # If no PrePlace exists, transition is source.
-            # Only update PostPlace
-            else:
-
-                # Choose random PostPlace of transition
-                # Add query to check for edge weigh
-                print("No prePlace available")
-
-                postPlace = self.getPlaceByID(random.choice(chosenTrans.postPlaceIDs))
-                print("PostPlace token bevore: ", postPlace.tokens, postPlace.name)
-                print("TEST: ", postPlace.preTransitionsIDs)
-                edgeTP = self.edgeDict[(chosenTrans.id, postPlace.id, 'TP')]
-                # Update PostPlace token
-                postPlace.tokens += edgeTP.weight
-
-                print("No PrePlace found. Only update postPlace")
-                print("PostPlace token: ", postPlace.tokens)
-
-
-
-
-                # print("TRY", edge)"""
-
 
 
     # TODO function just ends -> recursive call for transitionlist or implement function in an outside loop?

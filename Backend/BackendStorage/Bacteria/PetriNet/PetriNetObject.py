@@ -67,13 +67,21 @@ class PetriNet:
         for i in postPlaceIDs:
             tempPostPlaceIDs.append(i)
         # For loop through temporary PrePlaceID's
+        # Add Pre- and Posttransition to PlaceObject here?
         for i in tempprePlaceIDs:
+
             if not self.edgeIDList:
                 # TODO if isn't used
                 if type(i) is tuple:
                     self.addEdge(i[1], self.placeDict[i[0]], self.transitionDict[id], "PT")
                 else:
+                    # self.placeDict[id] = Place(id, name, tokens, preTransitionIDs, postTransitionIDs)
                     self.addEdge(1, self.placeDict[i], self.transitionDict[id], "PT")
+                    place = self.getPlaceByID(i)
+
+                    print("ID: ", self.placeDict[place.id].name)
+
+
             else:
                 if type(i) is tuple:
                     self.addEdge(i[1], self.placeDict[i[0]], self.transitionDict[id], "PT")
@@ -227,37 +235,10 @@ class PetriNet:
                 self.placeDict[x].tokens = self.placeDict[x].tokens + self.edgeDict[(i, x, "TP")].weight
                 #print("I fired a transition and added tokens somewhere")"""
 
-    # Finds edge between
-    # TODO (0, 1, 'TP') gefunden gibt kein 0 1 PT. Nicht sicher verstanden
-    def findEdge(self, pre, post):
-
-        if pre == None:
-            pass
-
-        if post == None:
-            pass
-
-        foundSource = [x[0] for x in self.edgeIDList]
-        foundSink = [y[1] for y in self.edgeIDList]
 
 
-        print("In findEdge Pre ", pre, "post ", post)
 
-        print(foundSource)
-        print(foundSink)
-        for i in range(len(foundSource)-1):
-            numSource = foundSource[i]
-            numSink = foundSink[i]
 
-            if numSource == pre and numSink == post:
-                print("SourceID:", numSource," SinkID:", numSink)
-                print("Output: ", self.edgeIDList[i])
-
-                return self.edgeIDList[i]
-
-        print("Edge not found")
-
-        return self.edgeDict
 
 
     # this function simulates a single step
@@ -267,11 +248,13 @@ class PetriNet:
     Gleiche Transition kann mehrfach schalten, wenn sie weiter aktiviert ist, auch
     wenn andere Transitionen ebenfalls aktiviert sind."""
     #TODO priority ist für synchronen Schritt?
+    # TODO findEdge not needed. Use EdgeDict[]
     def simulateAsynchronousStep(self):
         chooseToFire = []
         # Go through all transitions and check if they're enabled.
         # Append them to list, to choose randomly which fires.
         #TODO is random choosing okay?
+
 
         for transitionKey in self.transitionDict:
             if self.isTransitionEnabled(transitionKey):
@@ -312,8 +295,6 @@ class PetriNet:
 
             # Query if 1 PrePlace exists
             if len(chosenTrans.prePlaceIDs) == 1:
-
-                #try:
                     # Choose prePlace randomly
                     prePlace = self.getPlaceByID(random.choice(chosenTrans.prePlaceIDs))
                     print("PrePlace", prePlace.name,"has ", prePlace.tokens, " tokens")
@@ -321,35 +302,30 @@ class PetriNet:
 
 
                     # TODO check for more than one PrePlace
-                    # Check if PostPlace exists, otherwise choose new transition
+                    # If only one postplace exists
                     if len(chosenTrans.postPlaceIDs) == 1:
-
                             # Choose random PostPlace and get place object
                             postPlace = self.getPlaceByID(random.choice(chosenTrans.postPlaceIDs))
                             print("PostPlace", postPlace.name, "has ", postPlace.tokens, " tokens")
 
-                            try:
-                                sourcePlace = self.edgeDict.keys()
-                               # print("All edges: ", sourcePlace)
-                                edge = self.findEdge(prePlace.id, postPlace.id)
-                                weight = self.edgeDict[edge].weight
-                                #print("TRY", edge)
-                                print("Weightausgabe: ", weight, edge)
-                                # If edge weight <= prePlaceToken update pre- and post-place
-                                if weight <= prePlace.tokens:
-                                    print("Bevore firing PrePlace", prePlace.tokens, " PostPlace", postPlace.tokens)
-                                    # Updating pre- and post-places
-                                    prePlace.tokens -= weight
-                                    postPlace.tokens += weight
-                                    print("After firing PrePlace", prePlace.tokens, " ", "PostPlace", postPlace.tokens)
-                                    return prePlace, postPlace
-                                else:
-                                    print("No firing possible.")
-                            except (AttributeError, TypeError):
-                                if AttributeError:
-                                    print("Attribute error")
-                                if TypeError:
-                                    print("TypeError")
+                            # weight transID placeID, type
+                            edgeTP = self.edgeDict[(chosenTrans.id, postPlace.id, 'TP')]
+                            edgePT = self.edgeDict[(prePlace.id, chosenTrans.id, 'PT')]
+                            print("EDGE: ", edgeTP.id, edgeTP.weight)
+                            weightTP = edgeTP.weight
+                            weightPT = edgePT.weight
+
+                            # TODO
+                            if weightPT <= prePlace.tokens:
+                                print("Bevore firing PrePlace", prePlace.tokens, " PostPlace", postPlace.tokens)
+                                # Updating pre- and post-places
+                                prePlace.tokens -= weightPT
+                                postPlace.tokens += weightTP
+                                print("After firing PrePlace", prePlace.tokens, " ", "PostPlace", postPlace.tokens)
+                                return prePlace, postPlace
+                            else:
+                                print("No firing possible.")
+
 
 
 
@@ -376,17 +352,18 @@ class PetriNet:
 
                 postPlace = self.getPlaceByID(random.choice(chosenTrans.postPlaceIDs))
                 print("PostPlace token bevore: ", postPlace.tokens, postPlace.name)
+                print("TEST: ", postPlace.preTransitionsIDs)
                 # Update PostPlace token
                 prePlace = None
                 #postPlace.tokens += 1
                 if prePlace is None:
                     print("HIER")
 
-                    #edge = self.findEdge(postPlace.id, postPlace.id)
-                    # weight = self.edgeDict[edge].weight
-                    for j in self.edgeDict.keys():
-                        print("Key: ", j)
-                    #print("Try EDGE: ", edge.weight, edge.id)
+
+                    # TODO only get right edge
+                    for i in self.edgeDict.keys():
+                        print("DICT: ", i)
+
                     for i in self.edgeDict.values():
                         print(i.weight)
                         print(i.source, i.sink)

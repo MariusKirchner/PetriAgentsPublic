@@ -18,10 +18,12 @@ class PetriNet:
         self.transitionDict = {}
         self.edgeDict = {}
 
+    """Creates places and their tokens. Includes Pre- and Posttransitions, 
+    but they're not instantiated"""
     def addPlace(self, id, name, tokens, preTransitionIDs, postTransitionIDs):
         self.placeIDList.append(id)
         self.placeDict[id] = Place(id, name, tokens, preTransitionIDs, postTransitionIDs)
-        print("addPlaceStart: ", self.getPlaceByID(id).name)
+
         # TODO: preTransitionIDs is empty postTransitionIDs also. For Loop isn't used
         for i in preTransitionIDs:
             if self.edgeIDList == []:
@@ -34,13 +36,11 @@ class PetriNet:
                     self.addEdge(i[1], i[0], id, "TP")
                 else:
                     self.addEdge(1, i, id, "TP")
-        print("addPlaceEnd: ", postTransitionIDs, self.edgeIDList)
+
         # postTransitionID's is empty
         for i in postTransitionIDs:
-            print("addPlace: ", postTransitionIDs)
             if self.edgeIDList == []:
                 if type(i) is tuple:
-                    print("addPlacePOST: ", i[1], id, i[0])
                     self.addEdge(i[1], id, i[0], "PT")
                 else:
                     self.addEdge(1, id, i, "PT")
@@ -51,6 +51,8 @@ class PetriNet:
                     self.addEdge(1, id, i, "PT")
 
 
+    """Creates Transitions and includes Pre- and PostPlaces.
+    These are added by instantiating."""
     def addTransition(self, id, name, prePlaceIDs, postPlaceIDs, priority=2):
         self.transitionIDList.append(id)
         self.transitionDict[id] = Transition(id, name, [], [], priority)
@@ -59,44 +61,27 @@ class PetriNet:
         # Adds PrePlaces to a temporary list
         for i in prePlaceIDs:
             tempprePlaceIDs.append(i)
-            print("TEST1 PRE: ", i)
-            if type(i) is tuple:
-                print("TUPEL: ", i[1])
         tempPostPlaceIDs = []
-        print("prePlaceIDs: ", prePlaceIDs, " tempprePlaceIDs: ", tempprePlaceIDs)
         # For loop through PostPlaceID's
         # Adds PostPlaces to a temporary list
         for i in postPlaceIDs:
             tempPostPlaceIDs.append(i)
-            print("TEST2 POST: ", i)
-        print("postPlaceIDs: ", postPlaceIDs, " temppostPlaceIDs: ", tempPostPlaceIDs)
         # For loop through temporary PrePlaceID's
         for i in tempprePlaceIDs:
-            print("TEST3 PRE: ", i, self.edgeIDList, tempprePlaceIDs)
-            #
             if not self.edgeIDList:
                 # TODO if isn't used
                 if type(i) is tuple:
                     self.addEdge(i[1], self.placeDict[i[0]], self.transitionDict[id], "PT")
-                    print("Edge", i, i[1])
                 else:
                     self.addEdge(1, self.placeDict[i], self.transitionDict[id], "PT")
-                    print("EdgeELSE", self.placeDict[i].name, self.transitionDict[id].name)
             else:
-                print("Edge2")
                 if type(i) is tuple:
-                    print("Edge3 TUPEL: ", i[1])
                     self.addEdge(i[1], self.placeDict[i[0]], self.transitionDict[id], "PT")
-                    print("Edge2 if: ",self.placeDict[i[0]].name, self.transitionDict[id].name )
                 else:
                     self.addEdge(1, self.placeDict[i], self.transitionDict[id], "PT")
-                    print("Edge2 else: ",self.placeDict[i].name, self.transitionDict[id].name)
-        print("TEST5: ", tempPostPlaceIDs)
         for i in tempPostPlaceIDs:
-
-            print("TEST5 POST: ", i, self.edgeIDList)
             if not self.edgeIDList:
-                print("TEST4 POST: ", i, self.edgeIDList)
+
                 if type(i) is tuple:
                     self.addEdge(i[1], self.transitionDict[id], self.placeDict[i[0]], "TP")
                 else:
@@ -112,7 +97,6 @@ class PetriNet:
     def addEdge(self, weight, source, sink, edgeType):
         self.edgeIDList.append((source.id, sink.id, edgeType))
         self.edgeDict[(source.id, sink.id, edgeType)] = Edge((source.id, sink.id, edgeType), weight, source.id, sink.id, edgeType)
-        print("in addEdge: ", source.id, sink.id, edgeType)
         if type(source) == Place:
             self.placeDict[source.id].addPostTransition(sink.id)
             self.transitionDict[sink.id].addPrePlace(source.id)
@@ -147,7 +131,7 @@ class PetriNet:
     def getTransitionByID(self, transID):
         for i in self.transitionIDList:
             if transID == self.transitionDict[i].id:
-                print('TransID',transID)
+                print('TransID', transID)
                 return self.transitionDict[i]
 
             #return print("Transition ID not found")
@@ -296,8 +280,7 @@ class PetriNet:
             else:
                 print("Transition: ", transitionKey, " is disabled")
 
-        # TODO: Choose randomly? which transition fires.
-
+        # if no transition is enabled
         if len(chooseToFire) == 0:
             print("No transition enabled. Firing not possible.")
             print('List of enabled transitions: ', chooseToFire)
@@ -308,21 +291,38 @@ class PetriNet:
             chosenTrans = self.getTransitionByID(transToFire)
             # Get pre- and post-place. Check if they're existing
             print("Transition ",chosenTrans.id , "PrePlaces : ", chosenTrans.prePlaceIDs)
-            print("TRANSITION Inhalt: ", chosenTrans.prePlaceIDs)
 
-            # Query if PrePlace does exist, otherwise choose different transition
-            if len(chosenTrans.prePlaceIDs) >= 1:
+
+            if len(chosenTrans.prePlaceIDs) >= 2:
+                print("2 PrePlaces")
+
+                # check edges of all PrePlaces
+
+                # fire what's possible
+
+                # update PrePlace
+
+                # check number of Postplaces
+
+                # if 1 PostPlace and edge weight is okay, update PostPlace
+
+                # if more PostPlaces: check all edgeweights
+
+
+
+            # Query if 1 PrePlace exists
+            if len(chosenTrans.prePlaceIDs) == 1:
 
                 #try:
                     # Choose prePlace randomly
                     prePlace = self.getPlaceByID(random.choice(chosenTrans.prePlaceIDs))
                     print("PrePlace", prePlace.name,"has ", prePlace.tokens, " tokens")
-                    print("PrePlace Test: ", prePlace)
 
 
 
+                    # TODO check for more than one PrePlace
                     # Check if PostPlace exists, otherwise choose new transition
-                    if len(chosenTrans.postPlaceIDs) >= 1:
+                    if len(chosenTrans.postPlaceIDs) == 1:
 
                             # Choose random PostPlace and get place object
                             postPlace = self.getPlaceByID(random.choice(chosenTrans.postPlaceIDs))
@@ -363,6 +363,8 @@ class PetriNet:
 
                         print("Updated PrePlace: ", prePlace.tokens)
 
+
+
                # except IndexError:
                    # print("No prePlace available")
             # If no PrePlace exists, transition is source.
@@ -391,7 +393,7 @@ class PetriNet:
                         if i.sink == postPlace.id:
                             weight = i.weight
                             print("PostPlace Token: ", postPlace.tokens)
-                            postPlace.tokens -= weight
+                            postPlace.tokens += weight
                             print("New PostPlace Token: ", postPlace.tokens)
 
                     print("No PrePlace found. Only update postPlace")
@@ -406,6 +408,8 @@ class PetriNet:
 
     # TODO function just ends -> recursive call for transitionlist or implement function in an outside loop?
 
+    def priority(self):
+        pass
 
 
 

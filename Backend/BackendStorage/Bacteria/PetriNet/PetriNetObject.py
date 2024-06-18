@@ -52,7 +52,7 @@ class PetriNet:
 
 
     """Creates Transitions and includes Pre- and PostPlaces.
-    These are added by instantiating."""
+    These are added by instantiating. priority=2"""
     def addTransition(self, id, name, prePlaceIDs, postPlaceIDs, priority=2):
         self.transitionIDList.append(id)
         self.transitionDict[id] = Transition(id, name, [], [], priority)
@@ -136,7 +136,7 @@ class PetriNet:
     def getTransitionByID(self, transID):
         for i in self.transitionIDList:
             if transID == self.transitionDict[i].id:
-                print('TransID', transID)
+                print('Transition found with ID:', transID)
                 return self.transitionDict[i]
 
 
@@ -245,17 +245,25 @@ class PetriNet:
     Gleiche Transition kann mehrfach schalten, wenn sie weiter aktiviert ist, auch
     wenn andere Transitionen ebenfalls aktiviert sind."""
     #TODO priority ist für synchronen Schritt?
-    # TODO findEdge not needed. Use EdgeDict[]
     def simulateAsynchronousStep(self):
         chooseToFire = []
+        priorityDict = {}
+        listOfPriorities = []
+        chosenTrans = None
         # Go through all transitions and check if they're enabled.
         # Append them to list, to choose randomly which fires.
-        #TODO is random choosing okay?
-
-
         for transitionKey in self.transitionDict:
             if self.isTransitionEnabled(transitionKey):
+                transToPriority = self.transitionDict[transitionKey]
                 chooseToFire.append(transitionKey)
+                """Check for priority in enabled transition list,
+                add them to dictionary"""
+                if transToPriority.priority in priorityDict:
+                    priorityDict[transToPriority].append(transitionKey)
+                else:
+                    priorityDict[transToPriority] = [transitionKey]
+                    listOfPriorities.append(transToPriority.priority)
+
                 print('Transition:', transitionKey, " is enabled")
             else:
                 print("Transition: ", transitionKey, " is disabled")
@@ -266,15 +274,30 @@ class PetriNet:
             print('List of enabled transitions: ', chooseToFire)
             print("List with transitions is empty.")
         else:
+            # Sort list with priorities
+            # Ordered list: highest priority on first index
+            listOfPriorities.sort()
+            # Check if priority exists and they're different.
+            # If different priority's exist: use priority list
+            if not self.identical(listOfPriorities):
+                for key, val in priorityDict.items():
+                    print("Key Prio: ", key.priority, "Key Name: ", key.name)
+                    # Choose transition with the highest priority <=> listOfPriorities[0]
+                    if key.priority == listOfPriorities[0]:
+                        chosenTrans = self.getTransitionByID(key.id)
+                print("Chosen Transition: ", chosenTrans.name)
+
+            else:
+            # otherwise: choose transition randomly
             # Choose random enabled transition
-            transToFire = random.choice(chooseToFire)
-            chosenTrans = self.getTransitionByID(transToFire)
+                transToFire = random.choice(chooseToFire)
+                chosenTrans = self.getTransitionByID(transToFire)
             # Get pre- and post-place. Check if they're existing
             print("Transition ",chosenTrans.id , "PrePlaces : ", chosenTrans.prePlaceIDs)
 
             for i in chosenTrans.prePlaceIDs:
                 for j in chosenTrans.postPlaceIDs:
-                    # 3 cases: Pre- and PostPlace exist, just PrePlace, just PostPlace
+                    # 3 cases: Pre- and PostPlace exist, just PrePlace exists, just PostPlace exists
                     if len(chosenTrans.prePlaceIDs) > 0 and len(chosenTrans.postPlaceIDs) > 0:
                         prePlace = self.getPlaceByID(i)
                         postPlace = self.getPlaceByID(j)
@@ -284,37 +307,41 @@ class PetriNet:
 
                         weightTP = edgeTP.weight
                         weightPT = edgePT.weight
-                        print("Test Token: ",prePlace.tokens, postPlace.tokens, "ID " ,prePlace.id, postPlace.id, "EdgeID",edgeTP.id, edgePT.id, "Weight",weightTP, weightPT)
+                        print("Bevore firing:")
+                        print("PrePlaceToken: ",prePlace.tokens,"| PostPlaceToken: ", postPlace.tokens, "| WeightPT: ",weightPT,"| WeightTP: ", weightTP, "| PrePlaceID: " ,prePlace.id,"| PostPlaceID", postPlace.id, "| EdgeIDPT: ",edgePT.id, "| EdgeIDTP: " ,edgeTP.id)
                         # Don't need to check if weight<= number of tokens -> function isEnabled
                         prePlace.tokens -= weightPT
                         postPlace.tokens += weightTP
-                        print("TestDanach Token: ",prePlace.tokens, postPlace.tokens,"PlaceID :", prePlace.id, postPlace.id,"EdgeID: ", edgeTP.id, edgePT.id,"Weight: ", weightTP, weightPT)
+                        print("After firing: ")
+                        print("PrePlaceToken: ",prePlace.tokens,"| PostPlaceTokens: ", postPlace.tokens, "| WeightPT: ",weightPT,"| WeightTP: ", weightTP,"| PrePlaceID :", prePlace.id,"| PostPlaceID", postPlace.id,"| EdgeIDPT: ", edgePT.id, "| EdgeIDTP: ", edgeTP.id)
 
                     if len(chosenTrans.prePlaceIDs) > 0 and len(chosenTrans.postPlaceIDs) == 0:
-                        print("TestIF2 TOKENS: ",prePlace.tokens, postPlace.tokens, "PlaceID: ", prePlace.id, postPlace.id,"EdgeID: ", edgeTP.id, edgePT.id,"Weight: ", weightTP, weightPT)
+                        print("PrePlace and no PostPlace. Before firing: ")
+                        print("PrePlaceToken: ",prePlace.tokens, "| PostPlaceTokens: ", postPlace.tokens, "| WeightPT: ",weightPT,"| WeightTP: ", weightTP, "| PrePlaceID: ", prePlace.id, "| PostPlaceID: ", postPlace.id,"| EdgeIDPT: ", edgePT.id,"| EdgeIDTP", edgeTP.id)
 
                         prePlace = self.getPlaceByID(i)
                         edgePT = self.edgeDict[(prePlace.id, chosenTrans.id, 'PT')]
                         weightPT = edgePT.weight
                         prePlace.tokens -= weightPT
-                        print("TestDanachIF2 Tokens: ",prePlace.tokens, postPlace.tokens,"PlaceID: ", prePlace.id, postPlace.id,"Edge: ", edgeTP.id, edgePT.id,"Weight: ", weightTP, weightPT)
+                        print("PrePlace and no PostPlace. After firing: ")
+                        print("PrePlaceTokens: ",prePlace.tokens,"| PostPlaceTokens: ", postPlace.tokens, "| WeightPT: ",weightPT,"| WeightTP: ", weightTP,"| PrePlaceID: ", prePlace.id,"| PostPlaceID: ", postPlace.id,"| EdgeIDPT: ", edgePT.id, "| EdgeIDTP: ", edgeTP.id)
 
 
                     if len(chosenTrans.prePlaceIDs) == 0 and len(chosenTrans.postPlaceIDs) > 0:
-                        print("TestIF3 TOkens: ",prePlace.tokens, postPlace.tokens, "placeID: ", prePlace.id, postPlace.id,"EdgeID: ", edgeTP.id, edgePT.id,"Weight: ", weightTP, weightPT)
+                        print("No PrePlace but PostPlace. Before firing: ")
+                        print("PrePlaceToken: ",prePlace.tokens,"| PostPlaceToken: ", postPlace.tokens, "| WeightPT: ",weightPT,"| WeightTP: ", weightTP, "| PrePlaceID: ", prePlace.id,"| PostPlaceID", postPlace.id,"| EdgeIDPT: ", edgePT.id,"| EdgeIDTP: ", edgeTP.id)
 
                         postPlace = self.getPlaceByID(j)
                         edgeTP = self.edgeDict[(chosenTrans.id, postPlace.id, 'TP')]
                         weightTP = edgeTP.weight
                         postPlace.tokens += weightTP
-                        print("TestDanachIF3 Tokens: ",prePlace.tokens, postPlace.tokens, "placeID: ", prePlace.id, postPlace.id,"EdgeID: ", edgeTP.id, edgePT.id,"Weight: ", weightTP, weightPT)
+                        print("No PrePlace, but PostPlace. After firing: ")
+                        print("PrePlaceTokens: ",prePlace.tokens,"| PostPlaceTpken: ", postPlace.tokens, "| WeightPT: ",weightPT,"| WeightTP: ", weightTP, "| PrePlaceID: ", prePlace.id,"| PostPlaceID", postPlace.id,"| EdgeIDPT: ", edgePT.id,"| EdgeIDTP", edgeTP.id)
 
 
-    # TODO function just ends -> recursive call for transitionlist or implement function in an outside loop?
-
-    def priority(self):
-        pass
-
+    # Check if list entries are identical
+    def identical(self, list):
+        return all(i == list[0] for i in list)
 
 
 

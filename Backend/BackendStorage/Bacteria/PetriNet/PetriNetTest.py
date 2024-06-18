@@ -64,8 +64,8 @@ SecondPetri.addPlace(4, "Beh_Move", 0, [], [])
 SecondPetri.addPlace(5, "Beh_Size", 0, [], [])
 SecondPetri.addPlace(6, "Beh_Replication", 0, [], [])
 
-SecondPetri.addTransition(0, "Intake_Nutrition", [0], [(3, 5)])
-SecondPetri.addTransition(1, "ActiveInhibition_1", [0, 2], [0, 1], 1)
+SecondPetri.addTransition(0, "Intake_Nutrition", [0], [(3, 5)],1)
+SecondPetri.addTransition(1, "ActiveInhibition_1", [0, 2], [0, 1])
 SecondPetri.addTransition(2, "PassiveUninhibition_0", [1], [2], 0)
 SecondPetri.addTransition(3, "Nutrient_to_Move", [2, 3], [2, 4])
 SecondPetri.addTransition(4, "Nutrient_to_Size", [(3, 12)], [5])
@@ -128,5 +128,6 @@ SecondPetri.simulateStep()
 SecondPetri.printPlaces()
 print("=")
 #
+
 MainPetri.simulateAsynchronousStep()
 #SecondPetri.simulateAsynchronousStep()

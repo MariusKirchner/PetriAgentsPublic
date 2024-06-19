@@ -296,14 +296,13 @@ class PetriNet:
 
             print("Chosen transition: ",chosenTrans.name," [ID: ",chosenTrans.id,"]" , " with PrePlaces: ", chosenTrans.prePlaceIDs, " and PostPlaces: ", chosenTrans.postPlaceIDs)
             # Get pre- and post-place. Check if they're existing
-
-            # TODO is no PrePlace exists
+            # 3 cases: Pre- and PostPlace exist, just PrePlace exists, just PostPlace exists
+            # Case 1: No PrePlace existing, but PostPlaces.
             if len(chosenTrans.prePlaceIDs) == 0:
                 for j in chosenTrans.postPlaceIDs:
                     postPlace = self.getPlaceByID(j)
                     edgeTP = self.edgeDict[(chosenTrans.id, postPlace.id, 'TP')]
                     weightTP = edgeTP.weight
-                    print("TEST")
                     print("No PrePlace but PostPlace. Before firing: ")
                     print("PrePlace: None", "| PrePlaceToken: None", "| PostPlace: ",
                           postPlace.name, "| PostPlaceToken: ", postPlace.tokens, "| WeightPT: No edge, no weight",
@@ -318,8 +317,7 @@ class PetriNet:
                           postPlace.id, "| EdgeIDPT: None", "| EdgeIDTP", edgeTP.id)
 
             for i in chosenTrans.prePlaceIDs:
-
-                # If no PostPlace exists, no loop throught empty list needed.
+                # Case2: if no PostPlace exists, no loop throught empty list needed.
                 if len(chosenTrans.postPlaceIDs) == 0:
                     prePlace = self.getPlaceByID(i)
                     edgePT = self.edgeDict[(prePlace.id, chosenTrans.id, 'PT')]
@@ -336,8 +334,7 @@ class PetriNet:
                           "| EdgeIDPT: ", edgePT.id,"| EdgeIDTP: None")
                 else:
                     for j in chosenTrans.postPlaceIDs:
-
-                        # 3 cases: Pre- and PostPlace exist, just PrePlace exists, just PostPlace exists
+                        # Case 3: Pre- and PostPlaces do exist
                         if len(chosenTrans.prePlaceIDs) > 0 and len(chosenTrans.postPlaceIDs) > 0:
                             prePlace = self.getPlaceByID(i)
                             postPlace = self.getPlaceByID(j)

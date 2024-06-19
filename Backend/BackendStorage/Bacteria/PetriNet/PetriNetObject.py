@@ -296,7 +296,29 @@ class PetriNet:
 
             print("Chosen transition: ",chosenTrans.name," [ID: ",chosenTrans.id,"]" , " with PrePlaces: ", chosenTrans.prePlaceIDs, " and PostPlaces: ", chosenTrans.postPlaceIDs)
             # Get pre- and post-place. Check if they're existing
+
+            # TODO is no PrePlace exists
+            if len(chosenTrans.prePlaceIDs) == 0:
+                for j in chosenTrans.postPlaceIDs:
+                    postPlace = self.getPlaceByID(j)
+                    edgeTP = self.edgeDict[(chosenTrans.id, postPlace.id, 'TP')]
+                    weightTP = edgeTP.weight
+                    print("TEST")
+                    print("No PrePlace but PostPlace. Before firing: ")
+                    print("PrePlace: None", "| PrePlaceToken: None", "| PostPlace: ",
+                          postPlace.name, "| PostPlaceToken: ", postPlace.tokens, "| WeightPT: No edge, no weight",
+                          "| WeightTP: ", weightTP, "| PrePlaceID: None",  "| PostPlaceID", postPlace.id,
+                          "| EdgeIDPT: no edge",  "| EdgeIDTP: ", edgeTP.id)
+
+                    postPlace.tokens += weightTP
+                    print("No PrePlace, but PostPlace. After firing: ")
+                    print("PrePlace: None","| PrePlaceTokens: None","| PostPlace: ",
+                          postPlace.name, "| PostPlaceToken: ", postPlace.tokens, "| WeightPT: No edge, no weight",
+                           "| WeightTP: ", weightTP, "| PrePlaceID: None",  "| PostPlaceID",
+                          postPlace.id, "| EdgeIDPT: None", "| EdgeIDTP", edgeTP.id)
+
             for i in chosenTrans.prePlaceIDs:
+
                 # If no PostPlace exists, no loop throught empty list needed.
                 if len(chosenTrans.postPlaceIDs) == 0:
                     prePlace = self.getPlaceByID(i)
@@ -333,16 +355,6 @@ class PetriNet:
                             print("After firing: ")
                             print("PrePlace: ",prePlace.name, "| PrePlaceToken: ",prePlace.tokens,"| PostPlace: ", postPlace.name,"| PostPlaceTokens: ", postPlace.tokens, "| WeightPT: ",weightPT,"| WeightTP: ", weightTP,"| PrePlaceID :", prePlace.id,"| PostPlaceID", postPlace.id,"| EdgeIDPT: ", edgePT.id, "| EdgeIDTP: ", edgeTP.id)
 
-                        if len(chosenTrans.prePlaceIDs) == 0 and len(chosenTrans.postPlaceIDs) > 0:
-                            print("No PrePlace but PostPlace. Before firing: ")
-                            print("PrePlace: ", prePlace.name,"| PrePlaceToken: ",prePlace.tokens,"| PostPlace: ", postPlace.name,"| PostPlaceToken: ", postPlace.tokens, "| WeightPT: ",weightPT,"| WeightTP: ", weightTP, "| PrePlaceID: ", prePlace.id,"| PostPlaceID", postPlace.id,"| EdgeIDPT: ", edgePT.id,"| EdgeIDTP: ", edgeTP.id)
-
-                            postPlace = self.getPlaceByID(j)
-                            edgeTP = self.edgeDict[(chosenTrans.id, postPlace.id, 'TP')]
-                            weightTP = edgeTP.weight
-                            postPlace.tokens += weightTP
-                            print("No PrePlace, but PostPlace. After firing: ")
-                            print("PrePlaceTokens: ",prePlace.tokens,"| PostPlaceTpken: ", postPlace.tokens, "| WeightPT: ",weightPT,"| WeightTP: ", weightTP, "| PrePlaceID: ", prePlace.id,"| PostPlaceID", postPlace.id,"| EdgeIDPT: ", edgePT.id,"| EdgeIDTP", edgeTP.id)
 
 
     # Check if list entries are identical

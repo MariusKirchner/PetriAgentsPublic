@@ -13,7 +13,10 @@ def saveProject(mainProject, filehandler):
     maxYCor = doc.createElement("maxYCor")
     settings.appendChild(maxYCor)
     maxYCor.appendChild(doc.createTextNode(str(mainProject.maxYCor)))
-    #TODO: following will be secluded for each compartment later on, then netlogosettings will be more special
+    ticks = doc.createElement("Ticks")
+    settings.appendChild(ticks)
+    ticks.appendChild(doc.createTextNode(str(mainProject.ticks)))
+    #TODO: following will be secluded for each compartment later on, then netlogosettings will be more specific
     lrCont = doc.createElement("lrCont")
     settings.appendChild(lrCont)
     lrCont.appendChild(doc.createTextNode(str(mainProject.lrCont)))
@@ -23,9 +26,18 @@ def saveProject(mainProject, filehandler):
     diffRate = doc.createElement("diffRate")
     settings.appendChild(diffRate)
     diffRate.appendChild(doc.createTextNode(str(mainProject.diffRate)))
-    diffDir = doc.createElement("diffDir")
-    settings.appendChild(diffDir)
-    diffDir.appendChild(doc.createTextNode(str(mainProject.diffDir)))
+    diffBool = doc.createElement("diffBool")
+    settings.appendChild(diffBool)
+    diffBool.appendChild(doc.createTextNode(str(mainProject.diffBool)))
+    flowRate = doc.createElement("flowRate")
+    settings.appendChild(flowRate)
+    flowRate.appendChild(doc.createTextNode(str(mainProject.flowRate)))
+    flowDir = doc.createElement("flowDir")
+    settings.appendChild(flowDir)
+    flowDir.appendChild(doc.createTextNode(str(mainProject.flowDir)))
+    flowBool = doc.createElement("flowBool")
+    settings.appendChild(flowBool)
+    flowBool.appendChild(doc.createTextNode(str(mainProject.flowBool)))
 
     bacteria = doc.createElement("bacteria")
     project.appendChild(bacteria)
@@ -83,8 +95,8 @@ def saveProject(mainProject, filehandler):
         bacteria.appendChild(tempBac)
 
 
-
+    doc = doc.toprettyxml()
     file = open(filehandler, mode="w")
-    doc.writexml(file)
+    file.write(doc)
     file.close()
     print("Saving")

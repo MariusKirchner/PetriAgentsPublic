@@ -27,7 +27,7 @@ class petriAgentProject:
         self.tbCont = 1
         self.diffRate = 100
         self.diffBool = 1
-        self.flowDir = E
+        self.flowDir = "E"
         self.flowRate = 100
         self.flowBool = 1
         #TODO: Split Diffusion and flow! Change strings in GUI

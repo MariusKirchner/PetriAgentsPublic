@@ -86,6 +86,10 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
                 mainProject.bacteriaIDDict[k].dictOfIndividuals[j].petriNet.simulateStep()
         time10 = time.time()
         print("PetriNet Simulations --- %s seconds ---" % (time10 - time9))
+        #todo: insert output functionality here, probably similar to the behaviour function below
+        # here
+        time11 = time.time()
+        print("Change patch values for outputs--- %s seconds ---" % (time11 - time10))
         for k in mainProject.listOfBacteriaIDs:
             totalCommandList = []
             for j in mainProject.bacteriaIDDict[k].listOfIndividuals:
@@ -99,7 +103,7 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
             n.command("setBacteria" + str(k) + "BehAll " + re.sub(",", "", commandString))
         #TODO: CHECK IF THIS REALLY WORKS!! ( looks good, but i just saw that flagella are different colors for multiple species)
         time13 = time.time()
-        print("Total for Commands for Bacteria Setters--- %s seconds ---" % (time13 - time10))
+        print("Total for Commands for Bacteria Setters--- %s seconds ---" % (time13 - time11))
         n.command("go")
         time14 = time.time()
         print("go command(including diffusion)--- %s seconds ---" % (time14 - time13))

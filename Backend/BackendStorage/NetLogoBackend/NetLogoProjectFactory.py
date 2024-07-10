@@ -338,9 +338,7 @@ def createNetLogoProject(mainProject):
             tempnetlogoFile.write("\t \t \t set tempList lput who tempList \n")
             tempnetlogoFile.write("\t \t \t set newIndividuals lput tempList newIndividuals \n")
             tempnetlogoFile.write("\t \t ] \n")
-            tempnetlogoFile.write("\t \t set Beh_Replication 0 \n")
             tempnetlogoFile.write("\t \t set size 1 \n")
-            tempnetlogoFile.write("\t \t set Beh_Size 0 \n")
             tempnetlogoFile.write("\t ] \n")
             tempnetlogoFile.write("end \n")
         if "Size" in mainProject.bacteriaIDDict[i].dictOfBehPlaces.values():

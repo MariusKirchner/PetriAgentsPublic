@@ -9,7 +9,7 @@ class Place:
         self.postTransitionIDs = postTransitionIDs
 
     def changeTokens(self, tokenChange):
-        self.tokens = self.tokens + tokenChange
+        self.tokens = tokenChange
 
     def addPreTransition(self, transitionID):
         self.preTransitionsIDs.append(transitionID)

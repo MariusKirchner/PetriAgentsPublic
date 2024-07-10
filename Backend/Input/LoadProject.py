@@ -11,10 +11,14 @@ def loadProject(filehandler):
     doc = minidom.parse(filehandler)
     newProject.maxXCor = doc.getElementsByTagName("maxXCor")[0].childNodes[0].data
     newProject.maxYCor = doc.getElementsByTagName("maxYCor")[0].childNodes[0].data
+    newProject.ticks = doc.getElementsByTagName("Ticks")[0].childNodes[0].data
     newProject.lrCont = doc.getElementsByTagName("lrCont")[0].childNodes[0].data
     newProject.tbCont = doc.getElementsByTagName("tbCont")[0].childNodes[0].data
     newProject.diffRate = doc.getElementsByTagName("diffRate")[0].childNodes[0].data
-    newProject.diffDir = doc.getElementsByTagName("diffDir")[0].childNodes[0].data
+    newProject.diffBool = doc.getElementsByTagName("diffBool")[0].childNodes[0].data
+    newProject.flowRate = doc.getElementsByTagName("flowRate")[0].childNodes[0].data
+    newProject.flowDir = doc.getElementsByTagName("flowDir")[0].childNodes[0].data
+    newProject.flowBool = doc.getElementsByTagName("flowBool")[0].childNodes[0].data
     for bac in doc.getElementsByTagName("bacteria")[0].childNodes:
         #print(bac.toxml())
         tempPetri = PetriNet()

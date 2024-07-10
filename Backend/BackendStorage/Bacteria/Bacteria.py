@@ -10,6 +10,7 @@ class bacteria:
         self.dictOfBehPlaces = {}
         self.dictOfEnvPlaces = {}
         self.listOfBehPlaceIDs = []
+        self.listOfEnvPlaceIDs = []
         self.listOfEnvPlaces = []
         self.MOI = MOI
         self.listOfIndividuals = []
@@ -21,6 +22,7 @@ class bacteria:
             if petriNet.placeDict[placeID].name[:4] == "Env_":
                 self.listOfEnvPlaces.append(petriNet.placeDict[placeID].name[4:])
                 self.dictOfEnvPlaces[placeID] = petriNet.placeDict[placeID].name[4:]
+                self.listOfEnvPlaceIDs.append(placeID)
             elif petriNet.placeDict[placeID].name[:4] == "Beh_":
                 self.listOfBehPlaceIDs.append(placeID)
                 if petriNet.placeDict[placeID].name[4:] == "Repl" or petriNet.placeDict[placeID].name[4:] == "Replication" or petriNet.placeDict[placeID].name[4:] == "repl":

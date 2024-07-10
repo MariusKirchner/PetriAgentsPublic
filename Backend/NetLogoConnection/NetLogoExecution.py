@@ -77,8 +77,10 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
         print("Delete dead individuals--- %s seconds ---" % (time8 - time7))
         intakeReport = n.report("intake")
         intakeReport = ast.literal_eval(intakeReport)
+        print("HERE")
+        print(intakeReport)
         for j in intakeReport:
-            mainProject.bacteriaIDDict[int(j[0])].dictOfIndividuals[int(j[1])].petriNet.getPlaceByName("Env_" + j[2]).changeTokens(1)
+            mainProject.bacteriaIDDict[int(j[0])].dictOfIndividuals[int(j[1])].petriNet.getPlaceByName("Env_" + j[2]).changeTokens(j[3])
         time9 = time.time()
         print("Change Tokens for intakes--- %s seconds ---" % (time9 - time8))
         for k in mainProject.listOfBacteriaIDs:
@@ -86,7 +88,18 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
                 mainProject.bacteriaIDDict[k].dictOfIndividuals[j].petriNet.simulateStep()
         time10 = time.time()
         print("PetriNet Simulations --- %s seconds ---" % (time10 - time9))
-        #todo: insert output functionality here, probably similar to the behaviour function below
+        # todo: insert output functionality here, probably similar to the behaviour function below
+        for k in mainProject.listOfBacteriaIDs:
+            totalCommandList = []
+            for j in mainProject.bacteriaIDDict[k].listOfIndividuals:
+                singleCommand = []
+                singleCommand.append(j)
+                for m in mainProject.bacteriaIDDict[k].listOfEnvPlaceIDs:
+                    singleCommand.append(str(mainProject.bacteriaIDDict[k].dictOfIndividuals[j].petriNet.placeDict[m].tokens))
+                totalCommandList.append(singleCommand)
+            commandString = re.sub("'", "", str(totalCommandList))
+            n.command("setBacteria" + str(k) + "PatchAll " + re.sub(",", "", commandString))
+            print("setBacteria" + str(k) + "PatchAll " + re.sub(",", "", commandString))
         # here
         time11 = time.time()
         print("Change patch values for outputs--- %s seconds ---" % (time11 - time10))

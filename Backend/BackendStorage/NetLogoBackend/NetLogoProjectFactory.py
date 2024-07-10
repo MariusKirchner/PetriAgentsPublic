@@ -144,7 +144,7 @@ def createNetLogoProject(mainProject):
     #runtime procedures
     #standard go
     tempnetlogoFile.write("to go \n")
-    tempnetlogoFile.write("\t patch-intakes \n")
+    #tempnetlogoFile.write("\t patch-intakes \n")
     for i in mainProject.listOfBacteriaIDs:
         tempnetlogoFile.write("\t ask bacteria" + str(i) + " [ \n")
         for j in mainProject.bacteriaIDDict[i].listOfBehPlaceIDs:
@@ -378,7 +378,7 @@ def createNetLogoProject(mainProject):
         tempnetlogoFile.write("\t \t ] \n")
         tempnetlogoFile.write("\t ] \n")
     tempnetlogoFile.write("end \n")
-    #set functions
+    #setBehaviour functions
     for i in mainProject.listOfBacteriaIDs:
         tempString = "[ id "
         for j in mainProject.bacteriaIDDict[i].listOfBehPlaceIDs:
@@ -392,7 +392,7 @@ def createNetLogoProject(mainProject):
                 tempnetlogoFile.write("\t \t set Beh_" + mainProject.bacteriaIDDict[i].dictOfBehPlaces[j] + " Beh" + mainProject.bacteriaIDDict[i].dictOfBehPlaces[j] + " \n")
         tempnetlogoFile.write("\t ] \n")
         tempnetlogoFile.write("end \n")
-    #new setAll functions
+    #new setAllBehaviour functions
     for i in mainProject.listOfBacteriaIDs:
         tempString = ""
         x = 0
@@ -407,7 +407,36 @@ def createNetLogoProject(mainProject):
         tempnetlogoFile.write("\t \t setBacteria" + str(i) + "Beh " + tempString)
         tempnetlogoFile.write("\t ] \n")
         tempnetlogoFile.write("end \n")
-
+    #setPatch function
+    for i in mainProject.listOfBacteriaIDs:
+        tempString = "[ id "
+        for j in mainProject.bacteriaIDDict[i].listOfEnvPlaceIDs:
+            if mainProject.bacteriaIDDict[i].dictOfEnvPlaces[j] != "None":
+                tempString += (mainProject.bacteriaIDDict[i].dictOfEnvPlaces[j] + " ") #maybe parenthesis gone
+        tempString += "]"
+        tempnetlogoFile.write("to setBacteria" + str(i) + "Patch " + tempString + " \n")
+        tempnetlogoFile.write("\t ask turtle id [ \n")
+        tempnetlogoFile.write("\t \t ask patch-here [ \n")
+        for j in mainProject.bacteriaIDDict[i].listOfEnvPlaceIDs:
+            tempnetlogoFile.write("\t \t \t set patch_" + mainProject.bacteriaIDDict[i].dictOfEnvPlaces[j] + " " + mainProject.bacteriaIDDict[i].dictOfEnvPlaces[j] + " \n")
+        tempnetlogoFile.write("\t \t ] \n")
+        tempnetlogoFile.write("\t ] \n")
+        tempnetlogoFile.write("end \n")
+    #setAllPatches function
+    for i in mainProject.listOfBacteriaIDs:
+        tempString = ""
+        x = 0
+        for j in mainProject.bacteriaIDDict[i].listOfEnvPlaceIDs:
+            if mainProject.bacteriaIDDict[i].dictOfEnvPlaces[j] != "None":
+                tempString += "(item " + str(x) + " content) "
+                x += 1
+        tempString += "(item " + str(x) + " content) "
+        tempnetlogoFile.write("to setBacteria" + str(i) + "PatchAll " + "[ listOfCommands ]" + " \n")
+        tempnetlogoFile.write("\t foreach listOfCommands [ \n")
+        tempnetlogoFile.write("\t \t [content] -> \n")
+        tempnetlogoFile.write("\t \t setBacteria" + str(i) + "Patch " + tempString)
+        tempnetlogoFile.write("\t ] \n")
+        tempnetlogoFile.write("end \n")
     #pushfunction
     #TODO: add compartment detection for these spawns (and probably the normal repl as well) (for some reason normal repl seems to work)
     tempnetlogoFile.write("to pushfunction [ currBacID ] \n")
@@ -469,13 +498,12 @@ def createNetLogoProject(mainProject):
         tempnetlogoFile.write("\t \t let tempID who \n")
         tempnetlogoFile.write("\t \t ask patch-here [ \n")
         for j in mainProject.bacteriaIDDict[i].listOfEnvPlaces:
-            tempnetlogoFile.write("\t \t \t if (patch_" + j + " > 0) [ \n")
-            tempnetlogoFile.write("\t \t \t \t set tempList lput bacType tempList \n")
-            tempnetlogoFile.write("\t \t \t \t set tempList lput tempID tempList\n")
-            tempnetlogoFile.write("\t \t \t \t set tempList lput \"\\\"" + j + "\\\"\" templist \n")
-            tempnetlogoFile.write("\t \t \t \t set wholeList lput tempList wholeList \n")
-            tempnetlogoFile.write("\t \t \t \t set tempList [] \n")
-            tempnetlogoFile.write("\t \t \t ] \n")
+            tempnetlogoFile.write(" \t \t \t set tempList lput bacType tempList \n")
+            tempnetlogoFile.write(" \t \t \t set tempList lput tempID tempList\n")
+            tempnetlogoFile.write(" \t \t \t set tempList lput \"\\\"" + j + "\\\"\" templist \n")
+            tempnetlogoFile.write(" \t \t \t set tempList lput patch_" + j + " templist \n")
+            tempnetlogoFile.write(" \t \t \t set wholeList lput tempList wholeList \n")
+            tempnetlogoFile.write(" \t \t \t set tempList [] \n")
         tempnetlogoFile.write("\t \t ] \n")
         tempnetlogoFile.write("\t ] \n")
     tempnetlogoFile.write("\t report wholeList \n")

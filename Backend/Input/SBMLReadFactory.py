@@ -38,8 +38,8 @@ def readSBML(filename):
                 tempPostPlaceList.append(tempTuple)
             else:
                 tempPostPlaceList.append(id)
-        if r.getName().split("_")[-1].isdigit():
-            tempPetri.addTransition(currid, r.getName(), tempPrePlaceList, tempPostPlaceList, int(r.getName().split("_")[-1]))
+        if r.getName().split("_")[0].isdigit():
+            tempPetri.addTransition(currid, r.getName(), tempPrePlaceList, tempPostPlaceList, int(r.getName().split("_")[0]))
         else:
             tempPetri.addTransition(currid, r.getName(), tempPrePlaceList, tempPostPlaceList)
         currid += 1

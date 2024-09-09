@@ -54,8 +54,8 @@ def createNetLogoProject(mainProject):
     tempnetlogoFile.write("\t clear-output \n")
     tempnetlogoFile.write("\t reset-ticks \n")
     #set globals
-    tempnetlogoFile.write("\t set timeinterval-per-tick 0.1 \n")
-    tempnetlogoFile.write("\t set bacteria-velocity 10 \n")
+    tempnetlogoFile.write("\t set timeinterval-per-tick 1 \n")
+    tempnetlogoFile.write("\t set bacteria-velocity 1 \n")
     tempnetlogoFile.write("\t set flowspeed 0.1 \n")
     tempnetlogoFile.write("\t set newIndividuals [] \n")
     tempnetlogoFile.write("\t set deadIndividuals [] \n")
@@ -265,7 +265,7 @@ def createNetLogoProject(mainProject):
     #These are for now filled with placeholder behaviour for movement, replication and death
     #This should probably be changed by the user depending on the bacteria
     #things like movement speed, movement type (flagellar, linear etc.)
-    #same for replication, change variables by user (timespan, where to span, size after etc.
+    #same for replication, change variables by user (timespan, where to spawn, size after etc.)
 
     for i in mainProject.listOfBacteriaIDs:
         if "Move" in mainProject.bacteriaIDDict[i].dictOfBehPlaces.values():

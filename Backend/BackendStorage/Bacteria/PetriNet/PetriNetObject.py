@@ -45,7 +45,7 @@ class PetriNet:
                  else:
                      self.addEdge(1, id, i, "PT")
 
-    def addTransition(self, id, name, prePlaceIDs, postPlaceIDs, priority=2):
+    def addTransition(self, id, name, prePlaceIDs, postPlaceIDs, priority=3):
         self.transitionIDList.append(id)
         self.transitionDict[id] = Transition(id, name, [], [], priority)
         tempprePlaceIDs = []

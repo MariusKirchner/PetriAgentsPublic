@@ -9,7 +9,7 @@
       <Corners>0</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
-    <Node Name="2_SurviveCheck">
+    <Node Name="SurviveCheck_2">
       <LabelPosition>SE</LabelPosition>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
       <Corners>4</Corners>
@@ -21,7 +21,7 @@
       <Corners>0</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
-    <Node Name="1_SurviveReset">
+    <Node Name="SurviveReset_1">
       <LabelPosition>SE</LabelPosition>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
       <Corners>4</Corners>
@@ -123,25 +123,13 @@
       <Corners>4</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
-    <Node Name="End_Repl">
-      <LabelPosition>SE</LabelPosition>
-      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
-      <Corners>4</Corners>
-      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
-    </Node>
-    <Node Name="Timer">
-      <LabelPosition>SE</LabelPosition>
-      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
-      <Corners>4</Corners>
-      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
-    </Node>
     <Node Name="Age">
       <LabelPosition>SE</LabelPosition>
       <Color>java.awt.Color[r=255,g=255,b=255]</Color>
       <Corners>0</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
-    <Node Name="DeathByAge">
+    <Node Name="End_Repl">
       <LabelPosition>SE</LabelPosition>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
       <Corners>4</Corners>
@@ -153,7 +141,7 @@
       <Corners>0</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
-    <Node Name="ProduceOffspring">
+    <Node Name="Timer">
       <LabelPosition>SE</LabelPosition>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
       <Corners>4</Corners>
@@ -165,7 +153,7 @@
       <Corners>0</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
-    <Node Name="T15">
+    <Node Name="DeathByAge">
       <LabelPosition>SE</LabelPosition>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
       <Corners>4</Corners>
@@ -177,7 +165,25 @@
       <Corners>0</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
+    <Node Name="ProduceOffspring">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
     <Node Name="ReproduceAge">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T15">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="OffSpringCooldownDeactivated">
       <LabelPosition>SE</LabelPosition>
       <Color>java.awt.Color[r=255,g=255,b=255]</Color>
       <Corners>0</Corners>
@@ -187,12 +193,6 @@
       <LabelPosition>SW</LabelPosition>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
       <Corners>4</Corners>
-      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
-    </Node>
-    <Node Name="OffSpringCooldownDeactivated">
-      <LabelPosition>SE</LabelPosition>
-      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
-      <Corners>0</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
     <Node Name="TimerStartOffspringCooldown">
@@ -207,16 +207,16 @@
       <Corners>4</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
-    <Node Name="T18">
-      <LabelPosition>SE</LabelPosition>
-      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
-      <Corners>4</Corners>
-      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
-    </Node>
     <Node Name="OffspringCooldownTimer">
       <LabelPosition>N</LabelPosition>
       <Color>java.awt.Color[r=255,g=255,b=255]</Color>
       <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T18">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
   </AdditionalInformationAboutNodes>
@@ -227,27 +227,27 @@
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E1">
-      <Source>2_SurviveCheck</Source>
+      <Source>SurviveCheck_2</Source>
       <Target>SurvivingCheckPos</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E2">
-      <Source>2_SurviveCheck</Source>
+      <Source>SurviveCheck_2</Source>
       <Target>Wood</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E3">
-      <Source>2_SurviveCheck</Source>
+      <Source>SurviveCheck_2</Source>
       <Target>Nutrients</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E4">
       <Source>SurvivingCheckPos</Source>
-      <Target>1_SurviveReset</Target>
+      <Target>SurviveReset_1</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E5">
-      <Source>1_SurviveReset</Source>
+      <Source>SurviveReset_1</Source>
       <Target>SurvivingCheckNeg</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
@@ -273,7 +273,7 @@
     </Edge>
     <Edge Name="E10">
       <Source>Wood</Source>
-      <Target>2_SurviveCheck</Target>
+      <Target>SurviveCheck_2</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E11">
@@ -293,7 +293,7 @@
     </Edge>
     <Edge Name="E14">
       <Source>Nutrients</Source>
-      <Target>2_SurviveCheck</Target>
+      <Target>SurviveCheck_2</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E15">
@@ -308,12 +308,12 @@
     </Edge>
     <Edge Name="E17">
       <Source>BuildTrap</Source>
-      <Target>Env_Trap</Target>
+      <Target>Wood</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E18">
       <Source>BuildTrap</Source>
-      <Target>Wood</Target>
+      <Target>Env_Trap</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E19">
@@ -338,7 +338,7 @@
     </Edge>
     <Edge Name="E23">
       <Source>SurvivingCheckNeg</Source>
-      <Target>2_SurviveCheck</Target>
+      <Target>SurviveCheck_2</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E24">
@@ -347,43 +347,43 @@
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E25">
-      <Source>Timer</Source>
-      <Target>Age</Target>
-      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
-    </Edge>
-    <Edge Name="E26">
       <Source>Age</Source>
       <Target>DeathByAge</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
-    <Edge Name="E27">
+    <Edge Name="E26">
       <Source>Age</Source>
       <Target>ReachEndReproduceTime</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
-    <Edge Name="E28">
-      <Source>DeathByAge</Source>
-      <Target>Beh_Death</Target>
-      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
-    </Edge>
-    <Edge Name="E29">
+    <Edge Name="E27">
       <Source>OffSpring</Source>
       <Target>T4</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
+    <Edge Name="E28">
+      <Source>Timer</Source>
+      <Target>Age</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E29">
+      <Source>TimerStartOffspring</Source>
+      <Target>T4</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
     <Edge Name="E30">
-      <Source>ProduceOffspring</Source>
-      <Target>OffSpring</Target>
+      <Source>TimerStartOffspring</Source>
+      <Target>T15</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E31">
-      <Source>ProduceOffspring</Source>
-      <Target>TimerStartOffspring</Target>
+      <Source>DeathByAge</Source>
+      <Target>Beh_Death</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E32">
-      <Source>ProduceOffspring</Source>
-      <Target>ReproduceAge</Target>
+      <Source>TimerOffspring</Source>
+      <Target>T4</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E33">
@@ -393,52 +393,52 @@
     </Edge>
     <Edge Name="E34">
       <Source>ProduceOffspring</Source>
-      <Target>TimerStartOffspringCooldown</Target>
+      <Target>OffSpring</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E35">
-      <Source>TimerStartOffspring</Source>
-      <Target>T15</Target>
-      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
-    </Edge>
-    <Edge Name="E36">
-      <Source>TimerStartOffspring</Source>
-      <Target>T4</Target>
-      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
-    </Edge>
-    <Edge Name="E37">
-      <Source>T15</Source>
+      <Source>ProduceOffspring</Source>
       <Target>TimerStartOffspring</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
+    <Edge Name="E36">
+      <Source>ProduceOffspring</Source>
+      <Target>ReproduceAge</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E37">
+      <Source>ProduceOffspring</Source>
+      <Target>TimerStartOffspringCooldown</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
     <Edge Name="E38">
-      <Source>T15</Source>
-      <Target>TimerOffspring</Target>
-      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
-    </Edge>
-    <Edge Name="E39">
-      <Source>TimerOffspring</Source>
-      <Target>T4</Target>
-      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
-    </Edge>
-    <Edge Name="E40">
       <Source>ReproduceAge</Source>
       <Target>ProduceOffspring</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
-    <Edge Name="E41">
+    <Edge Name="E39">
       <Source>ReproduceAge</Source>
       <Target>ReachEndReproduceTime</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
+    <Edge Name="E40">
+      <Source>T15</Source>
+      <Target>TimerStartOffspring</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E41">
+      <Source>T15</Source>
+      <Target>TimerOffspring</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
     <Edge Name="E42">
-      <Source>ReachEndReproduceTime</Source>
-      <Target>Age</Target>
+      <Source>OffSpringCooldownDeactivated</Source>
+      <Target>ProduceOffspring</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E43">
-      <Source>OffSpringCooldownDeactivated</Source>
-      <Target>ProduceOffspring</Target>
+      <Source>ReachEndReproduceTime</Source>
+      <Target>Age</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E44">
@@ -462,13 +462,13 @@
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E48">
-      <Source>T18</Source>
-      <Target>OffSpringCooldownDeactivated</Target>
+      <Source>OffspringCooldownTimer</Source>
+      <Target>T18</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E49">
-      <Source>OffspringCooldownTimer</Source>
-      <Target>T18</Target>
+      <Source>T18</Source>
+      <Target>OffSpringCooldownDeactivated</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
   </AdditionalInformationAboutEdges>

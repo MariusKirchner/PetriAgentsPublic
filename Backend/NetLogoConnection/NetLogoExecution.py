@@ -18,9 +18,9 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
     print(platform.platform()[0:7:])
     if platform.platform()[0:7:] == "Windows":
         #homepc
-        #nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
+        nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
         #laptop
-        nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
+        #nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
         #oldNLVersionTry
         #nl4py.initialize(r"C:\Program Files\NetLogo6.2.2")
     else:
@@ -77,8 +77,6 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
         print("Delete dead individuals--- %s seconds ---" % (time8 - time7))
         intakeReport = n.report("intake")
         intakeReport = ast.literal_eval(intakeReport)
-        print("HERE")
-        print(intakeReport)
         for j in intakeReport:
             mainProject.bacteriaIDDict[int(j[0])].dictOfIndividuals[int(j[1])].petriNet.getPlaceByName("Env_" + j[2]).changeTokens(j[3])
         time9 = time.time()
@@ -99,7 +97,6 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
                 totalCommandList.append(singleCommand)
             commandString = re.sub("'", "", str(totalCommandList))
             n.command("setBacteria" + str(k) + "PatchAll " + re.sub(",", "", commandString))
-            print("setBacteria" + str(k) + "PatchAll " + re.sub(",", "", commandString))
         # here
         time11 = time.time()
         print("Change patch values for outputs--- %s seconds ---" % (time11 - time10))

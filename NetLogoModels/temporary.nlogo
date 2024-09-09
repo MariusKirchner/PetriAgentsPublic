@@ -48,14 +48,14 @@ to setup
 	 set flowspeed 0.1 
 	 set newIndividuals [] 
 	 set deadIndividuals [] 
-	 create-bacteria1 20[ 
+	 create-bacteria1 100[ 
 	 	 setxy random-xcor random-ycor 
 	 	 set size 1 
 	 	 set Beh_Move 0 
 	 	 set Beh_Replication 0 
 	 	 set Beh_Death 0 
 	 ] 
-	 create-bacteria2 20[ 
+	 create-bacteria2 2[ 
 	 	 setxy random-xcor random-ycor 
 	 	 set size 1 
 	 	 set Beh_Death 0 
@@ -67,22 +67,22 @@ to setup
 	 set-default-shape flagella "flagella" 
 	 ask bacteria1 [ 
 	 	 set dxy ( bacteria-velocity * timeinterval-per-tick ) 
-	 	 set color [0 255 0 ] 
+	 	 set color [255 0 0 ] 
 	 	 set local-color color 
 	 	 ask out-link-neighbors [set color local-color] 
 	 ] 
 	 ask bacteria2 [ 
 	 	 set dxy ( bacteria-velocity * timeinterval-per-tick ) 
-	 	 set color [255 0 0 ] 
+	 	 set color [128 255 0 ] 
 	 	 set local-color color 
 	 	 ask out-link-neighbors [set color local-color] 
 	 ] 
 	 ask patches with [pxcor > 0 and pxcor < 100 and pycor > 0 and pycor < 50][ 
-	 	 set patch_Meat random 0 
+	 	 set patch_Meat random 1 
 	 ]	 ask patches with [pxcor > 0 and pxcor < 100 and pycor > 0 and pycor < 50][ 
-	 	 set patch_Trap random 0 
+	 	 set patch_Trap random 1 
 	 ]	 ask patches with [pxcor > 0 and pxcor < 100 and pycor > 0 and pycor < 50][ 
-	 	 set patch_Tree random 100 
+	 	 set patch_Tree random 1000 
 	 ]	 set flagella-size 1 
 	 updateView 
 end 
@@ -156,42 +156,9 @@ end
 
 to bacteria1_Move [ id ] 
 	 ask turtle id [ 
-	 	 (ifelse 
-	 	 	 (xcor < (min-pxcor + 0.5) or ycor < (min-pycor + 0.5) or xcor > (max-pxcor - 0.5) or ycor > (max-pycor - 0.5)) 
-	 	 	 [ 
-	 	 	 	 set heading heading + 180 
-	 	 	 	 forward dxy 
-	 	 	 	 ask out-link-neighbors 
-	 	 	 	 [ 
-	 	 	 	 	 setxy ([xcor] of myself) ([ycor] of myself) 
-	 	 	 	 	 set heading ([heading] of myself)
-	 	 	 	 	 bk 2 
-	 	 	 	 ] 
-	 	 	 ] 
-	 	 	 ([compartmentID] of patch-here != [compartmentID] of patch-ahead dxy) 
-	 	 	 [ 
-	 	 	 	 ifelse (runresult (word "comp" ([compartmentID] of patch-here) "Xcomp" ([compartmentID] of patch-ahead dxy) "Bac")) = 0 
-	 	 	 	 [ 
-	 	 	 	 	 set heading heading + 180 
-	 	 	 	 	 forward dxy	 	 	 	 	 ask out-link-neighbors 
-	 	 	 	 	 [ 
-	 	 	 	 	 	 setxy ([xcor] of myself) ([ycor] of myself) 
-	 	 	 	 	 	 set heading ([heading] of myself) 
-	 	 	 	 	 	 bk 2 
-	 	 	 	 	 ] 
-	 	 	 	 ] 
-	 	 	 	 [ 
-	 	 	 	 	 forward dxy 
-	 	 	 	 	 right (5 - random-float 10) 
-	 	 	 	 	 set Beh_Move (Beh_Move - 1) 
-	 	 	 	 ] 
-	 	 	 ] 
-	 	 	 [ 
-	 	 	 	 forward dxy 
-	 	 	 	 right (5 - random-float 10) 
-	 	 	 	 set Beh_Move (Beh_Move - 1) 
-	 	 	 ] 
-	 	 ) 
+	 	 forward dxy 
+	 	 right (5 - random-float 10) 
+	 	 set Beh_Move (Beh_Move - 1) 
 	 ] 
 end 
 to bacteria1_Replication [ id ] 
@@ -203,7 +170,7 @@ to bacteria1_Replication [ id ]
 	 	 	 set Beh_Move 0 
 	 	 	 set Beh_Replication 0 
 	 	 	 set Beh_Death 0 
-	 	 	 set color [0 255 0 ] 
+	 	 	 set color [255 0 0 ] 
 	 	 	 set local-color color 
 	 	 	 ask out-link-neighbors [set color local-color] 
 	 	 	 let tempList [] 
@@ -226,42 +193,9 @@ to bacteria1_Death [ id ]
 end 
 to bacteria2_Move [ id ] 
 	 ask turtle id [ 
-	 	 (ifelse 
-	 	 	 (xcor < (min-pxcor + 0.5) or ycor < (min-pycor + 0.5) or xcor > (max-pxcor - 0.5) or ycor > (max-pycor - 0.5)) 
-	 	 	 [ 
-	 	 	 	 set heading heading + 180 
-	 	 	 	 forward dxy 
-	 	 	 	 ask out-link-neighbors 
-	 	 	 	 [ 
-	 	 	 	 	 setxy ([xcor] of myself) ([ycor] of myself) 
-	 	 	 	 	 set heading ([heading] of myself)
-	 	 	 	 	 bk 2 
-	 	 	 	 ] 
-	 	 	 ] 
-	 	 	 ([compartmentID] of patch-here != [compartmentID] of patch-ahead dxy) 
-	 	 	 [ 
-	 	 	 	 ifelse (runresult (word "comp" ([compartmentID] of patch-here) "Xcomp" ([compartmentID] of patch-ahead dxy) "Bac")) = 0 
-	 	 	 	 [ 
-	 	 	 	 	 set heading heading + 180 
-	 	 	 	 	 forward dxy	 	 	 	 	 ask out-link-neighbors 
-	 	 	 	 	 [ 
-	 	 	 	 	 	 setxy ([xcor] of myself) ([ycor] of myself) 
-	 	 	 	 	 	 set heading ([heading] of myself) 
-	 	 	 	 	 	 bk 2 
-	 	 	 	 	 ] 
-	 	 	 	 ] 
-	 	 	 	 [ 
-	 	 	 	 	 forward dxy 
-	 	 	 	 	 right (5 - random-float 10) 
-	 	 	 	 	 set Beh_Move (Beh_Move - 1) 
-	 	 	 	 ] 
-	 	 	 ] 
-	 	 	 [ 
-	 	 	 	 forward dxy 
-	 	 	 	 right (5 - random-float 10) 
-	 	 	 	 set Beh_Move (Beh_Move - 1) 
-	 	 	 ] 
-	 	 ) 
+	 	 forward dxy 
+	 	 right (5 - random-float 10) 
+	 	 set Beh_Move (Beh_Move - 1) 
 	 ] 
 end 
 to bacteria2_Replication [ id ] 
@@ -273,7 +207,7 @@ to bacteria2_Replication [ id ]
 	 	 	 set Beh_Death 0 
 	 	 	 set Beh_Replication 0 
 	 	 	 set Beh_Move 0 
-	 	 	 set color [255 0 0 ] 
+	 	 	 set color [128 255 0 ] 
 	 	 	 set local-color color 
 	 	 	 ask out-link-neighbors [set color local-color] 
 	 	 	 let tempList [] 
@@ -483,7 +417,7 @@ GRAPHICS-WINDOW
 1
 1
 0
-100
+20
 0
 50
 0

@@ -93,7 +93,7 @@
       <Corners>0</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
-    <Node Name="T4">
+    <Node Name="OffspringAdult">
       <LabelPosition>SE</LabelPosition>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
       <Corners>4</Corners>
@@ -201,20 +201,20 @@
       <Corners>0</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
-    <Node Name="T17">
+    <Node Name="OffspringCooldownTimer">
       <LabelPosition>SE</LabelPosition>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
       <Corners>4</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
-    <Node Name="OffspringCooldownTimer">
+    <Node Name="OffspringCooldownTime">
       <LabelPosition>N</LabelPosition>
       <Color>java.awt.Color[r=255,g=255,b=255]</Color>
       <Corners>0</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
-    <Node Name="T18">
-      <LabelPosition>SE</LabelPosition>
+    <Node Name="ReactivateOffspringCreation">
+      <LabelPosition>S</LabelPosition>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
       <Corners>4</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
@@ -322,7 +322,7 @@
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E20">
-      <Source>T4</Source>
+      <Source>OffspringAdult</Source>
       <Target>Beh_Repl</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
@@ -358,7 +358,7 @@
     </Edge>
     <Edge Name="E27">
       <Source>OffSpring</Source>
-      <Target>T4</Target>
+      <Target>OffspringAdult</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E28">
@@ -368,7 +368,7 @@
     </Edge>
     <Edge Name="E29">
       <Source>TimerStartOffspring</Source>
-      <Target>T4</Target>
+      <Target>OffspringAdult</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E30">
@@ -383,7 +383,7 @@
     </Edge>
     <Edge Name="E32">
       <Source>TimerOffspring</Source>
-      <Target>T4</Target>
+      <Target>OffspringAdult</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E33">
@@ -443,31 +443,31 @@
     </Edge>
     <Edge Name="E44">
       <Source>TimerStartOffspringCooldown</Source>
-      <Target>T17</Target>
+      <Target>OffspringCooldownTimer</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E45">
       <Source>TimerStartOffspringCooldown</Source>
-      <Target>T18</Target>
+      <Target>ReactivateOffspringCreation</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E46">
-      <Source>T17</Source>
+      <Source>OffspringCooldownTimer</Source>
       <Target>TimerStartOffspringCooldown</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E47">
-      <Source>T17</Source>
-      <Target>OffspringCooldownTimer</Target>
+      <Source>OffspringCooldownTimer</Source>
+      <Target>OffspringCooldownTime</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E48">
-      <Source>OffspringCooldownTimer</Source>
-      <Target>T18</Target>
+      <Source>OffspringCooldownTime</Source>
+      <Target>ReactivateOffspringCreation</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E49">
-      <Source>T18</Source>
+      <Source>ReactivateOffspringCreation</Source>
       <Target>OffSpringCooldownDeactivated</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>

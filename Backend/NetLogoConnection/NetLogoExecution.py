@@ -18,9 +18,9 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
     print(platform.platform()[0:7:])
     if platform.platform()[0:7:] == "Windows":
         #homepc
-        nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
+        #nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
         #laptop
-        #nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
+        nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
         #oldNLVersionTry
         #nl4py.initialize(r"C:\Program Files\NetLogo6.2.2")
     else:
@@ -29,25 +29,25 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
 
     n = nl4py.netlogo_app()
     time2 = time.time()
-    print("PreConfig--- %s seconds ---" % (time2 - time1))
+    #print("PreConfig--- %s seconds ---" % (time2 - time1))
     n.open_model(netLogoProjectFilepath)
     time3 = time.time()
-    print("Starting Netlogo--- %s seconds ---" % (time3 - time2))
+    #print("Starting Netlogo--- %s seconds ---" % (time3 - time2))
     #setupstuff
     n.command("setup")
     n.command("setup")
     time4 = time.time()
-    print("double setup--- %s seconds ---" % (time4 - time3))
+    #print("double setup--- %s seconds ---" % (time4 - time3))
 
     currentBacteriaStatus = n.report("bacteriaReport")
     currentBacteriaStatus = ast.literal_eval(currentBacteriaStatus)
     for i in currentBacteriaStatus:
-        print(i)
+        #print(i)
         for j in i:
             mainProject.bacteriaIDDict[int(j[0])].addIndividual(int(j[1]))
     #runtime procedures
     time5 = time.time()
-    print("Setup the individuals--- %s seconds ---" % (time5 - time4))
+    #print("Setup the individuals--- %s seconds ---" % (time5 - time4))
     commandDict = {}
     for compartmentID in mainProject.listOfCompartmentIDs:
         for x in range(0, int(mainProject.maxXCor) + 1):
@@ -57,10 +57,10 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
                         commandDict[(x, y)] = compartmentID
     commandList = [[list(key)[0], list(key)[1], value] for key, value in commandDict.items()]
     time5b = time.time()
-    print("First Step of the compartments--- %s seconds ---" % (time5b - time5))
+    #print("First Step of the compartments--- %s seconds ---" % (time5b - time5))
     n.command("setCompartmentAll " + re.sub(",", "", str(commandList)))
     time5a = time.time()
-    print("Setup the compartments--- %s seconds ---" % (time5a - time5b))
+    #print("Setup the compartments--- %s seconds ---" % (time5a - time5b))
     for i in range(0, int(mainProject.ticks)):
         time6 = time.time()
         newIndividuals = n.report("newIndiv")
@@ -68,24 +68,24 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
         for j in newIndividuals:
             mainProject.bacteriaIDDict[int(j[0])].addIndividual(int(j[1]))
         time7 = time.time()
-        print("Add new Individuals--- %s seconds ---" % (time7 - time6))
+        #print("Add new Individuals--- %s seconds ---" % (time7 - time6))
         deadIndividuals = n.report("deadIndiv")
         deadIndividuals = ast.literal_eval(deadIndividuals)
         for j in deadIndividuals:
             mainProject.bacteriaIDDict[int(j[0])].delIndividual(int(j[1]))
         time8 = time.time()
-        print("Delete dead individuals--- %s seconds ---" % (time8 - time7))
+        #print("Delete dead individuals--- %s seconds ---" % (time8 - time7))
         intakeReport = n.report("intake")
         intakeReport = ast.literal_eval(intakeReport)
         for j in intakeReport:
             mainProject.bacteriaIDDict[int(j[0])].dictOfIndividuals[int(j[1])].petriNet.getPlaceByName("Env_" + j[2]).changeTokens(j[3])
         time9 = time.time()
-        print("Change Tokens for intakes--- %s seconds ---" % (time9 - time8))
+        #print("Change Tokens for intakes--- %s seconds ---" % (time9 - time8))
         for k in mainProject.listOfBacteriaIDs:
             for j in mainProject.bacteriaIDDict[k].listOfIndividuals:
                 mainProject.bacteriaIDDict[k].dictOfIndividuals[j].petriNet.simulateStep()
         time10 = time.time()
-        print("PetriNet Simulations --- %s seconds ---" % (time10 - time9))
+        #print("PetriNet Simulations --- %s seconds ---" % (time10 - time9))
         # todo: insert output functionality here, probably similar to the behaviour function below
         for k in mainProject.listOfBacteriaIDs:
             totalCommandList = []
@@ -99,7 +99,7 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
             n.command("setBacteria" + str(k) + "PatchAll " + re.sub(",", "", commandString))
         # here
         time11 = time.time()
-        print("Change patch values for outputs--- %s seconds ---" % (time11 - time10))
+        #print("Change patch values for outputs--- %s seconds ---" % (time11 - time10))
         for k in mainProject.listOfBacteriaIDs:
             totalCommandList = []
             for j in mainProject.bacteriaIDDict[k].listOfIndividuals:
@@ -113,10 +113,10 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
             n.command("setBacteria" + str(k) + "BehAll " + re.sub(",", "", commandString))
         #TODO: CHECK IF THIS REALLY WORKS!! ( looks good, but i just saw that flagella are different colors for multiple species)
         time13 = time.time()
-        print("Total for Commands for Bacteria Setters--- %s seconds ---" % (time13 - time11))
+        #print("Total for Commands for Bacteria Setters--- %s seconds ---" % (time13 - time11))
         n.command("go")
         time14 = time.time()
-        print("go command(including diffusion)--- %s seconds ---" % (time14 - time13))
+        #print("go command(including diffusion)--- %s seconds ---" % (time14 - time13))
         print(i)
         #TESTING STUFF AHEAD
         for k in mainProject.listOfBacteriaIDs:

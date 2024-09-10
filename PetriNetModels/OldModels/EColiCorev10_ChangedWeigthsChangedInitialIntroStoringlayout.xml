@@ -1,0 +1,3967 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layoutdata>
+  <LogicalPlaces />
+  <BendEdges />
+  <AdditionalInformationAboutNodes>
+    <Node Name="Env_D-Glucose">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Phosphofructokinase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Oxaloacetate_Storage">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Pyruvate_formate_lyase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="L-Glutamine">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glucose-6-phosphate_isomerase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_L-Glutamine">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glucose-6-phosphate_isomerase_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="ATP_C10H12N5O13P3_Storage">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Phosphoglycerate_kinase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="L-Glutamate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Phosphoglycerate_kinase_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Nicotinamide_adenine_dinucleotide_phosphate_-_reduced_Storage">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="6-phosphogluconolactonase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_L-Glutamate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Acetaldehyde_dehydrogenase_(acetylating)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glyoxylate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Acetaldehyde_dehydrogenase_(acetylating)_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Phosphoenolpyruvate_Storage">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="2_oxoglutarate_intake_via_symport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="H2O">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="2_oxoglutarate_reversible_output_via_symport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_H2O">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Phosphoglycerate_mutase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="H+">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Phosphoglycerate_mutase_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="3-Phospho-D-glycerate_Storage">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Phosphate_intake_transport_via_symport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_H+">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Phosphate_output_transport_via_symport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Isocitrate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Alcohol_dehydrogenase_(ethanol)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="H2O_Storage">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Alcohol_dehydrogenase_(ethanol)_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D-Lactate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Acetaldehyde_intake_via_transport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_D-Lactate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Acetaldehyde_output_via_transport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D-Fructose_6-phosphate_Storage">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Acetate_kinase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="L-Malate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Acetate_kinase_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_L-Malate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Phosphoenolpyruvate_carboxylase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glyceraldehyde_3-phosphate_Storage">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Aconitase_(half-reaction_A,_Citrate_hydro-lyase)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Beh_Size">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Aconitase_(half-reaction_A,_Citrate_hydro-lyase)_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Nicotinamide_adenine_dinucleotide">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Aconitase_(half-reaction_B,_Isocitrate_hydro-lyase)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D-Erythrose_4-phosphate_Storage">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Aconitase_(half-reaction_B,_Isocitrate_hydro-lyase)_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Nicotinamide_adenine_dinucleotide_-_reduced">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="ATP_maintenance_requirement">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Nicotinamide_adenine_dinucleotide_phosphate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Phosphoenolpyruvate_carboxykinase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Alpha-D-Ribose_5-phosphate_Storage">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Acetate_intake_transport_via_proton_symport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Nicotinamide_adenine_dinucleotide_phosphate_-_reduced">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Acetate_output_transport_via_proton_symport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ammonium">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Phosphoenolpyruvate_synthase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Pyruvate_Storage">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Adenylate_kinase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="3-Phospho-D-glyceroyl_phosphate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Adenylate_kinase_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_Ammonium">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="2-Oxogluterate_dehydrogenase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="L-Glutamate_Storage">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="ATP_synthase_(four_protons_for_one_ATP)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="O2">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="ATP_synthase_(four_protons_for_one_ATP)_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D-Glycerate_2-phosphate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Phosphotransacetylase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="L-Glutamine_Storage">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Phosphotransacetylase_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_O2">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Pyruvate_kinase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="3-Phospho-D-glycerate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Biomass_Objective_Function_with_GAM">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Oxaloacetate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Pyruvate_intake_transport_in_via_proton_symport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Phosphoenolpyruvate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Pyruvate_output_transport_in_via_proton_symport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="6-Phospho-D-gluconate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="CO2_intake_via_diffusion">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Phosphate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="CO2_output_via_diffusion">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="6-phospho-D-glucono-1,5-lactone">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ribulose_5-phosphate_3-epimerase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_Phosphate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ribulose_5-phosphate_3-epimerase_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Acetate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Citrate_synthase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Pyruvate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ribose-5-phosphate_isomerase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_Pyruvate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ribose-5-phosphate_isomerase_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ubiquinone-8">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Succinate_intake_transport_via_proton_symport_(2_H)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ubiquinol-8">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Cytochrome_oxidase_bd_(ubiquinol-8:_2_protons)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Alpha-D-Ribose_5-phosphate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D_lactate_intake_transport_via_proton_symport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D-Ribulose_5-phosphate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D_lactate_output_transport_via_proton_symport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_Acetate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Enolase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Acetaldehyde">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Enolase_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Sedoheptulose_7-phosphate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Succinate_output_transport_out_via_proton_antiport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_Acetaldehyde">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ethanol_reversible_intake_transport_via_proton_symport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Acetyl-CoA">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ethanol_reversible_output_transport_via_proton_symport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Succinate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Succinate_dehydrogenase_(irreversible)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_Succinate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Succinyl-CoA_synthetase_(ADP-forming)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Succinyl-CoA">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Succinyl-CoA_synthetase_(ADP-forming)_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Cis-Aconitate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Transaldolase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D-Xylulose_5-phosphate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Transaldolase_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Acetyl_phosphate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="NAD(P)_transhydrogenase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="ADP_C10H12N5O10P2">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Transketolase_Nr1">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="2-Oxoglutarate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Transketolase_Nr1_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_Two-Oxoglutarate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Transketolase_Nr2">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="AMP_C10H12N5O7P">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Transketolase_Nr2_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="ATP_C10H12N5O13P3">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Triose-phosphate_isomerase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Citrate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Triose-phosphate_isomerase_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="CO2_CO2">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Fructose-bisphosphate_aldolase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_CO2">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Fructose-bisphosphate_aldolase_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Coenzyme_A">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Fructose-bisphosphatase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Dihydroxyacetone_phosphate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Formate_intake_transport_in_via_proton_symport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D-Erythrose_4-phosphate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Formate_intake_transport_via_diffusion">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ethanol">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Formate_output_transport_via_diffusion">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_Ethanol">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Fumarate_reductase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D-Fructose_6-phosphate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Fructose_transport_via_PEP:Pyr_PTS_(f6p_generating)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D-Fructose_1,6-bisphosphate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Fumarase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Formate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Fumarase_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_Formate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Fumarate_intake_transport_via_proton_symport_(2_H)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_D-Fructose">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glucose_6-phosphate_dehydrogenase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Fumarate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glucose_6-phosphate_dehydrogenase_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_Fumarate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glyceraldehyde-3-phosphate_dehydrogenase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glyceraldehyde_3-phosphate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glyceraldehyde-3-phosphate_dehydrogenase_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D-Glucose_6-phosphate">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D-glucose_transport_via_PEP:Pyr_PTS">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Beh_Repl">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glutamine_synthetase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Acetyl-CoA_Storage">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="L-glutamine_intake_transport_via_ABC_system">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D-Glucose_6-phosphate_Storage">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glutamate_dehydrogenase_(NADP)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Nicotinamide_adenine_dinucleotide_Storage">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glutamate_dehydrogenase_(NADP)_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glutaminase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glutamate_synthase_(NADPH)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="L_glutamate_intake_transport_via_proton_symport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="L_glutamate_output_transport_via_proton_symport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Phosphogluconate_dehydrogenase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="H2O_intake_via_diffusion">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="H2O_output_via_diffusion">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Isocitrate_dehydrogenase_(NADP)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Isocitrate_dehydrogenase_(NADP)_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Isocitrate_lyase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D-lactate_dehydrogenase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D-lactate_dehydrogenase_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Malate_synthase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Malate_intake_transport_via_proton_symport_(2_H)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Malate_dehydrogenase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Malate_dehydrogenase_rev">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Malic_enzyme_(NAD)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Malic_enzyme_(NADP)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="NADH_dehydrogenase_(ubiquinone-8_&amp;_3_protons)">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="NAD_transhydrogenase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ammonia_intake_transport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ammonia_output_transport">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="O2_intake_transport_via_diffusion">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="O2_output_transport_via_diffusion">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Pyruvate_dehydrogenase">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Replication">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="End_Repl">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Acetyl-CoA_Storing">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D-Glucose_6-phosphate_Storing">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Nicotinamide_adenine_dinucleotide_Storing">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Oxaloacetate_Storing">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="ATP_C10H12N5O13P3_Storing">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Nicotinamide_adenine_dinucleotide_phosphate_-_reduced_Storing">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Phosphoenolpyruvate_Storing">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="3-Phospho-D-glycerate_Storing">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="H2O_Storing">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D-Fructose_6-phosphate_Storing">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Glyceraldehyde_3-phosphate_Storing">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="D-Erythrose_4-phosphate_Storing">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Alpha-D-Ribose_5-phosphate_Storing">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Pyruvate_Storing">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="L-Glutamate_Storing">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="L-Glutamine_Storing">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+  </AdditionalInformationAboutNodes>
+  <AdditionalInformationAboutEdges>
+    <Edge Name="E0">
+      <Source>Env_D-Glucose</Source>
+      <Target>D-glucose_transport_via_PEP:Pyr_PTS</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E1">
+      <Source>Phosphofructokinase</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E2">
+      <Source>Phosphofructokinase</Source>
+      <Target>ADP_C10H12N5O10P2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E3">
+      <Source>Phosphofructokinase</Source>
+      <Target>D-Fructose_1,6-bisphosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E4">
+      <Source>Oxaloacetate_Storage</Source>
+      <Target>Biomass_Objective_Function_with_GAM</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E5">
+      <Source>Pyruvate_formate_lyase</Source>
+      <Target>Acetyl-CoA</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E6">
+      <Source>Pyruvate_formate_lyase</Source>
+      <Target>Formate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E7">
+      <Source>L-Glutamine</Source>
+      <Target>Glutaminase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E8">
+      <Source>L-Glutamine</Source>
+      <Target>Glutamate_synthase_(NADPH)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E9">
+      <Source>L-Glutamine</Source>
+      <Target>L-Glutamine_Storing</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E10">
+      <Source>Glucose-6-phosphate_isomerase</Source>
+      <Target>D-Fructose_6-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E11">
+      <Source>Env_L-Glutamine</Source>
+      <Target>L-glutamine_intake_transport_via_ABC_system</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E12">
+      <Source>Glucose-6-phosphate_isomerase_rev</Source>
+      <Target>D-Glucose_6-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E13">
+      <Source>ATP_C10H12N5O13P3_Storage</Source>
+      <Target>Biomass_Objective_Function_with_GAM</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E14">
+      <Source>Phosphoglycerate_kinase</Source>
+      <Target>3-Phospho-D-glyceroyl_phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E15">
+      <Source>Phosphoglycerate_kinase</Source>
+      <Target>ADP_C10H12N5O10P2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E16">
+      <Source>L-Glutamate</Source>
+      <Target>Glutamine_synthetase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E17">
+      <Source>L-Glutamate</Source>
+      <Target>Glutamate_dehydrogenase_(NADP)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E18">
+      <Source>L-Glutamate</Source>
+      <Target>L_glutamate_output_transport_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E19">
+      <Source>L-Glutamate</Source>
+      <Target>L-Glutamate_Storing</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E20">
+      <Source>Phosphoglycerate_kinase_rev</Source>
+      <Target>3-Phospho-D-glycerate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E21">
+      <Source>Phosphoglycerate_kinase_rev</Source>
+      <Target>ATP_C10H12N5O13P3</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E22">
+      <Source>Nicotinamide_adenine_dinucleotide_phosphate_-_reduced_Storage</Source>
+      <Target>Biomass_Objective_Function_with_GAM</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E23">
+      <Source>6-phosphogluconolactonase</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E24">
+      <Source>6-phosphogluconolactonase</Source>
+      <Target>6-Phospho-D-gluconate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E25">
+      <Source>Env_L-Glutamate</Source>
+      <Target>L_glutamate_intake_transport_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E26">
+      <Source>Acetaldehyde_dehydrogenase_(acetylating)</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E27">
+      <Source>Acetaldehyde_dehydrogenase_(acetylating)</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_-_reduced</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E28">
+      <Source>Acetaldehyde_dehydrogenase_(acetylating)</Source>
+      <Target>Acetyl-CoA</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E29">
+      <Source>Glyoxylate</Source>
+      <Target>Malate_synthase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E30">
+      <Source>Acetaldehyde_dehydrogenase_(acetylating)_rev</Source>
+      <Target>Nicotinamide_adenine_dinucleotide</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E31">
+      <Source>Acetaldehyde_dehydrogenase_(acetylating)_rev</Source>
+      <Target>Acetaldehyde</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E32">
+      <Source>Acetaldehyde_dehydrogenase_(acetylating)_rev</Source>
+      <Target>Coenzyme_A</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E33">
+      <Source>Phosphoenolpyruvate_Storage</Source>
+      <Target>Biomass_Objective_Function_with_GAM</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E34">
+      <Source>2_oxoglutarate_intake_via_symport</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E35">
+      <Source>2_oxoglutarate_intake_via_symport</Source>
+      <Target>2-Oxoglutarate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E36">
+      <Source>H2O</Source>
+      <Target>6-phosphogluconolactonase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E37">
+      <Source>H2O</Source>
+      <Target>Phosphoenolpyruvate_carboxylase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E38">
+      <Source>H2O</Source>
+      <Target>Aconitase_(half-reaction_A,_Citrate_hydro-lyase)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E39">
+      <Source>H2O</Source>
+      <Target>Aconitase_(half-reaction_B,_Isocitrate_hydro-lyase)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E40">
+      <Source>H2O</Source>
+      <Target>ATP_maintenance_requirement</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E41">
+      <Source>H2O</Source>
+      <Target>Phosphoenolpyruvate_synthase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E42">
+      <Source>H2O</Source>
+      <Target>ATP_synthase_(four_protons_for_one_ATP)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E43">
+      <Source>H2O</Source>
+      <Target>Citrate_synthase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E44">
+      <Source>H2O</Source>
+      <Target>Enolase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E45">
+      <Source>H2O</Source>
+      <Target>Fructose-bisphosphatase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E46">
+      <Source>H2O</Source>
+      <Target>Fumarase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E47">
+      <Source>H2O</Source>
+      <Target>L-glutamine_intake_transport_via_ABC_system</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E48">
+      <Source>H2O</Source>
+      <Target>Glutamate_dehydrogenase_(NADP)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E49">
+      <Source>H2O</Source>
+      <Target>Glutaminase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E50">
+      <Source>H2O</Source>
+      <Target>H2O_output_via_diffusion</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E51">
+      <Source>H2O</Source>
+      <Target>Malate_synthase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E52">
+      <Source>H2O</Source>
+      <Target>H2O_Storing</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E53">
+      <Source>2_oxoglutarate_reversible_output_via_symport</Source>
+      <Target>Env_H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E54">
+      <Source>2_oxoglutarate_reversible_output_via_symport</Source>
+      <Target>Env_Two-Oxoglutarate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E55">
+      <Source>Env_H2O</Source>
+      <Target>H2O_intake_via_diffusion</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E56">
+      <Source>Phosphoglycerate_mutase</Source>
+      <Target>3-Phospho-D-glycerate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E57">
+      <Source>H+</Source>
+      <Target>Acetaldehyde_dehydrogenase_(acetylating)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E58">
+      <Source>H+</Source>
+      <Target>2_oxoglutarate_reversible_output_via_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E59">
+      <Source>H+</Source>
+      <Target>Phosphate_output_transport_via_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E60">
+      <Source>H+</Source>
+      <Target>Alcohol_dehydrogenase_(ethanol)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E61">
+      <Source>H+</Source>
+      <Target>Acetate_output_transport_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E62">
+      <Source>H+</Source>
+      <Target>ATP_synthase_(four_protons_for_one_ATP)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E63">
+      <Source>H+</Source>
+      <Target>Pyruvate_kinase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E64">
+      <Source>H+</Source>
+      <Target>Pyruvate_output_transport_in_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E65">
+      <Source>H+</Source>
+      <Target>Cytochrome_oxidase_bd_(ubiquinol-8:_2_protons)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E66">
+      <Source>H+</Source>
+      <Target>D_lactate_output_transport_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E67">
+      <Source>H+</Source>
+      <Target>Ethanol_reversible_output_transport_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E68">
+      <Source>H+</Source>
+      <Target>Glucose_6-phosphate_dehydrogenase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E69">
+      <Source>H+</Source>
+      <Target>Glyceraldehyde-3-phosphate_dehydrogenase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E70">
+      <Source>H+</Source>
+      <Target>Glutamate_dehydrogenase_(NADP)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E71">
+      <Source>H+</Source>
+      <Target>Glutamate_synthase_(NADPH)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E72">
+      <Source>H+</Source>
+      <Target>L_glutamate_output_transport_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E73">
+      <Source>H+</Source>
+      <Target>D-lactate_dehydrogenase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E74">
+      <Source>H+</Source>
+      <Target>Malate_dehydrogenase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E75">
+      <Source>H+</Source>
+      <Target>NADH_dehydrogenase_(ubiquinone-8_&amp;_3_protons)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E76">
+      <Source>Phosphoglycerate_mutase_rev</Source>
+      <Target>D-Glycerate_2-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E77">
+      <Source>3-Phospho-D-glycerate_Storage</Source>
+      <Target>Biomass_Objective_Function_with_GAM</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E78">
+      <Source>Phosphate_intake_transport_via_symport</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E79">
+      <Source>Phosphate_intake_transport_via_symport</Source>
+      <Target>Phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E80">
+      <Source>Env_H+</Source>
+      <Target>2_oxoglutarate_intake_via_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E81">
+      <Source>Env_H+</Source>
+      <Target>Phosphate_intake_transport_via_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E82">
+      <Source>Env_H+</Source>
+      <Target>Acetate_intake_transport_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E83">
+      <Source>Env_H+</Source>
+      <Target>ATP_synthase_(four_protons_for_one_ATP)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E84">
+      <Source>Env_H+</Source>
+      <Target>Pyruvate_intake_transport_in_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E85">
+      <Source>Env_H+</Source>
+      <Target>Succinate_intake_transport_via_proton_symport_(2_H)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E86">
+      <Source>Env_H+</Source>
+      <Target>D_lactate_intake_transport_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E87">
+      <Source>Env_H+</Source>
+      <Target>Succinate_output_transport_out_via_proton_antiport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E88">
+      <Source>Env_H+</Source>
+      <Target>Ethanol_reversible_intake_transport_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E89">
+      <Source>Env_H+</Source>
+      <Target>NAD(P)_transhydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E90">
+      <Source>Env_H+</Source>
+      <Target>Formate_intake_transport_in_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E91">
+      <Source>Env_H+</Source>
+      <Target>Fumarate_intake_transport_via_proton_symport_(2_H)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E92">
+      <Source>Env_H+</Source>
+      <Target>L_glutamate_intake_transport_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E93">
+      <Source>Env_H+</Source>
+      <Target>Malate_intake_transport_via_proton_symport_(2_H)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E94">
+      <Source>Phosphate_output_transport_via_symport</Source>
+      <Target>Env_H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E95">
+      <Source>Phosphate_output_transport_via_symport</Source>
+      <Target>Env_Phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E96">
+      <Source>Isocitrate</Source>
+      <Target>Aconitase_(half-reaction_B,_Isocitrate_hydro-lyase)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E97">
+      <Source>Isocitrate</Source>
+      <Target>Isocitrate_dehydrogenase_(NADP)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E98">
+      <Source>Isocitrate</Source>
+      <Target>Isocitrate_lyase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E99">
+      <Source>Alcohol_dehydrogenase_(ethanol)</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E100">
+      <Source>Alcohol_dehydrogenase_(ethanol)</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_-_reduced</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E101">
+      <Source>Alcohol_dehydrogenase_(ethanol)</Source>
+      <Target>Acetaldehyde</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E102">
+      <Source>H2O_Storage</Source>
+      <Target>Biomass_Objective_Function_with_GAM</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E103">
+      <Source>Alcohol_dehydrogenase_(ethanol)_rev</Source>
+      <Target>Nicotinamide_adenine_dinucleotide</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E104">
+      <Source>Alcohol_dehydrogenase_(ethanol)_rev</Source>
+      <Target>Ethanol</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E105">
+      <Source>D-Lactate</Source>
+      <Target>D_lactate_output_transport_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E106">
+      <Source>D-Lactate</Source>
+      <Target>D-lactate_dehydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E107">
+      <Source>Acetaldehyde_intake_via_transport</Source>
+      <Target>Acetaldehyde</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E108">
+      <Source>Env_D-Lactate</Source>
+      <Target>D_lactate_intake_transport_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E109">
+      <Source>Acetaldehyde_output_via_transport</Source>
+      <Target>Env_Acetaldehyde</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E110">
+      <Source>D-Fructose_6-phosphate_Storage</Source>
+      <Target>Biomass_Objective_Function_with_GAM</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E111">
+      <Source>Acetate_kinase</Source>
+      <Target>Acetyl_phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E112">
+      <Source>Acetate_kinase</Source>
+      <Target>ADP_C10H12N5O10P2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E113">
+      <Source>L-Malate</Source>
+      <Target>Fumarase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E114">
+      <Source>L-Malate</Source>
+      <Target>Malate_dehydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E115">
+      <Source>L-Malate</Source>
+      <Target>Malic_enzyme_(NAD)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E116">
+      <Source>L-Malate</Source>
+      <Target>Malic_enzyme_(NADP)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E117">
+      <Source>Acetate_kinase_rev</Source>
+      <Target>Acetate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E118">
+      <Source>Acetate_kinase_rev</Source>
+      <Target>ATP_C10H12N5O13P3</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E119">
+      <Source>Env_L-Malate</Source>
+      <Target>Malate_intake_transport_via_proton_symport_(2_H)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E120">
+      <Source>Phosphoenolpyruvate_carboxylase</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E121">
+      <Source>Phosphoenolpyruvate_carboxylase</Source>
+      <Target>Oxaloacetate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E122">
+      <Source>Phosphoenolpyruvate_carboxylase</Source>
+      <Target>Phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E123">
+      <Source>Glyceraldehyde_3-phosphate_Storage</Source>
+      <Target>Biomass_Objective_Function_with_GAM</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E124">
+      <Source>Aconitase_(half-reaction_A,_Citrate_hydro-lyase)</Source>
+      <Target>H2O</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E125">
+      <Source>Aconitase_(half-reaction_A,_Citrate_hydro-lyase)</Source>
+      <Target>Cis-Aconitate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E126">
+      <Source>Beh_Size</Source>
+      <Target>Replication</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E127">
+      <Source>Aconitase_(half-reaction_A,_Citrate_hydro-lyase)_rev</Source>
+      <Target>Citrate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E128">
+      <Source>Nicotinamide_adenine_dinucleotide</Source>
+      <Target>Acetaldehyde_dehydrogenase_(acetylating)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E129">
+      <Source>Nicotinamide_adenine_dinucleotide</Source>
+      <Target>Alcohol_dehydrogenase_(ethanol)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E130">
+      <Source>Nicotinamide_adenine_dinucleotide</Source>
+      <Target>2-Oxogluterate_dehydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E131">
+      <Source>Nicotinamide_adenine_dinucleotide</Source>
+      <Target>Glyceraldehyde-3-phosphate_dehydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E132">
+      <Source>Nicotinamide_adenine_dinucleotide</Source>
+      <Target>D-lactate_dehydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E133">
+      <Source>Nicotinamide_adenine_dinucleotide</Source>
+      <Target>Malate_dehydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E134">
+      <Source>Nicotinamide_adenine_dinucleotide</Source>
+      <Target>Malic_enzyme_(NAD)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E135">
+      <Source>Nicotinamide_adenine_dinucleotide</Source>
+      <Target>NAD_transhydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E136">
+      <Source>Nicotinamide_adenine_dinucleotide</Source>
+      <Target>Pyruvate_dehydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E137">
+      <Source>Nicotinamide_adenine_dinucleotide</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_Storing</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E138">
+      <Source>Aconitase_(half-reaction_B,_Isocitrate_hydro-lyase)</Source>
+      <Target>Isocitrate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E139">
+      <Source>D-Erythrose_4-phosphate_Storage</Source>
+      <Target>Biomass_Objective_Function_with_GAM</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E140">
+      <Source>Aconitase_(half-reaction_B,_Isocitrate_hydro-lyase)_rev</Source>
+      <Target>H2O</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E141">
+      <Source>Aconitase_(half-reaction_B,_Isocitrate_hydro-lyase)_rev</Source>
+      <Target>Cis-Aconitate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E142">
+      <Source>Nicotinamide_adenine_dinucleotide_-_reduced</Source>
+      <Target>Acetaldehyde_dehydrogenase_(acetylating)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E143">
+      <Source>Nicotinamide_adenine_dinucleotide_-_reduced</Source>
+      <Target>Alcohol_dehydrogenase_(ethanol)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E144">
+      <Source>Nicotinamide_adenine_dinucleotide_-_reduced</Source>
+      <Target>NAD(P)_transhydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E145">
+      <Source>Nicotinamide_adenine_dinucleotide_-_reduced</Source>
+      <Target>Glyceraldehyde-3-phosphate_dehydrogenase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E146">
+      <Source>Nicotinamide_adenine_dinucleotide_-_reduced</Source>
+      <Target>D-lactate_dehydrogenase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E147">
+      <Source>Nicotinamide_adenine_dinucleotide_-_reduced</Source>
+      <Target>Malate_dehydrogenase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E148">
+      <Source>Nicotinamide_adenine_dinucleotide_-_reduced</Source>
+      <Target>NADH_dehydrogenase_(ubiquinone-8_&amp;_3_protons)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E149">
+      <Source>ATP_maintenance_requirement</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E150">
+      <Source>ATP_maintenance_requirement</Source>
+      <Target>Phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E151">
+      <Source>ATP_maintenance_requirement</Source>
+      <Target>ADP_C10H12N5O10P2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E152">
+      <Source>Nicotinamide_adenine_dinucleotide_phosphate</Source>
+      <Target>NAD(P)_transhydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E153">
+      <Source>Nicotinamide_adenine_dinucleotide_phosphate</Source>
+      <Target>Glucose_6-phosphate_dehydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E154">
+      <Source>Nicotinamide_adenine_dinucleotide_phosphate</Source>
+      <Target>Glutamate_dehydrogenase_(NADP)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E155">
+      <Source>Nicotinamide_adenine_dinucleotide_phosphate</Source>
+      <Target>Phosphogluconate_dehydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E156">
+      <Source>Nicotinamide_adenine_dinucleotide_phosphate</Source>
+      <Target>Isocitrate_dehydrogenase_(NADP)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E157">
+      <Source>Nicotinamide_adenine_dinucleotide_phosphate</Source>
+      <Target>Malic_enzyme_(NADP)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E158">
+      <Source>Phosphoenolpyruvate_carboxykinase</Source>
+      <Target>Phosphoenolpyruvate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E159">
+      <Source>Phosphoenolpyruvate_carboxykinase</Source>
+      <Target>ADP_C10H12N5O10P2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E160">
+      <Source>Phosphoenolpyruvate_carboxykinase</Source>
+      <Target>CO2_CO2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E161">
+      <Source>Alpha-D-Ribose_5-phosphate_Storage</Source>
+      <Target>Biomass_Objective_Function_with_GAM</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E162">
+      <Source>Acetate_intake_transport_via_proton_symport</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E163">
+      <Source>Acetate_intake_transport_via_proton_symport</Source>
+      <Target>Acetate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E164">
+      <Source>Nicotinamide_adenine_dinucleotide_phosphate_-_reduced</Source>
+      <Target>Glucose_6-phosphate_dehydrogenase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E165">
+      <Source>Nicotinamide_adenine_dinucleotide_phosphate_-_reduced</Source>
+      <Target>Glutamate_dehydrogenase_(NADP)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E166">
+      <Source>Nicotinamide_adenine_dinucleotide_phosphate_-_reduced</Source>
+      <Target>Glutamate_synthase_(NADPH)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E167">
+      <Source>Nicotinamide_adenine_dinucleotide_phosphate_-_reduced</Source>
+      <Target>Isocitrate_dehydrogenase_(NADP)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E168">
+      <Source>Nicotinamide_adenine_dinucleotide_phosphate_-_reduced</Source>
+      <Target>NAD_transhydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E169">
+      <Source>Nicotinamide_adenine_dinucleotide_phosphate_-_reduced</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_phosphate_-_reduced_Storing</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E170">
+      <Source>Acetate_output_transport_via_proton_symport</Source>
+      <Target>Env_H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E171">
+      <Source>Acetate_output_transport_via_proton_symport</Source>
+      <Target>Env_Acetate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E172">
+      <Source>Ammonium</Source>
+      <Target>Glutamine_synthetase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E173">
+      <Source>Ammonium</Source>
+      <Target>Glutamate_dehydrogenase_(NADP)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E174">
+      <Source>Ammonium</Source>
+      <Target>Ammonia_output_transport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E175">
+      <Source>Phosphoenolpyruvate_synthase</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E176">
+      <Source>Phosphoenolpyruvate_synthase</Source>
+      <Target>Phosphoenolpyruvate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E177">
+      <Source>Phosphoenolpyruvate_synthase</Source>
+      <Target>Phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E178">
+      <Source>Phosphoenolpyruvate_synthase</Source>
+      <Target>AMP_C10H12N5O7P</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E179">
+      <Source>Pyruvate_Storage</Source>
+      <Target>Biomass_Objective_Function_with_GAM</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E180">
+      <Source>Adenylate_kinase</Source>
+      <Target>ADP_C10H12N5O10P2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E181">
+      <Source>3-Phospho-D-glyceroyl_phosphate</Source>
+      <Target>Phosphoglycerate_kinase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E182">
+      <Source>3-Phospho-D-glyceroyl_phosphate</Source>
+      <Target>Glyceraldehyde-3-phosphate_dehydrogenase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E183">
+      <Source>Adenylate_kinase_rev</Source>
+      <Target>AMP_C10H12N5O7P</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E184">
+      <Source>Adenylate_kinase_rev</Source>
+      <Target>ATP_C10H12N5O13P3</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E185">
+      <Source>Env_Ammonium</Source>
+      <Target>Ammonia_intake_transport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E186">
+      <Source>2-Oxogluterate_dehydrogenase</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_-_reduced</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E187">
+      <Source>2-Oxogluterate_dehydrogenase</Source>
+      <Target>Succinyl-CoA</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E188">
+      <Source>2-Oxogluterate_dehydrogenase</Source>
+      <Target>CO2_CO2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E189">
+      <Source>L-Glutamate_Storage</Source>
+      <Target>Biomass_Objective_Function_with_GAM</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E190">
+      <Source>ATP_synthase_(four_protons_for_one_ATP)</Source>
+      <Target>H2O</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E191">
+      <Source>ATP_synthase_(four_protons_for_one_ATP)</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E192">
+      <Source>ATP_synthase_(four_protons_for_one_ATP)</Source>
+      <Target>ATP_C10H12N5O13P3</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E193">
+      <Source>O2</Source>
+      <Target>Cytochrome_oxidase_bd_(ubiquinol-8:_2_protons)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E194">
+      <Source>O2</Source>
+      <Target>O2_output_transport_via_diffusion</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E195">
+      <Source>ATP_synthase_(four_protons_for_one_ATP)_rev</Source>
+      <Target>Env_H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E196">
+      <Source>ATP_synthase_(four_protons_for_one_ATP)_rev</Source>
+      <Target>Phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E197">
+      <Source>ATP_synthase_(four_protons_for_one_ATP)_rev</Source>
+      <Target>ADP_C10H12N5O10P2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E198">
+      <Source>D-Glycerate_2-phosphate</Source>
+      <Target>Phosphoglycerate_mutase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E199">
+      <Source>D-Glycerate_2-phosphate</Source>
+      <Target>Enolase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E200">
+      <Source>Phosphotransacetylase</Source>
+      <Target>Acetyl_phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E201">
+      <Source>Phosphotransacetylase</Source>
+      <Target>Coenzyme_A</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E202">
+      <Source>L-Glutamine_Storage</Source>
+      <Target>Biomass_Objective_Function_with_GAM</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E203">
+      <Source>Phosphotransacetylase_rev</Source>
+      <Target>Phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E204">
+      <Source>Phosphotransacetylase_rev</Source>
+      <Target>Acetyl-CoA</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E205">
+      <Source>Env_O2</Source>
+      <Target>O2_intake_transport_via_diffusion</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E206">
+      <Source>Pyruvate_kinase</Source>
+      <Target>Pyruvate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E207">
+      <Source>Pyruvate_kinase</Source>
+      <Target>ATP_C10H12N5O13P3</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E208">
+      <Source>3-Phospho-D-glycerate</Source>
+      <Target>Phosphoglycerate_kinase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E209">
+      <Source>3-Phospho-D-glycerate</Source>
+      <Target>Phosphoglycerate_mutase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E210">
+      <Source>3-Phospho-D-glycerate</Source>
+      <Target>3-Phospho-D-glycerate_Storing</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E211">
+      <Source>Biomass_Objective_Function_with_GAM</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E212">
+      <Source>Biomass_Objective_Function_with_GAM</Source>
+      <Target>Beh_Size</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E213">
+      <Source>Biomass_Objective_Function_with_GAM</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_-_reduced</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E214">
+      <Source>Biomass_Objective_Function_with_GAM</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E215">
+      <Source>Biomass_Objective_Function_with_GAM</Source>
+      <Target>Phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E216">
+      <Source>Biomass_Objective_Function_with_GAM</Source>
+      <Target>ADP_C10H12N5O10P2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E217">
+      <Source>Biomass_Objective_Function_with_GAM</Source>
+      <Target>2-Oxoglutarate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E218">
+      <Source>Biomass_Objective_Function_with_GAM</Source>
+      <Target>Coenzyme_A</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E219">
+      <Source>Oxaloacetate</Source>
+      <Target>Phosphoenolpyruvate_carboxykinase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E220">
+      <Source>Oxaloacetate</Source>
+      <Target>Citrate_synthase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E221">
+      <Source>Oxaloacetate</Source>
+      <Target>Malate_dehydrogenase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E222">
+      <Source>Oxaloacetate</Source>
+      <Target>Oxaloacetate_Storing</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E223">
+      <Source>Pyruvate_intake_transport_in_via_proton_symport</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E224">
+      <Source>Pyruvate_intake_transport_in_via_proton_symport</Source>
+      <Target>Pyruvate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E225">
+      <Source>Phosphoenolpyruvate</Source>
+      <Target>Phosphoenolpyruvate_carboxylase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E226">
+      <Source>Phosphoenolpyruvate</Source>
+      <Target>Pyruvate_kinase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E227">
+      <Source>Phosphoenolpyruvate</Source>
+      <Target>Enolase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E228">
+      <Source>Phosphoenolpyruvate</Source>
+      <Target>Fructose_transport_via_PEP:Pyr_PTS_(f6p_generating)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E229">
+      <Source>Phosphoenolpyruvate</Source>
+      <Target>D-glucose_transport_via_PEP:Pyr_PTS</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E230">
+      <Source>Phosphoenolpyruvate</Source>
+      <Target>Phosphoenolpyruvate_Storing</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E231">
+      <Source>Pyruvate_output_transport_in_via_proton_symport</Source>
+      <Target>Env_H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E232">
+      <Source>Pyruvate_output_transport_in_via_proton_symport</Source>
+      <Target>Env_Pyruvate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E233">
+      <Source>6-Phospho-D-gluconate</Source>
+      <Target>Phosphogluconate_dehydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E234">
+      <Source>CO2_intake_via_diffusion</Source>
+      <Target>CO2_CO2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E235">
+      <Source>Phosphate</Source>
+      <Target>Phosphate_output_transport_via_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E236">
+      <Source>Phosphate</Source>
+      <Target>ATP_synthase_(four_protons_for_one_ATP)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E237">
+      <Source>Phosphate</Source>
+      <Target>Phosphotransacetylase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E238">
+      <Source>Phosphate</Source>
+      <Target>Succinyl-CoA_synthetase_(ADP-forming)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E239">
+      <Source>Phosphate</Source>
+      <Target>Glyceraldehyde-3-phosphate_dehydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E240">
+      <Source>CO2_output_via_diffusion</Source>
+      <Target>Env_CO2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E241">
+      <Source>6-phospho-D-glucono-1,5-lactone</Source>
+      <Target>6-phosphogluconolactonase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E242">
+      <Source>6-phospho-D-glucono-1,5-lactone</Source>
+      <Target>Glucose_6-phosphate_dehydrogenase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E243">
+      <Source>Ribulose_5-phosphate_3-epimerase</Source>
+      <Target>D-Xylulose_5-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E244">
+      <Source>Env_Phosphate</Source>
+      <Target>Phosphate_intake_transport_via_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E245">
+      <Source>Ribulose_5-phosphate_3-epimerase_rev</Source>
+      <Target>D-Ribulose_5-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E246">
+      <Source>Acetate</Source>
+      <Target>Acetate_kinase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E247">
+      <Source>Acetate</Source>
+      <Target>Acetate_output_transport_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E248">
+      <Source>Citrate_synthase</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E249">
+      <Source>Citrate_synthase</Source>
+      <Target>Citrate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E250">
+      <Source>Citrate_synthase</Source>
+      <Target>Coenzyme_A</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E251">
+      <Source>Pyruvate</Source>
+      <Target>Pyruvate_formate_lyase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E252">
+      <Source>Pyruvate</Source>
+      <Target>Phosphoenolpyruvate_synthase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E253">
+      <Source>Pyruvate</Source>
+      <Target>Pyruvate_output_transport_in_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E254">
+      <Source>Pyruvate</Source>
+      <Target>D-lactate_dehydrogenase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E255">
+      <Source>Pyruvate</Source>
+      <Target>Pyruvate_dehydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E256">
+      <Source>Pyruvate</Source>
+      <Target>Pyruvate_Storing</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E257">
+      <Source>Ribose-5-phosphate_isomerase</Source>
+      <Target>D-Ribulose_5-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E258">
+      <Source>Env_Pyruvate</Source>
+      <Target>Pyruvate_intake_transport_in_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E259">
+      <Source>Ribose-5-phosphate_isomerase_rev</Source>
+      <Target>Alpha-D-Ribose_5-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E260">
+      <Source>Ubiquinone-8</Source>
+      <Target>Succinate_dehydrogenase_(irreversible)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E261">
+      <Source>Ubiquinone-8</Source>
+      <Target>NADH_dehydrogenase_(ubiquinone-8_&amp;_3_protons)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E262">
+      <Source>Succinate_intake_transport_via_proton_symport_(2_H)</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E263">
+      <Source>Succinate_intake_transport_via_proton_symport_(2_H)</Source>
+      <Target>Succinate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E264">
+      <Source>Ubiquinol-8</Source>
+      <Target>Cytochrome_oxidase_bd_(ubiquinol-8:_2_protons)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E265">
+      <Source>Ubiquinol-8</Source>
+      <Target>Fumarate_reductase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E266">
+      <Source>Cytochrome_oxidase_bd_(ubiquinol-8:_2_protons)</Source>
+      <Target>H2O</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E267">
+      <Source>Cytochrome_oxidase_bd_(ubiquinol-8:_2_protons)</Source>
+      <Target>Env_H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E268">
+      <Source>Cytochrome_oxidase_bd_(ubiquinol-8:_2_protons)</Source>
+      <Target>Ubiquinone-8</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E269">
+      <Source>Alpha-D-Ribose_5-phosphate</Source>
+      <Target>Ribose-5-phosphate_isomerase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E270">
+      <Source>Alpha-D-Ribose_5-phosphate</Source>
+      <Target>Transketolase_Nr1</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E271">
+      <Source>Alpha-D-Ribose_5-phosphate</Source>
+      <Target>Alpha-D-Ribose_5-phosphate_Storing</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E272">
+      <Source>D_lactate_intake_transport_via_proton_symport</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E273">
+      <Source>D_lactate_intake_transport_via_proton_symport</Source>
+      <Target>D-Lactate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E274">
+      <Source>D-Ribulose_5-phosphate</Source>
+      <Target>Ribulose_5-phosphate_3-epimerase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E275">
+      <Source>D-Ribulose_5-phosphate</Source>
+      <Target>Ribose-5-phosphate_isomerase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E276">
+      <Source>D_lactate_output_transport_via_proton_symport</Source>
+      <Target>Env_H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E277">
+      <Source>D_lactate_output_transport_via_proton_symport</Source>
+      <Target>Env_D-Lactate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E278">
+      <Source>Env_Acetate</Source>
+      <Target>Acetate_intake_transport_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E279">
+      <Source>Enolase</Source>
+      <Target>H2O</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E280">
+      <Source>Enolase</Source>
+      <Target>Phosphoenolpyruvate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E281">
+      <Source>Acetaldehyde</Source>
+      <Target>Acetaldehyde_dehydrogenase_(acetylating)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E282">
+      <Source>Acetaldehyde</Source>
+      <Target>Alcohol_dehydrogenase_(ethanol)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E283">
+      <Source>Acetaldehyde</Source>
+      <Target>Acetaldehyde_output_via_transport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E284">
+      <Source>Enolase_rev</Source>
+      <Target>D-Glycerate_2-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E285">
+      <Source>Sedoheptulose_7-phosphate</Source>
+      <Target>Transaldolase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E286">
+      <Source>Sedoheptulose_7-phosphate</Source>
+      <Target>Transketolase_Nr1_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E287">
+      <Source>Succinate_output_transport_out_via_proton_antiport</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E288">
+      <Source>Succinate_output_transport_out_via_proton_antiport</Source>
+      <Target>Env_Succinate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E289">
+      <Source>Env_Acetaldehyde</Source>
+      <Target>Acetaldehyde_intake_via_transport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E290">
+      <Source>Ethanol_reversible_intake_transport_via_proton_symport</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E291">
+      <Source>Ethanol_reversible_intake_transport_via_proton_symport</Source>
+      <Target>Ethanol</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E292">
+      <Source>Acetyl-CoA</Source>
+      <Target>Acetaldehyde_dehydrogenase_(acetylating)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E293">
+      <Source>Acetyl-CoA</Source>
+      <Target>Phosphotransacetylase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E294">
+      <Source>Acetyl-CoA</Source>
+      <Target>Citrate_synthase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E295">
+      <Source>Acetyl-CoA</Source>
+      <Target>Malate_synthase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E296">
+      <Source>Acetyl-CoA</Source>
+      <Target>Acetyl-CoA_Storing</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E297">
+      <Source>Ethanol_reversible_output_transport_via_proton_symport</Source>
+      <Target>Env_H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E298">
+      <Source>Ethanol_reversible_output_transport_via_proton_symport</Source>
+      <Target>Env_Ethanol</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E299">
+      <Source>Succinate</Source>
+      <Target>Succinate_output_transport_out_via_proton_antiport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E300">
+      <Source>Succinate</Source>
+      <Target>Succinate_dehydrogenase_(irreversible)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E301">
+      <Source>Succinate</Source>
+      <Target>Succinyl-CoA_synthetase_(ADP-forming)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E302">
+      <Source>Succinate_dehydrogenase_(irreversible)</Source>
+      <Target>Ubiquinol-8</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E303">
+      <Source>Succinate_dehydrogenase_(irreversible)</Source>
+      <Target>Fumarate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E304">
+      <Source>Env_Succinate</Source>
+      <Target>Succinate_intake_transport_via_proton_symport_(2_H)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E305">
+      <Source>Succinyl-CoA_synthetase_(ADP-forming)</Source>
+      <Target>Phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E306">
+      <Source>Succinyl-CoA_synthetase_(ADP-forming)</Source>
+      <Target>Succinyl-CoA</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E307">
+      <Source>Succinyl-CoA_synthetase_(ADP-forming)</Source>
+      <Target>ADP_C10H12N5O10P2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E308">
+      <Source>Succinyl-CoA</Source>
+      <Target>Succinyl-CoA_synthetase_(ADP-forming)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E309">
+      <Source>Succinyl-CoA_synthetase_(ADP-forming)_rev</Source>
+      <Target>Succinate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E310">
+      <Source>Succinyl-CoA_synthetase_(ADP-forming)_rev</Source>
+      <Target>ATP_C10H12N5O13P3</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E311">
+      <Source>Succinyl-CoA_synthetase_(ADP-forming)_rev</Source>
+      <Target>Coenzyme_A</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E312">
+      <Source>Cis-Aconitate</Source>
+      <Target>Aconitase_(half-reaction_A,_Citrate_hydro-lyase)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E313">
+      <Source>Cis-Aconitate</Source>
+      <Target>Aconitase_(half-reaction_B,_Isocitrate_hydro-lyase)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E314">
+      <Source>Transaldolase</Source>
+      <Target>D-Erythrose_4-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E315">
+      <Source>Transaldolase</Source>
+      <Target>D-Fructose_6-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E316">
+      <Source>D-Xylulose_5-phosphate</Source>
+      <Target>Ribulose_5-phosphate_3-epimerase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E317">
+      <Source>D-Xylulose_5-phosphate</Source>
+      <Target>Transketolase_Nr1</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E318">
+      <Source>D-Xylulose_5-phosphate</Source>
+      <Target>Transketolase_Nr2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E319">
+      <Source>Transaldolase_rev</Source>
+      <Target>Sedoheptulose_7-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E320">
+      <Source>Transaldolase_rev</Source>
+      <Target>Glyceraldehyde_3-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E321">
+      <Source>Acetyl_phosphate</Source>
+      <Target>Acetate_kinase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E322">
+      <Source>Acetyl_phosphate</Source>
+      <Target>Phosphotransacetylase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E323">
+      <Source>NAD(P)_transhydrogenase</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E324">
+      <Source>NAD(P)_transhydrogenase</Source>
+      <Target>Nicotinamide_adenine_dinucleotide</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E325">
+      <Source>NAD(P)_transhydrogenase</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_phosphate_-_reduced</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E326">
+      <Source>ADP_C10H12N5O10P2</Source>
+      <Target>Phosphoglycerate_kinase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E327">
+      <Source>ADP_C10H12N5O10P2</Source>
+      <Target>Acetate_kinase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E328">
+      <Source>ADP_C10H12N5O10P2</Source>
+      <Target>Adenylate_kinase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E329">
+      <Source>ADP_C10H12N5O10P2</Source>
+      <Target>ATP_synthase_(four_protons_for_one_ATP)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E330">
+      <Source>ADP_C10H12N5O10P2</Source>
+      <Target>Pyruvate_kinase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E331">
+      <Source>ADP_C10H12N5O10P2</Source>
+      <Target>Succinyl-CoA_synthetase_(ADP-forming)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E332">
+      <Source>Transketolase_Nr1</Source>
+      <Target>Sedoheptulose_7-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E333">
+      <Source>Transketolase_Nr1</Source>
+      <Target>Glyceraldehyde_3-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E334">
+      <Source>2-Oxoglutarate</Source>
+      <Target>2_oxoglutarate_reversible_output_via_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E335">
+      <Source>2-Oxoglutarate</Source>
+      <Target>2-Oxogluterate_dehydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E336">
+      <Source>2-Oxoglutarate</Source>
+      <Target>Glutamate_dehydrogenase_(NADP)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E337">
+      <Source>2-Oxoglutarate</Source>
+      <Target>Glutamate_synthase_(NADPH)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E338">
+      <Source>2-Oxoglutarate</Source>
+      <Target>Isocitrate_dehydrogenase_(NADP)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E339">
+      <Source>Transketolase_Nr1_rev</Source>
+      <Target>Alpha-D-Ribose_5-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E340">
+      <Source>Transketolase_Nr1_rev</Source>
+      <Target>D-Xylulose_5-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E341">
+      <Source>Env_Two-Oxoglutarate</Source>
+      <Target>2_oxoglutarate_intake_via_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E342">
+      <Source>Transketolase_Nr2</Source>
+      <Target>D-Fructose_6-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E343">
+      <Source>Transketolase_Nr2</Source>
+      <Target>Glyceraldehyde_3-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E344">
+      <Source>AMP_C10H12N5O7P</Source>
+      <Target>Adenylate_kinase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E345">
+      <Source>Transketolase_Nr2_rev</Source>
+      <Target>D-Xylulose_5-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E346">
+      <Source>Transketolase_Nr2_rev</Source>
+      <Target>D-Erythrose_4-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E347">
+      <Source>ATP_C10H12N5O13P3</Source>
+      <Target>Phosphofructokinase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E348">
+      <Source>ATP_C10H12N5O13P3</Source>
+      <Target>Phosphoglycerate_kinase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E349">
+      <Source>ATP_C10H12N5O13P3</Source>
+      <Target>Acetate_kinase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E350">
+      <Source>ATP_C10H12N5O13P3</Source>
+      <Target>ATP_maintenance_requirement</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E351">
+      <Source>ATP_C10H12N5O13P3</Source>
+      <Target>Phosphoenolpyruvate_carboxykinase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E352">
+      <Source>ATP_C10H12N5O13P3</Source>
+      <Target>Phosphoenolpyruvate_synthase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E353">
+      <Source>ATP_C10H12N5O13P3</Source>
+      <Target>Adenylate_kinase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E354">
+      <Source>ATP_C10H12N5O13P3</Source>
+      <Target>ATP_synthase_(four_protons_for_one_ATP)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E355">
+      <Source>ATP_C10H12N5O13P3</Source>
+      <Target>Succinyl-CoA_synthetase_(ADP-forming)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E356">
+      <Source>ATP_C10H12N5O13P3</Source>
+      <Target>Glutamine_synthetase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E357">
+      <Source>ATP_C10H12N5O13P3</Source>
+      <Target>L-glutamine_intake_transport_via_ABC_system</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E358">
+      <Source>ATP_C10H12N5O13P3</Source>
+      <Target>ATP_C10H12N5O13P3_Storing</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E359">
+      <Source>Triose-phosphate_isomerase</Source>
+      <Target>Glyceraldehyde_3-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E360">
+      <Source>Citrate</Source>
+      <Target>Aconitase_(half-reaction_A,_Citrate_hydro-lyase)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E361">
+      <Source>Triose-phosphate_isomerase_rev</Source>
+      <Target>Dihydroxyacetone_phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E362">
+      <Source>CO2_CO2</Source>
+      <Target>Phosphoenolpyruvate_carboxylase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E363">
+      <Source>CO2_CO2</Source>
+      <Target>CO2_output_via_diffusion</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E364">
+      <Source>CO2_CO2</Source>
+      <Target>Isocitrate_dehydrogenase_(NADP)_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E365">
+      <Source>Fructose-bisphosphate_aldolase</Source>
+      <Target>Dihydroxyacetone_phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E366">
+      <Source>Fructose-bisphosphate_aldolase</Source>
+      <Target>Glyceraldehyde_3-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E367">
+      <Source>Env_CO2</Source>
+      <Target>CO2_intake_via_diffusion</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E368">
+      <Source>Fructose-bisphosphate_aldolase_rev</Source>
+      <Target>D-Fructose_1,6-bisphosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E369">
+      <Source>Coenzyme_A</Source>
+      <Target>Pyruvate_formate_lyase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E370">
+      <Source>Coenzyme_A</Source>
+      <Target>Acetaldehyde_dehydrogenase_(acetylating)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E371">
+      <Source>Coenzyme_A</Source>
+      <Target>2-Oxogluterate_dehydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E372">
+      <Source>Coenzyme_A</Source>
+      <Target>Phosphotransacetylase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E373">
+      <Source>Coenzyme_A</Source>
+      <Target>Succinyl-CoA_synthetase_(ADP-forming)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E374">
+      <Source>Coenzyme_A</Source>
+      <Target>Pyruvate_dehydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E375">
+      <Source>Fructose-bisphosphatase</Source>
+      <Target>Phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E376">
+      <Source>Fructose-bisphosphatase</Source>
+      <Target>D-Fructose_6-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E377">
+      <Source>Dihydroxyacetone_phosphate</Source>
+      <Target>Triose-phosphate_isomerase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E378">
+      <Source>Dihydroxyacetone_phosphate</Source>
+      <Target>Fructose-bisphosphate_aldolase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E379">
+      <Source>Formate_intake_transport_in_via_proton_symport</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E380">
+      <Source>Formate_intake_transport_in_via_proton_symport</Source>
+      <Target>Formate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E381">
+      <Source>D-Erythrose_4-phosphate</Source>
+      <Target>Transaldolase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E382">
+      <Source>D-Erythrose_4-phosphate</Source>
+      <Target>Transketolase_Nr2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E383">
+      <Source>D-Erythrose_4-phosphate</Source>
+      <Target>D-Erythrose_4-phosphate_Storing</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E384">
+      <Source>Formate_intake_transport_via_diffusion</Source>
+      <Target>Formate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E385">
+      <Source>Ethanol</Source>
+      <Target>Alcohol_dehydrogenase_(ethanol)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E386">
+      <Source>Ethanol</Source>
+      <Target>Ethanol_reversible_output_transport_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E387">
+      <Source>Formate_output_transport_via_diffusion</Source>
+      <Target>Env_Formate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E388">
+      <Source>Env_Ethanol</Source>
+      <Target>Ethanol_reversible_intake_transport_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E389">
+      <Source>Fumarate_reductase</Source>
+      <Target>Ubiquinone-8</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E390">
+      <Source>Fumarate_reductase</Source>
+      <Target>Succinate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E391">
+      <Source>D-Fructose_6-phosphate</Source>
+      <Target>Phosphofructokinase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E392">
+      <Source>D-Fructose_6-phosphate</Source>
+      <Target>Glucose-6-phosphate_isomerase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E393">
+      <Source>D-Fructose_6-phosphate</Source>
+      <Target>Transaldolase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E394">
+      <Source>D-Fructose_6-phosphate</Source>
+      <Target>Transketolase_Nr2_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E395">
+      <Source>D-Fructose_6-phosphate</Source>
+      <Target>D-Fructose_6-phosphate_Storing</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E396">
+      <Source>Fructose_transport_via_PEP:Pyr_PTS_(f6p_generating)</Source>
+      <Target>Pyruvate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E397">
+      <Source>Fructose_transport_via_PEP:Pyr_PTS_(f6p_generating)</Source>
+      <Target>D-Fructose_6-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E398">
+      <Source>D-Fructose_1,6-bisphosphate</Source>
+      <Target>Fructose-bisphosphate_aldolase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E399">
+      <Source>D-Fructose_1,6-bisphosphate</Source>
+      <Target>Fructose-bisphosphatase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E400">
+      <Source>Fumarase</Source>
+      <Target>L-Malate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E401">
+      <Source>Formate</Source>
+      <Target>Formate_output_transport_via_diffusion</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E402">
+      <Source>Fumarase_rev</Source>
+      <Target>H2O</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E403">
+      <Source>Fumarase_rev</Source>
+      <Target>Fumarate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E404">
+      <Source>Env_Formate</Source>
+      <Target>Formate_intake_transport_in_via_proton_symport</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E405">
+      <Source>Env_Formate</Source>
+      <Target>Formate_intake_transport_via_diffusion</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E406">
+      <Source>Fumarate_intake_transport_via_proton_symport_(2_H)</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E407">
+      <Source>Fumarate_intake_transport_via_proton_symport_(2_H)</Source>
+      <Target>Fumarate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E408">
+      <Source>Env_D-Fructose</Source>
+      <Target>Fructose_transport_via_PEP:Pyr_PTS_(f6p_generating)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E409">
+      <Source>Glucose_6-phosphate_dehydrogenase</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E410">
+      <Source>Glucose_6-phosphate_dehydrogenase</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_phosphate_-_reduced</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E411">
+      <Source>Glucose_6-phosphate_dehydrogenase</Source>
+      <Target>6-phospho-D-glucono-1,5-lactone</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E412">
+      <Source>Fumarate</Source>
+      <Target>Fumarate_reductase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E413">
+      <Source>Fumarate</Source>
+      <Target>Fumarase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E414">
+      <Source>Glucose_6-phosphate_dehydrogenase_rev</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E415">
+      <Source>Glucose_6-phosphate_dehydrogenase_rev</Source>
+      <Target>D-Glucose_6-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E416">
+      <Source>Env_Fumarate</Source>
+      <Target>Fumarate_intake_transport_via_proton_symport_(2_H)</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E417">
+      <Source>Glyceraldehyde-3-phosphate_dehydrogenase</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E418">
+      <Source>Glyceraldehyde-3-phosphate_dehydrogenase</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_-_reduced</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E419">
+      <Source>Glyceraldehyde-3-phosphate_dehydrogenase</Source>
+      <Target>3-Phospho-D-glyceroyl_phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E420">
+      <Source>Glyceraldehyde_3-phosphate</Source>
+      <Target>Transaldolase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E421">
+      <Source>Glyceraldehyde_3-phosphate</Source>
+      <Target>Transketolase_Nr1_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E422">
+      <Source>Glyceraldehyde_3-phosphate</Source>
+      <Target>Transketolase_Nr2_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E423">
+      <Source>Glyceraldehyde_3-phosphate</Source>
+      <Target>Triose-phosphate_isomerase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E424">
+      <Source>Glyceraldehyde_3-phosphate</Source>
+      <Target>Fructose-bisphosphate_aldolase_rev</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E425">
+      <Source>Glyceraldehyde_3-phosphate</Source>
+      <Target>Glyceraldehyde-3-phosphate_dehydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E426">
+      <Source>Glyceraldehyde_3-phosphate</Source>
+      <Target>Glyceraldehyde_3-phosphate_Storing</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E427">
+      <Source>Glyceraldehyde-3-phosphate_dehydrogenase_rev</Source>
+      <Target>Nicotinamide_adenine_dinucleotide</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E428">
+      <Source>Glyceraldehyde-3-phosphate_dehydrogenase_rev</Source>
+      <Target>Phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E429">
+      <Source>Glyceraldehyde-3-phosphate_dehydrogenase_rev</Source>
+      <Target>Glyceraldehyde_3-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E430">
+      <Source>D-Glucose_6-phosphate</Source>
+      <Target>Glucose-6-phosphate_isomerase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E431">
+      <Source>D-Glucose_6-phosphate</Source>
+      <Target>Glucose_6-phosphate_dehydrogenase</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E432">
+      <Source>D-Glucose_6-phosphate</Source>
+      <Target>D-Glucose_6-phosphate_Storing</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E433">
+      <Source>D-glucose_transport_via_PEP:Pyr_PTS</Source>
+      <Target>Pyruvate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E434">
+      <Source>D-glucose_transport_via_PEP:Pyr_PTS</Source>
+      <Target>D-Glucose_6-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E435">
+      <Source>Beh_Repl</Source>
+      <Target>End_Repl</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E436">
+      <Source>Glutamine_synthetase</Source>
+      <Target>L-Glutamine</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E437">
+      <Source>Glutamine_synthetase</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E438">
+      <Source>Glutamine_synthetase</Source>
+      <Target>Phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E439">
+      <Source>Glutamine_synthetase</Source>
+      <Target>ADP_C10H12N5O10P2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E440">
+      <Source>Acetyl-CoA_Storage</Source>
+      <Target>Biomass_Objective_Function_with_GAM</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E441">
+      <Source>L-glutamine_intake_transport_via_ABC_system</Source>
+      <Target>L-Glutamine</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E442">
+      <Source>L-glutamine_intake_transport_via_ABC_system</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E443">
+      <Source>L-glutamine_intake_transport_via_ABC_system</Source>
+      <Target>Phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E444">
+      <Source>L-glutamine_intake_transport_via_ABC_system</Source>
+      <Target>ADP_C10H12N5O10P2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E445">
+      <Source>D-Glucose_6-phosphate_Storage</Source>
+      <Target>Biomass_Objective_Function_with_GAM</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E446">
+      <Source>Glutamate_dehydrogenase_(NADP)</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E447">
+      <Source>Glutamate_dehydrogenase_(NADP)</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_phosphate_-_reduced</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E448">
+      <Source>Glutamate_dehydrogenase_(NADP)</Source>
+      <Target>Ammonium</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E449">
+      <Source>Glutamate_dehydrogenase_(NADP)</Source>
+      <Target>2-Oxoglutarate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E450">
+      <Source>Nicotinamide_adenine_dinucleotide_Storage</Source>
+      <Target>Biomass_Objective_Function_with_GAM</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E451">
+      <Source>Glutamate_dehydrogenase_(NADP)_rev</Source>
+      <Target>L-Glutamate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E452">
+      <Source>Glutamate_dehydrogenase_(NADP)_rev</Source>
+      <Target>H2O</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E453">
+      <Source>Glutamate_dehydrogenase_(NADP)_rev</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E454">
+      <Source>Glutaminase</Source>
+      <Target>L-Glutamate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E455">
+      <Source>Glutaminase</Source>
+      <Target>Ammonium</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E456">
+      <Source>Glutamate_synthase_(NADPH)</Source>
+      <Target>L-Glutamate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E457">
+      <Source>Glutamate_synthase_(NADPH)</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E458">
+      <Source>L_glutamate_intake_transport_via_proton_symport</Source>
+      <Target>L-Glutamate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E459">
+      <Source>L_glutamate_intake_transport_via_proton_symport</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E460">
+      <Source>L_glutamate_output_transport_via_proton_symport</Source>
+      <Target>Env_L-Glutamate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E461">
+      <Source>L_glutamate_output_transport_via_proton_symport</Source>
+      <Target>Env_H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E462">
+      <Source>Phosphogluconate_dehydrogenase</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_phosphate_-_reduced</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E463">
+      <Source>Phosphogluconate_dehydrogenase</Source>
+      <Target>D-Ribulose_5-phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E464">
+      <Source>Phosphogluconate_dehydrogenase</Source>
+      <Target>CO2_CO2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E465">
+      <Source>H2O_intake_via_diffusion</Source>
+      <Target>H2O</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E466">
+      <Source>H2O_output_via_diffusion</Source>
+      <Target>Env_H2O</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E467">
+      <Source>Isocitrate_dehydrogenase_(NADP)</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_phosphate_-_reduced</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E468">
+      <Source>Isocitrate_dehydrogenase_(NADP)</Source>
+      <Target>2-Oxoglutarate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E469">
+      <Source>Isocitrate_dehydrogenase_(NADP)</Source>
+      <Target>CO2_CO2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E470">
+      <Source>Isocitrate_dehydrogenase_(NADP)_rev</Source>
+      <Target>Isocitrate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E471">
+      <Source>Isocitrate_dehydrogenase_(NADP)_rev</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E472">
+      <Source>Isocitrate_lyase</Source>
+      <Target>Glyoxylate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E473">
+      <Source>Isocitrate_lyase</Source>
+      <Target>Succinate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E474">
+      <Source>D-lactate_dehydrogenase</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E475">
+      <Source>D-lactate_dehydrogenase</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_-_reduced</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E476">
+      <Source>D-lactate_dehydrogenase</Source>
+      <Target>Pyruvate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E477">
+      <Source>D-lactate_dehydrogenase_rev</Source>
+      <Target>D-Lactate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E478">
+      <Source>D-lactate_dehydrogenase_rev</Source>
+      <Target>Nicotinamide_adenine_dinucleotide</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E479">
+      <Source>Malate_synthase</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E480">
+      <Source>Malate_synthase</Source>
+      <Target>L-Malate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E481">
+      <Source>Malate_synthase</Source>
+      <Target>Coenzyme_A</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E482">
+      <Source>Malate_intake_transport_via_proton_symport_(2_H)</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E483">
+      <Source>Malate_intake_transport_via_proton_symport_(2_H)</Source>
+      <Target>L-Malate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E484">
+      <Source>Malate_dehydrogenase</Source>
+      <Target>H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E485">
+      <Source>Malate_dehydrogenase</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_-_reduced</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E486">
+      <Source>Malate_dehydrogenase</Source>
+      <Target>Oxaloacetate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E487">
+      <Source>Malate_dehydrogenase_rev</Source>
+      <Target>L-Malate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E488">
+      <Source>Malate_dehydrogenase_rev</Source>
+      <Target>Nicotinamide_adenine_dinucleotide</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E489">
+      <Source>Malic_enzyme_(NAD)</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_-_reduced</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E490">
+      <Source>Malic_enzyme_(NAD)</Source>
+      <Target>Pyruvate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E491">
+      <Source>Malic_enzyme_(NAD)</Source>
+      <Target>CO2_CO2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E492">
+      <Source>Malic_enzyme_(NADP)</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_phosphate_-_reduced</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E493">
+      <Source>Malic_enzyme_(NADP)</Source>
+      <Target>Pyruvate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E494">
+      <Source>Malic_enzyme_(NADP)</Source>
+      <Target>CO2_CO2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E495">
+      <Source>NADH_dehydrogenase_(ubiquinone-8_&amp;_3_protons)</Source>
+      <Target>Env_H+</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E496">
+      <Source>NADH_dehydrogenase_(ubiquinone-8_&amp;_3_protons)</Source>
+      <Target>Nicotinamide_adenine_dinucleotide</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E497">
+      <Source>NADH_dehydrogenase_(ubiquinone-8_&amp;_3_protons)</Source>
+      <Target>Ubiquinol-8</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E498">
+      <Source>NAD_transhydrogenase</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_-_reduced</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E499">
+      <Source>NAD_transhydrogenase</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_phosphate</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E500">
+      <Source>Ammonia_intake_transport</Source>
+      <Target>Ammonium</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E501">
+      <Source>Ammonia_output_transport</Source>
+      <Target>Env_Ammonium</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E502">
+      <Source>O2_intake_transport_via_diffusion</Source>
+      <Target>O2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E503">
+      <Source>O2_output_transport_via_diffusion</Source>
+      <Target>Env_O2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E504">
+      <Source>Pyruvate_dehydrogenase</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_-_reduced</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E505">
+      <Source>Pyruvate_dehydrogenase</Source>
+      <Target>Acetyl-CoA</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E506">
+      <Source>Pyruvate_dehydrogenase</Source>
+      <Target>CO2_CO2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E507">
+      <Source>Replication</Source>
+      <Target>Beh_Repl</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E508">
+      <Source>Acetyl-CoA_Storing</Source>
+      <Target>Acetyl-CoA_Storage</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E509">
+      <Source>D-Glucose_6-phosphate_Storing</Source>
+      <Target>D-Glucose_6-phosphate_Storage</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E510">
+      <Source>Nicotinamide_adenine_dinucleotide_Storing</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_Storage</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E511">
+      <Source>Oxaloacetate_Storing</Source>
+      <Target>Oxaloacetate_Storage</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E512">
+      <Source>ATP_C10H12N5O13P3_Storing</Source>
+      <Target>ATP_C10H12N5O13P3_Storage</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E513">
+      <Source>Nicotinamide_adenine_dinucleotide_phosphate_-_reduced_Storing</Source>
+      <Target>Nicotinamide_adenine_dinucleotide_phosphate_-_reduced_Storage</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E514">
+      <Source>Phosphoenolpyruvate_Storing</Source>
+      <Target>Phosphoenolpyruvate_Storage</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E515">
+      <Source>3-Phospho-D-glycerate_Storing</Source>
+      <Target>3-Phospho-D-glycerate_Storage</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E516">
+      <Source>H2O_Storing</Source>
+      <Target>H2O_Storage</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E517">
+      <Source>D-Fructose_6-phosphate_Storing</Source>
+      <Target>D-Fructose_6-phosphate_Storage</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E518">
+      <Source>Glyceraldehyde_3-phosphate_Storing</Source>
+      <Target>Glyceraldehyde_3-phosphate_Storage</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E519">
+      <Source>D-Erythrose_4-phosphate_Storing</Source>
+      <Target>D-Erythrose_4-phosphate_Storage</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E520">
+      <Source>Alpha-D-Ribose_5-phosphate_Storing</Source>
+      <Target>Alpha-D-Ribose_5-phosphate_Storage</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E521">
+      <Source>Pyruvate_Storing</Source>
+      <Target>Pyruvate_Storage</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E522">
+      <Source>L-Glutamate_Storing</Source>
+      <Target>L-Glutamate_Storage</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E523">
+      <Source>L-Glutamine_Storing</Source>
+      <Target>L-Glutamine_Storage</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+  </AdditionalInformationAboutEdges>
+</Layoutdata>

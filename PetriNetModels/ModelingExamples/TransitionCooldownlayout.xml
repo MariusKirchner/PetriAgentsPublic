@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layoutdata>
+  <LogicalPlaces />
+  <BendEdges />
+  <AdditionalInformationAboutNodes>
+    <Node Name="TransitionToCooldown">
+      <LabelPosition>S</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Input">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Output">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="TransitionInactive">
+      <LabelPosition>SW</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="TransitionActive">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="CooldownTime">
+      <LabelPosition>N</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="CooldownTimer">
+      <LabelPosition>NW</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="TransitionReactivation_2">
+      <LabelPosition>NE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+  </AdditionalInformationAboutNodes>
+  <AdditionalInformationAboutEdges>
+    <Edge Name="E0">
+      <Source>TransitionToCooldown</Source>
+      <Target>Output</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E1">
+      <Source>TransitionToCooldown</Source>
+      <Target>TransitionInactive</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E2">
+      <Source>Input</Source>
+      <Target>TransitionToCooldown</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E3">
+      <Source>TransitionInactive</Source>
+      <Target>CooldownTimer</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E4">
+      <Source>TransitionInactive</Source>
+      <Target>TransitionReactivation_2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E5">
+      <Source>TransitionActive</Source>
+      <Target>TransitionToCooldown</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E6">
+      <Source>CooldownTime</Source>
+      <Target>TransitionReactivation_2</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E7">
+      <Source>CooldownTimer</Source>
+      <Target>TransitionInactive</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E8">
+      <Source>CooldownTimer</Source>
+      <Target>CooldownTime</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E9">
+      <Source>TransitionReactivation_2</Source>
+      <Target>TransitionActive</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+  </AdditionalInformationAboutEdges>
+</Layoutdata>

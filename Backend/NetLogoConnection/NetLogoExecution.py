@@ -4,7 +4,7 @@ import ast
 import platform
 import time
 import re
-
+import csv
 import nl4py
 
 
@@ -38,7 +38,18 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
     n.command("setup")
     time4 = time.time()
     #print("double setup--- %s seconds ---" % (time4 - time3))
-
+    csvfile = open("results.csv", "w", encoding="UTF8", newline="")
+    csvwriter = csv.writer(csvfile)
+    header = ["ticks"]
+    for bacteria in mainProject.listOfBacteriaIDs:
+        header.append(mainProject.bacteriaIDDict[bacteria].name)
+        for behaviour in mainProject.bacteriaIDDict[bacteria].listOfBehPlaceIDs:
+            header.append(mainProject.bacteriaIDDict[bacteria].name + mainProject.bacteriaIDDict[bacteria].dictOfBehPlaces[behaviour])
+    for envmol in mainProject.listOfEnvironmentMolecules:
+        header.append(envmol)
+    seperatorline = ["sep=,"]
+    csvwriter.writerow(seperatorline)
+    csvwriter.writerow(header)
     currentBacteriaStatus = n.report("bacteriaReport")
     currentBacteriaStatus = ast.literal_eval(currentBacteriaStatus)
     for i in currentBacteriaStatus:
@@ -61,7 +72,9 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
     n.command("setCompartmentAll " + re.sub(",", "", str(commandList)))
     time5a = time.time()
     #print("Setup the compartments--- %s seconds ---" % (time5a - time5b))
+
     for i in range(0, int(mainProject.ticks)):
+        newcsvline = [i]
         time6 = time.time()
         newIndividuals = n.report("newIndiv")
         newIndividuals = ast.literal_eval(newIndividuals)
@@ -117,8 +130,19 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
         n.command("go")
         time14 = time.time()
         #print("go command(including diffusion)--- %s seconds ---" % (time14 - time13))
-        print(i)
-        #TESTING STUFF AHEAD
+        if i % 100 == 0:
+            print(i)
+        #write results
         for k in mainProject.listOfBacteriaIDs:
-            print("Number of Individuals of Species " + mainProject.bacteriaIDDict[k].name + " :" + str(len(mainProject.bacteriaIDDict[k].listOfIndividuals)))
-
+            newcsvline.append(str(len(mainProject.bacteriaIDDict[k].listOfIndividuals)))
+            for behplace in mainProject.bacteriaIDDict[k].listOfBehPlaceIDs:
+                counter = 0
+                for bac in mainProject.bacteriaIDDict[k].listOfIndividuals:
+                    if mainProject.bacteriaIDDict[k].dictOfIndividuals[bac].petriNet.placeDict[behplace].tokens >= 1:
+                        counter += 1
+                newcsvline.append(counter)
+        patchreport = n.report("patchvalues")
+        patchreporteval = ast.literal_eval(patchreport)
+        for k in patchreporteval:
+            newcsvline.append(int(k))
+        csvwriter.writerow(newcsvline)

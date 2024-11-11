@@ -335,7 +335,7 @@ def mainWindow(projectHolder):
 
 
     global diffusionCheck
-    diffusionCheck = IntVar(value=1)
+    diffusionCheck = IntVar(value=0)
     Checkbutton(environmentTab, text="Diffusion?", variable=diffusionCheck, onvalue=1, offvalue=0, command=lambda: diffusionCheckboxChange(projectHolder.currProject, diffusionCheck)).grid(column=2, row=6)
 
     global diffusionRateDefault
@@ -349,7 +349,7 @@ def mainWindow(projectHolder):
     Entry(environmentTab, textvariable=flowRateDefault).grid(column=1, row=8)
 
     global flowCheck
-    flowCheck = IntVar(value=1)
+    flowCheck = IntVar(value=0)
     Checkbutton(environmentTab, text="Flow?", variable=flowCheck, onvalue=1, offvalue=0, command=lambda: flowCheckboxChange(projectHolder.currProject, flowCheck)).grid(column=2, row=7)
 
     global flowDirectionDefault

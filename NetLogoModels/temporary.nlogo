@@ -1,14 +1,7 @@
 breed [bacteria1 bacterium1] 
-breed [bacteria2 bacterium2] 
 breed [flagella flagellum] 
  
 bacteria1-own [ 
-	 Beh_Death 
-	 Beh_Replication 
-	 Beh_Move 
-	 dxy 
-	 ] 
-bacteria2-own [ 
 	 Beh_Move 
 	 Beh_Replication 
 	 Beh_Death 
@@ -16,9 +9,8 @@ bacteria2-own [
 	 ] 
  
 patches-own [ 
-	 patch_Meat
-	 patch_Tree
-	 patch_Trap
+	 patch_SCFA
+	 patch_Nutrient
 	 compartmentID 
 	 ] 
 
@@ -48,14 +40,7 @@ to setup
 	 set flowspeed 0.1 
 	 set newIndividuals [] 
 	 set deadIndividuals [] 
-	 create-bacteria1 5[ 
-	 	 setxy random-xcor random-ycor 
-	 	 set size 1 
-	 	 set Beh_Death 0 
-	 	 set Beh_Replication 0 
-	 	 set Beh_Move 0 
-	 ] 
-	 create-bacteria2 200[ 
+	 create-bacteria1 20[ 
 	 	 setxy random-xcor random-ycor 
 	 	 set size 1 
 	 	 set Beh_Move 0 
@@ -63,7 +48,6 @@ to setup
 	 	 set Beh_Death 0 
 	 ] 
 	 set-default-shape bacteria1 "bacteria 1" 
-	 set-default-shape bacteria2 "bacteria 1" 
 	 set-default-shape flagella "flagella" 
 	 ask bacteria1 [ 
 	 	 set dxy ( bacteria-velocity * timeinterval-per-tick ) 
@@ -71,18 +55,10 @@ to setup
 	 	 set local-color color 
 	 	 ask out-link-neighbors [set color local-color] 
 	 ] 
-	 ask bacteria2 [ 
-	 	 set dxy ( bacteria-velocity * timeinterval-per-tick ) 
-	 	 set color [0 255 0 ] 
-	 	 set local-color color 
-	 	 ask out-link-neighbors [set color local-color] 
-	 ] 
 	 ask patches with [pxcor > 0 and pxcor < 100 and pycor > 0 and pycor < 50][ 
-	 	 set patch_Meat random 10 
+	 	 set patch_SCFA random 1 
 	 ]	 ask patches with [pxcor > 0 and pxcor < 100 and pycor > 0 and pycor < 50][ 
-	 	 set patch_Tree random 100 
-	 ]	 ask patches with [pxcor > 0 and pxcor < 100 and pycor > 0 and pycor < 50][ 
-	 	 set patch_Trap random 0 
+	 	 set patch_Nutrient random 10000 
 	 ]	 set flagella-size 1 
 	 updateView 
 end 
@@ -116,25 +92,14 @@ end
  
 to go 
 	 ask bacteria1 [ 
-	 	 if (Beh_Death != 0) [ 
-	 	 	 bacteria1_Death who 
+	 	 if (Beh_Move != 0) [ 
+	 	 	 bacteria1_Move who 
 	 	 ] 
 	 	 if (Beh_Replication != 0) [ 
 	 	 	 bacteria1_Replication who 
 	 	 ] 
-	 	 if (Beh_Move != 0) [ 
-	 	 	 bacteria1_Move who 
-	 	 ] 
-	 ] 
-	 ask bacteria2 [ 
-	 	 if (Beh_Move != 0) [ 
-	 	 	 bacteria2_Move who 
-	 	 ] 
-	 	 if (Beh_Replication != 0) [ 
-	 	 	 bacteria2_Replication who 
-	 	 ] 
 	 	 if (Beh_Death != 0) [ 
-	 	 	 bacteria2_Death who 
+	 	 	 bacteria1_Death who 
 	 	 ] 
 	 ] 
 	 ask flagella with [not any? my-links][die] 
@@ -145,12 +110,12 @@ end
 
 to updateView 
 	 ask patches [ 
-	 	 if (patch_Meat = 0) [set pcolor 5] 
-	 	 if (patch_Meat > 0) [set pcolor 19] 
-	 	 if (patch_Meat > 25) [set pcolor 18] 
-	 	 if (patch_Meat > 50) [set pcolor 17] 
-	 	 if (patch_Meat > 75) [set pcolor 16] 
-	 	 if (patch_Meat > 100) [set pcolor 15] 
+	 	 if (patch_SCFA = 0) [set pcolor 5] 
+	 	 if (patch_SCFA > 0) [set pcolor 19] 
+	 	 if (patch_SCFA > 25) [set pcolor 18] 
+	 	 if (patch_SCFA > 50) [set pcolor 17] 
+	 	 if (patch_SCFA > 75) [set pcolor 16] 
+	 	 if (patch_SCFA > 100) [set pcolor 15] 
 	 ] 
 end 
 
@@ -167,9 +132,9 @@ to bacteria1_Replication [ id ]
 	 	 	 setxy xcor ycor 
 	 	 	 set heading (heading + random-float 360) 
 	 	 	 set size 1 
-	 	 	 set Beh_Death 0 
-	 	 	 set Beh_Replication 0 
 	 	 	 set Beh_Move 0 
+	 	 	 set Beh_Replication 0 
+	 	 	 set Beh_Death 0 
 	 	 	 set color [0 0 0 ] 
 	 	 	 set local-color color 
 	 	 	 ask out-link-neighbors [set color local-color] 
@@ -191,76 +156,19 @@ to bacteria1_Death [ id ]
 	 	 die 
 	 ] 
 end 
-to bacteria2_Move [ id ] 
-	 ask turtle id [ 
-	 	 forward dxy 
-	 	 right (5 - random-float 10) 
-	 	 set Beh_Move (Beh_Move - 1) 
-	 ] 
-end 
-to bacteria2_Replication [ id ] 
-	 ask turtle id [ 
-	 	 hatch-bacteria2 1 [ 
-	 	 	 setxy xcor ycor 
-	 	 	 set heading (heading + random-float 360) 
-	 	 	 set size 1 
-	 	 	 set Beh_Move 0 
-	 	 	 set Beh_Replication 0 
-	 	 	 set Beh_Death 0 
-	 	 	 set color [0 255 0 ] 
-	 	 	 set local-color color 
-	 	 	 ask out-link-neighbors [set color local-color] 
-	 	 	 let tempList [] 
-	 	 	 set tempList lput 2 tempList 
-	 	 	 set tempList lput who tempList 
-	 	 	 set newIndividuals lput tempList newIndividuals 
-	 	 ] 
-	 	 set size 1 
-	 ] 
-end 
-to bacteria2_Death [ id ] 
-	 ask turtle id [ 
-	 	 let tempList [] 
-	 	 set tempList lput 2 tempList 
-	 	 set tempList lput who tempList 
-	 	 set deadIndividuals lput tempList deadIndividuals 
-	 	 ask my-links [ die ] 
-	 	 die 
-	 ] 
-end 
 to patch-intakes 
 	 ask bacteria1 [ 
 	 	 ask patch-here [ 
-	 	 	 if (patch_Meat > 0) [ 
-	 	 	 	 set patch_Meat (patch_Meat - 1) 
+	 	 	 if (patch_SCFA > 0) [ 
+	 	 	 	 set patch_SCFA (patch_SCFA - 1) 
 	 	 	 ] 
-	 	 	 if (patch_Tree > 0) [ 
-	 	 	 	 set patch_Tree (patch_Tree - 1) 
-	 	 	 ] 
-	 	 	 if (patch_Trap > 0) [ 
-	 	 	 	 set patch_Trap (patch_Trap - 1) 
-	 	 	 ] 
-	 	 ] 
-	 ] 
-	 ask bacteria2 [ 
-	 	 ask patch-here [ 
-	 	 	 if (patch_Meat > 0) [ 
-	 	 	 	 set patch_Meat (patch_Meat - 1) 
-	 	 	 ] 
-	 	 	 if (patch_Trap > 0) [ 
-	 	 	 	 set patch_Trap (patch_Trap - 1) 
+	 	 	 if (patch_Nutrient > 0) [ 
+	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
 	 	 	 ] 
 	 	 ] 
 	 ] 
 end 
-to setBacteria1Beh [ id BehDeath BehReplication BehMove ] 
-	 ask turtle id [ 
-	 	 set Beh_Death BehDeath 
-	 	 set Beh_Replication BehReplication 
-	 	 set Beh_Move BehMove 
-	 ] 
-end 
-to setBacteria2Beh [ id BehMove BehReplication BehDeath ] 
+to setBacteria1Beh [ id BehMove BehReplication BehDeath ] 
 	 ask turtle id [ 
 	 	 set Beh_Move BehMove 
 	 	 set Beh_Replication BehReplication 
@@ -272,37 +180,18 @@ to setBacteria1BehAll [ listOfCommands ]
 	 	 [content] -> 
 	 	 setBacteria1Beh (item 0 content) (item 1 content) (item 2 content) (item 3 content) 	 ] 
 end 
-to setBacteria2BehAll [ listOfCommands ] 
-	 foreach listOfCommands [ 
-	 	 [content] -> 
-	 	 setBacteria2Beh (item 0 content) (item 1 content) (item 2 content) (item 3 content) 	 ] 
-end 
-to setBacteria1Patch [ id Meat Tree Trap ] 
+to setBacteria1Patch [ id SCFA Nutrient ] 
 	 ask turtle id [ 
 	 	 ask patch-here [ 
-	 	 	 set patch_Meat Meat 
-	 	 	 set patch_Tree Tree 
-	 	 	 set patch_Trap Trap 
-	 	 ] 
-	 ] 
-end 
-to setBacteria2Patch [ id Meat Trap ] 
-	 ask turtle id [ 
-	 	 ask patch-here [ 
-	 	 	 set patch_Meat Meat 
-	 	 	 set patch_Trap Trap 
+	 	 	 set patch_SCFA SCFA 
+	 	 	 set patch_Nutrient Nutrient 
 	 	 ] 
 	 ] 
 end 
 to setBacteria1PatchAll [ listOfCommands ] 
 	 foreach listOfCommands [ 
 	 	 [content] -> 
-	 	 setBacteria1Patch (item 0 content) (item 1 content) (item 2 content) (item 3 content) 	 ] 
-end 
-to setBacteria2PatchAll [ listOfCommands ] 
-	 foreach listOfCommands [ 
-	 	 [content] -> 
-	 	 setBacteria2Patch (item 0 content) (item 1 content) (item 2 content) 	 ] 
+	 	 setBacteria1Patch (item 0 content) (item 1 content) (item 2 content) 	 ] 
 end 
 to pushfunction [ currBacID ] 
 	 ask turtle currBacID [ 
@@ -322,14 +211,6 @@ to-report bacteriaReport
 	 let wholeList [] 
 	 ask bacteria1 [ 
 	 	 set tempList lput 1 tempList 
-	 	 set tempList lput who tempList 
-	 	 set bacList lput tempList bacList 
-	 	 set tempList [] 
-	 ] 
-	 set wholeList lput bacList wholeList 
-	 set bacList [] 
-	 ask bacteria2 [ 
-	 	 set tempList lput 2 tempList 
 	 	 set tempList lput who tempList 
 	 	 set bacList lput tempList bacList 
 	 	 set tempList [] 
@@ -359,43 +240,31 @@ to-report intake
 	 	 ask patch-here [ 
  	 	 	 set tempList lput bacType tempList 
  	 	 	 set tempList lput tempID tempList
- 	 	 	 set tempList lput "\"Meat\"" templist 
- 	 	 	 set tempList lput patch_Meat templist 
+ 	 	 	 set tempList lput "\"SCFA\"" templist 
+ 	 	 	 set tempList lput patch_SCFA templist 
  	 	 	 set wholeList lput tempList wholeList 
  	 	 	 set tempList [] 
  	 	 	 set tempList lput bacType tempList 
  	 	 	 set tempList lput tempID tempList
- 	 	 	 set tempList lput "\"Tree\"" templist 
- 	 	 	 set tempList lput patch_Tree templist 
- 	 	 	 set wholeList lput tempList wholeList 
- 	 	 	 set tempList [] 
- 	 	 	 set tempList lput bacType tempList 
- 	 	 	 set tempList lput tempID tempList
- 	 	 	 set tempList lput "\"Trap\"" templist 
- 	 	 	 set tempList lput patch_Trap templist 
- 	 	 	 set wholeList lput tempList wholeList 
- 	 	 	 set tempList [] 
-	 	 ] 
-	 ] 
-	 set bacType 2 
-	 ask bacteria2 [ 
-	 	 let tempID who 
-	 	 ask patch-here [ 
- 	 	 	 set tempList lput bacType tempList 
- 	 	 	 set tempList lput tempID tempList
- 	 	 	 set tempList lput "\"Meat\"" templist 
- 	 	 	 set tempList lput patch_Meat templist 
- 	 	 	 set wholeList lput tempList wholeList 
- 	 	 	 set tempList [] 
- 	 	 	 set tempList lput bacType tempList 
- 	 	 	 set tempList lput tempID tempList
- 	 	 	 set tempList lput "\"Trap\"" templist 
- 	 	 	 set tempList lput patch_Trap templist 
+ 	 	 	 set tempList lput "\"Nutrient\"" templist 
+ 	 	 	 set tempList lput patch_Nutrient templist 
  	 	 	 set wholeList lput tempList wholeList 
  	 	 	 set tempList [] 
 	 	 ] 
 	 ] 
 	 report wholeList 
+end 
+to-report patchvalues 
+	 let templist [] 
+	 let tempvalueSCFA 0 
+	 let tempvalueNutrient 0 
+	 ask patches [ 
+	 	 set tempvalueSCFA tempvalueSCFA + patch_SCFA 
+	 	 set tempvalueNutrient tempvalueNutrient + patch_Nutrient 
+	 ] 
+ 	 set templist lput tempvalueSCFA templist 
+	 set templist lput tempvalueNutrient templist 
+	 report templist 
 end 
 
 @#$#@#$#@

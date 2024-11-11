@@ -325,7 +325,7 @@ def createNetLogoProject(mainProject):
                 tempnetlogoFile.write("\t ] \n")
                 tempnetlogoFile.write("end \n")
         #Does this work for noncontinuos regions? How to handle compartments?
-        #TODO: for now bacteria spawn new bacteria at the same place to handle this - maybe try below at some point
+        #rfvbgedTODO: for now bacteria spawn new bacteria at the same place to handle this - maybe try below at some point
         #maybe check positions if in compartment, if not => closer repr => check again, rinse and repeat
         if "Replication" in mainProject.bacteriaIDDict[i].dictOfBehPlaces.values():
             tempnetlogoFile.write("to bacteria" + str(i) + "_" + "Replication" + " [ id ] \n")
@@ -514,6 +514,19 @@ def createNetLogoProject(mainProject):
         tempnetlogoFile.write("\t \t ] \n")
         tempnetlogoFile.write("\t ] \n")
     tempnetlogoFile.write("\t report wholeList \n")
+    tempnetlogoFile.write("end \n")
+
+    tempnetlogoFile.write("to-report patchvalues \n")
+    tempnetlogoFile.write("\t let templist [] \n")
+    for j in mainProject.listOfEnvironmentMolecules:
+        tempnetlogoFile.write("\t let tempvalue" + j + " 0 \n")
+    tempnetlogoFile.write("\t ask patches [ \n")
+    for j in mainProject.listOfEnvironmentMolecules:
+        tempnetlogoFile.write("\t \t set tempvalue" + j + " tempvalue" + j + " + patch_" + j + " \n")
+    tempnetlogoFile.write("\t ] \n ")
+    for j in mainProject.listOfEnvironmentMolecules:
+        tempnetlogoFile.write("\t set templist lput tempvalue" + j + " templist \n")
+    tempnetlogoFile.write("\t report templist \n")
     tempnetlogoFile.write("end \n")
     lines = defaultnetlogoFile.readlines()
     for i in range(0, len(lines)):

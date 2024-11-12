@@ -10,14 +10,15 @@ import numpy as np
 #todo: add explanation to parameters
 
 matplotlib.use("TkAgg")
-csvfile = open("C:\\Users\\mariu\\PycharmProjects\\PetriAgentsPublic\\results.csv", newline="")
+#csvfile = open("C:\\Users\\mariu\\PycharmProjects\\PetriAgentsPublic\\results.csv", newline="")
+csvfile = open("C:\\Users\\Marius MainPC\\Desktop\\ToBeSorted\\PetriAgentsPublic\\results.csv", newline="")
 inputfile = csv.reader(csvfile, delimiter=",")
 xaxis= []
 plots = []
 style = next(inputfile)
 header = next(inputfile)
 print(header)
-numberofPlots = len(header) - 1
+numberofPlots = len(header)
 for i in range(1, numberofPlots):
     plots.append([])
 for row in inputfile:

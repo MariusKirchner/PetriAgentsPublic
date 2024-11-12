@@ -56,9 +56,9 @@ to setup
 	 	 ask out-link-neighbors [set color local-color] 
 	 ] 
 	 ask patches with [pxcor > 0 and pxcor < 100 and pycor > 0 and pycor < 50][ 
-	 	 set patch_SCFA random 1 
+	 	 set patch_SCFA random 0 
 	 ]	 ask patches with [pxcor > 0 and pxcor < 100 and pycor > 0 and pycor < 50][ 
-	 	 set patch_Nutrient random 10000 
+	 	 set patch_Nutrient random 10000000 
 	 ]	 set flagella-size 1 
 	 updateView 
 end 
@@ -286,9 +286,9 @@ GRAPHICS-WINDOW
 1
 1
 0
-100
-0
 50
+0
+25
 0
 0
 1

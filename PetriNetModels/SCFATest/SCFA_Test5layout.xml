@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layoutdata>
+  <LogicalPlaces />
+  <BendEdges />
+  <AdditionalInformationAboutNodes>
+    <Node Name="ReplCooldown">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="T13">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Beh_Move">
+      <LabelPosition>E</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="0_ReactivateReplCooldown">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="P13">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="4_ReturnOverSCFA">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Beh_Replication">
+      <LabelPosition>E</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="End_Replication">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="ReplicationInhibNotActive">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Replication">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="ReplicationCooldownActive">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="1_TakeInSCFA">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Env_SCFA">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Ageing">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Age">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="DeathByAge">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="InternalSCFA">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Beh_Death">
+      <LabelPosition>E</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Timer">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="ReplInhibited">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="1_ActivateReplication">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="ReplInhibTimer">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+  </AdditionalInformationAboutNodes>
+  <AdditionalInformationAboutEdges>
+    <Edge Name="E0">
+      <Source>ReplCooldown</Source>
+      <Target>T13</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E1">
+      <Source>ReplCooldown</Source>
+      <Target>0_ReactivateReplCooldown</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E2">
+      <Source>T13</Source>
+      <Target>ReplCooldown</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E3">
+      <Source>T13</Source>
+      <Target>P13</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E4">
+      <Source>0_ReactivateReplCooldown</Source>
+      <Target>ReplicationCooldownActive</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E5">
+      <Source>P13</Source>
+      <Target>0_ReactivateReplCooldown</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E6">
+      <Source>4_ReturnOverSCFA</Source>
+      <Target>Env_SCFA</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E7">
+      <Source>4_ReturnOverSCFA</Source>
+      <Target>InternalSCFA</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E8">
+      <Source>Beh_Replication</Source>
+      <Target>End_Replication</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E9">
+      <Source>ReplicationInhibNotActive</Source>
+      <Target>Replication</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E10">
+      <Source>ReplicationInhibNotActive</Source>
+      <Target>1_TakeInSCFA</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E11">
+      <Source>Replication</Source>
+      <Target>ReplCooldown</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E12">
+      <Source>Replication</Source>
+      <Target>Beh_Replication</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E13">
+      <Source>Replication</Source>
+      <Target>Env_SCFA</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E14">
+      <Source>Replication</Source>
+      <Target>ReplicationInhibNotActive</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E15">
+      <Source>ReplicationCooldownActive</Source>
+      <Target>Replication</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E16">
+      <Source>1_TakeInSCFA</Source>
+      <Target>InternalSCFA</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E17">
+      <Source>1_TakeInSCFA</Source>
+      <Target>ReplInhibited</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E18">
+      <Source>Env_SCFA</Source>
+      <Target>1_TakeInSCFA</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E19">
+      <Source>Ageing</Source>
+      <Target>Age</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E20">
+      <Source>Age</Source>
+      <Target>DeathByAge</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E21">
+      <Source>DeathByAge</Source>
+      <Target>Beh_Death</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E22">
+      <Source>InternalSCFA</Source>
+      <Target>4_ReturnOverSCFA</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E23">
+      <Source>Timer</Source>
+      <Target>ReplInhibited</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E24">
+      <Source>Timer</Source>
+      <Target>ReplInhibTimer</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E25">
+      <Source>ReplInhibited</Source>
+      <Target>Timer</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E26">
+      <Source>ReplInhibited</Source>
+      <Target>1_ActivateReplication</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E27">
+      <Source>1_ActivateReplication</Source>
+      <Target>ReplicationInhibNotActive</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E28">
+      <Source>ReplInhibTimer</Source>
+      <Target>1_ActivateReplication</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+  </AdditionalInformationAboutEdges>
+</Layoutdata>

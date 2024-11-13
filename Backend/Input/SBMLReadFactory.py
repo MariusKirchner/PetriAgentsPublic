@@ -1,5 +1,7 @@
 __author__ = "Marius Kirchner, Goethe University Frankfurt am Main"
 
+from random import randint
+
 from Backend.BackendStorage.Bacteria.PetriNet.PetriNetObject import PetriNet
 import libsbml
 

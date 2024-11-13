@@ -10,8 +10,8 @@ import numpy as np
 #todo: add explanation to parameters
 
 matplotlib.use("TkAgg")
-#csvfile = open("C:\\Users\\mariu\\PycharmProjects\\PetriAgentsPublic\\results.csv", newline="")
-csvfile = open("C:\\Users\\Marius MainPC\\Desktop\\ToBeSorted\\PetriAgentsPublic\\results.csv", newline="")
+csvfile = open("C:\\Users\\mariu\\PycharmProjects\\PetriAgentsPublic\\results.csv", newline="")
+#csvfile = open("C:\\Users\\Marius MainPC\\Desktop\\ToBeSorted\\PetriAgentsPublic\\results.csv", newline="")
 inputfile = csv.reader(csvfile, delimiter=",")
 xaxis= []
 plots = []

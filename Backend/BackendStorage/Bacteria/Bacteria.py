@@ -1,4 +1,6 @@
 import copy
+from random import randint
+
 from Backend.BackendStorage.Bacteria.IndividualBacteria import individualBacteria
 
 
@@ -40,8 +42,16 @@ class bacteria:
     def changeMOI(self, newMOI):
         self.MOI = newMOI
 
-    def addIndividual(self, ID):
+    def addIndividual(self, ID, start):
         tempIndividual = individualBacteria(ID, copy.deepcopy(self.petriNet), self.ID)
+        if start:
+            for place in tempIndividual.petriNet.placeIDList:
+                if tempIndividual.petriNet.placeDict[place].name.split("_")[0] == "Random":
+                    tempIndividual.petriNet.placeDict[place].tokens = randint(int(tempIndividual.petriNet.placeDict[place].name.split("_")[1]), int(tempIndividual.petriNet.placeDict[place].name.split("_")[2]))
+        else:
+            for place in tempIndividual.petriNet.placeIDList:
+                if tempIndividual.petriNet.placeDict[place].name.split("_")[0] == "Random":
+                    tempIndividual.petriNet.placeDict[place].tokens = int(tempIndividual.petriNet.placeDict[place].name.split("_")[1])
         self.dictOfIndividuals[ID] = tempIndividual
         self.listOfIndividuals.append(ID)
 

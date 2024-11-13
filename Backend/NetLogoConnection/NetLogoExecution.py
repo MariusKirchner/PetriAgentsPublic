@@ -18,9 +18,9 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
     print(platform.platform()[0:7:])
     if platform.platform()[0:7:] == "Windows":
         #homepc
-        nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
+        #nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
         #laptop
-        #nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
+        nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
         #oldNLVersionTry
         #nl4py.initialize(r"C:\Program Files\NetLogo6.2.2")
     else:
@@ -55,7 +55,7 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
     for i in currentBacteriaStatus:
         #print(i)
         for j in i:
-            mainProject.bacteriaIDDict[int(j[0])].addIndividual(int(j[1]))
+            mainProject.bacteriaIDDict[int(j[0])].addIndividual(int(j[1]), True)
     #runtime procedures
     time5 = time.time()
     #print("Setup the individuals--- %s seconds ---" % (time5 - time4))
@@ -79,7 +79,7 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
         newIndividuals = n.report("newIndiv")
         newIndividuals = ast.literal_eval(newIndividuals)
         for j in newIndividuals:
-            mainProject.bacteriaIDDict[int(j[0])].addIndividual(int(j[1]))
+            mainProject.bacteriaIDDict[int(j[0])].addIndividual(int(j[1]), False)
         time7 = time.time()
         #print("Add new Individuals--- %s seconds ---" % (time7 - time6))
         deadIndividuals = n.report("deadIndiv")

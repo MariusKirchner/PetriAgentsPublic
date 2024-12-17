@@ -88,3 +88,5 @@ class petriAgentProject:
         self.listOfCompartmentIDs.append(len(self.listOfCompartmentIDs))
         self.compartmentDict[len(self.listOfCompartmentIDs) - 1] = newCompartment
 
+    def addinoutFlow(self, inout, time, starttime, endtime, amount, area, start, end):
+        pass

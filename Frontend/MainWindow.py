@@ -211,7 +211,55 @@ def openEnvironmentMoleculeDetails(mainProject, root):
     currAmountDefault = StringVar(tempFrame, value=currMolecule.distAmount)
     Entry(tempFrame, textvariable=currAmountDefault).grid(column=1, row=4)
     ttk.Button(tempFrame, text="Confirm changes", command=lambda: changesOnMolecule(newWindow, mainProject, currMolecule.moleculeName, currMinXDefault.get(), currMinYDefault.get(), currMaxXDefault.get(), currMaxYDefault.get(), currAmountDefault.get())).grid(column=0, row=5)
+    inOutMolColumnNames = ("In/Out", "Time", "Amount", "Distribution type")
+    global inOutMolTree
+    inOutMolTree = ttk.Treeview(tempFrame, columns=inOutMolColumnNames, show="headings")
+    inOutMolTree.bind("<Double-1>", lambda e: (mainProject, root)) #TODO: add delete function for flows
+    for column in inOutMolColumnNames:
+        inOutMolTree.heading(column, text=column)
+    inOutMolTree.grid(column=2, row=0, rowspan=10)
+    ttk.Button(tempFrame, text="Add new flow option", command=lambda: addFlowOption(newWindow, mainProject)).grid(column=2, row=11)
     newWindow.mainloop()
+
+def addFlowOption(newWindow, mainProject):
+    def checkdisabled():
+        pass
+    tempWindow = Toplevel(newWindow)
+    tempFrame = ttk.Frame(tempWindow, padding=10)
+    tempFrame.grid()
+    inOutVar = BooleanVar()
+    inButton = ttk.Radiobutton(tempFrame, text="Inflow", variable=inOutVar, value=True, command= lambda: checkdisabled).grid(row=0, column=0)
+    OutButton = ttk.Radiobutton(tempFrame, text="Outflow", variable=inOutVar, value=False, command= lambda: checkdisabled).grid(row=0, column=1)
+    timeVar = IntVar()
+    alwaysButton =  ttk.Radiobutton(tempFrame, text="At all timesteps", variable=timeVar, value=0, command= lambda: checkdisabled).grid(row=1, column=0)
+    intervallButton = ttk.Radiobutton(tempFrame, text="At an intervall", variable=timeVar, value=1, command= lambda: checkdisabled).grid(row=1, column=1)
+    singleTimestepButton = ttk.Radiobutton(tempFrame, text="At a single timestep", variable=timeVar, value=2, command= lambda: checkdisabled).grid(row=1, column=2)
+    ttk.Label(tempFrame, text="StartTime:").grid(row=2, column=0)
+    startTimeDefault = StringVar(tempFrame, value=0)
+    Entry(tempFrame, textvariable=startTimeDefault).grid(row=2, column=1)
+    ttk.Label(tempFrame, text="EndTime:").grid(row=2, column=2)
+    endTimeDefault = StringVar(tempFrame, value=0)
+    Entry(tempFrame, textvariable=endTimeDefault).grid(row=2, column=3)
+    ttk.Label(tempFrame, text="Amount of Molecule").grid(row=3, column=0)
+    amountDefault = StringVar(tempFrame, value=0)
+    Entry(tempFrame, textvariable=amountDefault).grid(row=3, column=1)
+    areaVar = IntVar()
+    everywhereButton = ttk.Radiobutton(tempFrame, text="Entire axis", variable=areaVar, value=0, command= lambda: checkdisabled).grid(row=4, column=0)
+    certainLengthButton = ttk.Radiobutton(tempFrame, text="Part of axis", variable=areaVar, value=1, command= lambda: checkdisabled).grid(row=4, column=1)
+    certainPositionButton = ttk.Radiobutton(tempFrame, text="Single position", variable=areaVar, value=2, command= lambda: checkdisabled).grid(row=4, column=1)
+    ttk.Label(tempFrame, text="StartSpace:").grid(row=4, column=0)
+    startSpaceDefault = StringVar(tempFrame, value=0)
+    Entry(tempFrame, textvariable=startSpaceDefault).grid(row=4, column=1)
+    ttk.Label(tempFrame, text="EndSpace:").grid(row=4, column=2)
+    endSpaceDefault = StringVar(tempFrame, value=0)
+    Entry(tempFrame, textvariable=endSpaceDefault).grid(row=4, column=3)
+    ttk.Button(tempFrame, text="Add Flowoption", command= lambda: addinoutFlow(tempWindow, mainProject, inOutVar.get(), timeVar.get(), startTimeDefault.get(), endTimeDefault.get(), amountDefault.get(), areaVar.get(), startSpaceDefault.get(), endSpaceDefault.get())).grid(row=5, column=0)
+    tempWindow.mainloop()
+
+def addinoutFlow(tempWindow, mainProject, inout, time, starttime, endtime, amount, area, start, end):
+    mainProject.addinoutFlow(inout, time, starttime, endtime, amount, area, start, end)
+    updateTables(mainProject)
+    tempWindow.destroy()
 
 def changesOnMolecule(newWindow, mainProject, moleculeName, minX, minY, maxX, maxY, amount):
     mainProject.dictOfEnvironmentMolecules[moleculeName].distArea = [[minX, minY], [maxX, maxY]]
@@ -236,7 +284,7 @@ def updateTables(mainProject):
     for compartmentID in mainProject.listOfCompartmentIDs:
         coord = [mainProject.compartmentDict[compartmentID].minX, mainProject.compartmentDict[compartmentID].maxX, mainProject.compartmentDict[compartmentID].minY, mainProject.compartmentDict[compartmentID].maxY]
         compartmentTree.insert("", "end", values=(mainProject.compartmentDict[compartmentID].name, coord, "NotYetImplemented"))
-
+    #TODO: add updateforflowTable
 
 def diffusionCheckboxChange(mainProject, checkboxVar):
     mainProject.diffBool = checkboxVar.get()
@@ -370,14 +418,14 @@ def mainWindow(projectHolder):
     environmentTree.bind("<Double-1>", lambda e: openEnvironmentMoleculeDetails(projectHolder.currProject, root))
     for column in environmentColumnNames:
         environmentTree.heading(column, text=column)
-    environmentTree.grid(column=4, row=11, rowspan=10)
+    environmentTree.grid(column=4, row=0, rowspan=10)
 
     compartmentColumnNames = ("CompartmentName", "Corners in X1, X2, Y1, Y2", "RestrictionsFor")
     global compartmentTree
     compartmentTree = ttk.Treeview(compartmentTab, columns=compartmentColumnNames, show="headings")
     for column in compartmentColumnNames:
         compartmentTree.heading(column, text=column)
-    compartmentTree.grid(column=4, row=21, rowspan=10)
+    compartmentTree.grid(column=4, row=0, rowspan=10)
 
     updateTables(projectHolder.currProject)
     root.mainloop()

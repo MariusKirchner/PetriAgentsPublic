@@ -8,5 +8,7 @@ class EnvironmentMolecule:
         self.distArea = distArea
         self.distAmount = distAmount
         self.involvedBacIDs = involvedBacIDs
+        self.flows = []
+
 
 

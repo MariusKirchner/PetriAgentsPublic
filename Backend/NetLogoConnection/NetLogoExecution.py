@@ -71,8 +71,17 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
     #print("First Step of the compartments--- %s seconds ---" % (time5b - time5))
     n.command("setCompartmentAll " + re.sub(",", "", str(commandList)))
     time5a = time.time()
-    #print("Setup the compartments--- %s seconds ---" % (time5a - time5b))
-
+    #print("Set up the compartments--- %s seconds ---" % (time5a - time5b))
+    #create inflow data
+    for i in range(0, int(mainProject.ticks)):
+        inflowDict = {}
+        inflowDict[i] = {}
+        for envmol in mainProject.listOfEnvironmentMolecules:
+            inflowDict[i] = []
+    for flow in mainProject.flows:
+        for currtick in range(flow.finalTime[0], flow.finalTime[1] + 1):
+            #todo implement call for netlogo functions
+            pass
     for i in range(0, int(mainProject.ticks)):
         newcsvline = [i]
         time6 = time.time()
@@ -124,7 +133,7 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
                 totalCommandList.append(singleCommand)
             commandString = re.sub("'", "", str(totalCommandList))
             n.command("setBacteria" + str(k) + "BehAll " + re.sub(",", "", commandString))
-        #TODO: CHECK IF THIS REALLY WORKS!! ( looks good, but i just saw that flagella are different colors for multiple species)
+        #TODO: CHECK IF THIS REALLY WORKS!! (looks good, but i just saw that flagella are different colors for multiple species)
         time13 = time.time()
         #print("Total for Commands for Bacteria Setters--- %s seconds ---" % (time13 - time11))
         n.command("go")

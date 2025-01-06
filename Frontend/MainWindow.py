@@ -211,13 +211,6 @@ def openEnvironmentMoleculeDetails(mainProject, root):
     currAmountDefault = StringVar(tempFrame, value=currMolecule.distAmount)
     Entry(tempFrame, textvariable=currAmountDefault).grid(column=1, row=4)
     ttk.Button(tempFrame, text="Confirm changes", command=lambda: changesOnMolecule(newWindow, mainProject, currMolecule.moleculeName, currMinXDefault.get(), currMinYDefault.get(), currMaxXDefault.get(), currMaxYDefault.get(), currAmountDefault.get())).grid(column=0, row=5)
-    inOutMolColumnNames = ("In/Out", "Time", "Amount", "Distribution type")
-    global inOutMolTree
-    inOutMolTree = ttk.Treeview(tempFrame, columns=inOutMolColumnNames, show="headings")
-    inOutMolTree.bind("<Double-1>", lambda e: (mainProject, root)) #TODO: add delete function for flows
-    for column in inOutMolColumnNames:
-        inOutMolTree.heading(column, text=column)
-    inOutMolTree.grid(column=2, row=0, rowspan=10)
     ttk.Button(tempFrame, text="Add new flow option", command=lambda: addFlowOption(newWindow, mainProject)).grid(column=2, row=11)
     newWindow.mainloop()
 
@@ -229,8 +222,10 @@ def addFlowOption(newWindow, mainProject):
     tempFrame = ttk.Frame(tempWindow, padding=10)
     tempFrame.grid()
     inOutVar = BooleanVar()
+    inOutVar.set(True)
     ttk.Radiobutton(tempFrame, text="Inflow", variable=inOutVar, value=True, command= lambda: checkdisabled).grid(row=0, column=0)
-    ttk.Radiobutton(tempFrame, text="Outflow", variable=inOutVar, value=False, command= lambda: checkdisabled).grid(row=0, column=1)
+    #TODO: Once implemented comment this back in
+    #ttk.Radiobutton(tempFrame, text="Outflow", variable=inOutVar, value=False, command= lambda: checkdisabled).grid(row=0, column=1)
     timeVar = IntVar()
     ttk.Radiobutton(tempFrame, text="At all timesteps", variable=timeVar, value=0, command= lambda: checkdisabled).grid(row=1, column=0)
     ttk.Radiobutton(tempFrame, text="At an intervall", variable=timeVar, value=1, command= lambda: checkdisabled).grid(row=1, column=1)
@@ -247,27 +242,32 @@ def addFlowOption(newWindow, mainProject):
     areaVar = IntVar()
     ttk.Radiobutton(tempFrame, text="Entire axis", variable=areaVar, value=0, command= lambda: checkdisabled).grid(row=4, column=0)
     ttk.Radiobutton(tempFrame, text="Part of axis", variable=areaVar, value=1, command= lambda: checkdisabled).grid(row=4, column=1)
-    ttk.Radiobutton(tempFrame, text="Single position", variable=areaVar, value=2, command= lambda: checkdisabled).grid(row=4, column=1)
+    ttk.Radiobutton(tempFrame, text="Single position", variable=areaVar, value=2, command= lambda: checkdisabled).grid(row=4, column=2)
     ttk.Label(tempFrame, text="StartSpace:").grid(row=5, column=0)
     startSpaceDefault = StringVar(tempFrame, value=0)
     Entry(tempFrame, textvariable=startSpaceDefault).grid(row=5, column=1)
     ttk.Label(tempFrame, text="EndSpace:").grid(row=5, column=2)
     endSpaceDefault = StringVar(tempFrame, value=0)
     Entry(tempFrame, textvariable=endSpaceDefault).grid(row=5, column=3)
-    ttk.Button(tempFrame, text="Add Flowoption", command= lambda: addinoutFlow(tempWindow, mainProject, inOutVar.get(), timeVar.get(), startTimeDefault.get(), endTimeDefault.get(), amountDefault.get(), areaVar.get(), startSpaceDefault.get(), endSpaceDefault.get())).grid(row=6, column=0)
+    currItem = environmentTree.focus()
+    currMolecule = mainProject.dictOfEnvironmentMolecules[environmentTree.item(currItem).get("values")[0]]
+    ttk.Button(tempFrame, text="Add Flowoption", command=lambda: addinoutFlow(newWindow,tempWindow, mainProject, currMolecule, inOutVar.get(), timeVar.get(), startTimeDefault.get(), endTimeDefault.get(), amountDefault.get(), areaVar.get(), startSpaceDefault.get(), endSpaceDefault.get())).grid(row=6, column=0)
     tempWindow.mainloop()
 
-def addinoutFlow(tempWindow, mainProject, inout, time, starttime, endtime, amount, area, start, end):
-    mainProject.addinoutFlow(inout, time, starttime, endtime, amount, area, start, end)
+
+
+def addinoutFlow(newWindow, tempWindow, mainProject, molecule, inout, time, starttime, endtime, amount, area, start, end):
+    mainProject.addinoutFlow(molecule, inout, time, starttime, endtime, amount, area, start, end)
     updateTables(mainProject)
     tempWindow.destroy()
+    newWindow.destroy()
+
 
 def changesOnMolecule(newWindow, mainProject, moleculeName, minX, minY, maxX, maxY, amount):
     mainProject.dictOfEnvironmentMolecules[moleculeName].distArea = [[minX, minY], [maxX, maxY]]
     mainProject.dictOfEnvironmentMolecules[moleculeName].distAmount = amount
     updateTables(mainProject)
     newWindow.destroy()
-
 
 
 def clearTable(treeview):
@@ -285,6 +285,13 @@ def updateTables(mainProject):
     for compartmentID in mainProject.listOfCompartmentIDs:
         coord = [mainProject.compartmentDict[compartmentID].minX, mainProject.compartmentDict[compartmentID].maxX, mainProject.compartmentDict[compartmentID].minY, mainProject.compartmentDict[compartmentID].maxY]
         compartmentTree.insert("", "end", values=(mainProject.compartmentDict[compartmentID].name, coord, "NotYetImplemented"))
+    clearTable(inOutMolTree)
+    for flow in mainProject.inflows:
+        if flow.inout:
+            tempType = "Inflow";
+        else:
+            tempType = "Outflow";
+        inOutMolTree.insert("", "end", values=(flow.molecule.moleculeName, tempType, flow.finalTime, flow.amount, flow.finalArea))
     #TODO: add updateforflowTable
 
 def diffusionCheckboxChange(mainProject, checkboxVar):
@@ -427,7 +434,13 @@ def mainWindow(projectHolder):
     for column in compartmentColumnNames:
         compartmentTree.heading(column, text=column)
     compartmentTree.grid(column=4, row=0, rowspan=10)
-
+    inOutMolColumnNames = ("Molecule", "In/Out", "Time", "Amount", "Area")
+    global inOutMolTree
+    inOutMolTree = ttk.Treeview(environmentTab, columns=inOutMolColumnNames, show="headings")
+    inOutMolTree.bind("<Double-1>", lambda e: (projectHolder.currProject, root))  # TODO: add delete function for flows
+    for column in inOutMolColumnNames:
+        inOutMolTree.heading(column, text=column)
+    inOutMolTree.grid(column=4, row=11, rowspan=10)
     updateTables(projectHolder.currProject)
     root.mainloop()
 

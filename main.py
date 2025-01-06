@@ -87,7 +87,6 @@ for x in range(0, maxxcor + 2):
         #print(currid)
 for i in currentPatchStatus:
     pass
-#next step -> input transitions from the left, transitions between patchNutrients
 maxpreID = currid
 time3 = time.time()
 print("patchplaces and transitions--- %s seconds ---" % (time3 - time2))

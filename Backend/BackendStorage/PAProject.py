@@ -6,7 +6,7 @@ from tkinter import ttk
 import tkinter.filedialog
 from Backend.BackendStorage.Bacteria.Bacteria import bacteria
 from Backend.Input import SBMLReadFactory
-
+from Backend.BackendStorage.NetLogoBackend.Inflow import Inflow
 
 class petriAgentProject:
     def __init__(self):
@@ -31,7 +31,7 @@ class petriAgentProject:
         self.flowRate = 100
         self.flowBool = 1
         #TODO: Split Diffusion and flow! Change strings in GUI
-
+        self.inflows = []
         defaultCompartment = netLogoCompartment("Default", 0, 0, self.maxXCor, 0, self.maxYCor, self.lrCont, self.tbCont, self.diffRate, self.diffBool, self.flowDir, self. flowRate, self.flowBool)
         self.listOfCompartmentIDs.append(0)
         self.compartmentDict[0] = defaultCompartment
@@ -88,5 +88,12 @@ class petriAgentProject:
         self.listOfCompartmentIDs.append(len(self.listOfCompartmentIDs))
         self.compartmentDict[len(self.listOfCompartmentIDs) - 1] = newCompartment
 
-    def addinoutFlow(self, inout, time, starttime, endtime, amount, area, start, end):
-        pass
+    def addinoutFlow(self, molecule, inout, time, starttime, endtime, amount, area, start, end):
+        if area == 0:
+            start = 0
+            end = self.maxYCor
+        if time == 0:
+            starttime = 0
+            endtime = self.ticks
+        self.inflows.append(Inflow(molecule, inout, time, starttime, endtime, amount, area, start, end))
+

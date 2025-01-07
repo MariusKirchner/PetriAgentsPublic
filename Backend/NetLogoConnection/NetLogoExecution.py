@@ -18,9 +18,9 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
     print(platform.platform()[0:7:])
     if platform.platform()[0:7:] == "Windows":
         #homepc
-        nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
+        #nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
         #laptop
-        #nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
+        nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
         #oldNLVersionTry
         #nl4py.initialize(r"C:\Program Files\NetLogo6.2.2")
     else:
@@ -73,15 +73,14 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
     time5a = time.time()
     #print("Set up the compartments--- %s seconds ---" % (time5a - time5b))
     #create inflow data
+    allflows = []
     for i in range(0, int(mainProject.ticks)):
-        inflowDict = {}
-        inflowDict[i] = {}
-        for envmol in mainProject.listOfEnvironmentMolecules:
-            inflowDict[i] = []
+        allflows.append([])
+    print(allflows)
     for flow in mainProject.flows:
-        for currtick in range(flow.finalTime[0], flow.finalTime[1] + 1):
-            #todo implement call for netlogo functions
-            pass
+        for currtick in range(flow.finalTime[0], flow.finalTime[1]):
+            allflows[currtick].append([flow.molecule.moleculeName, flow.amount, flow.finalArea[0], flow.finalArea[1]])
+    print(allflows)
     for i in range(0, int(mainProject.ticks)):
         newcsvline = [i]
         time6 = time.time()
@@ -97,6 +96,13 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
             mainProject.bacteriaIDDict[int(j[0])].delIndividual(int(j[1]))
         time8 = time.time()
         #print("Delete dead individuals--- %s seconds ---" % (time8 - time7))
+        tempCommandList = []
+        for singleflow in allflows[i]:
+            tempCommandList.append(singleflow)
+        commandList = re.sub("'", "", str(tempCommandList))
+        print("doinflowAll " + re.sub(",", "", str(commandList)))
+        n.command("test " + "doinflowAll " + re.sub(",", "", str(commandList)))
+        n.command("doinflowAll " + re.sub(",", "", str(commandList)))
         intakeReport = n.report("intake")
         intakeReport = ast.literal_eval(intakeReport)
         for j in intakeReport:
@@ -118,6 +124,8 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
                     singleCommand.append(str(mainProject.bacteriaIDDict[k].dictOfIndividuals[j].petriNet.placeDict[m].tokens))
                 totalCommandList.append(singleCommand)
             commandString = re.sub("'", "", str(totalCommandList))
+            print("setBacteria" + str(k) + "PatchAll " + re.sub(",", "", commandString))
+            n.command("test " + "setBacteria" + str(k) + "PatchAll " + re.sub(",", "", commandString))
             n.command("setBacteria" + str(k) + "PatchAll " + re.sub(",", "", commandString))
         # here
         time11 = time.time()

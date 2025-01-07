@@ -411,10 +411,11 @@ def createNetLogoProject(mainProject):
         tempnetlogoFile.write("to setBacteria" + str(i) + "BehAll " + "[ listOfCommands ]" + " \n")
         tempnetlogoFile.write("\t foreach listOfCommands [ \n")
         tempnetlogoFile.write("\t \t [content] -> \n")
-        tempnetlogoFile.write("\t \t setBacteria" + str(i) + "Beh " + tempString)
+        tempnetlogoFile.write("\t \t setBacteria" + str(i) + "Beh " + tempString + " \n")
         tempnetlogoFile.write("\t ] \n")
         tempnetlogoFile.write("end \n")
     #setPatch function
+    #TODO: Fix for different intake numbers than 1
     for i in mainProject.listOfBacteriaIDs:
         tempString = "[ id "
         for j in mainProject.bacteriaIDDict[i].listOfEnvPlaceIDs:
@@ -439,12 +440,38 @@ def createNetLogoProject(mainProject):
                 x += 1
         tempString += "(item " + str(x) + " content) "
         tempnetlogoFile.write("to setBacteria" + str(i) + "PatchAll " + "[ listOfCommands ]" + " \n")
+        tempnetlogoFile.write("\t write \"hello world1\" \n")
         tempnetlogoFile.write("\t foreach listOfCommands [ \n")
         tempnetlogoFile.write("\t \t [content] -> \n")
-        tempnetlogoFile.write("\t \t setBacteria" + str(i) + "Patch " + tempString)
+        tempnetlogoFile.write("\t \t setBacteria" + str(i) + "Patch " + tempString + " \n")
         tempnetlogoFile.write("\t ] \n")
         tempnetlogoFile.write("end \n")
+    #single inflow function
+    tempnetlogoFile.write("to doinflow [ molecule amount starty endy ] \n")
+    tempnetlogoFile.write("\t while [starty < endy] [ \n")
+    tempnetlogoFile.write("\t \t write starty \n")
+    tempnetlogoFile.write("\t \t ask patch 0 starty [ \n")
+    tempnetlogoFile.write("\t \t \t (run (word \"set patch_\" molecule \" patch_\" molecule \" + \" amount)) \n")
+    tempnetlogoFile.write("\t \t \t set starty (starty + 1) \n")
+    tempnetlogoFile.write("\t \t ] \n")
+    tempnetlogoFile.write("\t ] \n")
+    tempnetlogoFile.write("end \n")
+    #allinflow function
+    tempnetlogoFile.write("to doinflowAll " + "[ listOfCommands ]" + " \n")
+    tempnetlogoFile.write("\t write \"tetetetetete\" \n")
+    tempnetlogoFile.write("\t foreach listOfCommands [ \n")
+    tempnetlogoFile.write("\t \t [content] -> \n")
+    tempnetlogoFile.write("\t \t doinflow (item 0 content) (item 1 content) (item 2 content) (item 3 content) \n")
+    tempnetlogoFile.write("\t ] \n")
+    tempnetlogoFile.write("end \n")
+    tempnetlogoFile.write("to test \n")
+    #tempnetlogoFile.write("to test " + "[ command ]" + " \n")
+    tempnetlogoFile.write("\t write \"LEL\" \n")
+    #tempnetlogoFile.write("\t write command \n")
+    tempnetlogoFile.write("end \n")
+
     #pushfunction
+    #TODO make it custom in GUI
     #TODO: add compartment detection for these spawns (and probably the normal repl as well) (for some reason normal repl seems to work)
     tempnetlogoFile.write("to pushfunction [ currBacID ] \n")
     tempnetlogoFile.write("\t ask turtle currBacID [ \n")

@@ -286,7 +286,7 @@ def updateTables(mainProject):
         coord = [mainProject.compartmentDict[compartmentID].minX, mainProject.compartmentDict[compartmentID].maxX, mainProject.compartmentDict[compartmentID].minY, mainProject.compartmentDict[compartmentID].maxY]
         compartmentTree.insert("", "end", values=(mainProject.compartmentDict[compartmentID].name, coord, "NotYetImplemented"))
     clearTable(inOutMolTree)
-    for flow in mainProject.inflows:
+    for flow in mainProject.flows:
         if flow.inout:
             tempType = "Inflow";
         else:

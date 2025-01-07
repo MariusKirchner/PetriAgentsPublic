@@ -31,7 +31,7 @@ class petriAgentProject:
         self.flowRate = 100
         self.flowBool = 1
         #TODO: Split Diffusion and flow! Change strings in GUI
-        self.inflows = []
+        self.flows = []
         defaultCompartment = netLogoCompartment("Default", 0, 0, self.maxXCor, 0, self.maxYCor, self.lrCont, self.tbCont, self.diffRate, self.diffBool, self.flowDir, self. flowRate, self.flowBool)
         self.listOfCompartmentIDs.append(0)
         self.compartmentDict[0] = defaultCompartment
@@ -95,5 +95,5 @@ class petriAgentProject:
         if time == 0:
             starttime = 0
             endtime = self.ticks
-        self.inflows.append(Inflow(molecule, inout, time, starttime, endtime, amount, area, start, end))
+        self.flows.append(Inflow(molecule, inout, time, starttime, endtime, amount, area, start, end))
 

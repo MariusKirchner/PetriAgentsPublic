@@ -216,7 +216,7 @@ def createNetLogoProject(mainProject):
                     else:
                         add += useList[counter]
                         tempnetlogoFile.write("\t \t \t (randomDirection < " + str(add) + ")[ \n")
-                        tempnetlogoFile.write("\t \t \t \t if (pxcor + " + str(x) + " <= max-pxcor and pxcor + " + str(x) + " >= min-pxcor and pycor + " + str(y) + " <= max-pycor and pycor + " + str(y) + " >= min-pycor) \n")
+                        tempnetlogoFile.write("\t \t \t \t (ifelse (pxcor + " + str(x) + " <= max-pxcor and pxcor + " + str(x) + " >= min-pxcor and pycor + " + str(y) + " <= max-pycor and pycor + " + str(y) + " >= min-pycor) \n")
                         tempnetlogoFile.write("\t \t \t \t [ \n")
                         tempnetlogoFile.write("\t \t \t \t \t ifelse ([compartmentID] of patch (pxcor + " + str(x) + ") (pycor + " + str(y) + ") != compartmentID) \n")
                         tempnetlogoFile.write("\t \t \t \t \t [ \n")
@@ -239,6 +239,9 @@ def createNetLogoProject(mainProject):
                         tempnetlogoFile.write("\t \t \t \t \t ] \n")
                         tempnetlogoFile.write("\t \t \t \t \t ] \n")
                         tempnetlogoFile.write("\t \t \t \t ] \n")
+                        tempnetlogoFile.write("\t \t \t \t (pxcor + " + str(x) + " > max-pxcor) [ \n")
+                        tempnetlogoFile.write("\t \t \t \t set patch_" + i + " (patch_" + i + " - 1) \n")
+                        tempnetlogoFile.write("\t \t \t \t ]) \n")
                         tempnetlogoFile.write("\t \t \t ] \n")
                         counter += 1
             tempnetlogoFile.write("\t \t \t ) \n")
@@ -440,7 +443,6 @@ def createNetLogoProject(mainProject):
                 x += 1
         tempString += "(item " + str(x) + " content) "
         tempnetlogoFile.write("to setBacteria" + str(i) + "PatchAll " + "[ listOfCommands ]" + " \n")
-        tempnetlogoFile.write("\t write \"hello world1\" \n")
         tempnetlogoFile.write("\t foreach listOfCommands [ \n")
         tempnetlogoFile.write("\t \t [content] -> \n")
         tempnetlogoFile.write("\t \t setBacteria" + str(i) + "Patch " + tempString + " \n")
@@ -448,8 +450,7 @@ def createNetLogoProject(mainProject):
         tempnetlogoFile.write("end \n")
     #single inflow function
     tempnetlogoFile.write("to doinflow [ molecule amount starty endy ] \n")
-    tempnetlogoFile.write("\t while [starty < endy] [ \n")
-    tempnetlogoFile.write("\t \t write starty \n")
+    tempnetlogoFile.write("\t while [starty <= endy] [ \n")
     tempnetlogoFile.write("\t \t ask patch 0 starty [ \n")
     tempnetlogoFile.write("\t \t \t (run (word \"set patch_\" molecule \" patch_\" molecule \" + \" amount)) \n")
     tempnetlogoFile.write("\t \t \t set starty (starty + 1) \n")
@@ -458,16 +459,10 @@ def createNetLogoProject(mainProject):
     tempnetlogoFile.write("end \n")
     #allinflow function
     tempnetlogoFile.write("to doinflowAll " + "[ listOfCommands ]" + " \n")
-    tempnetlogoFile.write("\t write \"tetetetetete\" \n")
     tempnetlogoFile.write("\t foreach listOfCommands [ \n")
     tempnetlogoFile.write("\t \t [content] -> \n")
     tempnetlogoFile.write("\t \t doinflow (item 0 content) (item 1 content) (item 2 content) (item 3 content) \n")
     tempnetlogoFile.write("\t ] \n")
-    tempnetlogoFile.write("end \n")
-    tempnetlogoFile.write("to test \n")
-    #tempnetlogoFile.write("to test " + "[ command ]" + " \n")
-    tempnetlogoFile.write("\t write \"LEL\" \n")
-    #tempnetlogoFile.write("\t write command \n")
     tempnetlogoFile.write("end \n")
 
     #pushfunction

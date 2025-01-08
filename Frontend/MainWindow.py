@@ -231,23 +231,23 @@ def addFlowOption(newWindow, mainProject):
     ttk.Radiobutton(tempFrame, text="At an intervall", variable=timeVar, value=1, command= lambda: checkdisabled).grid(row=1, column=1)
     ttk.Radiobutton(tempFrame, text="At a single timestep", variable=timeVar, value=2, command= lambda: checkdisabled).grid(row=1, column=2)
     ttk.Label(tempFrame, text="StartTime:").grid(row=2, column=0)
-    startTimeDefault = StringVar(tempFrame, value=0)
+    startTimeDefault = IntVar(tempFrame, value=0)
     Entry(tempFrame, textvariable=startTimeDefault).grid(row=2, column=1)
     ttk.Label(tempFrame, text="EndTime:").grid(row=2, column=2)
-    endTimeDefault = StringVar(tempFrame, value=0)
+    endTimeDefault = IntVar(tempFrame, value=0)
     Entry(tempFrame, textvariable=endTimeDefault).grid(row=2, column=3)
     ttk.Label(tempFrame, text="Amount of Molecule").grid(row=3, column=0)
-    amountDefault = StringVar(tempFrame, value=0)
+    amountDefault = IntVar(tempFrame, value=0)
     Entry(tempFrame, textvariable=amountDefault).grid(row=3, column=1)
     areaVar = IntVar()
     ttk.Radiobutton(tempFrame, text="Entire axis", variable=areaVar, value=0, command= lambda: checkdisabled).grid(row=4, column=0)
     ttk.Radiobutton(tempFrame, text="Part of axis", variable=areaVar, value=1, command= lambda: checkdisabled).grid(row=4, column=1)
     ttk.Radiobutton(tempFrame, text="Single position", variable=areaVar, value=2, command= lambda: checkdisabled).grid(row=4, column=2)
     ttk.Label(tempFrame, text="StartSpace:").grid(row=5, column=0)
-    startSpaceDefault = StringVar(tempFrame, value=0)
+    startSpaceDefault = IntVar(tempFrame, value=0)
     Entry(tempFrame, textvariable=startSpaceDefault).grid(row=5, column=1)
     ttk.Label(tempFrame, text="EndSpace:").grid(row=5, column=2)
-    endSpaceDefault = StringVar(tempFrame, value=0)
+    endSpaceDefault = IntVar(tempFrame, value=0)
     Entry(tempFrame, textvariable=endSpaceDefault).grid(row=5, column=3)
     currItem = environmentTree.focus()
     currMolecule = mainProject.dictOfEnvironmentMolecules[environmentTree.item(currItem).get("values")[0]]
@@ -391,27 +391,30 @@ def mainWindow(projectHolder):
 
 
     global diffusionCheck
-    diffusionCheck = IntVar(value=0)
+    diffusionCheck = IntVar(value=1)
     Checkbutton(environmentTab, text="Diffusion?", variable=diffusionCheck, onvalue=1, offvalue=0, command=lambda: diffusionCheckboxChange(projectHolder.currProject, diffusionCheck)).grid(column=2, row=6)
 
+    #comment back in if diffusionrate implemented
     global diffusionRateDefault
-    ttk.Label(environmentTab, text='Diffusion rate').grid(column=0, row=6)
+    #ttk.Label(environmentTab, text='Diffusion rate').grid(column=0, row=6)
     diffusionRateDefault = StringVar(environmentTab, value="100")
-    Entry(environmentTab, textvariable=diffusionRateDefault).grid(column=1, row=6)
+    #Entry(environmentTab, textvariable=diffusionRateDefault).grid(column=1, row=6)
 
+    #comment back in if flowrate implemented
     global flowRateDefault
-    ttk.Label(environmentTab, text="Flow rate").grid(column=0, row=8)
+    #ttk.Label(environmentTab, text="Flow rate").grid(column=0, row=8)
     flowRateDefault = StringVar(environmentTab, value="100")
-    Entry(environmentTab, textvariable=flowRateDefault).grid(column=1, row=8)
+    #Entry(environmentTab, textvariable=flowRateDefault).grid(column=1, row=8)
 
     global flowCheck
-    flowCheck = IntVar(value=0)
+    flowCheck = IntVar(value=1)
     Checkbutton(environmentTab, text="Flow?", variable=flowCheck, onvalue=1, offvalue=0, command=lambda: flowCheckboxChange(projectHolder.currProject, flowCheck)).grid(column=2, row=7)
 
+    #comment back in if flowdirection implemented
     global flowDirectionDefault
-    ttk.Label(environmentTab, text='Flow direction').grid(column=0, row=7)
+    #ttk.Label(environmentTab, text='Flow direction').grid(column=0, row=7)
     flowDirectionDefault = StringVar(environmentTab, value="E")
-    Entry(environmentTab, textvariable=flowDirectionDefault).grid(column=1, row=7)
+    #Entry(environmentTab, textvariable=flowDirectionDefault).grid(column=1, row=7)
 
     Button(settingsTab, text="Save this setup", command=lambda: createProjectFile(projectHolder.currProject)).grid(column=0, row=10)
     Button(settingsTab, text="Start this setup", command=lambda: startSimulation(projectHolder.currProject)).grid(column=1, row=10)

@@ -74,12 +74,12 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
     #print("Set up the compartments--- %s seconds ---" % (time5a - time5b))
     #create inflow data
     allflows = []
-    for i in range(0, int(mainProject.ticks)):
+    for i in range(0, int(mainProject.ticks)+1):
         allflows.append([])
     print(allflows)
     for flow in mainProject.flows:
-        for currtick in range(flow.finalTime[0], flow.finalTime[1]):
-            allflows[currtick].append([flow.molecule.moleculeName, flow.amount, flow.finalArea[0], flow.finalArea[1]])
+        for currtick in range(flow.finalTime[0], flow.finalTime[1] + 1):
+            allflows[currtick].append(["\"" + flow.molecule.moleculeName + "\"", flow.amount, flow.finalArea[0], flow.finalArea[1]])
     print(allflows)
     for i in range(0, int(mainProject.ticks)):
         newcsvline = [i]
@@ -100,8 +100,6 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
         for singleflow in allflows[i]:
             tempCommandList.append(singleflow)
         commandList = re.sub("'", "", str(tempCommandList))
-        print("doinflowAll " + re.sub(",", "", str(commandList)))
-        n.command("test " + "doinflowAll " + re.sub(",", "", str(commandList)))
         n.command("doinflowAll " + re.sub(",", "", str(commandList)))
         intakeReport = n.report("intake")
         intakeReport = ast.literal_eval(intakeReport)
@@ -124,8 +122,6 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
                     singleCommand.append(str(mainProject.bacteriaIDDict[k].dictOfIndividuals[j].petriNet.placeDict[m].tokens))
                 totalCommandList.append(singleCommand)
             commandString = re.sub("'", "", str(totalCommandList))
-            print("setBacteria" + str(k) + "PatchAll " + re.sub(",", "", commandString))
-            n.command("test " + "setBacteria" + str(k) + "PatchAll " + re.sub(",", "", commandString))
             n.command("setBacteria" + str(k) + "PatchAll " + re.sub(",", "", commandString))
         # here
         time11 = time.time()

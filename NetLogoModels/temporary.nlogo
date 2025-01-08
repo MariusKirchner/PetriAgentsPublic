@@ -58,9 +58,9 @@ to setup
 	 	 ask out-link-neighbors [set color local-color] 
 	 ] 
 	 ask patches with [pxcor > 0 and pxcor < 100 and pycor > 0 and pycor < 50][ 
-	 	 set patch_Nut random 1000 
+	 	 set patch_Nut random 10 
 	 ]	 ask patches with [pxcor > 0 and pxcor < 100 and pycor > 0 and pycor < 50][ 
-	 	 set patch_Antibiotica random 100 
+	 	 set patch_Antibiotica random 0 
 	 ]	 set flagella-size 1 
 	 updateView 
 end 

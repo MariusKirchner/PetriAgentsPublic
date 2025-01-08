@@ -293,7 +293,6 @@ def createNetLogoProject(mainProject):
                 tempnetlogoFile.write("\t \t \t \t [ \n")
                 tempnetlogoFile.write("\t \t \t \t \t setxy ([xcor] of myself) ([ycor] of myself) \n")
                 tempnetlogoFile.write("\t \t \t \t \t set heading ([heading] of myself)\n")
-                #TODO: cant move flagella back while turning because out of bounds - how to fix???
                 #TODO: dont let them turn around instantly and move, they dont sense the barrier, let them move until they hit it and the excess amount back?
                 #TODO: THIS IS BUGGED FOR SIDE RESTRICTED WORLDS!
                 #TODO: Add default border to no overlap at the edges, make the world 1 larger than user input and delete that - maybe start world at -1 -1?

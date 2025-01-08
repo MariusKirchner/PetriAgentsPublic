@@ -372,7 +372,7 @@ def mainWindow(projectHolder):
 
     global leftRightVar
     ttk.Label(environmentTab, text="Left/Right Continuity?").grid(column=0, row=2)
-    leftRightVar = IntVar(value=1)
+    leftRightVar = IntVar(value=0)
     Checkbutton(environmentTab, variable=leftRightVar).grid(column=1, row=2)
     global topBottomVar
     topBottomVar = IntVar(value=1)

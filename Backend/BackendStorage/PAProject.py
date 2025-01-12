@@ -35,6 +35,10 @@ class petriAgentProject:
         defaultCompartment = netLogoCompartment("Default", 0, 0, self.maxXCor, 0, self.maxYCor, self.lrCont, self.tbCont, self.diffRate, self.diffBool, self.flowDir, self. flowRate, self.flowBool)
         self.listOfCompartmentIDs.append(0)
         self.compartmentDict[0] = defaultCompartment
+        self.moloutflow = 1
+        self.bacoutflow = 1
+        self.bacflow = 100
+        # make these bacteriaspecific? if needed
 
     def addBacteria(self, bacteriaName, bacteriaPetri):
         # TODO: only if name not in there yet? or give individualIDs, change default of molnumber

@@ -416,6 +416,8 @@ def mainWindow(projectHolder):
     flowDirectionDefault = StringVar(environmentTab, value="E")
     #Entry(environmentTab, textvariable=flowDirectionDefault).grid(column=1, row=7)
 
+
+
     Button(settingsTab, text="Save this setup", command=lambda: createProjectFile(projectHolder.currProject)).grid(column=0, row=10)
     Button(settingsTab, text="Start this setup", command=lambda: startSimulation(projectHolder.currProject)).grid(column=1, row=10)
     Button(settingsTab, text="Load a setup", command=lambda: loadProjectFile(projectHolder)).grid(column=2, row=10)

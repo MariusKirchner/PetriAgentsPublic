@@ -84,7 +84,7 @@ def createNetLogoProject(mainProject):
     #set patchvalues, these are examples
     for i in mainProject.listOfEnvironmentMolecules:
         currMol = mainProject.dictOfEnvironmentMolecules[i]
-        tempnetlogoFile.write("\t ask patches with [pxcor > " + str(currMol.distArea[0][0]) + " and pxcor < " + str(currMol.distArea[1][0]) + " and pycor > " + str(currMol.distArea[0][1]) + " and pycor < " + str(currMol.distArea[1][1]) + "][ \n")
+        tempnetlogoFile.write("\t ask patches with [pxcor >= " + str(currMol.distArea[0][0]) + " and pxcor <= " + str(currMol.distArea[1][0]) + " and pycor >= " + str(currMol.distArea[0][1]) + " and pycor <= " + str(currMol.distArea[1][1]) + "][ \n")
         tempnetlogoFile.write("\t \t set patch_" + i + " random " + str(currMol.distAmount) + " \n")
         tempnetlogoFile.write("\t ]")
     #for scarce food: with [pxcor < 50 and pycor < 50]
@@ -285,17 +285,25 @@ def createNetLogoProject(mainProject):
                 tempnetlogoFile.write("to bacteria" + str(i) + "_" + "Move" + " [ id ] \n")
                 tempnetlogoFile.write("\t ask turtle id [ \n")
                 tempnetlogoFile.write("\t \t (ifelse \n")
-                tempnetlogoFile.write("\t \t \t (xcor < (min-pxcor + 0.5) or ycor < (min-pycor + 0.5) or xcor > (max-pxcor - 0.5) or ycor > (max-pycor - 0.5)) \n")
+                tempnetlogoFile.write("\t \t \t (patch-at dx 0 = nobody) \n")
                 tempnetlogoFile.write("\t \t \t [ \n")
-                tempnetlogoFile.write("\t \t \t \t set heading heading + 180 \n")
+                tempnetlogoFile.write("\t \t \t \t set heading (- heading) \n")
                 tempnetlogoFile.write("\t \t \t \t forward dxy \n")
                 tempnetlogoFile.write("\t \t \t \t ask out-link-neighbors \n")
                 tempnetlogoFile.write("\t \t \t \t [ \n")
                 tempnetlogoFile.write("\t \t \t \t \t setxy ([xcor] of myself) ([ycor] of myself) \n")
                 tempnetlogoFile.write("\t \t \t \t \t set heading ([heading] of myself)\n")
-                #TODO: dont let them turn around instantly and move, they dont sense the barrier, let them move until they hit it and the excess amount back?
-                #TODO: THIS IS BUGGED FOR SIDE RESTRICTED WORLDS!
-                #TODO: Add default border to no overlap at the edges, make the world 1 larger than user input and delete that - maybe start world at -1 -1?
+                tempnetlogoFile.write("\t \t \t \t \t bk 2 \n")
+                tempnetlogoFile.write("\t \t \t \t ] \n")
+                tempnetlogoFile.write("\t \t \t ] \n")
+                tempnetlogoFile.write("\t \t \t (patch-at 0 dy) = nobody \n")
+                tempnetlogoFile.write("\t \t \t [ \n")
+                tempnetlogoFile.write("\t \t \t \t set heading (180 - heading) \n")
+                tempnetlogoFile.write("\t \t \t \t forward dxy \n")
+                tempnetlogoFile.write("\t \t \t \t ask out-link-neighbors \n")
+                tempnetlogoFile.write("\t \t \t \t [ \n")
+                tempnetlogoFile.write("\t \t \t \t \t setxy ([xcor] of myself) ([ycor] of myself) \n")
+                tempnetlogoFile.write("\t \t \t \t \t set heading ([heading] of myself)\n")
                 tempnetlogoFile.write("\t \t \t \t \t bk 2 \n")
                 tempnetlogoFile.write("\t \t \t \t ] \n")
                 tempnetlogoFile.write("\t \t \t ] \n")
@@ -329,6 +337,12 @@ def createNetLogoProject(mainProject):
         #Does this work for noncontinuos regions? How to handle compartments?
         #rfvbgedTODO: for now bacteria spawn new bacteria at the same place to handle this - maybe try below at some point
         #maybe check positions if in compartment, if not => closer repr => check again, rinse and repeat
+        if "Tumble" in mainProject.bacteriaIDDict[i].dictOfBehPlaces.values():
+            tempnetlogoFile.write("to bacteria" + str(i) + "_" + "Tumble" + " [ id ] \n")
+            tempnetlogoFile.write("\t ask turtle id [ \n")
+            tempnetlogoFile.write("\t \t set heading (heading + random-float 360) \n")
+            tempnetlogoFile.write("\t ] \n")
+            tempnetlogoFile.write("end \n")
         if "Replication" in mainProject.bacteriaIDDict[i].dictOfBehPlaces.values():
             tempnetlogoFile.write("to bacteria" + str(i) + "_" + "Replication" + " [ id ] \n")
             tempnetlogoFile.write("\t ask turtle id [ \n")

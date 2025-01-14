@@ -35,6 +35,8 @@ class bacteria:
                     self.dictOfBehPlaces[placeID] = "Move"
                 elif petriNet.placeDict[placeID].name[4:] == "Death" or petriNet.placeDict[placeID].name[4:] == "death":
                     self.dictOfBehPlaces[placeID] = "Death"
+                elif petriNet.placeDict[placeID].name[4:] == "Tumble" or petriNet.placeDict[placeID].name[4:] == "tumble":
+                    self.dictOfBehPlaces[placeID] = "Tumble"
                 else:
                     self.dictOfBehPlaces[placeID] = "None"
         print("added a bacteria with name" + self.name)

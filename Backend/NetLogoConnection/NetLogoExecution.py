@@ -18,9 +18,9 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
     print(platform.platform()[0:7:])
     if platform.platform()[0:7:] == "Windows":
         #homepc
-        nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
+        #nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
         #laptop
-        #nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
+        nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
         #oldNLVersionTry
         #nl4py.initialize(r"C:\Program Files\NetLogo6.2.2")
     else:

@@ -25,6 +25,10 @@ def updateProject(mainProject):
     mainProject.flowDir = flowDirectionDefault.get()
     mainProject.diffBool = diffusionCheck.get()
     mainProject.flowBool = flowCheck.get()
+    mainProject.bacteriaFlow = bacteriaFlow.get()
+    mainProject.moleculeOutflow = moleculeOutflow.get()
+    mainProject.bacteriaOutflow = bacteriaOutflow.get()
+
     pass
 
 def updateGUI(mainProject):
@@ -367,8 +371,20 @@ def mainWindow(projectHolder):
     Entry(settingsTab, textvariable=maxYCorDefault).grid(column=1, row=1)
     global tickAmount
     ttk.Label(settingsTab, text="Ticks").grid(column=0, row=2)
-    tickAmount = StringVar(settingsTab, value="100")
+    tickAmount = StringVar(settingsTab, value="10000")
     Entry(settingsTab, textvariable=tickAmount).grid(column=1, row=2)
+    global bacteriaFlow
+    ttk.Label(settingsTab, text="Bacteria Flow (0-100)").grid(column=0, row=3)
+    bacteriaFlow = StringVar(settingsTab, value="0")
+    Entry(settingsTab, textvariable=bacteriaFlow).grid(column=1, row=3)
+    global bacteriaOutflow
+    ttk.Label(settingsTab, text="Bacteria Outflow?").grid(column=0, row=4)
+    bacteriaOutflow = IntVar(settingsTab, value=0)
+    Checkbutton(settingsTab, variable=bacteriaOutflow).grid(column=1, row=4)
+    global moleculeOutflow
+    ttk.Label(settingsTab, text="Molecule Outflow?").grid(column=0, row=5)
+    moleculeOutflow = IntVar(settingsTab, value=0)
+    Checkbutton(settingsTab, variable=moleculeOutflow).grid(column=1, row=5)
 
     global leftRightVar
     ttk.Label(environmentTab, text="Left/Right Continuity?").grid(column=0, row=2)

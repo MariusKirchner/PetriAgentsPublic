@@ -22,7 +22,7 @@ class petriAgentProject:
         self.dictOfEnvironmentMolecules = {}
         self.maxXCor = 100
         self.maxYCor = 50
-        self.ticks = 100
+        self.ticks = 10000
         self.lrCont = 1
         self.tbCont = 1
         self.diffRate = 100
@@ -35,9 +35,9 @@ class petriAgentProject:
         defaultCompartment = netLogoCompartment("Default", 0, 0, self.maxXCor, 0, self.maxYCor, self.lrCont, self.tbCont, self.diffRate, self.diffBool, self.flowDir, self. flowRate, self.flowBool)
         self.listOfCompartmentIDs.append(0)
         self.compartmentDict[0] = defaultCompartment
-        self.moloutflow = 1
-        self.bacoutflow = 1
-        self.bacflow = 100
+        self.moleculeOutFlow = 0
+        self.bacteriaOutflow = 0
+        self.bacteriaFlow = 0
         # make these bacteriaspecific? if needed
 
     def addBacteria(self, bacteriaName, bacteriaPetri):

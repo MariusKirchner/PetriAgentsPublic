@@ -40,7 +40,6 @@ def readSBML(filename):
                 tempPostPlaceList.append(tempTuple)
             else:
                 tempPostPlaceList.append(id)
-        print("test")
         print(r.getName().split("_")[0])
         if r.getName().split("_")[0].isdigit():
             tempPetri.addTransition(currid, r.getName(), tempPrePlaceList, tempPostPlaceList, int(r.getName().split("_")[0]))

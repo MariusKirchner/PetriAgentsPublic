@@ -6,7 +6,7 @@ import time
 import re
 import csv
 import nl4py
-
+import os.path
 
 def executeNetLogoProject(mainProject, netLogoProjectFilepath):
     time1 = time.time()
@@ -17,12 +17,15 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath):
     # linux
     print(platform.platform()[0:7:])
     if platform.platform()[0:7:] == "Windows":
-        #homepc
-        #nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
-        #laptop
-        nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
-        #oldNLVersionTry
-        #nl4py.initialize(r"C:\Program Files\NetLogo6.2.2")
+        if os.path.exists(r"D:\UniversityPrograms\NetLogo6.3.0"):
+            #homepc
+            nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
+        elif os.path.exists(r"C:\Program Files\NetLogo 6.3.0"):
+            #laptop
+            nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
+        elif os.path.exists(r"C:\Program Files\NetLogo6.2.2"):
+            #oldNLVersionTry
+            nl4py.initialize(r"C:\Program Files\NetLogo6.2.2")
     else:
         nl4py.initialize('/home/MariusKirchner/Desktop/Randomstuff/NetLogo-6.2.2-64/NetLogo 6.2.2/')
 

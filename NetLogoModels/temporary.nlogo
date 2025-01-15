@@ -40,7 +40,7 @@ to setup
 	 set flowspeed 0.1 
 	 set newIndividuals [] 
 	 set deadIndividuals [] 
-	 create-bacteria1 100[ 
+	 create-bacteria1 60[ 
 	 	 setxy random-xcor random-ycor 
 	 	 set size 1 
 	 	 set Beh_Move 0 
@@ -57,7 +57,7 @@ to setup
 	 	 ask out-link-neighbors [set color local-color] 
 	 ] 
 	 ask patches with [pxcor >= 0 and pxcor <= 100 and pycor >= 0 and pycor <= 50][ 
-	 	 set patch_Nut random 10 
+	 	 set patch_Nut random 2 
 	 ]	 set flagella-size 1 
 	 updateView 
 end 

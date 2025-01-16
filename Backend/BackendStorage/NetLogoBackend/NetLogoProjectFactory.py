@@ -55,7 +55,7 @@ def createNetLogoProject(mainProject):
     tempnetlogoFile.write("\t reset-ticks \n")
     #set globals
     tempnetlogoFile.write("\t set timeinterval-per-tick 1 \n")
-    tempnetlogoFile.write("\t set bacteria-velocity 1 \n")
+    tempnetlogoFile.write("\t set bacteria-velocity 0.3 \n")
     tempnetlogoFile.write("\t set flowspeed 0.1 \n")
     tempnetlogoFile.write("\t set newIndividuals [] \n")
     tempnetlogoFile.write("\t set deadIndividuals [] \n")

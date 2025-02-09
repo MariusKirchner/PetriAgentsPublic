@@ -1,4 +1,3 @@
-/results/testing/
 /AdditionalScripts/PlotScripts/Nutrient.png
 /AdditionalScripts/PlotScripts/Bacteria.png
 /AdditionalScripts/PlotScripts/BacteriaDeath.png
@@ -20,4 +19,5 @@
 /AdditionalScripts/PlotScripts/TestMove.png
 /AdditionalScripts/PlotScripts/TestReplication.png
 /AdditionalScripts/PlotScripts/testSize.png
-/results/
+/results/*
+!results/.gitkeep.txt

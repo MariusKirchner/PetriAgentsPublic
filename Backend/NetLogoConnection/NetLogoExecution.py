@@ -8,7 +8,7 @@ import csv
 import nl4py
 import os.path
 
-def executeNetLogoProject(mainProject, netLogoProjectFilepath):
+def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpath):
     time1 = time.time()
     print("Executing NetLogoFile")
     print("Starting Netlogo from Python")

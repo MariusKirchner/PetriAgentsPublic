@@ -1,3 +1,4 @@
+
 _author__ = "Marius Kirchner, Goethe University Frankfurt am Main"
 
 import time
@@ -7,7 +8,9 @@ from tkinter import ttk
 from tkinter.colorchooser import askcolor
 import tkinter.filedialog
 
+import datetime
 import nl4py
+import os
 
 from Backend.BackendStorage.NetLogoBackend.NetLogoProjectFactory import createNetLogoProject
 from Backend.Input import SBMLReadFactory, LoadProject
@@ -41,16 +44,38 @@ def updateGUI(mainProject):
     updateTables(mainProject)
     pass
 
-def startSimulation(mainProject):
+def startSimulation(mainProject, amount, foldername, window):
     updateProject(mainProject)
-    #quick test compartment:
-    #mainProject.addCompartment("TEST", "0", "0", "25", "25")
     print("Starting Simulation")
     print("Writing the NetLogoFile")
     netLogoProjectFilepath = createNetLogoProject(mainProject)
-    startTime = time.time()
-    NetLogoExecution.executeNetLogoProject(mainProject, netLogoProjectFilepath)
+    timezone = datetime.timezone.utc
+    format = "%Y-%m-%dT%H:%M:%S%z"
+    currdir = os.getcwd()
+    resultdir = os.path.join(currdir, r'results')
+    newfolder = foldername + datetime.datetime.now(tz=timezone).strftime(format)
+    newfolderdir = os.path.join(resultdir, r'newfolder')
+    if not os.path.isdir(newfolderdir):
+        os.makedirs(newfolderdir)
+    NetLogoExecution.executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, newfolderdir)
+    window.destroy()
     pass
+
+def startSimulationQueue(mainProject, root):
+    updateProject(mainProject)
+    newWindow = Toplevel(root)
+    tempFrame = ttk.Frame(newWindow, padding=10)
+    tempFrame.grid()
+    amount = StringVar(tempFrame)
+    amount.set("1")
+    ttk.Label(tempFrame, text="How often should this simulation be run? ").grid(column=0, row=0)
+    Entry(tempFrame, textvariable=amount).grid(column=1, row=0)
+    ttk.Label(tempFrame, text="Simulationresultfoldername (if left empty, it will default to just the current time): ").grid(column=0, row=1)
+    foldername = StringVar(tempFrame)
+    Entry(tempFrame, textvariable=foldername).grid(column=1, row=1)
+    Button(tempFrame, text="Start this setup", command=lambda: startSimulation(mainProject, amount.get(), foldername.get(), root)).grid(column=0, row=2)
+
+
 
 def createProjectFile(mainProject):
     updateProject(mainProject)
@@ -435,9 +460,9 @@ def mainWindow(projectHolder):
 
 
     Button(settingsTab, text="Save this setup", command=lambda: createProjectFile(projectHolder.currProject)).grid(column=0, row=10)
-    Button(settingsTab, text="Start this setup", command=lambda: startSimulation(projectHolder.currProject)).grid(column=1, row=10)
+    Button(settingsTab, text="Start this setup", command=lambda: startSimulationQueue(projectHolder.currProject, root)).grid(column=1, row=10)
     Button(settingsTab, text="Load a setup", command=lambda: loadProjectFile(projectHolder)).grid(column=2, row=10)
-    Button(compartmentTab, text="Add a compartment", command=lambda: addCompartment(projectHolder.currProject, root)).grid(column=2, row=0)
+    Button(compartmentTab, text="Add a compartment", command=lambda: addCompartment(projectHolder.currProject, root)).grid(column=3, row=0)
 
 
 

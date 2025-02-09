@@ -41,7 +41,7 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpat
     n.command("setup")
     time4 = time.time()
     #print("double setup--- %s seconds ---" % (time4 - time3))
-    csvfile = open("results.csv", "w", encoding="UTF8", newline="")
+    csvfile = open(folderpath + r"\results.csv", "w", encoding="UTF8", newline="")
     csvwriter = csv.writer(csvfile)
     header = ["ticks"]
     for bacteria in mainProject.listOfBacteriaIDs:

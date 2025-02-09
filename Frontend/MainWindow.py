@@ -50,11 +50,12 @@ def startSimulation(mainProject, amount, foldername, window):
     print("Writing the NetLogoFile")
     netLogoProjectFilepath = createNetLogoProject(mainProject)
     timezone = datetime.timezone.utc
-    format = "%Y-%m-%dT%H:%M:%S%z"
+    format = '%Y-%m-%dT%H%M%S%z'
+    rawtime = r'{}'.format(datetime.datetime.now(tz=timezone).strftime(format))
     currdir = os.getcwd()
-    resultdir = os.path.join(currdir, r'results')
-    newfolder = foldername + datetime.datetime.now(tz=timezone).strftime(format)
-    newfolderdir = os.path.join(resultdir, r'newfolder')
+    resultdir = os.path.join(currdir, 'results')
+    newfolder = '' + foldername + '_' + rawtime
+    newfolderdir = os.path.join(resultdir, newfolder)
     if not os.path.isdir(newfolderdir):
         os.makedirs(newfolderdir)
     NetLogoExecution.executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, newfolderdir)

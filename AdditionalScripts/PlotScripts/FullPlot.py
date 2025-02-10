@@ -17,8 +17,9 @@ listOfData = []
 xaxis = []
 numberOfSims = 0
 newxaxis = True
-for filename in os.listdir(directory):
-    filepath = os.path.join(directory, filename)
+tabledir = os.path.join(directory, 'tables')
+for filename in os.listdir(tabledir):
+    filepath = os.path.join(tabledir, filename)
     if os.path.isfile(filepath):
         templist = []
         csvfile = open(filepath, newline="")
@@ -36,6 +37,9 @@ for filename in os.listdir(directory):
         numberOfSims += 1
         listOfData.append(templist)
 
+newfolderdir = os.path.join(directory, r'plots')
+if not os.path.isdir(newfolderdir):
+    os.makedirs(newfolderdir)
 
 xnew = np.linspace(min(xaxis), max(xaxis), 300)
 counter = 0
@@ -71,9 +75,11 @@ for x in range(0, len(listOfData[0])):
     tempsmoothmax = make_interp_spline(xaxis, maxplot, k=3)
     smoothmax = tempsmoothmax(xnew)
     print("done interpolating")
-    plt.plot(xnew, smoothavg)
-    plt.fill_between(xnew, smoothmin, smoothmax)
-    plt.savefig(header[counter+1] + ".png", bbox_inches="tight")
+    plt.plot(xnew, smoothavg, color="b")
+    plt.fill_between(xnew, smoothmin, smoothmax, color="cornflowerblue")
+    print(newfolderdir)
+    plt.savefig(newfolderdir + "\\" + header[counter+1] + ".png", bbox_inches="tight")
+    plt.savefig(newfolderdir + "\\" + header[counter + 1] + ".svg", bbox_inches="tight")
     print("done")
     counter += 1
     plt.clf()

@@ -15,10 +15,10 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpat
     for i in range(0, int(mainProject.ticks) + 1):
         allflows.append([])
     print(allflows)
+    #todo fix flow length if tickamount is changed
     for flow in mainProject.flows:
         for currtick in range(flow.finalTime[0], flow.finalTime[1] + 1):
-            allflows[currtick].append(
-                ["\"" + flow.molecule.moleculeName + "\"", flow.amount, flow.finalArea[0], flow.finalArea[1]])
+            allflows[currtick].append(["\"" + flow.molecule.moleculeName + "\"", flow.amount, flow.finalArea[0], flow.finalArea[1]])
     print(allflows)
     time1 = time.time()
     print("Executing NetLogoFile")

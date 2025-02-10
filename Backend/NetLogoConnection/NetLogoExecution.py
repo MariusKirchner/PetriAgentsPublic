@@ -123,7 +123,6 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpat
                     mainProject.bacteriaIDDict[k].dictOfIndividuals[j].petriNet.simulateStep()
             time10 = time.time()
             #print("PetriNet Simulations --- %s seconds ---" % (time10 - time9))
-            # todo: insert output functionality here, probably similar to the behaviour function below
             for k in mainProject.listOfBacteriaIDs:
                 totalCommandList = []
                 for j in mainProject.bacteriaIDDict[k].listOfIndividuals:

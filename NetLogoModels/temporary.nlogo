@@ -11,6 +11,7 @@ bacteria1-own [
  
 patches-own [ 
 	 patch_Nut
+	 patch_Antibiotica
 	 compartmentID 
 	 ] 
 
@@ -58,6 +59,8 @@ to setup
 	 ] 
 	 ask patches with [pxcor >= 0 and pxcor <= 100 and pycor >= 0 and pycor <= 50][ 
 	 	 set patch_Nut random 100 
+	 ]	 ask patches with [pxcor >= 0 and pxcor <= 100 and pycor >= 0 and pycor <= 50][ 
+	 	 set patch_Antibiotica random 100 
 	 ]	 set flagella-size 1 
 	 updateView 
 end 
@@ -347,6 +350,239 @@ to patchdiffusion
 	 	 	 ] 
 	 	 	 ) 
 	 	 ] 
+	 	 set tempList range patch_Antibiotica 
+	 	 foreach tempList [ 
+	 	 	 let randomDirection random 100 
+	 	 	 (ifelse 
+	 	 	 (randomDirection < 3)[ 
+	 	 	 	 (ifelse (pxcor + -1 <= max-pxcor and pxcor + -1 >= min-pxcor and pycor + -1 <= max-pycor and pycor + -1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + -1) (pycor + -1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + -1) (pycor + -1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + -1) (pycor + -1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Antibiotica (patch_Antibiotica + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 	 ask patch (pxcor + -1) (pycor + -1)[ 
+	 	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + -1 > max-pxcor) [ 
+	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 8)[ 
+	 	 	 	 (ifelse (pxcor + -1 <= max-pxcor and pxcor + -1 >= min-pxcor and pycor + 0 <= max-pycor and pycor + 0 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + -1) (pycor + 0) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + -1) (pycor + 0)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + -1) (pycor + 0)[ 
+	 	 	 	 	 	 	 	 	  set patch_Antibiotica (patch_Antibiotica + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 	 ask patch (pxcor + -1) (pycor + 0)[ 
+	 	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + -1 > max-pxcor) [ 
+	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 11)[ 
+	 	 	 	 (ifelse (pxcor + -1 <= max-pxcor and pxcor + -1 >= min-pxcor and pycor + 1 <= max-pycor and pycor + 1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + -1) (pycor + 1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + -1) (pycor + 1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + -1) (pycor + 1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Antibiotica (patch_Antibiotica + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 	 ask patch (pxcor + -1) (pycor + 1)[ 
+	 	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + -1 > max-pxcor) [ 
+	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 18)[ 
+	 	 	 	 (ifelse (pxcor + 0 <= max-pxcor and pxcor + 0 >= min-pxcor and pycor + -1 <= max-pycor and pycor + -1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 0) (pycor + -1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 0) (pycor + -1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + 0) (pycor + -1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Antibiotica (patch_Antibiotica + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 	 ask patch (pxcor + 0) (pycor + -1)[ 
+	 	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + 0 > max-pxcor) [ 
+	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 38)[ 
+	 	 	 ;nothing happens as the random decider decided to leave the molecule in place 
+	 	 	 ] 
+	 	 	 (randomDirection < 45)[ 
+	 	 	 	 (ifelse (pxcor + 0 <= max-pxcor and pxcor + 0 >= min-pxcor and pycor + 1 <= max-pycor and pycor + 1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 0) (pycor + 1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 0) (pycor + 1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + 0) (pycor + 1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Antibiotica (patch_Antibiotica + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 	 ask patch (pxcor + 0) (pycor + 1)[ 
+	 	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + 0 > max-pxcor) [ 
+	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 60)[ 
+	 	 	 	 (ifelse (pxcor + 1 <= max-pxcor and pxcor + 1 >= min-pxcor and pycor + -1 <= max-pycor and pycor + -1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 1) (pycor + -1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 1) (pycor + -1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + 1) (pycor + -1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Antibiotica (patch_Antibiotica + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 	 ask patch (pxcor + 1) (pycor + -1)[ 
+	 	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + 1 > max-pxcor) [ 
+	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 85)[ 
+	 	 	 	 (ifelse (pxcor + 1 <= max-pxcor and pxcor + 1 >= min-pxcor and pycor + 0 <= max-pycor and pycor + 0 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 1) (pycor + 0) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 1) (pycor + 0)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + 1) (pycor + 0)[ 
+	 	 	 	 	 	 	 	 	  set patch_Antibiotica (patch_Antibiotica + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 	 ask patch (pxcor + 1) (pycor + 0)[ 
+	 	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + 1 > max-pxcor) [ 
+	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 100)[ 
+	 	 	 	 (ifelse (pxcor + 1 <= max-pxcor and pxcor + 1 >= min-pxcor and pycor + 1 <= max-pycor and pycor + 1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 1) (pycor + 1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 1) (pycor + 1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + 1) (pycor + 1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Antibiotica (patch_Antibiotica + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 	 ask patch (pxcor + 1) (pycor + 1)[ 
+	 	 	 	 	 	 set patch_Antibiotica (patch_Antibiotica + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + 1 > max-pxcor) [ 
+	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 ) 
+	 	 ] 
 	 ] 
 end 
 to updateView 
@@ -458,6 +694,9 @@ to patch-intakes
 	 	 	 if (patch_Nut > 0) [ 
 	 	 	 	 set patch_Nut (patch_Nut - 1) 
 	 	 	 ] 
+	 	 	 if (patch_Antibiotica > 0) [ 
+	 	 	 	 set patch_Antibiotica (patch_Antibiotica - 1) 
+	 	 	 ] 
 	 	 ] 
 	 ] 
 end 
@@ -475,17 +714,18 @@ to setBacteria1BehAll [ listOfCommands ]
 	 	 setBacteria1Beh (item 0 content) (item 1 content) (item 2 content) (item 3 content) (item 4 content)  
 	 ] 
 end 
-to setBacteria1Patch [ id Nut ] 
+to setBacteria1Patch [ id Nut Antibiotica ] 
 	 ask turtle id [ 
 	 	 ask patch-here [ 
 	 	 	 set patch_Nut Nut 
+	 	 	 set patch_Antibiotica Antibiotica 
 	 	 ] 
 	 ] 
 end 
 to setBacteria1PatchAll [ listOfCommands ] 
 	 foreach listOfCommands [ 
 	 	 [content] -> 
-	 	 setBacteria1Patch (item 0 content) (item 1 content)  
+	 	 setBacteria1Patch (item 0 content) (item 1 content) (item 2 content)  
 	 ] 
 end 
 to doinflow [ molecule amount starty endy ] 
@@ -553,6 +793,12 @@ to-report intake
  	 	 	 set tempList lput patch_Nut templist 
  	 	 	 set wholeList lput tempList wholeList 
  	 	 	 set tempList [] 
+ 	 	 	 set tempList lput bacType tempList 
+ 	 	 	 set tempList lput tempID tempList
+ 	 	 	 set tempList lput "\"Antibiotica\"" templist 
+ 	 	 	 set tempList lput patch_Antibiotica templist 
+ 	 	 	 set wholeList lput tempList wholeList 
+ 	 	 	 set tempList [] 
 	 	 ] 
 	 ] 
 	 report wholeList 
@@ -560,10 +806,13 @@ end
 to-report patchvalues 
 	 let templist [] 
 	 let tempvalueNut 0 
+	 let tempvalueAntibiotica 0 
 	 ask patches [ 
 	 	 set tempvalueNut tempvalueNut + patch_Nut 
+	 	 set tempvalueAntibiotica tempvalueAntibiotica + patch_Antibiotica 
 	 ] 
  	 set templist lput tempvalueNut templist 
+	 set templist lput tempvalueAntibiotica templist 
 	 report templist 
 end 
 

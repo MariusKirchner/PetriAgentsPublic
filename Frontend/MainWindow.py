@@ -44,7 +44,7 @@ def updateGUI(mainProject):
     updateTables(mainProject)
     pass
 
-def startSimulation(mainProject, amount, foldername, window):
+def startSimulation(mainProject, amount, foldername, guimode, window):
     updateProject(mainProject)
     print("Starting Simulation")
     print("Writing the NetLogoFile")
@@ -58,7 +58,7 @@ def startSimulation(mainProject, amount, foldername, window):
     newfolderdir = os.path.join(resultdir, newfolder)
     if not os.path.isdir(newfolderdir):
         os.makedirs(newfolderdir)
-    NetLogoExecution.executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, newfolderdir)
+    NetLogoExecution.executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, newfolderdir, guimode)
     window.destroy()
     pass
 
@@ -74,7 +74,11 @@ def startSimulationQueue(mainProject, root):
     ttk.Label(tempFrame, text="Simulationresultfoldername (if left empty, it will default to just the current time): ").grid(column=0, row=1)
     foldername = StringVar(tempFrame)
     Entry(tempFrame, textvariable=foldername).grid(column=1, row=1)
-    Button(tempFrame, text="Start this setup", command=lambda: startSimulation(mainProject, amount.get(), foldername.get(), root)).grid(column=0, row=2)
+    ttk.Label(tempFrame, text="Graphical representation of NetLogo?").grid(column=0, row=2)
+    guimode = BooleanVar(tempFrame)
+    guimode.set(True)
+    #Checkbutton(tempFrame, variable=guimode, onvalue=True, offvalue=False).grid(column=1, row=2)
+    Button(tempFrame, text="Start this setup", command=lambda: startSimulation(mainProject, amount.get(), foldername.get(), guimode.get(), root)).grid(column=0, row=3)
 
 
 

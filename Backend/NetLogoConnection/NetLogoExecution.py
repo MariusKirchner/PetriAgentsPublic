@@ -1,6 +1,7 @@
 __author__ = "Marius Kirchner, Goethe University Frankfurt am Main"
 
 import ast
+import copy
 import platform
 import time
 import re
@@ -19,32 +20,34 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpat
             allflows[currtick].append(
                 ["\"" + flow.molecule.moleculeName + "\"", flow.amount, flow.finalArea[0], flow.finalArea[1]])
     print(allflows)
+    time1 = time.time()
+    print("Executing NetLogoFile")
+    print("Starting Netlogo from Python")
 
+    # TODO: make user choose their NetLogoLocation
+    # linux
+    print(platform.platform()[0:7:])
+    if platform.platform()[0:7:] == "Windows":
+        if os.path.exists(r"D:\UniversityPrograms\NetLogo6.3.0"):
+            # homepc
+            nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
+        elif os.path.exists(r"C:\Program Files\NetLogo 6.3.0"):
+            # laptop
+            nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
+        elif os.path.exists(r"C:\Program Files\NetLogo6.2.2"):
+            # oldNLVersionTry
+            nl4py.initialize(r"C:\Program Files\NetLogo6.2.2")
+    else:
+        nl4py.initialize('/home/MariusKirchner/Desktop/Randomstuff/NetLogo-6.2.2-64/NetLogo 6.2.2/')
+
+    if guimode:
+        n = nl4py.netlogo_app()  #
+    else:
+        n = nl4py.create_headless_workspace()
+
+    parentProject = copy.deepcopy(mainProject)
     for currRun in range(0, int(amount)):
-        time1 = time.time()
-        print("Executing NetLogoFile")
-        print("Starting Netlogo from Python")
-
-        # TODO: make user choose their NetLogoLocation
-        # linux
-        print(platform.platform()[0:7:])
-        if platform.platform()[0:7:] == "Windows":
-            if os.path.exists(r"D:\UniversityPrograms\NetLogo6.3.0"):
-                #homepc
-                nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
-            elif os.path.exists(r"C:\Program Files\NetLogo 6.3.0"):
-                #laptop
-                nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
-            elif os.path.exists(r"C:\Program Files\NetLogo6.2.2"):
-                #oldNLVersionTry
-                nl4py.initialize(r"C:\Program Files\NetLogo6.2.2")
-        else:
-            nl4py.initialize('/home/MariusKirchner/Desktop/Randomstuff/NetLogo-6.2.2-64/NetLogo 6.2.2/')
-
-        if guimode:
-            n = nl4py.netlogo_app()#
-        else:
-            n = nl4py.create_headless_workspace()
+        mainProject = copy.deepcopy(parentProject)
         time2 = time.time()
         #print("PreConfig--- %s seconds ---" % (time2 - time1))
         n.open_model(netLogoProjectFilepath)
@@ -89,8 +92,7 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpat
         n.command("setCompartmentAll " + re.sub(",", "", str(commandList)))
         time5a = time.time()
         #print("Set up the compartments--- %s seconds ---" % (time5a - time5b))
-
-        for i in range(0, int(mainProject.ticks)):
+        for i in range(0, int(parentProject.ticks)):
             newcsvline = [i]
             time6 = time.time()
             newIndividuals = n.report("newIndiv")
@@ -153,7 +155,7 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpat
             time14 = time.time()
             #print("go command(including diffusion)--- %s seconds ---" % (time14 - time13))
             if i % 100 == 0:
-                print(i)
+                print("currtick (mod 100): " + str(i))
             #write results
             for k in mainProject.listOfBacteriaIDs:
                 newcsvline.append(str(len(mainProject.bacteriaIDDict[k].listOfIndividuals)))
@@ -169,4 +171,7 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpat
                 newcsvline.append(int(k))
             csvwriter.writerow(newcsvline)
         csvfile.close()
-        n.closeModel()
+        n.close_model()
+        print("Finished run number: " + str(currRun))
+        #n.app.disposeWorkspace()
+        #n.server_starter.shutdown_server()

@@ -19,6 +19,7 @@ from Backend.Output import SaveProject
 
 
 def updateProject(mainProject):
+    #todo fill this up
     mainProject.maxXCor = maxXCorDefault.get()
     mainProject.maxYCor = maxYCorDefault.get()
     mainProject.ticks = tickAmount.get()
@@ -35,12 +36,12 @@ def updateProject(mainProject):
     pass
 
 def updateGUI(mainProject):
+    #todo fill this up
     maxXCorDefault.set(mainProject.maxXCor)
     maxYCorDefault.set(mainProject.maxYCor)
     leftRightVar.set(mainProject.lrCont)
     topBottomVar.set(mainProject.tbCont)
     diffusionRateDefault.set(mainProject.diffRate)
-    diffusionDirectionDefault.set(mainProject.diffDir)
     updateTables(mainProject)
     pass
 
@@ -77,7 +78,7 @@ def startSimulationQueue(mainProject, root):
     ttk.Label(tempFrame, text="Graphical representation of NetLogo?").grid(column=0, row=2)
     guimode = BooleanVar(tempFrame)
     guimode.set(True)
-    #Checkbutton(tempFrame, variable=guimode, onvalue=True, offvalue=False).grid(column=1, row=2)
+    Checkbutton(tempFrame, variable=guimode, onvalue=True, offvalue=False).grid(column=1, row=2)
     Button(tempFrame, text="Start this setup", command=lambda: startSimulation(mainProject, amount.get(), foldername.get(), guimode.get(), root)).grid(column=0, row=3)
 
 
@@ -96,7 +97,8 @@ def loadProjectFile(projectHolder):
     #TODO: ask if user really wants to load in a new one or wants to save the old project first
     print("Loading ProjectFile")
     filehandler = tkinter.filedialog.askopenfilename(title="Loading project from...", filetypes=(("paproject", ".xml"), ("All files", "*.*")))
-    newMainProject = LoadProject.loadProject(filehandler)
+    file = open(filehandler, 'r', encoding='utf8')
+    newMainProject = LoadProject.loadProject(file)
     projectHolder.currProject = newMainProject
     #TODO: Test this!
     updateGUI(newMainProject)

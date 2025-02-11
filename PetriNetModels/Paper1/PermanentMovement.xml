@@ -87,7 +87,7 @@
     </layout:listOfLayouts>
     <listOfSpecies>
       <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P0" initialAmount="0" name="Env_Nut" sboTerm="SBO:0000000"/>
-      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P1" initialAmount="0" name="Random_0_10" sboTerm="SBO:0000000"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P1" initialAmount="0" name="Random_0_10_Nutrients" sboTerm="SBO:0000000"/>
       <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P2" initialAmount="0" name="Beh_Move" sboTerm="SBO:0000000"/>
       <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P3" initialAmount="0" name="Beh_Size" sboTerm="SBO:0000000"/>
       <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P4" initialAmount="0" name="Beh_Repl" sboTerm="SBO:0000000"/>

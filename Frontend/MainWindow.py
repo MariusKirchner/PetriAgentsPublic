@@ -59,7 +59,14 @@ def startSimulation(mainProject, amount, foldername, guimode, window):
     newfolderdir = os.path.join(resultdir, newfolder)
     if not os.path.isdir(newfolderdir):
         os.makedirs(newfolderdir)
-    NetLogoExecution.executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, newfolderdir, guimode)
+    print("Saving the project file with it")
+    projectfile = newfolder + ".xml"
+    projectfilepath = os.path.join(newfolderdir, projectfile)
+    SaveProject.saveProject(mainProject, projectfilepath)
+    tablefolderdir = os.path.join(newfolderdir, 'tables')
+    if not os.path.isdir(tablefolderdir):
+        os.makedirs(tablefolderdir)
+    NetLogoExecution.executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, tablefolderdir, guimode)
     window.destroy()
     pass
 

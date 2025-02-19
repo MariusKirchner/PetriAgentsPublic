@@ -48,12 +48,12 @@ class bacteria:
         tempIndividual = individualBacteria(ID, copy.deepcopy(self.petriNet), self.ID)
         if start:
             for place in tempIndividual.petriNet.placeIDList:
-                if tempIndividual.petriNet.placeDict[place].name.split("_")[0] == "Random":
-                    tempIndividual.petriNet.placeDict[place].tokens = randint(int(tempIndividual.petriNet.placeDict[place].name.split("_")[1]), int(tempIndividual.petriNet.placeDict[place].name.split("_")[2]))
+                if tempIndividual.petriNet.placeDict[place].name.split("_")[-1] == "Random":
+                    tempIndividual.petriNet.placeDict[place].tokens = randint(int(tempIndividual.petriNet.placeDict[place].name.split("_")[-3]), int(tempIndividual.petriNet.placeDict[place].name.split("_")[-2]))
         else:
             for place in tempIndividual.petriNet.placeIDList:
-                if tempIndividual.petriNet.placeDict[place].name.split("_")[0] == "Random":
-                    tempIndividual.petriNet.placeDict[place].tokens = int(tempIndividual.petriNet.placeDict[place].name.split("_")[1])
+                if tempIndividual.petriNet.placeDict[place].name.split("_")[-1] == "Random":
+                    tempIndividual.petriNet.placeDict[place].tokens = int(tempIndividual.petriNet.placeDict[place].name.split("_")[-3])
         self.dictOfIndividuals[ID] = tempIndividual
         self.listOfIndividuals.append(ID)
 

@@ -15,49 +15,55 @@
       <Corners>4</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
-    <Node Name="Random_0_10_Nutrients">
+    <Node Name="Nut_0_10_Random">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
+      <Corners>0</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Death">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Beh_Move">
       <LabelPosition>SE</LabelPosition>
       <Color>java.awt.Color[r=255,g=255,b=255]</Color>
       <Corners>0</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
     <Node Name="Nut_Size_Trans">
-      <LabelPosition>S</LabelPosition>
+      <LabelPosition>SE</LabelPosition>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
       <Corners>4</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
-    <Node Name="Beh_Move">
-      <LabelPosition>E</LabelPosition>
-      <Color>java.awt.Color[r=255,g=0,b=0]</Color>
+    <Node Name="Beh_Size_0_100_Random">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
       <Corners>0</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
     <Node Name="Nut_Move_Trans">
-      <LabelPosition>SW</LabelPosition>
-      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
-      <Corners>4</Corners>
-      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
-    </Node>
-    <Node Name="Beh_Size">
-      <LabelPosition>W</LabelPosition>
-      <Color>java.awt.Color[r=255,g=0,b=0]</Color>
-      <Corners>0</Corners>
-      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
-    </Node>
-    <Node Name="Repl">
-      <LabelPosition>W</LabelPosition>
+      <LabelPosition>SE</LabelPosition>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
       <Corners>4</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
     <Node Name="Beh_Repl">
-      <LabelPosition>NW</LabelPosition>
-      <Color>java.awt.Color[r=255,g=0,b=0]</Color>
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
       <Corners>0</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
-    <Node Name="Random_0_1000_Age">
+    <Node Name="Repl">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="Age_0_100_Random">
       <LabelPosition>SE</LabelPosition>
       <Color>java.awt.Color[r=255,g=255,b=255]</Color>
       <Corners>0</Corners>
@@ -69,25 +75,25 @@
       <Corners>4</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
-    <Node Name="Death">
-      <LabelPosition>SE</LabelPosition>
-      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
-      <Corners>4</Corners>
-      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
-    </Node>
     <Node Name="Beh_Death">
       <LabelPosition>SE</LabelPosition>
-      <Color>java.awt.Color[r=255,g=0,b=51]</Color>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
       <Corners>0</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
-    <Node Name="T14">
+    <Node Name="End_Move">
       <LabelPosition>SE</LabelPosition>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
       <Corners>4</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
-    <Node Name="T15">
+    <Node Name="End_Repl">
+      <LabelPosition>SE</LabelPosition>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+      <Corners>4</Corners>
+      <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
+    </Node>
+    <Node Name="End_Death">
       <LabelPosition>SE</LabelPosition>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
       <Corners>4</Corners>
@@ -102,62 +108,67 @@
     </Edge>
     <Edge Name="E1">
       <Source>Intake_Nut</Source>
-      <Target>Random_0_10</Target>
+      <Target>Nut_0_10_Random</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E2">
-      <Source>Random_0_10</Source>
+      <Source>Nut_0_10_Random</Source>
       <Target>Nut_Size_Trans</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E3">
-      <Source>Random_0_10</Source>
+      <Source>Nut_0_10_Random</Source>
       <Target>Nut_Move_Trans</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E4">
-      <Source>Nut_Size_Trans</Source>
-      <Target>Beh_Size</Target>
+      <Source>Death</Source>
+      <Target>Beh_Death</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E5">
       <Source>Beh_Move</Source>
-      <Target>T14</Target>
+      <Target>End_Move</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E6">
-      <Source>Nut_Move_Trans</Source>
-      <Target>Beh_Move</Target>
+      <Source>Nut_Size_Trans</Source>
+      <Target>Beh_Size_0_100_Random</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E7">
-      <Source>Beh_Size</Source>
+      <Source>Beh_Size_0_100_Random</Source>
       <Target>Repl</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E8">
-      <Source>Repl</Source>
-      <Target>Beh_Repl</Target>
+      <Source>Nut_Move_Trans</Source>
+      <Target>Beh_Move</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E9">
       <Source>Beh_Repl</Source>
-      <Target>T15</Target>
+      <Target>End_Repl</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E10">
-      <Source>Random_0_1000_Age</Source>
-      <Target>Death</Target>
+      <Source>Repl</Source>
+      <Target>Beh_Repl</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E11">
-      <Source>Ageing</Source>
-      <Target>Random_0_1000_Age</Target>
+      <Source>Age_0_100_Random</Source>
+      <Target>Death</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E12">
-      <Source>Death</Source>
-      <Target>Beh_Death</Target>
+      <Source>Ageing</Source>
+      <Target>Age_0_100_Random</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E13">
+      <Source>Beh_Death</Source>
+      <Target>End_Death</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
   </AdditionalInformationAboutEdges>

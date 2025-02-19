@@ -1,7 +1,14 @@
 breed [bacteria1 bacterium1] 
+breed [bacteria2 bacterium2] 
 breed [flagella flagellum] 
  
 bacteria1-own [ 
+	 Beh_Move 
+	 Beh_Replication 
+	 Beh_Death 
+	 dxy 
+	 ] 
+bacteria2-own [ 
 	 Beh_Move 
 	 Beh_Replication 
 	 Beh_Death 
@@ -22,7 +29,6 @@ globals [
 	 local-time 
 	 timeinterval-per-tick 
 	 bacteria-velocity 
-	 flowspeed 
 	 newIndividuals 
 	 deadIndividuals 
 	 ] 
@@ -36,11 +42,17 @@ to setup
 	 clear-output 
 	 reset-ticks 
 	 set timeinterval-per-tick 1 
-	 set bacteria-velocity 0.3 
-	 set flowspeed 0.1 
+	 set bacteria-velocity 0.5 
 	 set newIndividuals [] 
 	 set deadIndividuals [] 
-	 create-bacteria1 80[ 
+	 create-bacteria1 200[ 
+	 	 setxy random-xcor random-ycor 
+	 	 set size 1 
+	 	 set Beh_Move 0 
+	 	 set Beh_Replication 0 
+	 	 set Beh_Death 0 
+	 ] 
+	 create-bacteria2 300[ 
 	 	 setxy random-xcor random-ycor 
 	 	 set size 1 
 	 	 set Beh_Move 0 
@@ -48,8 +60,15 @@ to setup
 	 	 set Beh_Death 0 
 	 ] 
 	 set-default-shape bacteria1 "bacteria 1" 
+	 set-default-shape bacteria2 "bacteria 1" 
 	 set-default-shape flagella "flagella" 
 	 ask bacteria1 [ 
+	 	 set dxy ( bacteria-velocity * timeinterval-per-tick ) 
+	 	 set color [0 0 0 ] 
+	 	 set local-color color 
+	 	 ask out-link-neighbors [set color local-color] 
+	 ] 
+	 ask bacteria2 [ 
 	 	 set dxy ( bacteria-velocity * timeinterval-per-tick ) 
 	 	 set color [0 0 0 ] 
 	 	 set local-color color 
@@ -100,6 +119,17 @@ to go
 	 	 ] 
 	 	 if (Beh_Death != 0) [ 
 	 	 	 bacteria1_Death who 
+	 	 ] 
+	 ] 
+	 ask bacteria2 [ 
+	 	 if (Beh_Move != 0) [ 
+	 	 	 bacteria2_Move who 
+	 	 ] 
+	 	 if (Beh_Replication != 0) [ 
+	 	 	 bacteria2_Replication who 
+	 	 ] 
+	 	 if (Beh_Death != 0) [ 
+	 	 	 bacteria2_Death who 
 	 	 ] 
 	 ] 
 	 ask flagella with [not any? my-links][die] 
@@ -672,8 +702,99 @@ to bacteria1_Death [ id ]
 	 	 die 
 	 ] 
 end 
+to bacteria2_Move [ id ] 
+	 ask turtle id [ 
+	 	 (ifelse 
+	 	 	 (patch-at dx 0 = nobody) 
+	 	 	 [ 
+	 	 	 	 set heading (- heading) 
+	 	 	 	 forward dxy 
+	 	 	 	 ask out-link-neighbors 
+	 	 	 	 [ 
+	 	 	 	 	 setxy ([xcor] of myself) ([ycor] of myself) 
+	 	 	 	 	 set heading ([heading] of myself)
+	 	 	 	 	 bk 2 
+	 	 	 	 ] 
+	 	 	 ] 
+	 	 	 (patch-at 0 dy) = nobody 
+	 	 	 [ 
+	 	 	 	 set heading (180 - heading) 
+	 	 	 	 forward dxy 
+	 	 	 	 ask out-link-neighbors 
+	 	 	 	 [ 
+	 	 	 	 	 setxy ([xcor] of myself) ([ycor] of myself) 
+	 	 	 	 	 set heading ([heading] of myself)
+	 	 	 	 	 bk 2 
+	 	 	 	 ] 
+	 	 	 ] 
+	 	 	 ([compartmentID] of patch-here != [compartmentID] of patch-ahead dxy) 
+	 	 	 [ 
+	 	 	 	 ifelse (runresult (word "comp" ([compartmentID] of patch-here) "Xcomp" ([compartmentID] of patch-ahead dxy) "Bac")) = 0 
+	 	 	 	 [ 
+	 	 	 	 	 set heading heading + 180 
+	 	 	 	 	 forward dxy	 	 	 	 	 ask out-link-neighbors 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 setxy ([xcor] of myself) ([ycor] of myself) 
+	 	 	 	 	 	 set heading ([heading] of myself) 
+	 	 	 	 	 	 bk 2 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 [ 
+	 	 	 	 	 forward dxy 
+	 	 	 	 	 right (5 - random-float 10) 
+	 	 	 	 	 set Beh_Move (Beh_Move - 1) 
+	 	 	 	 ] 
+	 	 	 ] 
+	 	 	 [ 
+	 	 	 	 forward dxy 
+	 	 	 	 right (5 - random-float 10) 
+	 	 	 	 set Beh_Move (Beh_Move - 1) 
+	 	 	 ] 
+	 	 ) 
+	 ] 
+end 
+to bacteria2_Replication [ id ] 
+	 ask turtle id [ 
+	 	 hatch-bacteria2 1 [ 
+	 	 	 setxy xcor ycor 
+	 	 	 set heading (heading + random-float 360) 
+	 	 	 set size 1 
+	 	 	 set Beh_Move 0 
+	 	 	 set Beh_Replication 0 
+	 	 	 set Beh_Death 0 
+	 	 	 set color [0 0 0 ] 
+	 	 	 set local-color color 
+	 	 	 ask out-link-neighbors [set color local-color] 
+	 	 	 let tempList [] 
+	 	 	 set tempList lput 2 tempList 
+	 	 	 set tempList lput who tempList 
+	 	 	 set newIndividuals lput tempList newIndividuals 
+	 	 ] 
+	 	 set size 1 
+	 ] 
+end 
+to bacteria2_Death [ id ] 
+	 ask turtle id [ 
+	 	 let tempList [] 
+	 	 set tempList lput 2 tempList 
+	 	 set tempList lput who tempList 
+	 	 set deadIndividuals lput tempList deadIndividuals 
+	 	 ask my-links [ die ] 
+	 	 die 
+	 ] 
+end 
 to patch-intakes 
 	 ask bacteria1 [ 
+	 	 ask patch-here [ 
+	 	 	 if (patch_SCFA > 0) [ 
+	 	 	 	 set patch_SCFA (patch_SCFA - 1) 
+	 	 	 ] 
+	 	 	 if (patch_Nutrient > 0) [ 
+	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 ] 
+	 	 ] 
+	 ] 
+	 ask bacteria2 [ 
 	 	 ask patch-here [ 
 	 	 	 if (patch_SCFA > 0) [ 
 	 	 	 	 set patch_SCFA (patch_SCFA - 1) 
@@ -691,13 +812,34 @@ to setBacteria1Beh [ id BehMove BehReplication BehDeath ]
 	 	 set Beh_Death BehDeath 
 	 ] 
 end 
+to setBacteria2Beh [ id BehMove BehReplication BehDeath ] 
+	 ask turtle id [ 
+	 	 set Beh_Move BehMove 
+	 	 set Beh_Replication BehReplication 
+	 	 set Beh_Death BehDeath 
+	 ] 
+end 
 to setBacteria1BehAll [ listOfCommands ] 
 	 foreach listOfCommands [ 
 	 	 [content] -> 
 	 	 setBacteria1Beh (item 0 content) (item 1 content) (item 2 content) (item 3 content)  
 	 ] 
 end 
+to setBacteria2BehAll [ listOfCommands ] 
+	 foreach listOfCommands [ 
+	 	 [content] -> 
+	 	 setBacteria2Beh (item 0 content) (item 1 content) (item 2 content) (item 3 content)  
+	 ] 
+end 
 to setBacteria1Patch [ id SCFA Nutrient ] 
+	 ask turtle id [ 
+	 	 ask patch-here [ 
+	 	 	 set patch_SCFA SCFA 
+	 	 	 set patch_Nutrient Nutrient 
+	 	 ] 
+	 ] 
+end 
+to setBacteria2Patch [ id SCFA Nutrient ] 
 	 ask turtle id [ 
 	 	 ask patch-here [ 
 	 	 	 set patch_SCFA SCFA 
@@ -709,6 +851,12 @@ to setBacteria1PatchAll [ listOfCommands ]
 	 foreach listOfCommands [ 
 	 	 [content] -> 
 	 	 setBacteria1Patch (item 0 content) (item 1 content) (item 2 content)  
+	 ] 
+end 
+to setBacteria2PatchAll [ listOfCommands ] 
+	 foreach listOfCommands [ 
+	 	 [content] -> 
+	 	 setBacteria2Patch (item 0 content) (item 1 content) (item 2 content)  
 	 ] 
 end 
 to doinflow [ molecule amount starty endy ] 
@@ -749,6 +897,14 @@ to-report bacteriaReport
 	 ] 
 	 set wholeList lput bacList wholeList 
 	 set bacList [] 
+	 ask bacteria2 [ 
+	 	 set tempList lput 2 tempList 
+	 	 set tempList lput who tempList 
+	 	 set bacList lput tempList bacList 
+	 	 set tempList [] 
+	 ] 
+	 set wholeList lput bacList wholeList 
+	 set bacList [] 
 	 report wholeList 
 end 
 
@@ -768,6 +924,24 @@ to-report intake
 	 let bacType 0 
 	 set bacType 1 
 	 ask bacteria1 [ 
+	 	 let tempID who 
+	 	 ask patch-here [ 
+ 	 	 	 set tempList lput bacType tempList 
+ 	 	 	 set tempList lput tempID tempList
+ 	 	 	 set tempList lput "\"SCFA\"" templist 
+ 	 	 	 set tempList lput patch_SCFA templist 
+ 	 	 	 set wholeList lput tempList wholeList 
+ 	 	 	 set tempList [] 
+ 	 	 	 set tempList lput bacType tempList 
+ 	 	 	 set tempList lput tempID tempList
+ 	 	 	 set tempList lput "\"Nutrient\"" templist 
+ 	 	 	 set tempList lput patch_Nutrient templist 
+ 	 	 	 set wholeList lput tempList wholeList 
+ 	 	 	 set tempList [] 
+	 	 ] 
+	 ] 
+	 set bacType 2 
+	 ask bacteria2 [ 
 	 	 let tempID who 
 	 	 ask patch-here [ 
  	 	 	 set tempList lput bacType tempList 

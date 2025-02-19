@@ -16,7 +16,6 @@ directory = tkinter.filedialog.askdirectory()
 listOfData = []
 xaxis = []
 numberOfSims = 0
-newxaxis = True
 tabledir = os.path.join(directory, 'tables')
 for filename in os.listdir(tabledir):
     filepath = os.path.join(tabledir, filename)
@@ -29,18 +28,23 @@ for filename in os.listdir(tabledir):
         for i in range(1, len(header)):
             templist.append([])
         for row in inputfile:
-            if newxaxis:
-                xaxis.append(int(row[0]))
             for i in range(1, len(header)):
                 templist[i - 1].append(int(row[i]))
-        newxaxis = False
         numberOfSims += 1
         listOfData.append(templist)
 
 newfolderdir = os.path.join(directory, r'plots')
 if not os.path.isdir(newfolderdir):
     os.makedirs(newfolderdir)
-
+print(listOfData[0][0])
+minticks = len(listOfData[0][0])
+print(minticks)
+for x in range(0, numberOfSims):
+    if len(listOfData[x][0]) < minticks:
+        minticks = len(listOfData[x][0])
+print(minticks)
+for i in range(0, minticks):
+    xaxis.append(i)
 xnew = np.linspace(min(xaxis), max(xaxis), 300)
 counter = 0
 print(listOfData)
@@ -49,7 +53,7 @@ for x in range(0, len(listOfData[0])):
     minplot = []
     avgplot = []
     print(len(listOfData[0][x]))
-    for currx in range(0, len(listOfData[0][x])):
+    for currx in range(0, minticks):
         tempmin = sys.float_info.max
         tempmax = 0
         tempcounter = 0

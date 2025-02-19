@@ -66,8 +66,7 @@ def startSimulation(mainProject, amount, foldername, guimode, window):
     tablefolderdir = os.path.join(newfolderdir, 'tables')
     if not os.path.isdir(tablefolderdir):
         os.makedirs(tablefolderdir)
-    NetLogoExecution.executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, tablefolderdir, guimode)
-    window.destroy()
+    NetLogoExecution.executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, tablefolderdir, guimode, window)
     pass
 
 def startSimulationQueue(mainProject, root):
@@ -376,7 +375,6 @@ def addNewCompartment(mainProject, newWindow, name, x1, y1, x2, y2):
     updateTables(mainProject)
     newWindow.destroy()
 def mainWindow(projectHolder):
-
     root = Tk()
     root.title("PetriAgents MainWindow")
 

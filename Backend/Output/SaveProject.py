@@ -82,6 +82,7 @@ def saveProject(mainProject, filehandler):
         end.appendChild(doc.createTextNode(str(flow.end)))
         newflow.appendChild(end)
 
+    #todo include initial settings for bacteria and environmentmolecules
 
     bacteria = doc.createElement("bacteria")
     project.appendChild(bacteria)

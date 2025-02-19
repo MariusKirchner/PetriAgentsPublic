@@ -35,7 +35,6 @@ def createNetLogoProject(mainProject):
     tempnetlogoFile.write("\t local-time \n")
     tempnetlogoFile.write("\t timeinterval-per-tick \n")
     tempnetlogoFile.write("\t bacteria-velocity \n")
-    tempnetlogoFile.write("\t flowspeed \n")
     tempnetlogoFile.write("\t newIndividuals \n")
     tempnetlogoFile.write("\t deadIndividuals \n")
     for item in mainProject.compartmentRelationDict.items():
@@ -55,8 +54,7 @@ def createNetLogoProject(mainProject):
     tempnetlogoFile.write("\t reset-ticks \n")
     #set globals
     tempnetlogoFile.write("\t set timeinterval-per-tick 1 \n")
-    tempnetlogoFile.write("\t set bacteria-velocity 0.3 \n")
-    tempnetlogoFile.write("\t set flowspeed 0.1 \n")
+    tempnetlogoFile.write("\t set bacteria-velocity 0.5 \n")
     tempnetlogoFile.write("\t set newIndividuals [] \n")
     tempnetlogoFile.write("\t set deadIndividuals [] \n")
     #create bacteria

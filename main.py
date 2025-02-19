@@ -12,9 +12,10 @@ from Frontend import MainWindow
 from Backend.BackendStorage.Bacteria.PetriNet import PetriNetObject
 from IntermediateProject import intermediateProject
 
-mainProject = petriAgentProject()
-projectHolder = intermediateProject(mainProject)
-MainWindow.mainWindow(projectHolder)
+if __name__ == '__main__':
+    mainProject = petriAgentProject()
+    projectHolder = intermediateProject(mainProject)
+    MainWindow.mainWindow(projectHolder)
 
 #quit to not open netlogo for every test of the GUI
 quit()

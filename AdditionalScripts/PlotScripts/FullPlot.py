@@ -88,6 +88,7 @@ for x in range(0, len(listOfData[0])):
     print("done")
     counter += 1
     plt.clf()
+counter = 0
 for x in range(0, len(listOfData[0])):
     maxplot = []
     minplot = []

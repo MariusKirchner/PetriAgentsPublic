@@ -5,7 +5,7 @@
   <AdditionalInformationAboutNodes>
     <Node Name="Env_Nut">
       <LabelPosition>SE</LabelPosition>
-      <Color>java.awt.Color[r=0,g=0,b=255]</Color>
+      <Color>java.awt.Color[r=255,g=255,b=255]</Color>
       <Corners>0</Corners>
       <StrokeColor>java.awt.Color[r=0,g=0,b=0]</StrokeColor>
     </Node>
@@ -176,56 +176,61 @@
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
     <Edge Name="E10">
+      <Source>Nut_Move_Trans</Source>
+      <Target>Move_Activator</Target>
+      <Color>java.awt.Color[r=0,g=0,b=0]</Color>
+    </Edge>
+    <Edge Name="E11">
       <Source>Beh_Repl</Source>
       <Target>End_Repl</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
-    <Edge Name="E11">
+    <Edge Name="E12">
       <Source>Repl</Source>
       <Target>Beh_Repl</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
-    <Edge Name="E12">
+    <Edge Name="E13">
       <Source>Move_Activator</Source>
       <Target>Nut_Move_Trans</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
-    <Edge Name="E13">
+    <Edge Name="E14">
       <Source>Move_Activator</Source>
       <Target>Move_ActiveInhibition_2</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
-    <Edge Name="E14">
+    <Edge Name="E15">
       <Source>Move_ActiveInhibition_2</Source>
       <Target>Env_Nut</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
-    <Edge Name="E15">
+    <Edge Name="E16">
       <Source>Move_ActiveInhibition_2</Source>
       <Target>Move_Inhibited</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
-    <Edge Name="E16">
+    <Edge Name="E17">
       <Source>Move_Inhibited</Source>
       <Target>Move_PassiveUnInhibition_1</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
-    <Edge Name="E17">
+    <Edge Name="E18">
       <Source>Move_PassiveUnInhibition_1</Source>
       <Target>Move_Activator</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
-    <Edge Name="E18">
+    <Edge Name="E19">
       <Source>Age_0_100_Random</Source>
       <Target>Death</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
-    <Edge Name="E19">
+    <Edge Name="E20">
       <Source>Ageing</Source>
       <Target>Age_0_100_Random</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>
     </Edge>
-    <Edge Name="E20">
+    <Edge Name="E21">
       <Source>Beh_Death</Source>
       <Target>End_Death</Target>
       <Color>java.awt.Color[r=0,g=0,b=0]</Color>

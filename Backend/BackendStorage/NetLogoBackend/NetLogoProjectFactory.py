@@ -142,7 +142,6 @@ def createNetLogoProject(mainProject):
     #runtime procedures
     #standard go
     tempnetlogoFile.write("to go \n")
-    #tempnetlogoFile.write("\t patch-intakes \n")
     for i in mainProject.listOfBacteriaIDs:
         tempnetlogoFile.write("\t ask bacteria" + str(i) + " [ \n")
         for j in mainProject.bacteriaIDDict[i].listOfBehPlaceIDs:
@@ -387,18 +386,6 @@ def createNetLogoProject(mainProject):
             tempnetlogoFile.write("\t ] \n")
             tempnetlogoFile.write("end \n")
 
-    #patchintakefunction
-    tempnetlogoFile.write("to patch-intakes \n")
-    for i in mainProject.listOfBacteriaIDs:
-        tempnetlogoFile.write("\t ask bacteria" + str(i) + " [ \n")
-        tempnetlogoFile.write("\t \t ask patch-here [ \n")
-        for j in mainProject.bacteriaIDDict[i].listOfEnvPlaces:
-            tempnetlogoFile.write("\t \t \t if (patch_" + j + " > 0) [ \n")
-            tempnetlogoFile.write("\t \t \t \t set patch_" + j + " (patch_" + j + " - 1) \n")
-            tempnetlogoFile.write("\t \t \t ] \n")
-        tempnetlogoFile.write("\t \t ] \n")
-        tempnetlogoFile.write("\t ] \n")
-    tempnetlogoFile.write("end \n")
     #setBehaviour functions
     for i in mainProject.listOfBacteriaIDs:
         tempString = "[ id "
@@ -528,6 +515,7 @@ def createNetLogoProject(mainProject):
     tempnetlogoFile.write("\t report tempList \n")
     tempnetlogoFile.write("end \n")
 
+    #todo write check for multiple intakes
     tempnetlogoFile.write("to-report intake \n")
     tempnetlogoFile.write("\t let tempList [] \n")
     tempnetlogoFile.write("\t let wholeList [] \n")

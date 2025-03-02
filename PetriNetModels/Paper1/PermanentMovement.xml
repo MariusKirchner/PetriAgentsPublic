@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<!-- Created by MonaLisa version MonaLisa 1.1.2 on 2025-02-19 at 20:49:55 CET with JSBML version 1.4. -->
+<!-- Created by MonaLisa version MonaLisa 1.1.2 on 2025-02-22 at 23:48:22 CET with JSBML version 1.4. -->
 <sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" layout:required="false" level="3" version="1" xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1">
   <model id="MonaLisaExport">
     <layout:listOfLayouts xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -30,12 +30,12 @@
               <layout:position layout:x="720" layout:y="300" layout:z="0"/>
             </layout:boundingBox>
           </layout:speciesGlyph>
-          <layout:speciesGlyph layout:id="SGP5" layout:species="P5">
+          <layout:speciesGlyph layout:id="SGP7" layout:species="P7">
             <layout:boundingBox>
               <layout:position layout:x="680" layout:y="360" layout:z="0"/>
             </layout:boundingBox>
           </layout:speciesGlyph>
-          <layout:speciesGlyph layout:id="SGP6" layout:species="P6">
+          <layout:speciesGlyph layout:id="SGP8" layout:species="P8">
             <layout:boundingBox>
               <layout:position layout:x="680" layout:y="300" layout:z="0"/>
             </layout:boundingBox>
@@ -67,22 +67,22 @@
               <layout:position layout:x="720" layout:y="330" layout:z="0"/>
             </layout:boundingBox>
           </layout:reactionGlyph>
-          <layout:reactionGlyph layout:id="RGT5" layout:reaction="T5">
+          <layout:reactionGlyph layout:id="RGT7" layout:reaction="T7">
             <layout:boundingBox>
               <layout:position layout:x="680" layout:y="380" layout:z="0"/>
             </layout:boundingBox>
           </layout:reactionGlyph>
-          <layout:reactionGlyph layout:id="RGT6" layout:reaction="T6">
+          <layout:reactionGlyph layout:id="RGT8" layout:reaction="T8">
             <layout:boundingBox>
               <layout:position layout:x="640" layout:y="280" layout:z="0"/>
             </layout:boundingBox>
           </layout:reactionGlyph>
-          <layout:reactionGlyph layout:id="RGT7" layout:reaction="T7">
+          <layout:reactionGlyph layout:id="RGT9" layout:reaction="T9">
             <layout:boundingBox>
               <layout:position layout:x="720" layout:y="280" layout:z="0"/>
             </layout:boundingBox>
           </layout:reactionGlyph>
-          <layout:reactionGlyph layout:id="RGT8" layout:reaction="T8">
+          <layout:reactionGlyph layout:id="RGT10" layout:reaction="T10">
             <layout:boundingBox>
               <layout:position layout:x="680" layout:y="280" layout:z="0"/>
             </layout:boundingBox>
@@ -96,8 +96,8 @@
       <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P2" initialAmount="0" name="Beh_Move" sboTerm="SBO:0000000"/>
       <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P3" initialAmount="0" name="Beh_Size_0_100_Random" sboTerm="SBO:0000000"/>
       <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P4" initialAmount="0" name="Beh_Repl" sboTerm="SBO:0000000"/>
-      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P5" initialAmount="0" name="Age_0_100_Random" sboTerm="SBO:0000000"/>
-      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P6" initialAmount="0" name="Beh_Death" sboTerm="SBO:0000000"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P7" initialAmount="0" name="Age_0_100_Random" sboTerm="SBO:0000000"/>
+      <species boundaryCondition="false" constant="false" hasOnlySubstanceUnits="true" id="P8" initialAmount="0" name="Beh_Death" sboTerm="SBO:0000000"/>
     </listOfSpecies>
     <listOfReactions>
       <reaction fast="false" id="T0" name="Intake_Nut" reversible="false" sboTerm="SBO:0000000">
@@ -105,15 +105,15 @@
           <speciesReference constant="true" species="P0" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference constant="true" species="P1" stoichiometry="3"/>
+          <speciesReference constant="true" species="P1" stoichiometry="4"/>
         </listOfProducts>
       </reaction>
       <reaction fast="false" id="T1" name="Death" reversible="false" sboTerm="SBO:0000000">
         <listOfReactants>
-          <speciesReference constant="true" species="P5" stoichiometry="300"/>
+          <speciesReference constant="true" species="P7" stoichiometry="300"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference constant="true" species="P6" stoichiometry="1"/>
+          <speciesReference constant="true" species="P8" stoichiometry="1"/>
         </listOfProducts>
       </reaction>
       <reaction fast="false" id="T2" name="Nut_Size_Trans" reversible="false" sboTerm="SBO:0000000">
@@ -140,24 +140,24 @@
           <speciesReference constant="true" species="P4" stoichiometry="1"/>
         </listOfProducts>
       </reaction>
-      <reaction fast="false" id="T5" name="Ageing" reversible="false" sboTerm="SBO:0000000">
+      <reaction fast="false" id="T7" name="Ageing" reversible="false" sboTerm="SBO:0000000">
         <listOfProducts>
-          <speciesReference constant="true" species="P5" stoichiometry="1"/>
+          <speciesReference constant="true" species="P7" stoichiometry="1"/>
         </listOfProducts>
       </reaction>
-      <reaction fast="false" id="T6" name="End_Move" reversible="false" sboTerm="SBO:0000000">
+      <reaction fast="false" id="T8" name="End_Move" reversible="false" sboTerm="SBO:0000000">
         <listOfReactants>
           <speciesReference constant="true" species="P2" stoichiometry="1"/>
         </listOfReactants>
       </reaction>
-      <reaction fast="false" id="T7" name="End_Repl" reversible="false" sboTerm="SBO:0000000">
+      <reaction fast="false" id="T9" name="End_Repl" reversible="false" sboTerm="SBO:0000000">
         <listOfReactants>
           <speciesReference constant="true" species="P4" stoichiometry="1"/>
         </listOfReactants>
       </reaction>
-      <reaction fast="false" id="T8" name="End_Death" reversible="false" sboTerm="SBO:0000000">
+      <reaction fast="false" id="T10" name="End_Death" reversible="false" sboTerm="SBO:0000000">
         <listOfReactants>
-          <speciesReference constant="true" species="P6" stoichiometry="1"/>
+          <speciesReference constant="true" species="P8" stoichiometry="1"/>
         </listOfReactants>
       </reaction>
     </listOfReactions>

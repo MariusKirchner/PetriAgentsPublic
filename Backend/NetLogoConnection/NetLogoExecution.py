@@ -2,6 +2,7 @@ __author__ = "Marius Kirchner, Goethe University Frankfurt am Main"
 
 import ast
 import copy
+import json
 import platform
 import time
 import re
@@ -261,18 +262,24 @@ def runSingleWorkspace(parentProject, netLogoProjectFilepath, currRun, folderpat
     BacteriaSetterTimes = 0
     goCommandTime = 0
     resultswritetime = 0
+    inflowTime = 0
+    getdataandevalTimeIntake = 0
+    purereporttime = 0
+    jsontime = 0
     for i in range(0, int(parentProject.ticks)):
         newcsvline = [i]
         time6 = time.time()
-        newIndividuals = n.report("newIndiv")
-        newIndividuals = ast.literal_eval(newIndividuals)
+        newIndividualsRaw = n.report("newIndiv")
+        #newIndividuals = ast.literal_eval(newIndividuals)
+        newIndividuals = json.loads(newIndividualsRaw)
         for j in newIndividuals:
             mainProject.bacteriaIDDict[int(j[0])].addIndividual(int(j[1]), False)
         time7 = time.time()
         #print("Add new Individuals--- %s seconds ---" % (time7 - time6))
         addindividualtime += (time7 - time6)
-        deadIndividuals = n.report("deadIndiv")
-        deadIndividuals = ast.literal_eval(deadIndividuals)
+        deadIndividualsRaw = n.report("deadIndiv")
+        #deadIndividuals = ast.literal_eval(deadIndividuals)
+        deadIndividuals = json.loads(deadIndividualsRaw)
         for j in deadIndividuals:
             mainProject.bacteriaIDDict[int(j[0])].delIndividual(int(j[1]))
         time8 = time.time()
@@ -283,14 +290,23 @@ def runSingleWorkspace(parentProject, netLogoProjectFilepath, currRun, folderpat
             tempCommandList.append(singleflow)
         commandList = re.sub("'", "", str(tempCommandList))
         n.command("doinflowAll " + re.sub(",", "", str(commandList)))
-        intakeReport = n.report("intake")
-        intakeReport = ast.literal_eval(intakeReport)
+        time8b = time.time()
+        inflowTime += (time8b - time8)
+        intakeReportRaw = n.report("intake")
+        time8bb = time.time()
+        purereporttime += (time8bb - time8b)
+        intakeReport = json.loads(intakeReportRaw)
+        time8bc = time.time()
+        jsontime += (time8bc - time8bb)
+        #intakeReport = ast.literal_eval(intakeReportRaw)
+        time8c = time.time()
+        getdataandevalTimeIntake += (time8c - time8bc)
         for j in intakeReport:
             mainProject.bacteriaIDDict[int(j[0])].dictOfIndividuals[int(j[1])].petriNet.getPlaceByName(
                 "Env_" + j[2]).changeTokens(j[3])
         time9 = time.time()
-        #print("Change Tokens for intakes--- %s seconds ---" % (time9 - time8))
-        changeTokenIntaketime += (time9 - time8)
+        #print("Change Tokens for intakes--- %s seconds ---" % (time9 - time8c))
+        changeTokenIntaketime += (time9 - time8c)
         for k in mainProject.listOfBacteriaIDs:
             for j in mainProject.bacteriaIDDict[k].listOfIndividuals:
                 mainProject.bacteriaIDDict[k].dictOfIndividuals[j].petriNet.simulateStep()
@@ -303,12 +319,10 @@ def runSingleWorkspace(parentProject, netLogoProjectFilepath, currRun, folderpat
                 singleCommand = []
                 singleCommand.append(j)
                 for m in mainProject.bacteriaIDDict[k].listOfEnvPlaceIDs:
-                    singleCommand.append(str(
-                        mainProject.bacteriaIDDict[k].dictOfIndividuals[j].petriNet.placeDict[m].tokens))
+                    singleCommand.append(str(mainProject.bacteriaIDDict[k].dictOfIndividuals[j].petriNet.placeDict[m].tokens))
                 totalCommandList.append(singleCommand)
             commandString = re.sub("'", "", str(totalCommandList))
             n.command("setBacteria" + str(k) + "PatchAll " + re.sub(",", "", commandString))
-        # here
         time11 = time.time()
         #print("Change patch values for outputs--- %s seconds ---" % (time11 - time10))
         changePatchValueTime += (time11 - time10)
@@ -319,13 +333,10 @@ def runSingleWorkspace(parentProject, netLogoProjectFilepath, currRun, folderpat
                 singleCommand.append(j)
                 for m in mainProject.bacteriaIDDict[k].listOfBehPlaceIDs:
                     if mainProject.bacteriaIDDict[k].dictOfBehPlaces[m] != "None":
-                        singleCommand.append(str(
-                            mainProject.bacteriaIDDict[k].dictOfIndividuals[j].petriNet.placeDict[
-                                m].tokens))
+                        singleCommand.append(str(mainProject.bacteriaIDDict[k].dictOfIndividuals[j].petriNet.placeDict[m].tokens))
                 totalCommandList.append(singleCommand)
             commandString = re.sub("'", "", str(totalCommandList))
             n.command("setBacteria" + str(k) + "BehAll " + re.sub(",", "", commandString))
-        # TODO: CHECK IF THIS REALLY WORKS!! (looks good, but i just saw that flagella are different colors for multiple species)
         time13 = time.time()
         #print("Total for Commands for Bacteria Setters--- %s seconds ---" % (time13 - time11))
         BacteriaSetterTimes += (time13 - time11)
@@ -344,8 +355,9 @@ def runSingleWorkspace(parentProject, netLogoProjectFilepath, currRun, folderpat
                     if mainProject.bacteriaIDDict[k].dictOfIndividuals[bac].petriNet.placeDict[behplace].tokens >= 1:
                         counter += 1
                 newcsvline.append(counter)
-        patchreport = n.report("patchvalues")
-        patchreporteval = ast.literal_eval(patchreport)
+        patchreportraw = n.report("patchvalues")
+        #patchreporteval = ast.literal_eval(patchreport)
+        patchreporteval = json.loads(patchreportraw)
         for k in patchreporteval:
             newcsvline.append(int(k))
         csvwriter.writerow(newcsvline)
@@ -359,11 +371,16 @@ def runSingleWorkspace(parentProject, netLogoProjectFilepath, currRun, folderpat
     print("addindiv--- %s seconds ---" % addindividualtime)
     print("deleteindiv--- %s seconds ---" % delindividualtime)
     print("changeintaketokens--- %s seconds ---" % changeTokenIntaketime)
+    print("inflowTime--- %s seconds ---" % inflowTime)
+    print("purereporttime--- %s seconds ---" % purereporttime)
+    print("jsontime--- %s seconds ---" % jsontime)
+    print("evalTimeIntake--- %s seconds ---" % getdataandevalTimeIntake)
     print("pnsimstime--- %s seconds ---" % PNSimsTime)
     print("Changepatchvalues--- %s seconds ---" % changePatchValueTime)
     print("bacteriasetters--- %s seconds ---" % BacteriaSetterTimes)
     print("gocommandtime--- %s seconds ---" % goCommandTime)
     print("resultwrite--- %s seconds ---" % resultswritetime)
+
     n.deleteWorkspace()
     # n.server_starter.shutdown_server()
 def test(n):

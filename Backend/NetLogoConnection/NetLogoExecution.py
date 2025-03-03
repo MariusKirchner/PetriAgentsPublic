@@ -204,19 +204,19 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpat
 
 def runSingleWorkspace(parentProject, netLogoProjectFilepath, currRun, folderpath):
     print("Starting run number: " + str(currRun))
-    time1 = time.time()
+    #time1 = time.time()
     mainProject = copy.deepcopy(parentProject)
     n = nl4py.create_headless_workspace()
     n.open_model(netLogoProjectFilepath)
-    time2 = time.time()
-    print("PreConfig--- %s seconds ---" % (time2 - time1))
-    time3 = time.time()
-    print("Starting Netlogo--- %s seconds ---" % (time3 - time2))
+    #time2 = time.time()
+    #print("PreConfig--- %s seconds ---" % (time2 - time1))
+    #time3 = time.time()
+    #print("Starting Netlogo--- %s seconds ---" % (time3 - time2))
     # setupstuff
     n.command("setup")
     n.command("setup")
-    time4 = time.time()
-    print("double setup--- %s seconds ---" % (time4 - time3))
+    #time4 = time.time()
+    #print("double setup--- %s seconds ---" % (time4 - time3))
     csvfile = open(folderpath + r"\results" + str(currRun) + ".csv", "w", encoding="UTF8", newline="")
     csvwriter = csv.writer(csvfile)
     header = ["ticks"]
@@ -237,8 +237,8 @@ def runSingleWorkspace(parentProject, netLogoProjectFilepath, currRun, folderpat
         for j in i:
             mainProject.bacteriaIDDict[int(j[0])].addIndividual(int(j[1]), True)
     # runtime procedures
-    time5 = time.time()
-    print("Setup the individuals--- %s seconds ---" % (time5 - time4))
+    #time5 = time.time()
+    #print("Setup the individuals--- %s seconds ---" % (time5 - time4))
     commandDict = {}
     for compartmentID in mainProject.listOfCompartmentIDs:
         for x in range(0, int(mainProject.maxXCor) + 1):
@@ -249,70 +249,70 @@ def runSingleWorkspace(parentProject, netLogoProjectFilepath, currRun, folderpat
                             y <= mainProject.compartmentDict[compartmentID].maxY):
                         commandDict[(x, y)] = compartmentID
     commandList = [[list(key)[0], list(key)[1], value] for key, value in commandDict.items()]
-    time5b = time.time()
-    print("First Step of the compartments--- %s seconds ---" % (time5b - time5))
+    #time5b = time.time()
+    #print("First Step of the compartments--- %s seconds ---" % (time5b - time5))
     n.command("setCompartmentAll " + re.sub(",", "", str(commandList)))
-    time5a = time.time()
-    print("Set up the compartments--- %s seconds ---" % (time5a - time5b))
-    addindividualtime = 0
-    delindividualtime = 0
-    changeTokenIntaketime = 0
-    PNSimsTime = 0
-    changePatchValueTime = 0
-    BacteriaSetterTimes = 0
-    goCommandTime = 0
-    resultswritetime = 0
-    inflowTime = 0
-    getdataandevalTimeIntake = 0
-    purereporttime = 0
-    jsontime = 0
+    #time5a = time.time()
+    #print("Set up the compartments--- %s seconds ---" % (time5a - time5b))
+    #addindividualtime = 0
+    #delindividualtime = 0
+    #changeTokenIntaketime = 0
+    #PNSimsTime = 0
+    #changePatchValueTime = 0
+    #BacteriaSetterTimes = 0
+    #goCommandTime = 0
+    #resultswritetime = 0
+    #inflowTime = 0
+    #getdataandevalTimeIntake = 0
+    #purereporttime = 0
+    #jsontime = 0
     for i in range(0, int(parentProject.ticks)):
         newcsvline = [i]
-        time6 = time.time()
+        #time6 = time.time()
         newIndividualsRaw = n.report("newIndiv")
         #newIndividuals = ast.literal_eval(newIndividuals)
         newIndividuals = json.loads(newIndividualsRaw)
         for j in newIndividuals:
             mainProject.bacteriaIDDict[int(j[0])].addIndividual(int(j[1]), False)
-        time7 = time.time()
+        #time7 = time.time()
         #print("Add new Individuals--- %s seconds ---" % (time7 - time6))
-        addindividualtime += (time7 - time6)
+        #addindividualtime += (time7 - time6)
         deadIndividualsRaw = n.report("deadIndiv")
         #deadIndividuals = ast.literal_eval(deadIndividuals)
         deadIndividuals = json.loads(deadIndividualsRaw)
         for j in deadIndividuals:
             mainProject.bacteriaIDDict[int(j[0])].delIndividual(int(j[1]))
-        time8 = time.time()
+        #time8 = time.time()
         #print("Delete dead individuals--- %s seconds ---" % (time8 - time7))
-        delindividualtime += (time8 - time7)
+        #delindividualtime += (time8 - time7)
         tempCommandList = []
         for singleflow in allflows[i]:
             tempCommandList.append(singleflow)
         commandList = re.sub("'", "", str(tempCommandList))
         n.command("doinflowAll " + re.sub(",", "", str(commandList)))
-        time8b = time.time()
-        inflowTime += (time8b - time8)
+        #time8b = time.time()
+        #inflowTime += (time8b - time8)
         intakeReportRaw = n.report("intake")
-        time8bb = time.time()
-        purereporttime += (time8bb - time8b)
+        #time8bb = time.time()
+        #purereporttime += (time8bb - time8b)
         intakeReport = json.loads(intakeReportRaw)
-        time8bc = time.time()
-        jsontime += (time8bc - time8bb)
+        #time8bc = time.time()
+        #jsontime += (time8bc - time8bb)
         #intakeReport = ast.literal_eval(intakeReportRaw)
-        time8c = time.time()
-        getdataandevalTimeIntake += (time8c - time8bc)
+        #time8c = time.time()
+        #getdataandevalTimeIntake += (time8c - time8bc)
         for j in intakeReport:
             mainProject.bacteriaIDDict[int(j[0])].dictOfIndividuals[int(j[1])].petriNet.getPlaceByName(
                 "Env_" + j[2]).changeTokens(j[3])
-        time9 = time.time()
+        #time9 = time.time()
         #print("Change Tokens for intakes--- %s seconds ---" % (time9 - time8c))
-        changeTokenIntaketime += (time9 - time8c)
+        #changeTokenIntaketime += (time9 - time8c)
         for k in mainProject.listOfBacteriaIDs:
             for j in mainProject.bacteriaIDDict[k].listOfIndividuals:
                 mainProject.bacteriaIDDict[k].dictOfIndividuals[j].petriNet.simulateStep()
-        time10 = time.time()
+        #time10 = time.time()
         #print("PetriNet Simulations --- %s seconds ---" % (time10 - time9))
-        PNSimsTime += (time10 - time9)
+        #PNSimsTime += (time10 - time9)
         for k in mainProject.listOfBacteriaIDs:
             totalCommandList = []
             for j in mainProject.bacteriaIDDict[k].listOfIndividuals:
@@ -323,9 +323,9 @@ def runSingleWorkspace(parentProject, netLogoProjectFilepath, currRun, folderpat
                 totalCommandList.append(singleCommand)
             commandString = re.sub("'", "", str(totalCommandList))
             n.command("setBacteria" + str(k) + "PatchAll " + re.sub(",", "", commandString))
-        time11 = time.time()
+        #time11 = time.time()
         #print("Change patch values for outputs--- %s seconds ---" % (time11 - time10))
-        changePatchValueTime += (time11 - time10)
+        #changePatchValueTime += (time11 - time10)
         for k in mainProject.listOfBacteriaIDs:
             totalCommandList = []
             for j in mainProject.bacteriaIDDict[k].listOfIndividuals:
@@ -337,13 +337,13 @@ def runSingleWorkspace(parentProject, netLogoProjectFilepath, currRun, folderpat
                 totalCommandList.append(singleCommand)
             commandString = re.sub("'", "", str(totalCommandList))
             n.command("setBacteria" + str(k) + "BehAll " + re.sub(",", "", commandString))
-        time13 = time.time()
+        #time13 = time.time()
         #print("Total for Commands for Bacteria Setters--- %s seconds ---" % (time13 - time11))
-        BacteriaSetterTimes += (time13 - time11)
+        #BacteriaSetterTimes += (time13 - time11)
         n.command("go")
-        time14 = time.time()
+        #time14 = time.time()
         #print("go command(including diffusion)--- %s seconds ---" % (time14 - time13))
-        goCommandTime += (time14 - time13)
+        #goCommandTime += (time14 - time13)
         if i % 100 == 0:
             print("Runnumber: " + str(currRun) + " reached tick (mod 100): " + str(i))
         # write results
@@ -361,25 +361,25 @@ def runSingleWorkspace(parentProject, netLogoProjectFilepath, currRun, folderpat
         for k in patchreporteval:
             newcsvline.append(int(k))
         csvwriter.writerow(newcsvline)
-        time15 = time.time()
+        #time15 = time.time()
         #print("writing tickresults--- %s seconds ---" % (time15 - time14))
-        resultswritetime += (time15 - time14)
+        #resultswritetime += (time15 - time14)
     csvfile.close()
     n.close_model()
     print("Finished run number: " + str(currRun))
     currRun += 1
-    print("addindiv--- %s seconds ---" % addindividualtime)
-    print("deleteindiv--- %s seconds ---" % delindividualtime)
-    print("changeintaketokens--- %s seconds ---" % changeTokenIntaketime)
-    print("inflowTime--- %s seconds ---" % inflowTime)
-    print("purereporttime--- %s seconds ---" % purereporttime)
-    print("jsontime--- %s seconds ---" % jsontime)
-    print("evalTimeIntake--- %s seconds ---" % getdataandevalTimeIntake)
-    print("pnsimstime--- %s seconds ---" % PNSimsTime)
-    print("Changepatchvalues--- %s seconds ---" % changePatchValueTime)
-    print("bacteriasetters--- %s seconds ---" % BacteriaSetterTimes)
-    print("gocommandtime--- %s seconds ---" % goCommandTime)
-    print("resultwrite--- %s seconds ---" % resultswritetime)
+    #print("addindiv--- %s seconds ---" % addindividualtime)
+    #print("deleteindiv--- %s seconds ---" % delindividualtime)
+    #print("changeintaketokens--- %s seconds ---" % changeTokenIntaketime)
+    #print("inflowTime--- %s seconds ---" % inflowTime)
+    #print("purereporttime--- %s seconds ---" % purereporttime)
+    #print("jsontime--- %s seconds ---" % jsontime)
+    #print("evalTimeIntake--- %s seconds ---" % getdataandevalTimeIntake)
+    #print("pnsimstime--- %s seconds ---" % PNSimsTime)
+    #print("Changepatchvalues--- %s seconds ---" % changePatchValueTime)
+    #print("bacteriasetters--- %s seconds ---" % BacteriaSetterTimes)
+    #print("gocommandtime--- %s seconds ---" % goCommandTime)
+    #print("resultwrite--- %s seconds ---" % resultswritetime)
 
     n.deleteWorkspace()
     # n.server_starter.shutdown_server()

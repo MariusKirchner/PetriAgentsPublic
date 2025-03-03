@@ -17,7 +17,9 @@ bacteria2-own [
  
 patches-own [ 
 	 patch_SCFA
-	 patch_Nutrient
+	 patch_Nutrient1
+	 patch_Nutrient2
+	 patch_Nutrient3
 	 compartmentID 
 	 ] 
 
@@ -45,14 +47,14 @@ to setup
 	 set bacteria-velocity 0.5 
 	 set newIndividuals [] 
 	 set deadIndividuals [] 
-	 create-bacteria1 50[ 
+	 create-bacteria1 150[ 
 	 	 setxy random-xcor random-ycor 
 	 	 set size 1 
 	 	 set Beh_Move 0 
 	 	 set Beh_Replication 0 
 	 	 set Beh_Death 0 
 	 ] 
-	 create-bacteria2 50[ 
+	 create-bacteria2 150[ 
 	 	 setxy random-xcor random-ycor 
 	 	 set size 1 
 	 	 set Beh_Move 0 
@@ -77,7 +79,11 @@ to setup
 	 ask patches with [pxcor >= 0 and pxcor <= 100 and pycor >= 0 and pycor <= 50][ 
 	 	 set patch_SCFA random 0 
 	 ]	 ask patches with [pxcor >= 0 and pxcor <= 100 and pycor >= 0 and pycor <= 50][ 
-	 	 set patch_Nutrient random 2 
+	 	 set patch_Nutrient1 random 2 
+	 ]	 ask patches with [pxcor >= 0 and pxcor <= 100 and pycor >= 0 and pycor <= 50][ 
+	 	 set patch_Nutrient2 random 2 
+	 ]	 ask patches with [pxcor >= 0 and pxcor <= 100 and pycor >= 0 and pycor <= 50][ 
+	 	 set patch_Nutrient3 random 2 
 	 ]	 set flagella-size 1 
 	 updateView 
 end 
@@ -375,7 +381,7 @@ to patchdiffusion
 	 	 	 ] 
 	 	 	 ) 
 	 	 ] 
-	 	 set tempList range patch_Nutrient 
+	 	 set tempList range patch_Nutrient1 
 	 	 foreach tempList [ 
 	 	 	 let randomDirection random 100 
 	 	 	 (ifelse 
@@ -390,21 +396,21 @@ to patchdiffusion
 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 	 	 [ 
 	 	 	 	 	 	 	 	 ;different compartments but flow allowed
-	 	 	 	 	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 	 	 	 	 ask patch (pxcor + -1) (pycor + -1)[ 
-	 	 	 	 	 	 	 	 	  set patch_Nutrient (patch_Nutrient + 1) 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient1 (patch_Nutrient1 + 1) 
 	 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 ] 
 	 	 	 	 	 [ 
-	 	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 	 ask patch (pxcor + -1) (pycor + -1)[ 
-	 	 	 	 	 	 set patch_Nutrient (patch_Nutrient + 1) 
+	 	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 + 1) 
 	 	 	 	 	 ] 
 	 	 	 	 	 ] 
 	 	 	 	 ] 
 	 	 	 	 (pxcor + -1 > max-pxcor) [ 
-	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 ]) 
 	 	 	 ] 
 	 	 	 (randomDirection < 8)[ 
@@ -418,21 +424,21 @@ to patchdiffusion
 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 	 	 [ 
 	 	 	 	 	 	 	 	 ;different compartments but flow allowed
-	 	 	 	 	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 	 	 	 	 ask patch (pxcor + -1) (pycor + 0)[ 
-	 	 	 	 	 	 	 	 	  set patch_Nutrient (patch_Nutrient + 1) 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient1 (patch_Nutrient1 + 1) 
 	 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 ] 
 	 	 	 	 	 [ 
-	 	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 	 ask patch (pxcor + -1) (pycor + 0)[ 
-	 	 	 	 	 	 set patch_Nutrient (patch_Nutrient + 1) 
+	 	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 + 1) 
 	 	 	 	 	 ] 
 	 	 	 	 	 ] 
 	 	 	 	 ] 
 	 	 	 	 (pxcor + -1 > max-pxcor) [ 
-	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 ]) 
 	 	 	 ] 
 	 	 	 (randomDirection < 11)[ 
@@ -446,21 +452,21 @@ to patchdiffusion
 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 	 	 [ 
 	 	 	 	 	 	 	 	 ;different compartments but flow allowed
-	 	 	 	 	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 	 	 	 	 ask patch (pxcor + -1) (pycor + 1)[ 
-	 	 	 	 	 	 	 	 	  set patch_Nutrient (patch_Nutrient + 1) 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient1 (patch_Nutrient1 + 1) 
 	 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 ] 
 	 	 	 	 	 [ 
-	 	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 	 ask patch (pxcor + -1) (pycor + 1)[ 
-	 	 	 	 	 	 set patch_Nutrient (patch_Nutrient + 1) 
+	 	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 + 1) 
 	 	 	 	 	 ] 
 	 	 	 	 	 ] 
 	 	 	 	 ] 
 	 	 	 	 (pxcor + -1 > max-pxcor) [ 
-	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 ]) 
 	 	 	 ] 
 	 	 	 (randomDirection < 18)[ 
@@ -474,21 +480,21 @@ to patchdiffusion
 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 	 	 [ 
 	 	 	 	 	 	 	 	 ;different compartments but flow allowed
-	 	 	 	 	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 	 	 	 	 ask patch (pxcor + 0) (pycor + -1)[ 
-	 	 	 	 	 	 	 	 	  set patch_Nutrient (patch_Nutrient + 1) 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient1 (patch_Nutrient1 + 1) 
 	 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 ] 
 	 	 	 	 	 [ 
-	 	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 	 ask patch (pxcor + 0) (pycor + -1)[ 
-	 	 	 	 	 	 set patch_Nutrient (patch_Nutrient + 1) 
+	 	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 + 1) 
 	 	 	 	 	 ] 
 	 	 	 	 	 ] 
 	 	 	 	 ] 
 	 	 	 	 (pxcor + 0 > max-pxcor) [ 
-	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 ]) 
 	 	 	 ] 
 	 	 	 (randomDirection < 38)[ 
@@ -505,21 +511,21 @@ to patchdiffusion
 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 	 	 [ 
 	 	 	 	 	 	 	 	 ;different compartments but flow allowed
-	 	 	 	 	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 	 	 	 	 ask patch (pxcor + 0) (pycor + 1)[ 
-	 	 	 	 	 	 	 	 	  set patch_Nutrient (patch_Nutrient + 1) 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient1 (patch_Nutrient1 + 1) 
 	 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 ] 
 	 	 	 	 	 [ 
-	 	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 	 ask patch (pxcor + 0) (pycor + 1)[ 
-	 	 	 	 	 	 set patch_Nutrient (patch_Nutrient + 1) 
+	 	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 + 1) 
 	 	 	 	 	 ] 
 	 	 	 	 	 ] 
 	 	 	 	 ] 
 	 	 	 	 (pxcor + 0 > max-pxcor) [ 
-	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 ]) 
 	 	 	 ] 
 	 	 	 (randomDirection < 60)[ 
@@ -533,21 +539,21 @@ to patchdiffusion
 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 	 	 [ 
 	 	 	 	 	 	 	 	 ;different compartments but flow allowed
-	 	 	 	 	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 	 	 	 	 ask patch (pxcor + 1) (pycor + -1)[ 
-	 	 	 	 	 	 	 	 	  set patch_Nutrient (patch_Nutrient + 1) 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient1 (patch_Nutrient1 + 1) 
 	 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 ] 
 	 	 	 	 	 [ 
-	 	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 	 ask patch (pxcor + 1) (pycor + -1)[ 
-	 	 	 	 	 	 set patch_Nutrient (patch_Nutrient + 1) 
+	 	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 + 1) 
 	 	 	 	 	 ] 
 	 	 	 	 	 ] 
 	 	 	 	 ] 
 	 	 	 	 (pxcor + 1 > max-pxcor) [ 
-	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 ]) 
 	 	 	 ] 
 	 	 	 (randomDirection < 85)[ 
@@ -561,21 +567,21 @@ to patchdiffusion
 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 	 	 [ 
 	 	 	 	 	 	 	 	 ;different compartments but flow allowed
-	 	 	 	 	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 	 	 	 	 ask patch (pxcor + 1) (pycor + 0)[ 
-	 	 	 	 	 	 	 	 	  set patch_Nutrient (patch_Nutrient + 1) 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient1 (patch_Nutrient1 + 1) 
 	 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 ] 
 	 	 	 	 	 [ 
-	 	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 	 ask patch (pxcor + 1) (pycor + 0)[ 
-	 	 	 	 	 	 set patch_Nutrient (patch_Nutrient + 1) 
+	 	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 + 1) 
 	 	 	 	 	 ] 
 	 	 	 	 	 ] 
 	 	 	 	 ] 
 	 	 	 	 (pxcor + 1 > max-pxcor) [ 
-	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 ]) 
 	 	 	 ] 
 	 	 	 (randomDirection < 100)[ 
@@ -589,21 +595,487 @@ to patchdiffusion
 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 	 	 [ 
 	 	 	 	 	 	 	 	 ;different compartments but flow allowed
-	 	 	 	 	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 	 	 	 	 ask patch (pxcor + 1) (pycor + 1)[ 
-	 	 	 	 	 	 	 	 	  set patch_Nutrient (patch_Nutrient + 1) 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient1 (patch_Nutrient1 + 1) 
 	 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 	 	 ] 
 	 	 	 	 	 ] 
 	 	 	 	 	 [ 
-	 	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
 	 	 	 	 	 ask patch (pxcor + 1) (pycor + 1)[ 
-	 	 	 	 	 	 set patch_Nutrient (patch_Nutrient + 1) 
+	 	 	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 + 1) 
 	 	 	 	 	 ] 
 	 	 	 	 	 ] 
 	 	 	 	 ] 
 	 	 	 	 (pxcor + 1 > max-pxcor) [ 
-	 	 	 	 set patch_Nutrient (patch_Nutrient - 1) 
+	 	 	 	 set patch_Nutrient1 (patch_Nutrient1 - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 ) 
+	 	 ] 
+	 	 set tempList range patch_Nutrient2 
+	 	 foreach tempList [ 
+	 	 	 let randomDirection random 100 
+	 	 	 (ifelse 
+	 	 	 (randomDirection < 3)[ 
+	 	 	 	 (ifelse (pxcor + -1 <= max-pxcor and pxcor + -1 >= min-pxcor and pycor + -1 <= max-pycor and pycor + -1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + -1) (pycor + -1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + -1) (pycor + -1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + -1) (pycor + -1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient2 (patch_Nutrient2 + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 	 ask patch (pxcor + -1) (pycor + -1)[ 
+	 	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + -1 > max-pxcor) [ 
+	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 8)[ 
+	 	 	 	 (ifelse (pxcor + -1 <= max-pxcor and pxcor + -1 >= min-pxcor and pycor + 0 <= max-pycor and pycor + 0 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + -1) (pycor + 0) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + -1) (pycor + 0)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + -1) (pycor + 0)[ 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient2 (patch_Nutrient2 + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 	 ask patch (pxcor + -1) (pycor + 0)[ 
+	 	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + -1 > max-pxcor) [ 
+	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 11)[ 
+	 	 	 	 (ifelse (pxcor + -1 <= max-pxcor and pxcor + -1 >= min-pxcor and pycor + 1 <= max-pycor and pycor + 1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + -1) (pycor + 1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + -1) (pycor + 1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + -1) (pycor + 1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient2 (patch_Nutrient2 + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 	 ask patch (pxcor + -1) (pycor + 1)[ 
+	 	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + -1 > max-pxcor) [ 
+	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 18)[ 
+	 	 	 	 (ifelse (pxcor + 0 <= max-pxcor and pxcor + 0 >= min-pxcor and pycor + -1 <= max-pycor and pycor + -1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 0) (pycor + -1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 0) (pycor + -1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + 0) (pycor + -1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient2 (patch_Nutrient2 + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 	 ask patch (pxcor + 0) (pycor + -1)[ 
+	 	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + 0 > max-pxcor) [ 
+	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 38)[ 
+	 	 	 ;nothing happens as the random decider decided to leave the molecule in place 
+	 	 	 ] 
+	 	 	 (randomDirection < 45)[ 
+	 	 	 	 (ifelse (pxcor + 0 <= max-pxcor and pxcor + 0 >= min-pxcor and pycor + 1 <= max-pycor and pycor + 1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 0) (pycor + 1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 0) (pycor + 1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + 0) (pycor + 1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient2 (patch_Nutrient2 + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 	 ask patch (pxcor + 0) (pycor + 1)[ 
+	 	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + 0 > max-pxcor) [ 
+	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 60)[ 
+	 	 	 	 (ifelse (pxcor + 1 <= max-pxcor and pxcor + 1 >= min-pxcor and pycor + -1 <= max-pycor and pycor + -1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 1) (pycor + -1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 1) (pycor + -1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + 1) (pycor + -1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient2 (patch_Nutrient2 + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 	 ask patch (pxcor + 1) (pycor + -1)[ 
+	 	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + 1 > max-pxcor) [ 
+	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 85)[ 
+	 	 	 	 (ifelse (pxcor + 1 <= max-pxcor and pxcor + 1 >= min-pxcor and pycor + 0 <= max-pycor and pycor + 0 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 1) (pycor + 0) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 1) (pycor + 0)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + 1) (pycor + 0)[ 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient2 (patch_Nutrient2 + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 	 ask patch (pxcor + 1) (pycor + 0)[ 
+	 	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + 1 > max-pxcor) [ 
+	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 100)[ 
+	 	 	 	 (ifelse (pxcor + 1 <= max-pxcor and pxcor + 1 >= min-pxcor and pycor + 1 <= max-pycor and pycor + 1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 1) (pycor + 1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 1) (pycor + 1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + 1) (pycor + 1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient2 (patch_Nutrient2 + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 	 ask patch (pxcor + 1) (pycor + 1)[ 
+	 	 	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + 1 > max-pxcor) [ 
+	 	 	 	 set patch_Nutrient2 (patch_Nutrient2 - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 ) 
+	 	 ] 
+	 	 set tempList range patch_Nutrient3 
+	 	 foreach tempList [ 
+	 	 	 let randomDirection random 100 
+	 	 	 (ifelse 
+	 	 	 (randomDirection < 3)[ 
+	 	 	 	 (ifelse (pxcor + -1 <= max-pxcor and pxcor + -1 >= min-pxcor and pycor + -1 <= max-pycor and pycor + -1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + -1) (pycor + -1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + -1) (pycor + -1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + -1) (pycor + -1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient3 (patch_Nutrient3 + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 	 ask patch (pxcor + -1) (pycor + -1)[ 
+	 	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + -1 > max-pxcor) [ 
+	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 8)[ 
+	 	 	 	 (ifelse (pxcor + -1 <= max-pxcor and pxcor + -1 >= min-pxcor and pycor + 0 <= max-pycor and pycor + 0 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + -1) (pycor + 0) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + -1) (pycor + 0)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + -1) (pycor + 0)[ 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient3 (patch_Nutrient3 + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 	 ask patch (pxcor + -1) (pycor + 0)[ 
+	 	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + -1 > max-pxcor) [ 
+	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 11)[ 
+	 	 	 	 (ifelse (pxcor + -1 <= max-pxcor and pxcor + -1 >= min-pxcor and pycor + 1 <= max-pycor and pycor + 1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + -1) (pycor + 1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + -1) (pycor + 1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + -1) (pycor + 1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient3 (patch_Nutrient3 + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 	 ask patch (pxcor + -1) (pycor + 1)[ 
+	 	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + -1 > max-pxcor) [ 
+	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 18)[ 
+	 	 	 	 (ifelse (pxcor + 0 <= max-pxcor and pxcor + 0 >= min-pxcor and pycor + -1 <= max-pycor and pycor + -1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 0) (pycor + -1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 0) (pycor + -1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + 0) (pycor + -1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient3 (patch_Nutrient3 + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 	 ask patch (pxcor + 0) (pycor + -1)[ 
+	 	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + 0 > max-pxcor) [ 
+	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 38)[ 
+	 	 	 ;nothing happens as the random decider decided to leave the molecule in place 
+	 	 	 ] 
+	 	 	 (randomDirection < 45)[ 
+	 	 	 	 (ifelse (pxcor + 0 <= max-pxcor and pxcor + 0 >= min-pxcor and pycor + 1 <= max-pycor and pycor + 1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 0) (pycor + 1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 0) (pycor + 1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + 0) (pycor + 1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient3 (patch_Nutrient3 + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 	 ask patch (pxcor + 0) (pycor + 1)[ 
+	 	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + 0 > max-pxcor) [ 
+	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 60)[ 
+	 	 	 	 (ifelse (pxcor + 1 <= max-pxcor and pxcor + 1 >= min-pxcor and pycor + -1 <= max-pycor and pycor + -1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 1) (pycor + -1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 1) (pycor + -1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + 1) (pycor + -1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient3 (patch_Nutrient3 + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 	 ask patch (pxcor + 1) (pycor + -1)[ 
+	 	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + 1 > max-pxcor) [ 
+	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 85)[ 
+	 	 	 	 (ifelse (pxcor + 1 <= max-pxcor and pxcor + 1 >= min-pxcor and pycor + 0 <= max-pycor and pycor + 0 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 1) (pycor + 0) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 1) (pycor + 0)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + 1) (pycor + 0)[ 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient3 (patch_Nutrient3 + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 	 ask patch (pxcor + 1) (pycor + 0)[ 
+	 	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + 1 > max-pxcor) [ 
+	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 ]) 
+	 	 	 ] 
+	 	 	 (randomDirection < 100)[ 
+	 	 	 	 (ifelse (pxcor + 1 <= max-pxcor and pxcor + 1 >= min-pxcor and pycor + 1 <= max-pycor and pycor + 1 >= min-pycor) 
+	 	 	 	 [ 
+	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 1) (pycor + 1) != compartmentID) 
+	 	 	 	 	 [ 
+	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 1) (pycor + 1)) "Mol" )) = 0) 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 [ 
+	 	 	 	 	 	 	 	 ;different compartments but flow allowed
+	 	 	 	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 	 	 	 	 ask patch (pxcor + 1) (pycor + 1)[ 
+	 	 	 	 	 	 	 	 	  set patch_Nutrient3 (patch_Nutrient3 + 1) 
+	 	 	 	 	 	 	 	 ] 
+	 	 	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 	 [ 
+	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
+	 	 	 	 	 ask patch (pxcor + 1) (pycor + 1)[ 
+	 	 	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 + 1) 
+	 	 	 	 	 ] 
+	 	 	 	 	 ] 
+	 	 	 	 ] 
+	 	 	 	 (pxcor + 1 > max-pxcor) [ 
+	 	 	 	 set patch_Nutrient3 (patch_Nutrient3 - 1) 
 	 	 	 	 ]) 
 	 	 	 ] 
 	 	 	 ) 
@@ -809,32 +1281,34 @@ to setBacteria2BehAll [ listOfCommands ]
 	 	 setBacteria2Beh (item 0 content) (item 1 content) (item 2 content) (item 3 content)  
 	 ] 
 end 
-to setBacteria1Patch [ id SCFA Nutrient ] 
+to setBacteria1Patch [ id SCFA Nutrient1 Nutrient2 ] 
 	 ask turtle id [ 
 	 	 ask patch-here [ 
 	 	 	 set patch_SCFA SCFA 
-	 	 	 set patch_Nutrient Nutrient 
+	 	 	 set patch_Nutrient1 Nutrient1 
+	 	 	 set patch_Nutrient2 Nutrient2 
 	 	 ] 
 	 ] 
 end 
-to setBacteria2Patch [ id SCFA Nutrient ] 
+to setBacteria2Patch [ id SCFA Nutrient1 Nutrient3 ] 
 	 ask turtle id [ 
 	 	 ask patch-here [ 
 	 	 	 set patch_SCFA SCFA 
-	 	 	 set patch_Nutrient Nutrient 
+	 	 	 set patch_Nutrient1 Nutrient1 
+	 	 	 set patch_Nutrient3 Nutrient3 
 	 	 ] 
 	 ] 
 end 
 to setBacteria1PatchAll [ listOfCommands ] 
 	 foreach listOfCommands [ 
 	 	 [content] -> 
-	 	 setBacteria1Patch (item 0 content) (item 1 content) (item 2 content)  
+	 	 setBacteria1Patch (item 0 content) (item 1 content) (item 2 content) (item 3 content)  
 	 ] 
 end 
 to setBacteria2PatchAll [ listOfCommands ] 
 	 foreach listOfCommands [ 
 	 	 [content] -> 
-	 	 setBacteria2Patch (item 0 content) (item 1 content) (item 2 content)  
+	 	 setBacteria2Patch (item 0 content) (item 1 content) (item 2 content) (item 3 content)  
 	 ] 
 end 
 to doinflow [ molecule amount starty endy ] 
@@ -912,8 +1386,14 @@ to-report intake
  	 	 	 set tempList [] 
  	 	 	 set tempList lput bacType tempList 
  	 	 	 set tempList lput tempID tempList
- 	 	 	 set tempList lput "\"Nutrient\"" templist 
- 	 	 	 set tempList lput patch_Nutrient templist 
+ 	 	 	 set tempList lput "\"Nutrient1\"" templist 
+ 	 	 	 set tempList lput patch_Nutrient1 templist 
+ 	 	 	 set wholeList lput tempList wholeList 
+ 	 	 	 set tempList [] 
+ 	 	 	 set tempList lput bacType tempList 
+ 	 	 	 set tempList lput tempID tempList
+ 	 	 	 set tempList lput "\"Nutrient2\"" templist 
+ 	 	 	 set tempList lput patch_Nutrient2 templist 
  	 	 	 set wholeList lput tempList wholeList 
  	 	 	 set tempList [] 
 	 	 ] 
@@ -930,8 +1410,14 @@ to-report intake
  	 	 	 set tempList [] 
  	 	 	 set tempList lput bacType tempList 
  	 	 	 set tempList lput tempID tempList
- 	 	 	 set tempList lput "\"Nutrient\"" templist 
- 	 	 	 set tempList lput patch_Nutrient templist 
+ 	 	 	 set tempList lput "\"Nutrient1\"" templist 
+ 	 	 	 set tempList lput patch_Nutrient1 templist 
+ 	 	 	 set wholeList lput tempList wholeList 
+ 	 	 	 set tempList [] 
+ 	 	 	 set tempList lput bacType tempList 
+ 	 	 	 set tempList lput tempID tempList
+ 	 	 	 set tempList lput "\"Nutrient3\"" templist 
+ 	 	 	 set tempList lput patch_Nutrient3 templist 
  	 	 	 set wholeList lput tempList wholeList 
  	 	 	 set tempList [] 
 	 	 ] 
@@ -941,13 +1427,19 @@ end
 to-report patchvalues 
 	 let templist [] 
 	 let tempvalueSCFA 0 
-	 let tempvalueNutrient 0 
+	 let tempvalueNutrient1 0 
+	 let tempvalueNutrient2 0 
+	 let tempvalueNutrient3 0 
 	 ask patches [ 
 	 	 set tempvalueSCFA tempvalueSCFA + patch_SCFA 
-	 	 set tempvalueNutrient tempvalueNutrient + patch_Nutrient 
+	 	 set tempvalueNutrient1 tempvalueNutrient1 + patch_Nutrient1 
+	 	 set tempvalueNutrient2 tempvalueNutrient2 + patch_Nutrient2 
+	 	 set tempvalueNutrient3 tempvalueNutrient3 + patch_Nutrient3 
 	 ] 
  	 set templist lput tempvalueSCFA templist 
-	 set templist lput tempvalueNutrient templist 
+	 set templist lput tempvalueNutrient1 templist 
+	 set templist lput tempvalueNutrient2 templist 
+	 set templist lput tempvalueNutrient3 templist 
 	 report templist 
 end 
 

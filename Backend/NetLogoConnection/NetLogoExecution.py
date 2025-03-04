@@ -43,7 +43,10 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpat
             # oldNLVersionTry
             nl4py.initialize(r"C:\Program Files\NetLogo6.2.2")
     else:
-        nl4py.initialize('/home/MariusKirchner/Desktop/Randomstuff/NetLogo-6.2.2-64/NetLogo 6.2.2/')
+        if os.path.exists(r'/home/MariusKirchner/Desktop/Randomstuff/NetLogo-6.2.2-64/NetLogo 6.2.2/'):
+            nl4py.initialize('/home/MariusKirchner/Desktop/Randomstuff/NetLogo-6.2.2-64/NetLogo 6.2.2/')
+        elif os.path.exists(r'/opt/NetLogo-6.4.0.64/'):
+            nl4py.initialize('/opt/Netlogo-6.4.0-64/lib/')
 
     if guimode:
         n = nl4py.netlogo_app()

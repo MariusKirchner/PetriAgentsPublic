@@ -8,6 +8,8 @@ import csv
 from scipy.interpolate import make_interp_spline
 import numpy as np
 import tkinter.filedialog
+from pandas import read_csv
+from statsmodels.tsa.stattools import adfuller
 #todo: continue writing this, make it viable for any start setup (multiple bacteria in same graph)
 #todo: add legends
 #todo: add explanation to parameters
@@ -33,7 +35,24 @@ for filename in os.listdir(tabledir):
                 templist[i - 1].append(int(row[i]))
         numberOfSims += 1
         listOfData.append(templist)
-
+    series = read_csv(filepath, header=1, index_col=0)
+    series = series.transpose()
+    X = series.values[0][0000:20000:]
+    result = adfuller(X)
+    stable = True
+    if result[1] > 0.01:
+        print("Bact:" + str(result[1]))
+        stable = False
+    series = read_csv(filepath, header=1, index_col=0)
+    series = series.transpose()
+    X = series.values[4][0000:20000:]
+    result = adfuller(X)
+    if result[1] > 0.01:
+        print("Firm:" + str(result[1]))
+        stable = False
+    if stable:
+        print("Run: " + str(numberOfSims) + " was stable.")
+# quit()
 newfolderdir = os.path.join(directory, r'plots')
 if not os.path.isdir(newfolderdir):
     os.makedirs(newfolderdir)
@@ -47,7 +66,30 @@ print(minticks)
 for i in range(0, minticks):
     xaxis.append(i)
 xnew = np.linspace(min(xaxis), max(xaxis), 300)
-'''counter = 0
+#start for single plots
+singlePlots = False
+# singlePlots = True
+if singlePlots:
+    for currsim in range(0, numberOfSims):
+        # print(listOfData)
+        xposs = [1, 5]
+        for x in xposs:
+            plot = []
+            # print(len(listOfData[0][x]))
+            for currx in range(0, minticks):
+                plot.append(listOfData[currsim][x][currx])
+            tempsmoothplot = make_interp_spline(xaxis, plot, k=3)
+            smoothplot = tempsmoothplot(xnew)
+            print("done interpolating")
+            plt.plot(xnew, smoothplot, color="b")
+            plt.ylim(bottom=0)
+            plt.savefig(newfolderdir + "\\" + "SingleSim" + str(currsim) + header[x] + ".png", bbox_inches="tight")
+            plt.savefig(newfolderdir + "\\" + "SingleSim" + str(currsim) + header[x] + ".svg", bbox_inches="tight")
+            print("donehere")
+            plt.clf()
+
+# start for all other plots
+counter = 0
 #print(listOfData)
 for x in range(0, len(listOfData[0])):
     maxplot = []
@@ -126,7 +168,8 @@ for x in range(0, len(listOfData[0])):
     plt.savefig(newfolderdir + "\\" + "StandardDeviation" + header[counter + 1] + ".svg", bbox_inches="tight")
     print("done")
     counter += 1
-    plt.clf()'''
+    plt.clf()
+# end for all other plots
 counter = 0
 for x in range(0, len(listOfData[0])):
     maxplot = []

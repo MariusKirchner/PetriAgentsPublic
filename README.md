@@ -8,6 +8,7 @@ Final product will be an easy to use GUI interface for creation of Agent based s
 - PetriAgents requires JDK 1.8 
 - PetriAgents requires NL4PY [2] to be installed with your Python distribution
 - PetriAgents requires python-libsbml [3] to be installed with your Python distribution
+- PetriAgents requires statsmodels [5] to be installed with your Python distribution
 
 ## Installation
 Clone the github repository. 
@@ -60,3 +61,5 @@ To be written. For now check the example Petri nets (.sbml files) for reference 
 [3] Benjamin J. Bornstein, Sarah M. Keating, Akira Jouraku, and Michael Hucka (2008) LibSBML: An API Library for SBML. Bioinformatics, 24(6):880–881, doi:10.1093/bioinformatics/btn051.
 
 [4] Jens Einloft, Jörg Ackermann, Joachim Nöthen, Ina Koch, MonaLisa—visualization and analysis of functional modules in biochemical networks, Bioinformatics, Volume 29, Issue 11, June 2013, Pages 1469–1470, https://doi.org/10.1093/bioinformatics/btt165.
+
+[5] https://github.com/statsmodels/statsmodels

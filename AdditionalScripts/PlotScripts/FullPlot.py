@@ -255,7 +255,7 @@ for x in combinedPlots:
         plt.savefig(newfolderdir + "\\" + "Combine.svg", bbox_inches="tight")
         #plt.ylim(bottom=20, top=200)
         #plt.ylim(bottom=32, top=38)
-        plt.ylim(bottom=40, top=200)
+        plt.ylim(bottom=0, top=1200)
         plt.savefig(newfolderdir + "\\" + "CombineLimit.png", bbox_inches="tight")
         plt.savefig(newfolderdir + "\\" + "CombineLimit.svg", bbox_inches="tight")
         print("done")

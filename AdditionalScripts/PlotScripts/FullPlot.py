@@ -273,15 +273,14 @@ maxy = 51
 if heatmap:
     for currBacType in range(0, numberOfBacs):
         data = np.zeros((maxx, maxy))
-        print(listOfData[-1][-(1+currBacType)])
         for ticks in listOfData[-1][-(1+currBacType)]:
             processedData = json.loads(ticks)
             for currBac in processedData:
                 data[int(currBac[2]), int(currBac[3])] += 1
-        print(data)
         data = np.swapaxes(data, 0, 1)
-        plt.imshow(data, cmap='hot', interpolation='nearest')
-        plt.savefig(newfolderdir + "\\" + header[-(1+currBacType)] + "Heatmap.png", bbox_inches="tight")
+        plt.imshow(data, cmap='hot', interpolation='quadric')
+        plt.savefig(newfolderdir + "\\" + "Heatmap" + header[-(1+currBacType)] + ".svg", bbox_inches="tight")
+        plt.savefig(newfolderdir + "\\" + "Heatmap" + header[-(1+currBacType)] + ".svg", bbox_inches="tight")
         plt.clf()
 
 

@@ -20,6 +20,8 @@ listOfData = []
 xaxis = []
 numberOfSims = 0
 tabledir = os.path.join(directory, 'tables')
+# checkStable = True
+checkStable = False
 for filename in os.listdir(tabledir):
     filepath = os.path.join(tabledir, filename)
     if os.path.isfile(filepath):
@@ -35,23 +37,24 @@ for filename in os.listdir(tabledir):
                 templist[i - 1].append(int(row[i]))
         numberOfSims += 1
         listOfData.append(templist)
-    series = read_csv(filepath, header=1, index_col=0)
-    series = series.transpose()
-    X = series.values[0][0000:20000:]
-    result = adfuller(X)
-    stable = True
-    if result[1] > 0.01:
-        print("Bact:" + str(result[1]))
-        stable = False
-    series = read_csv(filepath, header=1, index_col=0)
-    series = series.transpose()
-    X = series.values[4][0000:20000:]
-    result = adfuller(X)
-    if result[1] > 0.01:
-        print("Firm:" + str(result[1]))
-        stable = False
-    if stable:
-        print("Run: " + str(numberOfSims) + " was stable.")
+    if checkStable:
+        series = read_csv(filepath, header=1, index_col=0)
+        series = series.transpose()
+        X = series.values[0][0000:20000:]
+        result = adfuller(X)
+        stable = True
+        if result[1] > 0.01:
+            print("Bact:" + str(result[1]))
+            stable = False
+        series = read_csv(filepath, header=1, index_col=0)
+        series = series.transpose()
+        X = series.values[4][0000:20000:]
+        result = adfuller(X)
+        if result[1] > 0.01:
+            print("Firm:" + str(result[1]))
+            stable = False
+        if stable:
+            print("Run: " + str(numberOfSims) + " was stable.")
 # quit()
 newfolderdir = os.path.join(directory, r'plots')
 if not os.path.isdir(newfolderdir):
@@ -252,7 +255,7 @@ for x in combinedPlots:
         plt.savefig(newfolderdir + "\\" + "Combine.svg", bbox_inches="tight")
         #plt.ylim(bottom=20, top=200)
         #plt.ylim(bottom=32, top=38)
-        plt.ylim(bottom=0, top=160)
+        plt.ylim(bottom=40, top=200)
         plt.savefig(newfolderdir + "\\" + "CombineLimit.png", bbox_inches="tight")
         plt.savefig(newfolderdir + "\\" + "CombineLimit.svg", bbox_inches="tight")
         print("done")

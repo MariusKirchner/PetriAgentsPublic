@@ -45,7 +45,7 @@ def updateGUI(mainProject):
     updateTables(mainProject)
     pass
 
-def startSimulation(mainProject, amount, foldername, guimode, window):
+def startSimulation(mainProject, amount, foldername, guimode, posmode, window):
     updateProject(mainProject)
     print("Starting Simulation")
     print("Writing the NetLogoFile")
@@ -66,7 +66,7 @@ def startSimulation(mainProject, amount, foldername, guimode, window):
     tablefolderdir = os.path.join(newfolderdir, 'tables')
     if not os.path.isdir(tablefolderdir):
         os.makedirs(tablefolderdir)
-    NetLogoExecution.executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, tablefolderdir, guimode, window)
+    NetLogoExecution.executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, tablefolderdir, guimode, posmode, window)
     pass
 
 def startSimulationQueue(mainProject, root):
@@ -85,7 +85,11 @@ def startSimulationQueue(mainProject, root):
     guimode = BooleanVar(tempFrame)
     guimode.set(True)
     Checkbutton(tempFrame, variable=guimode, onvalue=True, offvalue=False).grid(column=1, row=2)
-    Button(tempFrame, text="Start this setup", command=lambda: startSimulation(mainProject, amount.get(), foldername.get(), guimode.get(), root)).grid(column=0, row=3)
+    ttk.Label(tempFrame, text="Save position of turtles (LARGE FILES! Currently only in nonguimode)").grid(column=0, row=3)
+    posMode = BooleanVar(tempFrame)
+    posMode.set(False)
+    Checkbutton(tempFrame, variable=posMode, onvalue=True, offvalue=False).grid(column=1, row=3)
+    Button(tempFrame, text="Start this setup", command=lambda: startSimulation(mainProject, amount.get(), foldername.get(), guimode.get(), posMode.get(), root)).grid(column=0, row=4)
 
 
 

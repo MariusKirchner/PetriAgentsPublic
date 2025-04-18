@@ -1,3 +1,4 @@
+import json
 import math
 import os
 import sys
@@ -22,6 +23,7 @@ numberOfSims = 0
 tabledir = os.path.join(directory, 'tables')
 # checkStable = True
 checkStable = False
+numberOfBacs = 2
 for filename in os.listdir(tabledir):
     filepath = os.path.join(tabledir, filename)
     if os.path.isfile(filepath):
@@ -33,8 +35,10 @@ for filename in os.listdir(tabledir):
         for i in range(1, len(header)):
             templist.append([])
         for row in inputfile:
-            for i in range(1, len(header)):
+            for i in range(1, len(header) - numberOfBacs):
                 templist[i - 1].append(int(row[i]))
+            for x in range(1, numberOfBacs + 1):
+                templist[i + x - 1].append(row[i + x])
         numberOfSims += 1
         listOfData.append(templist)
     if checkStable:
@@ -94,7 +98,7 @@ if singlePlots:
 # start for all other plots
 counter = 0
 #print(listOfData)
-for x in range(0, len(listOfData[0])):
+for x in range(0, len(listOfData[0]) - numberOfBacs):
     maxplot = []
     minplot = []
     avgplot = []
@@ -135,7 +139,7 @@ for x in range(0, len(listOfData[0])):
     counter += 1
     plt.clf()
 counter = 0
-for x in range(0, len(listOfData[0])):
+for x in range(0, len(listOfData[0]) - numberOfBacs):
     maxplot = []
     minplot = []
     avgplot = []
@@ -174,7 +178,7 @@ for x in range(0, len(listOfData[0])):
     plt.clf()
 # end for all other plots
 counter = 0
-for x in range(0, len(listOfData[0])):
+for x in range(0, len(listOfData[0]) - numberOfBacs):
     maxplot = []
     minplot = []
     avgplot = []
@@ -261,5 +265,26 @@ for x in combinedPlots:
         print("done")
     #plt.clf()
 plt.clf()
+heatmap = True
+minx = 0
+maxx = 101
+miny = 0
+maxy = 51
+if heatmap:
+    for currBacType in range(0, numberOfBacs):
+        data = np.zeros((maxx, maxy))
+        print(listOfData[-1][-(1+currBacType)])
+        for ticks in listOfData[-1][-(1+currBacType)]:
+            processedData = json.loads(ticks)
+            for currBac in processedData:
+                data[int(currBac[2]), int(currBac[3])] += 1
+        print(data)
+        data = np.swapaxes(data, 0, 1)
+        plt.imshow(data, cmap='hot', interpolation='nearest')
+        plt.savefig(newfolderdir + "\\" + header[-(1+currBacType)] + "Heatmap.png", bbox_inches="tight")
+        plt.clf()
+
+
+
 
 

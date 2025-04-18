@@ -515,6 +515,27 @@ def createNetLogoProject(mainProject):
     tempnetlogoFile.write("\t report tempList \n")
     tempnetlogoFile.write("end \n")
 
+    #report positions
+    tempnetlogoFile.write("to-report bacPos \n")
+    tempnetlogoFile.write("\t let tempList [] \n")
+    tempnetlogoFile.write("\t let bacList [] \n")
+    tempnetlogoFile.write("\t let wholeList [] \n")
+    for i in mainProject.listOfBacteriaIDs:
+        tempnetlogoFile.write("\t ask bacteria" + str(i) + " [ \n")
+        tempnetlogoFile.write("\t \t set tempList lput " + str(i) + " tempList \n")
+        tempnetlogoFile.write("\t \t set tempList lput who tempList \n")
+        tempnetlogoFile.write("\t \t set tempList lput pxcor tempList \n")
+        tempnetlogoFile.write("\t \t set tempList lput pycor tempList \n")
+        tempnetlogoFile.write("\t \t set bacList lput tempList bacList \n")
+        tempnetlogoFile.write("\t \t set tempList [] \n")
+        tempnetlogoFile.write("\t ] \n")
+        tempnetlogoFile.write("\t set wholeList lput bacList wholeList \n")
+        tempnetlogoFile.write("\t set bacList [] \n")
+    tempnetlogoFile.write("\t report wholeList \n")
+    tempnetlogoFile.write("end \n")
+    tempnetlogoFile.write("\n")
+
+
     #todo write check for multiple intakes
     tempnetlogoFile.write("to-report intake \n")
     tempnetlogoFile.write("\t let tempList [] \n")

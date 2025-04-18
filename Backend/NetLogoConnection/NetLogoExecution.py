@@ -12,7 +12,7 @@ import os.path
 from multiprocessing import Pool
 import concurrent.futures
 
-def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpath, guimode, window):
+def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpath, guimode, posmode, window):
     # create inflow data
     window.destroy()
     global allflows
@@ -191,21 +191,23 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpat
         listofParentProjects = []
         listofFilePaths = []
         listoffolderpaths = []
+        listofposmodes = []
         for i in range(0, int(amount)):
             listofRuns.append(i)
             listofParentProjects.append(mainProject)
             listofFilePaths.append(netLogoProjectFilepath)
             listoffolderpaths.append(folderpath)
+            listofposmodes.append(posmode)
         with concurrent.futures.ThreadPoolExecutor() as executor:
             #test(1)
             #print(listofRuns)
-            executor.map(runSingleWorkspace, listofParentProjects, listofFilePaths, listofRuns, listoffolderpaths)
+            executor.map(runSingleWorkspace, listofParentProjects, listofFilePaths, listofRuns, listoffolderpaths, listofposmodes)
             #print("finished")
             #executor.map(test, listofRuns)
         pass
         #parentProject, netLogoProjectFilepath, currRun, folderpath
 
-def runSingleWorkspace(parentProject, netLogoProjectFilepath, currRun, folderpath):
+def runSingleWorkspace(parentProject, netLogoProjectFilepath, currRun, folderpath, posmode):
     print("Starting run number: " + str(currRun))
     #time1 = time.time()
     mainProject = copy.deepcopy(parentProject)
@@ -230,6 +232,9 @@ def runSingleWorkspace(parentProject, netLogoProjectFilepath, currRun, folderpat
                           mainProject.bacteriaIDDict[bacteria].dictOfBehPlaces[behaviour])
     for envmol in mainProject.listOfEnvironmentMolecules:
         header.append(envmol)
+    if posmode:
+        for bacteria in mainProject.listOfBacteriaIDs:
+            header.append(mainProject.bacteriaIDDict[bacteria].name + "Positions")
     seperatorline = ["sep=,"]
     csvwriter.writerow(seperatorline)
     csvwriter.writerow(header)
@@ -363,6 +368,12 @@ def runSingleWorkspace(parentProject, netLogoProjectFilepath, currRun, folderpat
         patchreporteval = json.loads(patchreportraw)
         for k in patchreporteval:
             newcsvline.append(int(k))
+        #TODO: add this for guimode runs
+        if posmode:
+            posreportraw = n.report("bacPos")
+            posreporteval = json.loads(posreportraw)
+            for i in posreporteval:
+                newcsvline.append(i)
         csvwriter.writerow(newcsvline)
         #time15 = time.time()
         #print("writing tickresults--- %s seconds ---" % (time15 - time14))

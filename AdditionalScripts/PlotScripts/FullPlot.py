@@ -293,6 +293,7 @@ if heatmap:
         plt.title("Heatmap of bacteria")
         plt.xlabel("x-axis")
         plt.ylabel("y-axis")
+        plt.colorbar(shrink=0.75)
         plt.savefig(newfolderdir + "\\" + "Heatmap" + header[-(1+currBacType)] + ".svg", bbox_inches="tight")
         plt.savefig(newfolderdir + "\\" + "Heatmap" + header[-(1+currBacType)] + ".svg", bbox_inches="tight")
         plt.clf()

@@ -21,7 +21,7 @@ def loadProject(filehandler):
     newProject.flowBool = doc.getElementsByTagName("flowBool")[0].childNodes[0].data
     newProject.moleculeOutFlow = doc.getElementsByTagName("molOutFlow")[0].childNodes[0].data
     newProject.bacteriaOutflow = doc.getElementsByTagName("bacOutFlow")[0].childNodes[0].data
-    newProject.bacteriaFlow = doc.getElementsByTagName("bacFlow")[0].childNodes[0].data
+    newProject.bacteriaFlow = doc.getElementsByTagName("bacRateFlow")[0].childNodes[0].data
 
 
     for bac in doc.getElementsByTagName("bacteria")[0].childNodes:

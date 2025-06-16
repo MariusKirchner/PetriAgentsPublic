@@ -85,19 +85,20 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpat
             # runtime procedures
             time5 = time.time()
             # print("Setup the individuals--- %s seconds ---" % (time5 - time4))
-            commandDict = {}
-            for compartmentID in mainProject.listOfCompartmentIDs:
-                for x in range(0, int(mainProject.maxXCor) + 1):
-                    for y in range(0, int(mainProject.maxYCor) + 1):
-                        if (x >= mainProject.compartmentDict[compartmentID].minX) and (
-                                x <= mainProject.compartmentDict[compartmentID].maxX):
-                            if (y >= mainProject.compartmentDict[compartmentID].minY) and (
-                                    y <= mainProject.compartmentDict[compartmentID].maxY):
-                                commandDict[(x, y)] = compartmentID
-            commandList = [[list(key)[0], list(key)[1], value] for key, value in commandDict.items()]
-            time5b = time.time()
+            # Comment for Compartment
+            #commandDict = {}
+            #for compartmentID in mainProject.listOfCompartmentIDs:
+            #    for x in range(0, int(mainProject.maxXCor) + 1):
+            #        for y in range(0, int(mainProject.maxYCor) + 1):
+            #            if (x >= mainProject.compartmentDict[compartmentID].minX) and (
+            #                    x <= mainProject.compartmentDict[compartmentID].maxX):
+            #                if (y >= mainProject.compartmentDict[compartmentID].minY) and (
+            #                        y <= mainProject.compartmentDict[compartmentID].maxY):
+            #                    commandDict[(x, y)] = compartmentID
+            #commandList = [[list(key)[0], list(key)[1], value] for key, value in commandDict.items()]
+            #time5b = time.time()
             # print("First Step of the compartments--- %s seconds ---" % (time5b - time5))
-            n.command("setCompartmentAll " + re.sub(",", "", str(commandList)))
+            #n.command("setCompartmentAll " + re.sub(",", "", str(commandList)))
             time5a = time.time()
             # print("Set up the compartments--- %s seconds ---" % (time5a - time5b))
             for i in range(0, int(parentProject.ticks)):
@@ -247,19 +248,20 @@ def runSingleWorkspace(parentProject, netLogoProjectFilepath, currRun, folderpat
     # runtime procedures
     #time5 = time.time()
     #print("Setup the individuals--- %s seconds ---" % (time5 - time4))
-    commandDict = {}
-    for compartmentID in mainProject.listOfCompartmentIDs:
-        for x in range(0, int(mainProject.maxXCor) + 1):
-            for y in range(0, int(mainProject.maxYCor) + 1):
-                if (x >= mainProject.compartmentDict[compartmentID].minX) and (
-                        x <= mainProject.compartmentDict[compartmentID].maxX):
-                    if (y >= mainProject.compartmentDict[compartmentID].minY) and (
-                            y <= mainProject.compartmentDict[compartmentID].maxY):
-                        commandDict[(x, y)] = compartmentID
-    commandList = [[list(key)[0], list(key)[1], value] for key, value in commandDict.items()]
+    #Comment for Compartment
+    #commandDict = {}
+    #for compartmentID in mainProject.listOfCompartmentIDs:
+    #    for x in range(0, int(mainProject.maxXCor) + 1):
+    #        for y in range(0, int(mainProject.maxYCor) + 1):
+    #            if (x >= mainProject.compartmentDict[compartmentID].minX) and (
+    #                    x <= mainProject.compartmentDict[compartmentID].maxX):
+    #                if (y >= mainProject.compartmentDict[compartmentID].minY) and (
+    #                        y <= mainProject.compartmentDict[compartmentID].maxY):
+    #                    commandDict[(x, y)] = compartmentID
+    #commandList = [[list(key)[0], list(key)[1], value] for key, value in commandDict.items()]
     #time5b = time.time()
     #print("First Step of the compartments--- %s seconds ---" % (time5b - time5))
-    n.command("setCompartmentAll " + re.sub(",", "", str(commandList)))
+    #n.command("setCompartmentAll " + re.sub(",", "", str(commandList)))
     #time5a = time.time()
     #print("Set up the compartments--- %s seconds ---" % (time5a - time5b))
     #addindividualtime = 0

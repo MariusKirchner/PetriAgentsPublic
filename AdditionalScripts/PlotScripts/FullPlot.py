@@ -23,7 +23,7 @@ numberOfSims = 0
 tabledir = os.path.join(directory, 'tables')
 # checkStable = True
 checkStable = False
-numberOfBacs = 2
+numberOfBacs = 1
 for filename in os.listdir(tabledir):
     filepath = os.path.join(tabledir, filename)
     if os.path.isfile(filepath):
@@ -226,56 +226,58 @@ for x in range(0, len(listOfData[0]) - numberOfBacs):
     print("done")
     counter += 1
     plt.clf()
-combinedPlots = [1, 5]
-for x in combinedPlots:
-    maxplot = []
-    minplot = []
-    avgplot = []
-    #print(len(listOfData[0][x]))
-    for currx in range(0, minticks):
-        tempcounter = 0
-        avgsum = 0
-        for currsim in range(0, numberOfSims):
-            avgsum += listOfData[currsim][x][currx]
-            tempcounter += 1
-        tempavg = avgsum / tempcounter
-        totaldev = 0
-        for currsim in range(0, numberOfSims):
-            totaldev += (listOfData[currsim][x][currx] - tempavg)**2
-        variance = totaldev / tempcounter
-        #print("Variance")
-        #print(variance)
-        standarddev = math.sqrt(variance)
-        maxplot.append(tempavg+(0.95*(standarddev/math.sqrt(numberOfSims))))
-        minplot.append(tempavg-(0.95*(standarddev/math.sqrt(numberOfSims))))
-        avgplot.append(tempavg)
-        #print(tempavg)
-    tempsmoothavg = make_interp_spline(xaxis, avgplot, k=3)
-    smoothavg = tempsmoothavg(xnew)
-    tempsmoothmin = make_interp_spline(xaxis, minplot, k=3)
-    smoothmin = tempsmoothmin(xnew)
-    tempsmoothmax = make_interp_spline(xaxis, maxplot, k=3)
-    smoothmax = tempsmoothmax(xnew)
-    print("done interpolating")
-    if x == 1:
-        plt.plot(xnew, smoothavg, color="b")
-        plt.fill_between(xnew, smoothmin, smoothmax, facecolor="cornflowerblue", alpha=0.7)
-    else:
-        plt.plot(xnew, smoothavg, color="r")
-        plt.fill_between(xnew, smoothmin, smoothmax, facecolor="indianred", alpha=0.7)
-        print(newfolderdir)
-        plt.xlabel("Simulation time (ticks)")
-        plt.ylabel("Number of bacteria")
-        plt.savefig(newfolderdir + "\\" + "Combine.png", bbox_inches="tight")
-        plt.savefig(newfolderdir + "\\" + "Combine.svg", bbox_inches="tight")
-        #plt.ylim(bottom=20, top=200)
-        #plt.ylim(bottom=32, top=38)
-        plt.ylim(bottom=0, top=1200)
-        plt.savefig(newfolderdir + "\\" + "CombineLimit.png", bbox_inches="tight")
-        plt.savefig(newfolderdir + "\\" + "CombineLimit.svg", bbox_inches="tight")
-        print("done")
-    #plt.clf()
-plt.clf()
+combine = False
+if combine:
+    combinedPlots = [1, 5]
+    for x in combinedPlots:
+        maxplot = []
+        minplot = []
+        avgplot = []
+        #print(len(listOfData[0][x]))
+        for currx in range(0, minticks):
+            tempcounter = 0
+            avgsum = 0
+            for currsim in range(0, numberOfSims):
+                avgsum += listOfData[currsim][x][currx]
+                tempcounter += 1
+            tempavg = avgsum / tempcounter
+            totaldev = 0
+            for currsim in range(0, numberOfSims):
+                totaldev += (listOfData[currsim][x][currx] - tempavg)**2
+            variance = totaldev / tempcounter
+            #print("Variance")
+            #print(variance)
+            standarddev = math.sqrt(variance)
+            maxplot.append(tempavg+(0.95*(standarddev/math.sqrt(numberOfSims))))
+            minplot.append(tempavg-(0.95*(standarddev/math.sqrt(numberOfSims))))
+            avgplot.append(tempavg)
+            #print(tempavg)
+        tempsmoothavg = make_interp_spline(xaxis, avgplot, k=3)
+        smoothavg = tempsmoothavg(xnew)
+        tempsmoothmin = make_interp_spline(xaxis, minplot, k=3)
+        smoothmin = tempsmoothmin(xnew)
+        tempsmoothmax = make_interp_spline(xaxis, maxplot, k=3)
+        smoothmax = tempsmoothmax(xnew)
+        print("done interpolating")
+        if x == 1:
+            plt.plot(xnew, smoothavg, color="b")
+            plt.fill_between(xnew, smoothmin, smoothmax, facecolor="cornflowerblue", alpha=0.7)
+        else:
+            plt.plot(xnew, smoothavg, color="r")
+            plt.fill_between(xnew, smoothmin, smoothmax, facecolor="indianred", alpha=0.7)
+            print(newfolderdir)
+            plt.xlabel("Simulation time (ticks)")
+            plt.ylabel("Number of bacteria")
+            plt.savefig(newfolderdir + "\\" + "Combine.png", bbox_inches="tight")
+            plt.savefig(newfolderdir + "\\" + "Combine.svg", bbox_inches="tight")
+            #plt.ylim(bottom=20, top=200)
+            #plt.ylim(bottom=32, top=38)
+            plt.ylim(bottom=0, top=300)
+            plt.savefig(newfolderdir + "\\" + "CombineLimit.png", bbox_inches="tight")
+            plt.savefig(newfolderdir + "\\" + "CombineLimit.svg", bbox_inches="tight")
+            print("done")
+        #plt.clf()
+    plt.clf()
 heatmap = True
 minx = 0
 maxx = 101
@@ -289,12 +291,12 @@ if heatmap:
             for currBac in processedData:
                 data[int(currBac[2]), int(currBac[3])] += 1
         data = np.swapaxes(data, 0, 1)
-        plt.imshow(data, cmap='hot', interpolation='quadric')
-        plt.title("Heatmap of bacteria")
+        plt.imshow(data, cmap='hot', interpolation='quadric', origin="lower")
+        plt.title("Heat map of bacteria using chemotaxis")
         plt.xlabel("x-axis")
         plt.ylabel("y-axis")
         plt.colorbar(shrink=0.75)
-        plt.savefig(newfolderdir + "\\" + "Heatmap" + header[-(1+currBacType)] + ".svg", bbox_inches="tight")
+        plt.savefig(newfolderdir + "\\" + "Heatmap" + header[-(1+currBacType)] + ".png", bbox_inches="tight")
         plt.savefig(newfolderdir + "\\" + "Heatmap" + header[-(1+currBacType)] + ".svg", bbox_inches="tight")
         plt.clf()
 

@@ -26,12 +26,16 @@ def updateProject(mainProject):
     mainProject.lrCont = leftRightVar.get()
     mainProject.tbCont = topBottomVar.get()
     mainProject.diffRate = diffusionRateDefault.get()
+    mainProject.flowRate = flowRateDefault.get()
     mainProject.flowDir = flowDirectionDefault.get()
     mainProject.diffBool = diffusionCheck.get()
     mainProject.flowBool = flowCheck.get()
-    mainProject.bacteriaFlow = bacteriaFlow.get()
     mainProject.moleculeOutflow = moleculeOutflow.get()
     mainProject.bacteriaOutflow = bacteriaOutflow.get()
+    mainProject.diffmode = compDiff.get()
+    mainProject.bacFlowRate = bacFlowRateDefault.get()
+    mainProject.bacDiffRate = bacDiffRateDefault.get()
+
 
     pass
 
@@ -327,10 +331,11 @@ def updateTables(mainProject):
         for i in mainProject.dictOfEnvironmentMolecules[envMolecule].involvedBacIDs:
             templist.append(mainProject.bacteriaIDDict[i].name)
         environmentTree.insert("", "end", values=(envMolecule, len(mainProject.dictOfEnvironmentMolecules[envMolecule].involvedBacIDs), templist))
-    clearTable(compartmentTree)
-    for compartmentID in mainProject.listOfCompartmentIDs:
-        coord = [mainProject.compartmentDict[compartmentID].minX, mainProject.compartmentDict[compartmentID].maxX, mainProject.compartmentDict[compartmentID].minY, mainProject.compartmentDict[compartmentID].maxY]
-        compartmentTree.insert("", "end", values=(mainProject.compartmentDict[compartmentID].name, coord, "NotYetImplemented"))
+    # Comment for Compartment
+    #clearTable(compartmentTree)
+    #for compartmentID in mainProject.listOfCompartmentIDs:
+    #    coord = [mainProject.compartmentDict[compartmentID].minX, mainProject.compartmentDict[compartmentID].maxX, mainProject.compartmentDict[compartmentID].minY, mainProject.compartmentDict[compartmentID].maxY]
+    #    compartmentTree.insert("", "end", values=(mainProject.compartmentDict[compartmentID].name, coord, "NotYetImplemented"))
     clearTable(inOutMolTree)
     for flow in mainProject.flows:
         if flow.inout:
@@ -387,14 +392,16 @@ def mainWindow(projectHolder):
     settingsTab = ttk.Frame(parentTab)
     bacteriaTab = ttk.Notebook(parentTab)
     environmentTab = ttk.Frame(parentTab)
-    compartmentTab = ttk.Frame(parentTab)
+    #Comment for Compartment
+    #compartmentTab = ttk.Frame(parentTab)
 
     changeBacteriaTab = ttk.Frame(bacteriaTab)
 
     parentTab.add(settingsTab, text="General Settings")
     parentTab.add(bacteriaTab, text="Bacteria")
     parentTab.add(environmentTab, text="Environment")
-    parentTab.add(compartmentTab, text="Compartments")
+    # Comment for Compartment
+    #parentTab.add(compartmentTab, text="Compartments")
 
     bacteriaTab.add(changeBacteriaTab, text="Add or remove Bacteria")
 
@@ -414,10 +421,6 @@ def mainWindow(projectHolder):
     ttk.Label(settingsTab, text="Ticks").grid(column=0, row=2)
     tickAmount = StringVar(settingsTab, value="10000")
     Entry(settingsTab, textvariable=tickAmount).grid(column=1, row=2)
-    global bacteriaFlow
-    ttk.Label(settingsTab, text="Bacteria Flow (0-100)").grid(column=0, row=3)
-    bacteriaFlow = StringVar(settingsTab, value="0")
-    Entry(settingsTab, textvariable=bacteriaFlow).grid(column=1, row=3)
     global bacteriaOutflow
     ttk.Label(settingsTab, text="Bacteria Outflow?").grid(column=0, row=4)
     bacteriaOutflow = IntVar(settingsTab, value=0)
@@ -426,6 +429,10 @@ def mainWindow(projectHolder):
     ttk.Label(settingsTab, text="Molecule Outflow?").grid(column=0, row=5)
     moleculeOutflow = IntVar(settingsTab, value=0)
     Checkbutton(settingsTab, variable=moleculeOutflow).grid(column=1, row=5)
+    global compDiff
+    ttk.Label(settingsTab, text="Complex Diffusion? (Needs more computing, uses normal distribution. Enables Flow and DiffusionRate Usage)").grid(column=0, row=6)
+    compDiff = IntVar(settingsTab, value=0)
+    Checkbutton(settingsTab, variable=compDiff).grid(column=1, row=6)
 
     global leftRightVar
     ttk.Label(environmentTab, text="Left/Right Continuity?").grid(column=0, row=2)
@@ -453,15 +460,26 @@ def mainWindow(projectHolder):
 
     #comment back in if diffusionrate implemented
     global diffusionRateDefault
-    #ttk.Label(environmentTab, text='Diffusion rate').grid(column=0, row=6)
+    ttk.Label(environmentTab, text='Diffusion rate (only changeable in complicated diffusionmode)').grid(column=0, row=6)
     diffusionRateDefault = StringVar(environmentTab, value="100")
-    #Entry(environmentTab, textvariable=diffusionRateDefault).grid(column=1, row=6)
+    Entry(environmentTab, textvariable=diffusionRateDefault).grid(column=1, row=6)
 
     #comment back in if flowrate implemented
     global flowRateDefault
-    #ttk.Label(environmentTab, text="Flow rate").grid(column=0, row=8)
+    ttk.Label(environmentTab, text="Flow rate (only changeable in complicated diffusionmode)").grid(column=0, row=7)
     flowRateDefault = StringVar(environmentTab, value="100")
-    #Entry(environmentTab, textvariable=flowRateDefault).grid(column=1, row=8)
+    Entry(environmentTab, textvariable=flowRateDefault).grid(column=1, row=7)
+
+    # comment back in if flowrate implemented
+    global bacFlowRateDefault
+    ttk.Label(environmentTab, text="Bacteria flow rate (only changeable in complicated diffusionmode)").grid(column=0, row=8)
+    bacFlowRateDefault = StringVar(environmentTab, value="0")
+    Entry(environmentTab, textvariable=bacFlowRateDefault).grid(column=1, row=8)
+
+    global bacDiffRateDefault
+    ttk.Label(environmentTab, text="Bacteria diff rate (only changeable in complicated diffusionmode)").grid(column=0, row=9)
+    bacDiffRateDefault = StringVar(environmentTab, value="0")
+    Entry(environmentTab, textvariable=bacDiffRateDefault).grid(column=1, row=9)
 
     global flowCheck
     flowCheck = IntVar(value=1)
@@ -473,12 +491,17 @@ def mainWindow(projectHolder):
     flowDirectionDefault = StringVar(environmentTab, value="E")
     #Entry(environmentTab, textvariable=flowDirectionDefault).grid(column=1, row=7)
 
+    ttk.Label(environmentTab, text="Diffusionrate and flowrate have Default 100, meaning standard diffusion and flow values").grid(column=0, row=10)
+    ttk.Label(environmentTab, text="For Diffusion: 0: No Diffusion, 100: Standard Diffusivity for Benzene (=1.02^-5 cm^2/s)").grid(column=0, row=11)
+    ttk.Label(environmentTab, text="For Flow: Mean of Normal Distribution used in x-axis diffusion. 0: No Flow (my = 0), 100: Defaultflow (my = 1)").grid(column=0, row=12)
+    ttk.Label(environmentTab, text="Any other value scales accordingly as a multiplicator for the 100-default.").grid(column=0, row=13)
 
 
     Button(settingsTab, text="Save this setup", command=lambda: createProjectFile(projectHolder.currProject)).grid(column=0, row=10)
     Button(settingsTab, text="Start this setup", command=lambda: startSimulationQueue(projectHolder.currProject, root)).grid(column=1, row=10)
     Button(settingsTab, text="Load a setup", command=lambda: loadProjectFile(projectHolder)).grid(column=2, row=10)
-    Button(compartmentTab, text="Add a compartment", command=lambda: addCompartment(projectHolder.currProject, root)).grid(column=3, row=0)
+    # Comment for Compartment
+    #Button(compartmentTab, text="Add a compartment", command=lambda: addCompartment(projectHolder.currProject, root)).grid(column=3, row=0)
 
 
 
@@ -489,13 +512,13 @@ def mainWindow(projectHolder):
     for column in environmentColumnNames:
         environmentTree.heading(column, text=column)
     environmentTree.grid(column=4, row=0, rowspan=10)
-
-    compartmentColumnNames = ("CompartmentName", "Corners in X1, X2, Y1, Y2", "RestrictionsFor")
-    global compartmentTree
-    compartmentTree = ttk.Treeview(compartmentTab, columns=compartmentColumnNames, show="headings")
-    for column in compartmentColumnNames:
-        compartmentTree.heading(column, text=column)
-    compartmentTree.grid(column=4, row=0, rowspan=10)
+    # Comment for Compartment
+    #compartmentColumnNames = ("CompartmentName", "Corners in X1, X2, Y1, Y2", "RestrictionsFor")
+    #global compartmentTree
+    #compartmentTree = ttk.Treeview(compartmentTab, columns=compartmentColumnNames, show="headings")
+    #for column in compartmentColumnNames:
+    #    compartmentTree.heading(column, text=column)
+    #compartmentTree.grid(column=4, row=0, rowspan=10)
     inOutMolColumnNames = ("Molecule", "In/Out", "Time", "Amount", "Area")
     global inOutMolTree
     inOutMolTree = ttk.Treeview(environmentTab, columns=inOutMolColumnNames, show="headings")

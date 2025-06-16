@@ -22,7 +22,9 @@ def createNetLogoProject(mainProject):
     tempnetlogoFile.write("patches-own [ \n")
     for i in mainProject.listOfEnvironmentMolecules:
         tempnetlogoFile.write("\t patch_" + i + "\n")
-    tempnetlogoFile.write("\t compartmentID \n")
+        tempnetlogoFile.write("\t patch_" + i + "_new \n")
+    #Comment for Compartment
+    #tempnetlogoFile.write("\t compartmentID \n")
     tempnetlogoFile.write("\t ] \n")
     tempnetlogoFile.write("\n")
     #connectors
@@ -34,12 +36,19 @@ def createNetLogoProject(mainProject):
     tempnetlogoFile.write("\t flagella-size \n")
     tempnetlogoFile.write("\t local-time \n")
     tempnetlogoFile.write("\t timeinterval-per-tick \n")
+    tempnetlogoFile.write("\t bacteria-real-velocity \n")
     tempnetlogoFile.write("\t bacteria-velocity \n")
+    tempnetlogoFile.write("\t bacteria-real-rotational-diffusion \n")
+    tempnetlogoFile.write("\t bacteria-rotational-diffusion \n")
+    tempnetlogoFile.write("\t bacteria-real-rotational-diffusion-helper \n")
     tempnetlogoFile.write("\t newIndividuals \n")
     tempnetlogoFile.write("\t deadIndividuals \n")
-    for item in mainProject.compartmentRelationDict.items():
-        tempnetlogoFile.write("\t comp" + str(item[0][0]) + "Xcomp" + str(item[0][1]) + "Bac \n")
-        tempnetlogoFile.write("\t comp" + str(item[0][0]) + "Xcomp" + str(item[0][1]) + "Mol \n")
+    tempnetlogoFile.write("\t diffConstant \n")
+    tempnetlogoFile.write("\t patchSize \n")
+    # Comment for Compartment
+    #for item in mainProject.compartmentRelationDict.items():
+    #    tempnetlogoFile.write("\t comp" + str(item[0][0]) + "Xcomp" + str(item[0][1]) + "Bac \n")
+    #    tempnetlogoFile.write("\t comp" + str(item[0][0]) + "Xcomp" + str(item[0][1]) + "Mol \n")
     tempnetlogoFile.write("\t ] \n")
     tempnetlogoFile.write(" \n")
     #setupprocedures
@@ -53,8 +62,20 @@ def createNetLogoProject(mainProject):
     tempnetlogoFile.write("\t clear-output \n")
     tempnetlogoFile.write("\t reset-ticks \n")
     #set globals
-    tempnetlogoFile.write("\t set timeinterval-per-tick 1 \n")
-    tempnetlogoFile.write("\t set bacteria-velocity 0.5 \n")
+    # for SCFA model:
+    #tempnetlogoFile.write("\t set timeinterval-per-tick 10 ; in s \n")
+    #tempnetlogoFile.write("\t set patchsize 0.5 ; in mm (sidelength) \n")
+    #tempnetlogoFile.write("\t set diffConstant 0.02 ; in mm^2/s\n")
+    # for chemotaxis model:
+    tempnetlogoFile.write("\t set timeinterval-per-tick 0.1 ; in s \n")
+    tempnetlogoFile.write("\t set patchsize 0.0025 ; in mm (sidelength) \n")
+    tempnetlogoFile.write("\t set diffConstant 0.001 ; in mm^2/s\n")
+    # for all models
+    tempnetlogoFile.write("\t set bacteria-real-velocity 0.025 ; in mm/s \n")
+    tempnetlogoFile.write("\t set bacteria-velocity (bacteria-real-velocity / patchsize ) ; in patches/s \n")
+    tempnetlogoFile.write("\t set bacteria-rotational-diffusion 9 ; in degrees/s \n")
+    tempnetlogoFile.write("\t set bacteria-real-rotational-diffusion (bacteria-rotational-diffusion * timeinterval-per-tick) ; in degrees/tick \n")
+    tempnetlogoFile.write("\t set bacteria-real-rotational-diffusion-helper (bacteria-real-rotational-diffusion * 2) ; in degrees/tick \n")
     tempnetlogoFile.write("\t set newIndividuals [] \n")
     tempnetlogoFile.write("\t set deadIndividuals [] \n")
     #create bacteria
@@ -102,26 +123,28 @@ def createNetLogoProject(mainProject):
     #tempnetlogoFile.write("\t \t set patch_Nut 1000 \n")
     #tempnetlogoFile.write("\t ] \n")
     #until here
-    for item in mainProject.compartmentRelationDict.items():
-        tempnetlogoFile.write("\t set comp" + str(item[0][0]) + "Xcomp" + str(item[0][1]) + "Bac " + str(item[1][0]) + " \n")
-        tempnetlogoFile.write("\t set comp" + str(item[0][0]) + "Xcomp" + str(item[0][1]) + "Mol " + str(item[1][1]) + " \n")
+    # Comment for Compartment
+    #for item in mainProject.compartmentRelationDict.items():
+    #    tempnetlogoFile.write("\t set comp" + str(item[0][0]) + "Xcomp" + str(item[0][1]) + "Bac " + str(item[1][0]) + " \n")
+    #    tempnetlogoFile.write("\t set comp" + str(item[0][0]) + "Xcomp" + str(item[0][1]) + "Mol " + str(item[1][1]) + " \n")
     tempnetlogoFile.write("\t set flagella-size 1 \n")
     tempnetlogoFile.write("\t updateView \n")
     tempnetlogoFile.write("end \n")
     tempnetlogoFile.write("\n")
+    # Comment for Compartment
     #set patch compartment function
-    tempnetlogoFile.write("to setCompartment [x y newCompartmentID] \n")
-    tempnetlogoFile.write("\t ask patch x y [ \n")
-    tempnetlogoFile.write("\t \t set compartmentID newCompartmentID \n")
-    tempnetlogoFile.write("\t ] \n")
-    tempnetlogoFile.write("end \n")
+    #tempnetlogoFile.write("to setCompartment [x y newCompartmentID] \n")
+    #tempnetlogoFile.write("\t ask patch x y [ \n")
+    #tempnetlogoFile.write("\t \t set compartmentID newCompartmentID \n")
+    #tempnetlogoFile.write("\t ] \n")
+    #tempnetlogoFile.write("end \n")
     #set patch compartment all
-    tempnetlogoFile.write("to setCompartmentAll [listOfCommands] \n")
-    tempnetlogoFile.write("\t foreach listOfCommands [ \n")
-    tempnetlogoFile.write("\t \t [content] -> \n")
-    tempnetlogoFile.write("\t \t setCompartment (item 0 content) (item 1 content) (item 2 content) \n")
-    tempnetlogoFile.write("\t ] \n")
-    tempnetlogoFile.write("end \n")
+    #tempnetlogoFile.write("to setCompartmentAll [listOfCommands] \n")
+    #tempnetlogoFile.write("\t foreach listOfCommands [ \n")
+    #tempnetlogoFile.write("\t \t [content] -> \n")
+    #tempnetlogoFile.write("\t \t setCompartment (item 0 content) (item 1 content) (item 2 content) \n")
+    #tempnetlogoFile.write("\t ] \n")
+    #tempnetlogoFile.write("end \n")
     #make flagella function
     tempnetlogoFile.write("to make-flagella \n")
     tempnetlogoFile.write("\t let flagella-shape (word \"flagella\" 1) \n")
@@ -151,110 +174,192 @@ def createNetLogoProject(mainProject):
                 #tempnetlogoFile.write("\t \t \t set tempList lput who tempList \n")
                 tempnetlogoFile.write("\t \t \t bacteria" + str(i) + "_" + mainProject.bacteriaIDDict[i].dictOfBehPlaces[j] + " who \n")
                 tempnetlogoFile.write("\t \t ] \n")
+        tempnetlogoFile.write("\t \t let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal " + str(round((float(mainProject.bacFlowRate) / 100), 4)) + " " + str(round((float(mainProject.bacDiffRate) / 100), 4)) + " ) ) \n")
+        tempnetlogoFile.write("\t \t let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 " + str(round((float(mainProject.bacDiffRate) / 100), 4)) + " ) ) \n")
+        tempnetlogoFile.write("\t \t (ifelse ((xcor + xchange < 0) or (xcor + xchange > max-pxcor)) \n")
+        tempnetlogoFile.write("\t \t \t [] \n")
+        tempnetlogoFile.write("\t \t \t [ setxy (xcor + xchange) (ycor + ychange) ]) \n")
         tempnetlogoFile.write("\t ] \n")
     tempnetlogoFile.write("\t ask flagella with [not any? my-links][die] \n")
     if mainProject.diffBool or mainProject.flowBool:
         tempnetlogoFile.write("\t patchdiffusion \n")
     tempnetlogoFile.write("\t tick \n")
     tempnetlogoFile.write("\t set local-time ticks * timeinterval-per-tick \n")
+    #Comment for graphical
     tempnetlogoFile.write("\t updateView \n")
     tempnetlogoFile.write("end \n")
     tempnetlogoFile.write("\n")
 
     if mainProject.diffBool or mainProject.flowBool:
-        #diffusion and flow function
-        #TODO: include flow and diffusion rates
-        #TODO: single tokens get moved multiple times if netlogo opens them multiple times patch after patch! => save them to a list or similar and add them after everything happened
-        if mainProject.diffBool and mainProject.flowBool:
-            directionalList = [3, 7, 15, 25, 15, 7, 3, 5]
-            stayProb = 20
-        elif mainProject.diffBool:
-            useList = [5, 10, 5, 10, 10, 5, 10, 5]
-            stayProb = 40
-        elif mainProject.flowBool:
-            directionalList = [0, 0, 0, 75, 0, 0, 0, 0]
-            stayProb = 25
-        if mainProject.flowBool:
-            if mainProject.flowDir == "S":
-                useList = [directionalList[0], directionalList[1], directionalList[2], directionalList[7], directionalList[3], directionalList[6], directionalList[5], directionalList[4]]
-            elif mainProject.flowDir == "SW":
-                useList = [directionalList[1], directionalList[2], directionalList[3], directionalList[0], directionalList[4], directionalList[7], directionalList[6], directionalList[5]]
-            elif mainProject.flowDir == "W":
-                useList = [directionalList[2], directionalList[3], directionalList[4], directionalList[1], directionalList[5], directionalList[0], directionalList[7], directionalList[6]]
-            elif mainProject.flowDir == "NW":
-                useList = [directionalList[3], directionalList[4], directionalList[5], directionalList[2], directionalList[6], directionalList[1], directionalList[0], directionalList[7]]
-            elif mainProject.flowDir == "N":
-                useList = [directionalList[4], directionalList[5], directionalList[6], directionalList[3], directionalList[7], directionalList[2], directionalList[1], directionalList[0]]
-            elif mainProject.flowDir == "NE":
-                useList = [directionalList[5], directionalList[6], directionalList[7], directionalList[4], directionalList[0], directionalList[3], directionalList[2], directionalList[1]]
-            elif mainProject.flowDir == "E":
-                useList = [directionalList[6], directionalList[7], directionalList[0], directionalList[5], directionalList[1], directionalList[4], directionalList[3], directionalList[2]]
-            elif mainProject.flowDir == "SE":
-                useList = [directionalList[7], directionalList[0], directionalList[1], directionalList[6], directionalList[2], directionalList[5], directionalList[4], directionalList[3]]
+        if mainProject.diffmode == 0:
+            #diffusion and flow function
+            #TODO: include flow and diffusion rates
+            #TODO: single tokens get moved multiple times if netlogo opens them multiple times patch after patch! => save them to a list or similar and add them after everything happened
+            if mainProject.diffBool and mainProject.flowBool:
+                #directionalList = [3, 7, 15, 25, 15, 7, 3, 5]
+                #stayProb = 20
+                directionalList = [3, 7, 15, 30, 15, 7, 3, 6]
+                stayProb = 14
+            elif mainProject.diffBool:
+                #useList = [5, 10, 5, 10, 10, 5, 10, 5]
+                #stayProb = 40
+                useList = [6.25, 12.5, 6.25, 12.5, 12.5, 6.25, 12.5, 6.25]
+                stayProb = 25
+            elif mainProject.flowBool:
+                directionalList = [0, 0, 0, 75, 0, 0, 0, 0]
+                stayProb = 25
+            if mainProject.flowBool:
+                if mainProject.flowDir == "S":
+                    useList = [directionalList[0], directionalList[1], directionalList[2], directionalList[7], directionalList[3], directionalList[6], directionalList[5], directionalList[4]]
+                elif mainProject.flowDir == "SW":
+                    useList = [directionalList[1], directionalList[2], directionalList[3], directionalList[0], directionalList[4], directionalList[7], directionalList[6], directionalList[5]]
+                elif mainProject.flowDir == "W":
+                    useList = [directionalList[2], directionalList[3], directionalList[4], directionalList[1], directionalList[5], directionalList[0], directionalList[7], directionalList[6]]
+                elif mainProject.flowDir == "NW":
+                    useList = [directionalList[3], directionalList[4], directionalList[5], directionalList[2], directionalList[6], directionalList[1], directionalList[0], directionalList[7]]
+                elif mainProject.flowDir == "N":
+                    useList = [directionalList[4], directionalList[5], directionalList[6], directionalList[3], directionalList[7], directionalList[2], directionalList[1], directionalList[0]]
+                elif mainProject.flowDir == "NE":
+                    useList = [directionalList[5], directionalList[6], directionalList[7], directionalList[4], directionalList[0], directionalList[3], directionalList[2], directionalList[1]]
+                elif mainProject.flowDir == "E":
+                    useList = [directionalList[6], directionalList[7], directionalList[0], directionalList[5], directionalList[1], directionalList[4], directionalList[3], directionalList[2]]
+                elif mainProject.flowDir == "SE":
+                    useList = [directionalList[7], directionalList[0], directionalList[1], directionalList[6], directionalList[2], directionalList[5], directionalList[4], directionalList[3]]
 
-        tempnetlogoFile.write("to patchdiffusion \n")
-        #TODO: SEPERATE DIFFUSION AND FLOW! IT IS NOT THE SAME!!!! RENAME EVERYTHING FLOW TO FLOW!
-        tempnetlogoFile.write("\t let tempList [] \n")
-        tempnetlogoFile.write("\t ask patches [ \n")
-        for i in mainProject.listOfEnvironmentMolecules:
-            tempnetlogoFile.write("\t \t set tempList range patch_" + i + " \n")
-            tempnetlogoFile.write("\t \t foreach tempList [ \n")
-            tempnetlogoFile.write("\t \t \t let randomDirection random 100 \n")
-            tempnetlogoFile.write("\t \t \t (ifelse \n")
-            counter = 0
-            add = 0
-            for x in range(-1, 2):
-                for y in range(-1, 2):
-                    if x == 0 and y == 0:
-                        add += stayProb
-                        tempnetlogoFile.write("\t \t \t (randomDirection < " + str(add) + ")[ \n")
-                        tempnetlogoFile.write("\t \t \t ;nothing happens as the random decider decided to leave the molecule in place \n")
-                        tempnetlogoFile.write("\t \t \t ] \n")
-                    else:
-                        add += useList[counter]
-                        tempnetlogoFile.write("\t \t \t (randomDirection < " + str(add) + ")[ \n")
-                        tempnetlogoFile.write("\t \t \t \t (ifelse (pxcor + " + str(x) + " <= max-pxcor and pxcor + " + str(x) + " >= min-pxcor and pycor + " + str(y) + " <= max-pycor and pycor + " + str(y) + " >= min-pycor) \n")
-                        tempnetlogoFile.write("\t \t \t \t [ \n")
-                        tempnetlogoFile.write("\t \t \t \t \t ifelse ([compartmentID] of patch (pxcor + " + str(x) + ") (pycor + " + str(y) + ") != compartmentID) \n")
-                        tempnetlogoFile.write("\t \t \t \t \t [ \n")
-                        tempnetlogoFile.write("\t \t \t \t \t \t ifelse ((runresult (word \"comp\" (compartmentID) \"Xcomp\" ([compartmentID] of patch (pxcor + " + str(x) + ") (pycor + " + str(y) + ")) \"Mol\" )) = 0) \n")
-                        tempnetlogoFile.write("\t \t \t \t \t \t \t [ \n")
-                        tempnetlogoFile.write("\t \t \t \t \t \t \t ;nothing happens as the molecule cant flow into target \n")
-                        tempnetlogoFile.write("\t \t \t \t \t \t \t ] \n")
-                        tempnetlogoFile.write("\t \t \t \t \t \t \t [ \n")
-                        tempnetlogoFile.write("\t \t \t \t \t \t \t \t ;different compartments but flow allowed\n")
-                        tempnetlogoFile.write("\t \t \t \t \t \t \t \t set patch_" + i + " (patch_" + i + " - 1) \n")
-                        tempnetlogoFile.write("\t \t \t \t \t \t \t \t ask patch (pxcor + " + str(x) + ") (pycor + " + str(y) + ")[ \n")
-                        tempnetlogoFile.write("\t \t \t \t \t \t \t \t \t  set patch_" + i + " (patch_" + i + " + 1) \n")
-                        tempnetlogoFile.write("\t \t \t \t \t \t \t \t ] \n")
-                        tempnetlogoFile.write("\t \t \t \t \t \t \t ] \n")
-                        tempnetlogoFile.write("\t \t \t \t \t ] \n")
-                        tempnetlogoFile.write("\t \t \t \t \t [ \n")
-                        tempnetlogoFile.write("\t \t \t \t \t set patch_" + i + " (patch_" + i + " - 1) \n")
-                        tempnetlogoFile.write("\t \t \t \t \t ask patch (pxcor + " + str(x) + ") (pycor + " + str(y) + ")[ \n")
-                        tempnetlogoFile.write("\t \t \t \t \t \t set patch_" + i + " (patch_" + i + " + 1) \n")
-                        tempnetlogoFile.write("\t \t \t \t \t ] \n")
-                        tempnetlogoFile.write("\t \t \t \t \t ] \n")
-                        tempnetlogoFile.write("\t \t \t \t ] \n")
-                        tempnetlogoFile.write("\t \t \t \t (pxcor + " + str(x) + " > max-pxcor) [ \n")
-                        tempnetlogoFile.write("\t \t \t \t set patch_" + i + " (patch_" + i + " - 1) \n")
-                        tempnetlogoFile.write("\t \t \t \t ]) \n")
-                        tempnetlogoFile.write("\t \t \t ] \n")
-                        counter += 1
-            tempnetlogoFile.write("\t \t \t ) \n")
-            tempnetlogoFile.write("\t \t ] \n")
-        tempnetlogoFile.write("\t ] \n")
-        tempnetlogoFile.write("end \n")
+            tempnetlogoFile.write("to patchdiffusion \n")
+            #TODO: SEPERATE DIFFUSION AND FLOW! IT IS NOT THE SAME!!!! RENAME EVERYTHING FLOW TO FLOW!
+            tempnetlogoFile.write("\t let tempList [] \n")
+            tempnetlogoFile.write("\t ask patches [ \n")
+            for i in mainProject.listOfEnvironmentMolecules:
+                tempnetlogoFile.write("\t \t repeat patch_" + i + "[ \n")
+                #tempnetlogoFile.write("\t \t set tempList range patch_" + i + " \n")
+                #tempnetlogoFile.write("\t \t foreach tempList [ \n")
+                tempnetlogoFile.write("\t \t \t let randomDirection random 100 \n")
+                tempnetlogoFile.write("\t \t \t (ifelse \n")
+                counter = 0
+                add = 0
+                for x in range(-1, 2):
+                    for y in range(-1, 2):
+                        if x == 0 and y == 0:
+                            add += stayProb
+                            tempnetlogoFile.write("\t \t \t (randomDirection < " + str(add) + ")[ \n")
+                            tempnetlogoFile.write("\t \t \t \t set patch_" + i + "_new (patch_" + i + "_new + 1) \n")
+                            tempnetlogoFile.write("\t \t \t ;nothing happens as the random decider decided to leave the molecule in place \n")
+                            tempnetlogoFile.write("\t \t \t ] \n")
+                        else:
+                            add += useList[counter]
+                            tempnetlogoFile.write("\t \t \t (randomDirection < " + str(add) + ")[ \n")
+                            tempnetlogoFile.write("\t \t \t \t (ifelse (pxcor + " + str(x) + " <= max-pxcor and pxcor + " + str(x) + " >= min-pxcor and pycor + " + str(y) + " <= max-pycor and pycor + " + str(y) + " >= min-pycor) \n")
+                            #Comment for Compartment
+                            #tempnetlogoFile.write("\t \t \t \t [ \n")
+                            #tempnetlogoFile.write("\t \t \t \t \t ifelse ([compartmentID] of patch (pxcor + " + str(x) + ") (pycor + " + str(y) + ") != compartmentID) \n")
+                            #tempnetlogoFile.write("\t \t \t \t \t [ \n")
+                            #tempnetlogoFile.write("\t \t \t \t \t \t ifelse ((runresult (word \"comp\" (compartmentID) \"Xcomp\" ([compartmentID] of patch (pxcor + " + str(x) + ") (pycor + " + str(y) + ")) \"Mol\" )) = 0) \n")
+                            #tempnetlogoFile.write("\t \t \t \t \t \t \t [ \n")
+                            #tempnetlogoFile.write("\t \t \t \t \t \t \t ;nothing happens as the molecule cant flow into target \n")
+                            #tempnetlogoFile.write("\t \t \t \t \t \t \t ] \n")
+                            #tempnetlogoFile.write("\t \t \t \t \t \t \t [ \n")
+                            #tempnetlogoFile.write("\t \t \t \t \t \t \t \t ;different compartments but flow allowed\n")
+                            #tempnetlogoFile.write("\t \t \t \t \t \t \t \t set patch_" + i + " (patch_" + i + " - 1) \n")
+                            #tempnetlogoFile.write("\t \t \t \t \t \t \t \t ask patch (pxcor + " + str(x) + ") (pycor + " + str(y) + ")[ \n")
+                            #tempnetlogoFile.write("\t \t \t \t \t \t \t \t \t  set patch_" + i + " (patch_" + i + " + 1) \n")
+                            #tempnetlogoFile.write("\t \t \t \t \t \t \t \t ] \n")
+                            #tempnetlogoFile.write("\t \t \t \t \t \t \t ] \n")
+                            #tempnetlogoFile.write("\t \t \t \t \t ] \n")
+                            tempnetlogoFile.write("\t \t \t \t \t [ \n")
+                            #tempnetlogoFile.write("\t \t \t \t \t set patch_" + i + " (patch_" + i + " - 1) \n")
+                            tempnetlogoFile.write("\t \t \t \t \t ask patch (pxcor + " + str(x) + ") (pycor + " + str(y) + ")[ \n")
+                            tempnetlogoFile.write("\t \t \t \t \t \t set patch_" + i + "_new (patch_" + i + "_new + 1) \n")
+                            tempnetlogoFile.write("\t \t \t \t \t \t ] \n")
+                            tempnetlogoFile.write("\t \t \t \t \t ] \n")
+                            tempnetlogoFile.write("\t \t \t \t (pxcor + " + str(x) + " > max-pxcor) [ \n")
+                            #tempnetlogoFile.write("\t \t \t \t set patch_" + i + " (patch_" + i + " - 1) \n")
+                            tempnetlogoFile.write("\t \t \t \t ] \n")
+                            tempnetlogoFile.write("\t \t \t \t [ \n")
+                            tempnetlogoFile.write("\t \t \t \t \t set patch_" + i + "_new (patch_" + i + "_new + 1) \n")
+                            tempnetlogoFile.write("\t \t \t \t ]) \n")
+                            # Comment for Compartment
+                            #tempnetlogoFile.write("\t \t \t \t \t ] \n")
+                            #tempnetlogoFile.write("\t \t \t \t ] \n")
+
+                            tempnetlogoFile.write("\t \t \t ] \n")
+                            counter += 1
+                tempnetlogoFile.write("\t \t \t ) \n")
+                tempnetlogoFile.write("\t \t ] \n")
+                tempnetlogoFile.write("\t ] \n")
+                tempnetlogoFile.write("\t ask patches [ \n")
+                tempnetlogoFile.write("\t \t set patch_" + i + " patch_" + i + "_new \n")
+                tempnetlogoFile.write("\t \t set patch_" + i + "_new 0 \n")
+                tempnetlogoFile.write("\t ] \n")
+            tempnetlogoFile.write("end \n")
+        else:
+            tempnetlogoFile.write("to patchdiffusion \n")
+            # TODO: SEPERATE DIFFUSION AND FLOW! IT IS NOT THE SAME!!!! RENAME EVERYTHING FLOW TO FLOW!
+            tempnetlogoFile.write("\t ask patches [ \n")
+            for i in mainProject.listOfEnvironmentMolecules:
+                tempnetlogoFile.write("\t \t repeat patch_" + i + "[ \n")
+                tempnetlogoFile.write("\t \t \t let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal " + str(round((float(mainProject.flowRate) / 100), 4)) + " " + str(round((float(mainProject.diffRate) / 100), 4)) + " ) ) \n")
+                tempnetlogoFile.write("\t \t \t let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 " + str(round((float(mainProject.diffRate) / 100), 4)) + " ) ) \n")
+                tempnetlogoFile.write("\t \t \t (ifelse (xchange < ( -0.5 * patchsize) and ychange < ( -0.5 * patchsize)) [ \n")
+                tempnetlogoFile.write("\t \t \t \t (ifelse pxcor = 0 \n")
+                tempnetlogoFile.write("\t \t \t \t \t [set patch_" + i + "_new (patch_" + i + "_new + 1)] \n")
+                tempnetlogoFile.write("\t \t \t \t \t pycor = 0 \n")
+                tempnetlogoFile.write("\t \t \t \t \t [ask patch (pxcor - 1) (max-pycor)[set patch_" + i + "_new (patch_" + i + "_new + 1)]] \n")
+                tempnetlogoFile.write("\t \t \t \t \t [ask patch (pxcor - 1) (pycor - 1)[set patch_" + i + "_new (patch_" + i + "_new + 1)]])] \n")
+                tempnetlogoFile.write("\t \t \t (xchange < ( -0.5 * patchsize) and ychange > ( 0.5 * patchsize)) [ \n")
+                tempnetlogoFile.write("\t \t \t \t (ifelse pxcor = 0 \n")
+                tempnetlogoFile.write("\t \t \t \t \t [set patch_" + i + "_new (patch_" + i + "_new + 1)] \n")
+                tempnetlogoFile.write("\t \t \t \t \t pycor = max-pycor \n")
+                tempnetlogoFile.write("\t \t \t \t \t [ask patch (pxcor - 1) (0)[set patch_" + i + "_new (patch_" + i + "_new + 1)]] \n")
+                tempnetlogoFile.write("\t \t \t \t \t [ask patch (pxcor - 1) (pycor + 1)[set patch_" + i + "_new (patch_" + i + "_new + 1)]])] \n")
+                tempnetlogoFile.write("\t \t \t (xchange < ( -0.5 * patchsize)) [ \n")
+                tempnetlogoFile.write("\t \t \t \t (ifelse pxcor = 0 \n")
+                tempnetlogoFile.write("\t \t \t \t \t [set patch_" + i + "_new (patch_" + i + "_new + 1)] \n")
+                tempnetlogoFile.write("\t \t \t \t \t [ask patch (pxcor - 1) (pycor)[set patch_" + i + "_new (patch_" + i + "_new + 1)]])] \n")
+                tempnetlogoFile.write("\t \t \t (xchange > ( 0.5 * patchsize) and ychange > ( 0.5 * patchsize)) [ \n")
+                tempnetlogoFile.write("\t \t \t \t (ifelse pxcor = max-pxcor \n")
+                tempnetlogoFile.write("\t \t \t \t \t [] \n")
+                tempnetlogoFile.write("\t \t \t \t \t pycor = max-pycor \n")
+                tempnetlogoFile.write("\t \t \t \t \t [ask patch (pxcor + 1) (0)[set patch_" + i + "_new (patch_" + i + "_new + 1)]] \n")
+                tempnetlogoFile.write("\t \t \t \t \t [ask patch (pxcor + 1) (pycor + 1)[set patch_" + i + "_new (patch_" + i + "_new + 1)]])] \n")
+                tempnetlogoFile.write("\t \t \t (xchange > ( 0.5 * patchsize) and ychange < ( -0.5 * patchsize)) [ \n")
+                tempnetlogoFile.write("\t \t \t \t (ifelse pxcor = max-pxcor \n")
+                tempnetlogoFile.write("\t \t \t \t \t [] \n")
+                tempnetlogoFile.write("\t \t \t \t \t pycor = 0 \n")
+                tempnetlogoFile.write("\t \t \t \t \t [ask patch (pxcor + 1) (max-pycor)[set patch_" + i + "_new (patch_" + i + "_new + 1)]] \n")
+                tempnetlogoFile.write("\t \t \t \t \t [ask patch (pxcor + 1) (pycor - 1)[set patch_" + i + "_new (patch_" + i + "_new + 1)]])] \n")
+                tempnetlogoFile.write("\t \t \t (xchange > ( 0.5 * patchsize)) [ \n")
+                tempnetlogoFile.write("\t \t \t \t (ifelse pxcor = max-pxcor \n")
+                tempnetlogoFile.write("\t \t \t \t \t [] \n")
+                tempnetlogoFile.write("\t \t \t \t \t [ask patch (pxcor + 1) (pycor)[set patch_" + i + "_new (patch_" + i + "_new + 1)]])] \n")
+                tempnetlogoFile.write("\t \t \t (ychange > ( 0.5 * patchsize)) [ \n")
+                tempnetlogoFile.write("\t \t \t \t (ifelse pycor = max-pycor \n")
+                tempnetlogoFile.write("\t \t \t \t \t [ask patch (pxcor) (0)[set patch_" + i + "_new (patch_" + i + "_new + 1)]] \n")
+                tempnetlogoFile.write("\t \t \t \t \t [ask patch (pxcor) (pycor + 1)[set patch_" + i + "_new (patch_" + i + "_new + 1)]])] \n")
+                tempnetlogoFile.write("\t \t \t (ychange < ( -0.5 * patchsize)) [ \n")
+                tempnetlogoFile.write("\t \t \t \t (ifelse pycor = 0 \n")
+                tempnetlogoFile.write("\t \t \t \t \t [ask patch (pxcor) (max-pycor)[set patch_" + i + "_new (patch_" + i + "_new + 1)]] \n")
+                tempnetlogoFile.write("\t \t \t \t \t [ask patch (pxcor) (pycor - 1)[set patch_" + i + "_new (patch_" + i + "_new + 1)]])] \n")
+                tempnetlogoFile.write("\t \t \t [ \n")
+                tempnetlogoFile.write("\t \t \t \t \t ask patch (pxcor) (pycor)[set patch_" + i + "_new (patch_" + i + "_new + 1)]]) \n")
+                tempnetlogoFile.write("\t \t ] \n")
+            tempnetlogoFile.write("\t ] \n")
+            for i in mainProject.listOfEnvironmentMolecules:
+                tempnetlogoFile.write("\t ask patches [ \n")
+                tempnetlogoFile.write("\t \t set patch_" + i + " patch_" + i + "_new \n")
+                tempnetlogoFile.write("\t \t set patch_" + i + "_new 0 \n")
+                tempnetlogoFile.write("\t ] \n")
+            tempnetlogoFile.write("end \n")
 
     #update View function (TODO: EXTEND, make it user dependant)
     tempnetlogoFile.write("to updateView \n")
     tempnetlogoFile.write("\t ask patches [ \n")
     tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " = 0) [set pcolor 5] \n")
     tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > 0) [set pcolor 19] \n")
-    tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > 25) [set pcolor 18] \n")
-    tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > 50) [set pcolor 17] \n")
-    tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > 75) [set pcolor 16] \n")
-    tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > 100) [set pcolor 15] \n")
+    tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > 5) [set pcolor 18] \n")
+    tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > 10) [set pcolor 17] \n")
+    tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > 20) [set pcolor 16] \n")
+    tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > 35) [set pcolor 15] \n")
     #tempnetlogoFile.write("\t \t \t set pcolor 5 \n ")
     tempnetlogoFile.write("\t ] \n")
     tempnetlogoFile.write("end \n")
@@ -273,7 +378,7 @@ def createNetLogoProject(mainProject):
                 tempnetlogoFile.write("to bacteria" + str(i) + "_" + "Move" + " [ id ] \n")
                 tempnetlogoFile.write("\t ask turtle id [ \n")
                 tempnetlogoFile.write("\t \t forward dxy \n")
-                tempnetlogoFile.write("\t \t right (5 - random-float 10) \n")
+                tempnetlogoFile.write("\t \t right (bacteria-real-rotational-diffusion - (random-float bacteria-real-rotational-diffusion-helper)) \n")
                 tempnetlogoFile.write("\t \t set Beh_Move (Beh_Move - 1) \n")
                 tempnetlogoFile.write("\t ] \n")
                 tempnetlogoFile.write("end \n")
@@ -304,28 +409,29 @@ def createNetLogoProject(mainProject):
                 tempnetlogoFile.write("\t \t \t \t \t bk 2 \n")
                 tempnetlogoFile.write("\t \t \t \t ] \n")
                 tempnetlogoFile.write("\t \t \t ] \n")
-                tempnetlogoFile.write("\t \t \t ([compartmentID] of patch-here != [compartmentID] of patch-ahead dxy) \n")
-                tempnetlogoFile.write("\t \t \t [ \n")
-                tempnetlogoFile.write("\t \t \t \t ifelse (runresult (word \"comp\" ([compartmentID] of patch-here) \"Xcomp\" ([compartmentID] of patch-ahead dxy) \"Bac\")) = 0 \n")
-                tempnetlogoFile.write("\t \t \t \t [ \n")
-                tempnetlogoFile.write("\t \t \t \t \t set heading heading + 180 \n")
-                tempnetlogoFile.write("\t \t \t \t \t forward dxy")
-                tempnetlogoFile.write("\t \t \t \t \t ask out-link-neighbors \n")
-                tempnetlogoFile.write("\t \t \t \t \t [ \n")
-                tempnetlogoFile.write("\t \t \t \t \t \t setxy ([xcor] of myself) ([ycor] of myself) \n")
-                tempnetlogoFile.write("\t \t \t \t \t \t set heading ([heading] of myself) \n")
-                tempnetlogoFile.write("\t \t \t \t \t \t bk 2 \n")
-                tempnetlogoFile.write("\t \t \t \t \t ] \n")
-                tempnetlogoFile.write("\t \t \t \t ] \n")
-                tempnetlogoFile.write("\t \t \t \t [ \n")
-                tempnetlogoFile.write("\t \t \t \t \t forward dxy \n")
-                tempnetlogoFile.write("\t \t \t \t \t right (5 - random-float 10) \n")
-                tempnetlogoFile.write("\t \t \t \t \t set Beh_Move (Beh_Move - 1) \n")
-                tempnetlogoFile.write("\t \t \t \t ] \n")
-                tempnetlogoFile.write("\t \t \t ] \n")
+                # Comment Compartment
+                #tempnetlogoFile.write("\t \t \t ([compartmentID] of patch-here != [compartmentID] of patch-ahead dxy) \n")
+                #tempnetlogoFile.write("\t \t \t [ \n")
+                #tempnetlogoFile.write("\t \t \t \t ifelse (runresult (word \"comp\" ([compartmentID] of patch-here) \"Xcomp\" ([compartmentID] of patch-ahead dxy) \"Bac\")) = 0 \n")
+                #tempnetlogoFile.write("\t \t \t \t [ \n")
+                #tempnetlogoFile.write("\t \t \t \t \t set heading heading + 180 \n")
+                #tempnetlogoFile.write("\t \t \t \t \t forward dxy")
+                #tempnetlogoFile.write("\t \t \t \t \t ask out-link-neighbors \n")
+                #tempnetlogoFile.write("\t \t \t \t \t [ \n")
+                #tempnetlogoFile.write("\t \t \t \t \t \t setxy ([xcor] of myself) ([ycor] of myself) \n")
+                #tempnetlogoFile.write("\t \t \t \t \t \t set heading ([heading] of myself) \n")
+                #tempnetlogoFile.write("\t \t \t \t \t \t bk 2 \n")
+                #tempnetlogoFile.write("\t \t \t \t \t ] \n")
+                #tempnetlogoFile.write("\t \t \t \t ] \n")
+                #tempnetlogoFile.write("\t \t \t \t [ \n")
+                #tempnetlogoFile.write("\t \t \t \t \t forward dxy \n")
+                #tempnetlogoFile.write("\t \t \t \t \t right (5 - random-float 10) \n")
+                #tempnetlogoFile.write("\t \t \t \t \t set Beh_Move (Beh_Move - 1) \n")
+                #tempnetlogoFile.write("\t \t \t \t ] \n")
+                #tempnetlogoFile.write("\t \t \t ] \n")
                 tempnetlogoFile.write("\t \t \t [ \n")
                 tempnetlogoFile.write("\t \t \t \t forward dxy \n")
-                tempnetlogoFile.write("\t \t \t \t right (5 - random-float 10) \n")
+                tempnetlogoFile.write("\t \t right (bacteria-real-rotational-diffusion - (random-float bacteria-real-rotational-diffusion-helper)) \n")
                 tempnetlogoFile.write("\t \t \t \t set Beh_Move (Beh_Move - 1) \n")
                 tempnetlogoFile.write("\t \t \t ] \n")
                 tempnetlogoFile.write("\t \t ) \n")
@@ -337,7 +443,7 @@ def createNetLogoProject(mainProject):
         if "Tumble" in mainProject.bacteriaIDDict[i].dictOfBehPlaces.values():
             tempnetlogoFile.write("to bacteria" + str(i) + "_" + "Tumble" + " [ id ] \n")
             tempnetlogoFile.write("\t ask turtle id [ \n")
-            tempnetlogoFile.write("\t \t set heading (heading + random-float 360) \n")
+            tempnetlogoFile.write("\t \t set heading (heading + ((random-normal 1.0 26) * 68)) \n")
             tempnetlogoFile.write("\t ] \n")
             tempnetlogoFile.write("end \n")
         if "Replication" in mainProject.bacteriaIDDict[i].dictOfBehPlaces.values():

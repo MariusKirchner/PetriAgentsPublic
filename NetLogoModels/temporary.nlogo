@@ -9,7 +9,7 @@ bacteria1-own [
  
 patches-own [ 
 	 patch_Attractant
-	 compartmentID 
+	 patch_Attractant_new 
 	 ] 
 
 directed-link-breed [connectors connector] 
@@ -19,9 +19,15 @@ globals [
 	 flagella-size 
 	 local-time 
 	 timeinterval-per-tick 
+	 bacteria-real-velocity 
 	 bacteria-velocity 
+	 bacteria-real-rotational-diffusion 
+	 bacteria-rotational-diffusion 
+	 bacteria-real-rotational-diffusion-helper 
 	 newIndividuals 
 	 deadIndividuals 
+	 diffConstant 
+	 patchSize 
 	 ] 
  
 to setup 
@@ -32,11 +38,17 @@ to setup
 	 clear-drawing 
 	 clear-output 
 	 reset-ticks 
-	 set timeinterval-per-tick 1 
-	 set bacteria-velocity 0.5 
+	 set timeinterval-per-tick 0.1 ; in s 
+	 set patchsize 0.0025 ; in mm (sidelength) 
+	 set diffConstant 0.001 ; in mm^2/s
+	 set bacteria-real-velocity 0.025 ; in mm/s 
+	 set bacteria-velocity (bacteria-real-velocity / patchsize ) ; in patches/s 
+	 set bacteria-rotational-diffusion 9 ; in degrees/s 
+	 set bacteria-real-rotational-diffusion (bacteria-rotational-diffusion * timeinterval-per-tick) ; in degrees/tick 
+	 set bacteria-real-rotational-diffusion-helper (bacteria-real-rotational-diffusion * 2) ; in degrees/tick 
 	 set newIndividuals [] 
 	 set deadIndividuals [] 
-	 create-bacteria1 50[ 
+	 create-bacteria1 100[ 
 	 	 setxy random-xcor random-ycor 
 	 	 set size 1 
 	 	 set Beh_Move 0 
@@ -56,17 +68,6 @@ to setup
 	 updateView 
 end 
 
-to setCompartment [x y newCompartmentID] 
-	 ask patch x y [ 
-	 	 set compartmentID newCompartmentID 
-	 ] 
-end 
-to setCompartmentAll [listOfCommands] 
-	 foreach listOfCommands [ 
-	 	 [content] -> 
-	 	 setCompartment (item 0 content) (item 1 content) (item 2 content) 
-	 ] 
-end 
 to make-flagella 
 	 let flagella-shape (word "flagella" 1) 
 	 hatch 1 [ 
@@ -91,6 +92,11 @@ to go
 	 	 if (Beh_Tumble != 0) [ 
 	 	 	 bacteria1_Tumble who 
 	 	 ] 
+	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.0 ) ) 
+	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.0 ) ) 
+	 	 (ifelse ((xcor + xchange < 0) or (xcor + xchange > max-pxcor)) 
+	 	 	 [] 
+	 	 	 [ setxy (xcor + xchange) (ycor + ychange) ]) 
 	 ] 
 	 ask flagella with [not any? my-links][die] 
 	 patchdiffusion 
@@ -100,251 +106,67 @@ to go
 end 
 
 to patchdiffusion 
-	 let tempList [] 
 	 ask patches [ 
-	 	 set tempList range patch_Attractant 
-	 	 foreach tempList [ 
-	 	 	 let randomDirection random 100 
-	 	 	 (ifelse 
-	 	 	 (randomDirection < 3)[ 
-	 	 	 	 (ifelse (pxcor + -1 <= max-pxcor and pxcor + -1 >= min-pxcor and pycor + -1 <= max-pycor and pycor + -1 >= min-pycor) 
-	 	 	 	 [ 
-	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + -1) (pycor + -1) != compartmentID) 
-	 	 	 	 	 [ 
-	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + -1) (pycor + -1)) "Mol" )) = 0) 
-	 	 	 	 	 	 	 [ 
-	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
-	 	 	 	 	 	 	 ] 
-	 	 	 	 	 	 	 [ 
-	 	 	 	 	 	 	 	 ;different compartments but flow allowed
-	 	 	 	 	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 	 	 	 	 ask patch (pxcor + -1) (pycor + -1)[ 
-	 	 	 	 	 	 	 	 	  set patch_Attractant (patch_Attractant + 1) 
-	 	 	 	 	 	 	 	 ] 
-	 	 	 	 	 	 	 ] 
-	 	 	 	 	 ] 
-	 	 	 	 	 [ 
-	 	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 	 ask patch (pxcor + -1) (pycor + -1)[ 
-	 	 	 	 	 	 set patch_Attractant (patch_Attractant + 1) 
-	 	 	 	 	 ] 
-	 	 	 	 	 ] 
-	 	 	 	 ] 
-	 	 	 	 (pxcor + -1 > max-pxcor) [ 
-	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 ]) 
-	 	 	 ] 
-	 	 	 (randomDirection < 8)[ 
-	 	 	 	 (ifelse (pxcor + -1 <= max-pxcor and pxcor + -1 >= min-pxcor and pycor + 0 <= max-pycor and pycor + 0 >= min-pycor) 
-	 	 	 	 [ 
-	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + -1) (pycor + 0) != compartmentID) 
-	 	 	 	 	 [ 
-	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + -1) (pycor + 0)) "Mol" )) = 0) 
-	 	 	 	 	 	 	 [ 
-	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
-	 	 	 	 	 	 	 ] 
-	 	 	 	 	 	 	 [ 
-	 	 	 	 	 	 	 	 ;different compartments but flow allowed
-	 	 	 	 	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 	 	 	 	 ask patch (pxcor + -1) (pycor + 0)[ 
-	 	 	 	 	 	 	 	 	  set patch_Attractant (patch_Attractant + 1) 
-	 	 	 	 	 	 	 	 ] 
-	 	 	 	 	 	 	 ] 
-	 	 	 	 	 ] 
-	 	 	 	 	 [ 
-	 	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 	 ask patch (pxcor + -1) (pycor + 0)[ 
-	 	 	 	 	 	 set patch_Attractant (patch_Attractant + 1) 
-	 	 	 	 	 ] 
-	 	 	 	 	 ] 
-	 	 	 	 ] 
-	 	 	 	 (pxcor + -1 > max-pxcor) [ 
-	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 ]) 
-	 	 	 ] 
-	 	 	 (randomDirection < 11)[ 
-	 	 	 	 (ifelse (pxcor + -1 <= max-pxcor and pxcor + -1 >= min-pxcor and pycor + 1 <= max-pycor and pycor + 1 >= min-pycor) 
-	 	 	 	 [ 
-	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + -1) (pycor + 1) != compartmentID) 
-	 	 	 	 	 [ 
-	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + -1) (pycor + 1)) "Mol" )) = 0) 
-	 	 	 	 	 	 	 [ 
-	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
-	 	 	 	 	 	 	 ] 
-	 	 	 	 	 	 	 [ 
-	 	 	 	 	 	 	 	 ;different compartments but flow allowed
-	 	 	 	 	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 	 	 	 	 ask patch (pxcor + -1) (pycor + 1)[ 
-	 	 	 	 	 	 	 	 	  set patch_Attractant (patch_Attractant + 1) 
-	 	 	 	 	 	 	 	 ] 
-	 	 	 	 	 	 	 ] 
-	 	 	 	 	 ] 
-	 	 	 	 	 [ 
-	 	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 	 ask patch (pxcor + -1) (pycor + 1)[ 
-	 	 	 	 	 	 set patch_Attractant (patch_Attractant + 1) 
-	 	 	 	 	 ] 
-	 	 	 	 	 ] 
-	 	 	 	 ] 
-	 	 	 	 (pxcor + -1 > max-pxcor) [ 
-	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 ]) 
-	 	 	 ] 
-	 	 	 (randomDirection < 18)[ 
-	 	 	 	 (ifelse (pxcor + 0 <= max-pxcor and pxcor + 0 >= min-pxcor and pycor + -1 <= max-pycor and pycor + -1 >= min-pycor) 
-	 	 	 	 [ 
-	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 0) (pycor + -1) != compartmentID) 
-	 	 	 	 	 [ 
-	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 0) (pycor + -1)) "Mol" )) = 0) 
-	 	 	 	 	 	 	 [ 
-	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
-	 	 	 	 	 	 	 ] 
-	 	 	 	 	 	 	 [ 
-	 	 	 	 	 	 	 	 ;different compartments but flow allowed
-	 	 	 	 	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 	 	 	 	 ask patch (pxcor + 0) (pycor + -1)[ 
-	 	 	 	 	 	 	 	 	  set patch_Attractant (patch_Attractant + 1) 
-	 	 	 	 	 	 	 	 ] 
-	 	 	 	 	 	 	 ] 
-	 	 	 	 	 ] 
-	 	 	 	 	 [ 
-	 	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 	 ask patch (pxcor + 0) (pycor + -1)[ 
-	 	 	 	 	 	 set patch_Attractant (patch_Attractant + 1) 
-	 	 	 	 	 ] 
-	 	 	 	 	 ] 
-	 	 	 	 ] 
-	 	 	 	 (pxcor + 0 > max-pxcor) [ 
-	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 ]) 
-	 	 	 ] 
-	 	 	 (randomDirection < 38)[ 
-	 	 	 ;nothing happens as the random decider decided to leave the molecule in place 
-	 	 	 ] 
-	 	 	 (randomDirection < 45)[ 
-	 	 	 	 (ifelse (pxcor + 0 <= max-pxcor and pxcor + 0 >= min-pxcor and pycor + 1 <= max-pycor and pycor + 1 >= min-pycor) 
-	 	 	 	 [ 
-	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 0) (pycor + 1) != compartmentID) 
-	 	 	 	 	 [ 
-	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 0) (pycor + 1)) "Mol" )) = 0) 
-	 	 	 	 	 	 	 [ 
-	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
-	 	 	 	 	 	 	 ] 
-	 	 	 	 	 	 	 [ 
-	 	 	 	 	 	 	 	 ;different compartments but flow allowed
-	 	 	 	 	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 	 	 	 	 ask patch (pxcor + 0) (pycor + 1)[ 
-	 	 	 	 	 	 	 	 	  set patch_Attractant (patch_Attractant + 1) 
-	 	 	 	 	 	 	 	 ] 
-	 	 	 	 	 	 	 ] 
-	 	 	 	 	 ] 
-	 	 	 	 	 [ 
-	 	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 	 ask patch (pxcor + 0) (pycor + 1)[ 
-	 	 	 	 	 	 set patch_Attractant (patch_Attractant + 1) 
-	 	 	 	 	 ] 
-	 	 	 	 	 ] 
-	 	 	 	 ] 
-	 	 	 	 (pxcor + 0 > max-pxcor) [ 
-	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 ]) 
-	 	 	 ] 
-	 	 	 (randomDirection < 60)[ 
-	 	 	 	 (ifelse (pxcor + 1 <= max-pxcor and pxcor + 1 >= min-pxcor and pycor + -1 <= max-pycor and pycor + -1 >= min-pycor) 
-	 	 	 	 [ 
-	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 1) (pycor + -1) != compartmentID) 
-	 	 	 	 	 [ 
-	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 1) (pycor + -1)) "Mol" )) = 0) 
-	 	 	 	 	 	 	 [ 
-	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
-	 	 	 	 	 	 	 ] 
-	 	 	 	 	 	 	 [ 
-	 	 	 	 	 	 	 	 ;different compartments but flow allowed
-	 	 	 	 	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 	 	 	 	 ask patch (pxcor + 1) (pycor + -1)[ 
-	 	 	 	 	 	 	 	 	  set patch_Attractant (patch_Attractant + 1) 
-	 	 	 	 	 	 	 	 ] 
-	 	 	 	 	 	 	 ] 
-	 	 	 	 	 ] 
-	 	 	 	 	 [ 
-	 	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 	 ask patch (pxcor + 1) (pycor + -1)[ 
-	 	 	 	 	 	 set patch_Attractant (patch_Attractant + 1) 
-	 	 	 	 	 ] 
-	 	 	 	 	 ] 
-	 	 	 	 ] 
-	 	 	 	 (pxcor + 1 > max-pxcor) [ 
-	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 ]) 
-	 	 	 ] 
-	 	 	 (randomDirection < 85)[ 
-	 	 	 	 (ifelse (pxcor + 1 <= max-pxcor and pxcor + 1 >= min-pxcor and pycor + 0 <= max-pycor and pycor + 0 >= min-pycor) 
-	 	 	 	 [ 
-	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 1) (pycor + 0) != compartmentID) 
-	 	 	 	 	 [ 
-	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 1) (pycor + 0)) "Mol" )) = 0) 
-	 	 	 	 	 	 	 [ 
-	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
-	 	 	 	 	 	 	 ] 
-	 	 	 	 	 	 	 [ 
-	 	 	 	 	 	 	 	 ;different compartments but flow allowed
-	 	 	 	 	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 	 	 	 	 ask patch (pxcor + 1) (pycor + 0)[ 
-	 	 	 	 	 	 	 	 	  set patch_Attractant (patch_Attractant + 1) 
-	 	 	 	 	 	 	 	 ] 
-	 	 	 	 	 	 	 ] 
-	 	 	 	 	 ] 
-	 	 	 	 	 [ 
-	 	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 	 ask patch (pxcor + 1) (pycor + 0)[ 
-	 	 	 	 	 	 set patch_Attractant (patch_Attractant + 1) 
-	 	 	 	 	 ] 
-	 	 	 	 	 ] 
-	 	 	 	 ] 
-	 	 	 	 (pxcor + 1 > max-pxcor) [ 
-	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 ]) 
-	 	 	 ] 
-	 	 	 (randomDirection < 100)[ 
-	 	 	 	 (ifelse (pxcor + 1 <= max-pxcor and pxcor + 1 >= min-pxcor and pycor + 1 <= max-pycor and pycor + 1 >= min-pycor) 
-	 	 	 	 [ 
-	 	 	 	 	 ifelse ([compartmentID] of patch (pxcor + 1) (pycor + 1) != compartmentID) 
-	 	 	 	 	 [ 
-	 	 	 	 	 	 ifelse ((runresult (word "comp" (compartmentID) "Xcomp" ([compartmentID] of patch (pxcor + 1) (pycor + 1)) "Mol" )) = 0) 
-	 	 	 	 	 	 	 [ 
-	 	 	 	 	 	 	 ;nothing happens as the molecule cant flow into target 
-	 	 	 	 	 	 	 ] 
-	 	 	 	 	 	 	 [ 
-	 	 	 	 	 	 	 	 ;different compartments but flow allowed
-	 	 	 	 	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 	 	 	 	 ask patch (pxcor + 1) (pycor + 1)[ 
-	 	 	 	 	 	 	 	 	  set patch_Attractant (patch_Attractant + 1) 
-	 	 	 	 	 	 	 	 ] 
-	 	 	 	 	 	 	 ] 
-	 	 	 	 	 ] 
-	 	 	 	 	 [ 
-	 	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 	 ask patch (pxcor + 1) (pycor + 1)[ 
-	 	 	 	 	 	 set patch_Attractant (patch_Attractant + 1) 
-	 	 	 	 	 ] 
-	 	 	 	 	 ] 
-	 	 	 	 ] 
-	 	 	 	 (pxcor + 1 > max-pxcor) [ 
-	 	 	 	 set patch_Attractant (patch_Attractant - 1) 
-	 	 	 	 ]) 
-	 	 	 ] 
-	 	 	 ) 
+	 	 repeat patch_Attractant[ 
+	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) ) 
+	 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) ) 
+	 	 	 (ifelse (xchange < ( -0.5 * patchsize) and ychange < ( -0.5 * patchsize)) [ 
+	 	 	 	 (ifelse pxcor = 0 
+	 	 	 	 	 [set patch_Attractant_new (patch_Attractant_new + 1)] 
+	 	 	 	 	 pycor = 0 
+	 	 	 	 	 [ask patch (pxcor - 1) (max-pycor)[set patch_Attractant_new (patch_Attractant_new + 1)]] 
+	 	 	 	 	 [ask patch (pxcor - 1) (pycor - 1)[set patch_Attractant_new (patch_Attractant_new + 1)]])] 
+	 	 	 (xchange < ( -0.5 * patchsize) and ychange > ( 0.5 * patchsize)) [ 
+	 	 	 	 (ifelse pxcor = 0 
+	 	 	 	 	 [set patch_Attractant_new (patch_Attractant_new + 1)] 
+	 	 	 	 	 pycor = max-pycor 
+	 	 	 	 	 [ask patch (pxcor - 1) (0)[set patch_Attractant_new (patch_Attractant_new + 1)]] 
+	 	 	 	 	 [ask patch (pxcor - 1) (pycor + 1)[set patch_Attractant_new (patch_Attractant_new + 1)]])] 
+	 	 	 (xchange < ( -0.5 * patchsize)) [ 
+	 	 	 	 (ifelse pxcor = 0 
+	 	 	 	 	 [set patch_Attractant_new (patch_Attractant_new + 1)] 
+	 	 	 	 	 [ask patch (pxcor - 1) (pycor)[set patch_Attractant_new (patch_Attractant_new + 1)]])] 
+	 	 	 (xchange > ( 0.5 * patchsize) and ychange > ( 0.5 * patchsize)) [ 
+	 	 	 	 (ifelse pxcor = max-pxcor 
+	 	 	 	 	 [] 
+	 	 	 	 	 pycor = max-pycor 
+	 	 	 	 	 [ask patch (pxcor + 1) (0)[set patch_Attractant_new (patch_Attractant_new + 1)]] 
+	 	 	 	 	 [ask patch (pxcor + 1) (pycor + 1)[set patch_Attractant_new (patch_Attractant_new + 1)]])] 
+	 	 	 (xchange > ( 0.5 * patchsize) and ychange < ( -0.5 * patchsize)) [ 
+	 	 	 	 (ifelse pxcor = max-pxcor 
+	 	 	 	 	 [] 
+	 	 	 	 	 pycor = 0 
+	 	 	 	 	 [ask patch (pxcor + 1) (max-pycor)[set patch_Attractant_new (patch_Attractant_new + 1)]] 
+	 	 	 	 	 [ask patch (pxcor + 1) (pycor - 1)[set patch_Attractant_new (patch_Attractant_new + 1)]])] 
+	 	 	 (xchange > ( 0.5 * patchsize)) [ 
+	 	 	 	 (ifelse pxcor = max-pxcor 
+	 	 	 	 	 [] 
+	 	 	 	 	 [ask patch (pxcor + 1) (pycor)[set patch_Attractant_new (patch_Attractant_new + 1)]])] 
+	 	 	 (ychange > ( 0.5 * patchsize)) [ 
+	 	 	 	 (ifelse pycor = max-pycor 
+	 	 	 	 	 [ask patch (pxcor) (0)[set patch_Attractant_new (patch_Attractant_new + 1)]] 
+	 	 	 	 	 [ask patch (pxcor) (pycor + 1)[set patch_Attractant_new (patch_Attractant_new + 1)]])] 
+	 	 	 (ychange < ( -0.5 * patchsize)) [ 
+	 	 	 	 (ifelse pycor = 0 
+	 	 	 	 	 [ask patch (pxcor) (max-pycor)[set patch_Attractant_new (patch_Attractant_new + 1)]] 
+	 	 	 	 	 [ask patch (pxcor) (pycor - 1)[set patch_Attractant_new (patch_Attractant_new + 1)]])] 
+	 	 	 [ 
+	 	 	 	 	 ask patch (pxcor) (pycor)[set patch_Attractant_new (patch_Attractant_new + 1)]]) 
 	 	 ] 
+	 ] 
+	 ask patches [ 
+	 	 set patch_Attractant patch_Attractant_new 
+	 	 set patch_Attractant_new 0 
 	 ] 
 end 
 to updateView 
 	 ask patches [ 
 	 	 if (patch_Attractant = 0) [set pcolor 5] 
 	 	 if (patch_Attractant > 0) [set pcolor 19] 
-	 	 if (patch_Attractant > 25) [set pcolor 18] 
-	 	 if (patch_Attractant > 50) [set pcolor 17] 
-	 	 if (patch_Attractant > 75) [set pcolor 16] 
-	 	 if (patch_Attractant > 100) [set pcolor 15] 
+	 	 if (patch_Attractant > 5) [set pcolor 18] 
+	 	 if (patch_Attractant > 10) [set pcolor 17] 
+	 	 if (patch_Attractant > 20) [set pcolor 16] 
+	 	 if (patch_Attractant > 35) [set pcolor 15] 
 	 ] 
 end 
 
@@ -373,27 +195,9 @@ to bacteria1_Move [ id ]
 	 	 	 	 	 bk 2 
 	 	 	 	 ] 
 	 	 	 ] 
-	 	 	 ([compartmentID] of patch-here != [compartmentID] of patch-ahead dxy) 
-	 	 	 [ 
-	 	 	 	 ifelse (runresult (word "comp" ([compartmentID] of patch-here) "Xcomp" ([compartmentID] of patch-ahead dxy) "Bac")) = 0 
-	 	 	 	 [ 
-	 	 	 	 	 set heading heading + 180 
-	 	 	 	 	 forward dxy	 	 	 	 	 ask out-link-neighbors 
-	 	 	 	 	 [ 
-	 	 	 	 	 	 setxy ([xcor] of myself) ([ycor] of myself) 
-	 	 	 	 	 	 set heading ([heading] of myself) 
-	 	 	 	 	 	 bk 2 
-	 	 	 	 	 ] 
-	 	 	 	 ] 
-	 	 	 	 [ 
-	 	 	 	 	 forward dxy 
-	 	 	 	 	 right (5 - random-float 10) 
-	 	 	 	 	 set Beh_Move (Beh_Move - 1) 
-	 	 	 	 ] 
-	 	 	 ] 
 	 	 	 [ 
 	 	 	 	 forward dxy 
-	 	 	 	 right (5 - random-float 10) 
+	 	 right (bacteria-real-rotational-diffusion - (random-float bacteria-real-rotational-diffusion-helper)) 
 	 	 	 	 set Beh_Move (Beh_Move - 1) 
 	 	 	 ] 
 	 	 ) 
@@ -401,7 +205,7 @@ to bacteria1_Move [ id ]
 end 
 to bacteria1_Tumble [ id ] 
 	 ask turtle id [ 
-	 	 set heading (heading + random-float 360) 
+	 	 set heading (heading + ((random-normal 1.0 26) * 68)) 
 	 ] 
 end 
 to setBacteria1Beh [ id BehMove BehTumble ] 

@@ -15,8 +15,9 @@ class petriAgentProject:
         self.bacteriaIDDict = {}
         self.bacteriaNameDict = {}
         self.listOfCompartmentIDs = []
-        self.compartmentDict = {}
-        self.compartmentRelationDict = {}
+        # Comment for Compartment
+        #self.compartmentDict = {}
+        #self.compartmentRelationDict = {}
         self.netLogoSettings = netLogoSettings(100, 100)
         self.listOfEnvironmentMolecules = []
         self.dictOfEnvironmentMolecules = {}
@@ -30,15 +31,18 @@ class petriAgentProject:
         self.flowDir = "E"
         self.flowRate = 100
         self.flowBool = 1
+        self.bacFlowRate = 0
+        self.bacDiffRate = 0
         #TODO: Split Diffusion and flow! Change strings in GUI
         self.flows = []
-        defaultCompartment = netLogoCompartment("Default", 0, 0, self.maxXCor, 0, self.maxYCor, self.lrCont, self.tbCont, self.diffRate, self.diffBool, self.flowDir, self. flowRate, self.flowBool)
-        self.listOfCompartmentIDs.append(0)
-        self.compartmentDict[0] = defaultCompartment
+        # Comment for Compartment
+        #defaultCompartment = netLogoCompartment("Default", 0, 0, self.maxXCor, 0, self.maxYCor, self.lrCont, self.tbCont, self.diffRate, self.diffBool, self.flowDir, self. flowRate, self.flowBool)
+        #self.listOfCompartmentIDs.append(0)
+        #self.compartmentDict[0] = defaultCompartment
         self.moleculeOutFlow = 0
         self.bacteriaOutflow = 0
-        self.bacteriaFlow = 0
         # make these bacteriaspecific? if needed
+        self.diffmode = 0
 
     def addBacteria(self, bacteriaName, bacteriaPetri):
         # TODO: only if name not in there yet? or give individualIDs, change default of molnumber
@@ -84,13 +88,15 @@ class petriAgentProject:
         else:
             lowerY = int(y2)
             higherY = int(y1)
-        newCompartment = netLogoCompartment(name, len(self.listOfCompartmentIDs), lowerX, higherX, lowerY, higherY, self.lrCont, self.tbCont, self.diffRate, self.diffBool, self.flowDir, self. flowRate, self.flowBool)
+        # Comment for Compartment
+        #newCompartment = netLogoCompartment(name, len(self.listOfCompartmentIDs), lowerX, higherX, lowerY, higherY, self.lrCont, self.tbCont, self.diffRate, self.diffBool, self.flowDir, self. flowRate, self.flowBool)
         #TODO: MAKE THIS SPECIFIC PER SPECIES AND MOLECULE AND NOT GENERIC
-        for compartmentID in self.listOfCompartmentIDs:
-            self.compartmentRelationDict[(compartmentID, len(self.listOfCompartmentIDs))] = [0, 0]
-            self.compartmentRelationDict[(len(self.listOfCompartmentIDs), compartmentID)] = [0, 0]
-        self.listOfCompartmentIDs.append(len(self.listOfCompartmentIDs))
-        self.compartmentDict[len(self.listOfCompartmentIDs) - 1] = newCompartment
+        # Comment for Compartment
+        #for compartmentID in self.listOfCompartmentIDs:
+        #    self.compartmentRelationDict[(compartmentID, len(self.listOfCompartmentIDs))] = [0, 0]
+        #    self.compartmentRelationDict[(len(self.listOfCompartmentIDs), compartmentID)] = [0, 0]
+        #self.listOfCompartmentIDs.append(len(self.listOfCompartmentIDs))
+        #self.compartmentDict[len(self.listOfCompartmentIDs) - 1] = newCompartment
 
     def addinoutFlow(self, molecule, inout, time, starttime, endtime, amount, area, start, end):
         if area == 0:

@@ -46,7 +46,7 @@ def saveProject(mainProject, filehandler):
     bacOutFlowBool.appendChild(doc.createTextNode(str(mainProject.bacteriaOutflow)))
     bacFlowBool = doc.createElement("bacFlow")
     settings.appendChild(bacFlowBool)
-    bacFlowBool.appendChild(doc.createTextNode(str(mainProject.bacteriaFlow)))
+    bacFlowBool.appendChild(doc.createTextNode(str(mainProject.bacFlowRate)))
 
     #todo make output readable by naming the single nodes
     flows = doc.createElement("flows")

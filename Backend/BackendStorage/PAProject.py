@@ -33,7 +33,6 @@ class petriAgentProject:
         self.flowBool = 1
         self.bacFlowRate = 0
         self.bacDiffRate = 0
-        #TODO: Split Diffusion and flow! Change strings in GUI
         self.flows = []
         # Comment for Compartment
         #defaultCompartment = netLogoCompartment("Default", 0, 0, self.maxXCor, 0, self.maxYCor, self.lrCont, self.tbCont, self.diffRate, self.diffBool, self.flowDir, self. flowRate, self.flowBool)
@@ -90,7 +89,7 @@ class petriAgentProject:
             higherY = int(y1)
         # Comment for Compartment
         #newCompartment = netLogoCompartment(name, len(self.listOfCompartmentIDs), lowerX, higherX, lowerY, higherY, self.lrCont, self.tbCont, self.diffRate, self.diffBool, self.flowDir, self. flowRate, self.flowBool)
-        #TODO: MAKE THIS SPECIFIC PER SPECIES AND MOLECULE AND NOT GENERIC
+        #idea: make this specific for each molecule and agent type
         # Comment for Compartment
         #for compartmentID in self.listOfCompartmentIDs:
         #    self.compartmentRelationDict[(compartmentID, len(self.listOfCompartmentIDs))] = [0, 0]

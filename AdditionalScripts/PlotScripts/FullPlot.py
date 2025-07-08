@@ -12,7 +12,6 @@ import tkinter.filedialog
 from pandas import read_csv
 from statsmodels.tsa.stattools import adfuller
 #todo: continue writing this, make it viable for any start setup (multiple bacteria in same graph)
-#todo: add legends
 #todo: add explanation to parameters
 
 matplotlib.use("TkAgg")

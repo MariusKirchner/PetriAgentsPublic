@@ -48,7 +48,7 @@ to setup
 	 set bacteria-real-rotational-diffusion-helper (bacteria-real-rotational-diffusion * 2) ; in degrees/tick 
 	 set newIndividuals [] 
 	 set deadIndividuals [] 
-	 create-bacteria1 100[ 
+	 create-bacteria1 1000[ 
 	 	 setxy random-xcor random-ycor 
 	 	 set size 1 
 	 	 set Beh_Move 0 
@@ -108,7 +108,7 @@ end
 to patchdiffusion 
 	 ask patches [ 
 	 	 repeat patch_Attractant[ 
-	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) ) 
+	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 1.0 1.0 ) ) 
 	 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) ) 
 	 	 	 (ifelse (xchange < ( -0.5 * patchsize) and ychange < ( -0.5 * patchsize)) [ 
 	 	 	 	 (ifelse pxcor = 0 

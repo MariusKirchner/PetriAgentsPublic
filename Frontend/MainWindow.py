@@ -265,7 +265,6 @@ def openEnvironmentMoleculeDetails(mainProject, root):
     newWindow.mainloop()
 
 def addFlowOption(newWindow, mainProject):
-    #TODO: Extend for more inflow options (other sides than just left)
     def checkdisabled():
         pass
     tempWindow = Toplevel(newWindow)
@@ -372,10 +371,11 @@ def addCompartment(mainProject, root):
     ttk.Label(tempFrame, text="Corner2 Y Coordinate: ").grid(column=0, row=4)
     corner2YCoord = StringVar(tempFrame)
     Entry(tempFrame, textvariable=corner2YCoord).grid(column=1, row=4)
-    #TODO: Add restriction variability for molecules and species
-    #TODO: Add possibility to modify compartment settings
-    #TODO: PREVENT COMPARTMENT WITH LARGER NUMBERS THAN DEFAULT
-    #TODO: PREVENT WRONG INPUTS (everywhere btw)
+    #compartment code
+    #idea: Add restriction variability for molecules and species
+    #idea: Add possibility to modify compartment settings
+    #idea: PREVENT COMPARTMENT WITH LARGER NUMBERS THAN DEFAULT
+    #idea: PREVENT WRONG INPUTS (everywhere btw)
     ttk.Button(tempFrame, text="Confirm changes", command=lambda: addNewCompartment(mainProject, newWindow, currNameDefault.get(), corner1XCoord.get(), corner1YCoord.get(), corner2XCoord.get(), corner2YCoord.get())).grid(column=0, row=5)
     newWindow.mainloop()
 

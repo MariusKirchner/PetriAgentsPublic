@@ -16,7 +16,6 @@ def saveProject(mainProject, filehandler):
     ticks = doc.createElement("Ticks")
     settings.appendChild(ticks)
     ticks.appendChild(doc.createTextNode(str(mainProject.ticks)))
-    #TODO: following will be secluded for each compartment later on, then netlogosettings will be more specific
     lrCont = doc.createElement("lrCont")
     settings.appendChild(lrCont)
     lrCont.appendChild(doc.createTextNode(str(mainProject.lrCont)))

@@ -159,7 +159,6 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpat
                         totalCommandList.append(singleCommand)
                     commandString = re.sub("'", "", str(totalCommandList))
                     n.command("setBacteria" + str(k) + "BehAll " + re.sub(",", "", commandString))
-                # TODO: CHECK IF THIS REALLY WORKS!! (looks good, but i just saw that flagella are different colors for multiple species)
                 time13 = time.time()
                 # print("Total for Commands for Bacteria Setters--- %s seconds ---" % (time13 - time11))
                 n.command("go")

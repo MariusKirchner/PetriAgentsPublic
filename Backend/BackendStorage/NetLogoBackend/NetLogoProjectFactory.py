@@ -194,7 +194,6 @@ def createNetLogoProject(mainProject):
         if mainProject.diffmode == 0:
             #diffusion and flow function
             #TODO: include flow and diffusion rates
-            #TODO: single tokens get moved multiple times if netlogo opens them multiple times patch after patch! => save them to a list or similar and add them after everything happened
             if mainProject.diffBool and mainProject.flowBool:
                 #directionalList = [3, 7, 15, 25, 15, 7, 3, 5]
                 #stayProb = 20
@@ -227,7 +226,6 @@ def createNetLogoProject(mainProject):
                     useList = [directionalList[7], directionalList[0], directionalList[1], directionalList[6], directionalList[2], directionalList[5], directionalList[4], directionalList[3]]
 
             tempnetlogoFile.write("to patchdiffusion \n")
-            #TODO: SEPERATE DIFFUSION AND FLOW! IT IS NOT THE SAME!!!! RENAME EVERYTHING FLOW TO FLOW!
             tempnetlogoFile.write("\t let tempList [] \n")
             tempnetlogoFile.write("\t ask patches [ \n")
             for i in mainProject.listOfEnvironmentMolecules:
@@ -294,7 +292,6 @@ def createNetLogoProject(mainProject):
             tempnetlogoFile.write("end \n")
         else:
             tempnetlogoFile.write("to patchdiffusion \n")
-            # TODO: SEPERATE DIFFUSION AND FLOW! IT IS NOT THE SAME!!!! RENAME EVERYTHING FLOW TO FLOW!
             tempnetlogoFile.write("\t ask patches [ \n")
             for i in mainProject.listOfEnvironmentMolecules:
                 tempnetlogoFile.write("\t \t repeat patch_" + i + "[ \n")
@@ -522,7 +519,6 @@ def createNetLogoProject(mainProject):
         tempnetlogoFile.write("\t ] \n")
         tempnetlogoFile.write("end \n")
     #setPatch function
-    #TODO: Fix for different intake numbers than 1
     for i in mainProject.listOfBacteriaIDs:
         tempString = "[ id "
         for j in mainProject.bacteriaIDDict[i].listOfEnvPlaceIDs:
@@ -642,7 +638,6 @@ def createNetLogoProject(mainProject):
     tempnetlogoFile.write("\n")
 
 
-    #todo write check for multiple intakes
     tempnetlogoFile.write("to-report intake \n")
     tempnetlogoFile.write("\t let tempList [] \n")
     tempnetlogoFile.write("\t let wholeList [] \n")

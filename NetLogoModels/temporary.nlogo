@@ -3,13 +3,18 @@ breed [flagella flagellum]
  
 bacteria1-own [ 
 	 Beh_Move 
-	 Beh_Tumble 
+	 Beh_Replication 
+	 Beh_Death 
 	 dxy 
 	 ] 
  
 patches-own [ 
-	 patch_Attractant
-	 patch_Attractant_new 
+	 patch_SCFA
+	 patch_SCFA_new 
+	 patch_Nutrient1
+	 patch_Nutrient1_new 
+	 patch_Nutrient2
+	 patch_Nutrient2_new 
 	 ] 
 
 directed-link-breed [connectors connector] 
@@ -38,9 +43,9 @@ to setup
 	 clear-drawing 
 	 clear-output 
 	 reset-ticks 
-	 set timeinterval-per-tick 0.1 ; in s 
-	 set patchsize 0.0025 ; in mm (sidelength) 
-	 set diffConstant 0.001 ; in mm^2/s
+	 set timeinterval-per-tick 10 ; in s 
+	 set patchsize 2 ; in mm (sidelength) 
+	 set diffConstant 1 ; in mm^2/s 
 	 set bacteria-real-velocity 0.025 ; in mm/s 
 	 set bacteria-velocity (bacteria-real-velocity / patchsize ) ; in patches/s 
 	 set bacteria-rotational-diffusion 9 ; in degrees/s 
@@ -48,22 +53,27 @@ to setup
 	 set bacteria-real-rotational-diffusion-helper (bacteria-real-rotational-diffusion * 2) ; in degrees/tick 
 	 set newIndividuals [] 
 	 set deadIndividuals [] 
-	 create-bacteria1 1000[ 
+	 create-bacteria1 100[ 
 	 	 setxy random-xcor random-ycor 
 	 	 set size 1 
 	 	 set Beh_Move 0 
-	 	 set Beh_Tumble 0 
+	 	 set Beh_Replication 0 
+	 	 set Beh_Death 0 
 	 ] 
 	 set-default-shape bacteria1 "bacteria 1" 
 	 set-default-shape flagella "flagella" 
 	 ask bacteria1 [ 
 	 	 set dxy ( bacteria-velocity * timeinterval-per-tick ) 
-	 	 set color [0 0 0 ] 
+	 	 set color [0 0 255 ] 
 	 	 set local-color color 
 	 	 ask out-link-neighbors [set color local-color] 
 	 ] 
 	 ask patches with [pxcor >= 0 and pxcor <= 100 and pycor >= 0 and pycor <= 50][ 
-	 	 set patch_Attractant random 0 
+	 	 set patch_SCFA random 0 
+	 ]	 ask patches with [pxcor >= 0 and pxcor <= 100 and pycor >= 0 and pycor <= 50][ 
+	 	 set patch_Nutrient1 random 2 
+	 ]	 ask patches with [pxcor >= 0 and pxcor <= 100 and pycor >= 0 and pycor <= 50][ 
+	 	 set patch_Nutrient2 random 2 
 	 ]	 set flagella-size 1 
 	 updateView 
 end 
@@ -89,12 +99,22 @@ to go
 	 	 if (Beh_Move != 0) [ 
 	 	 	 bacteria1_Move who 
 	 	 ] 
-	 	 if (Beh_Tumble != 0) [ 
-	 	 	 bacteria1_Tumble who 
+	 	 if (Beh_Replication != 0) [ 
+	 	 	 bacteria1_Replication who 
 	 	 ] 
-	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.0 ) ) 
-	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.0 ) ) 
-	 	 (ifelse ((xcor + xchange < 0) or (xcor + xchange > max-pxcor)) 
+	 	 if (Beh_Death != 0) [ 
+	 	 	 bacteria1_Death who 
+	 	 ] 
+	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.02 1.0 ) ) 
+	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) ) 
+	 	 if ((xcor + xchange > max-pxcor) ) 
+	 	 	 [let tempList [] 
+	 	 	 set tempList lput 1 tempList 
+	 	 	 set tempList lput who tempList 
+	 	 	 set deadIndividuals lput tempList deadIndividuals 
+	 	 	 ask my-links [ die ] 
+	 	 	 die] 
+	 	 (ifelse ((xcor + xchange < 0) or (xcor + xchange > max-pxcor) or (ycor + ychange < 0) or (ycor + ychange > max-pycor)) 
 	 	 	 [] 
 	 	 	 [ setxy (xcor + xchange) (ycor + ychange) ]) 
 	 ] 
@@ -107,66 +127,49 @@ end
 
 to patchdiffusion 
 	 ask patches [ 
-	 	 repeat patch_Attractant[ 
-	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 1.0 1.0 ) ) 
+	 	 repeat patch_SCFA[ 
+	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.02 1.0 ) ) 
 	 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) ) 
-	 	 	 (ifelse (xchange < ( -0.5 * patchsize) and ychange < ( -0.5 * patchsize)) [ 
-	 	 	 	 (ifelse pxcor = 0 
-	 	 	 	 	 [set patch_Attractant_new (patch_Attractant_new + 1)] 
-	 	 	 	 	 pycor = 0 
-	 	 	 	 	 [ask patch (pxcor - 1) (max-pycor)[set patch_Attractant_new (patch_Attractant_new + 1)]] 
-	 	 	 	 	 [ask patch (pxcor - 1) (pycor - 1)[set patch_Attractant_new (patch_Attractant_new + 1)]])] 
-	 	 	 (xchange < ( -0.5 * patchsize) and ychange > ( 0.5 * patchsize)) [ 
-	 	 	 	 (ifelse pxcor = 0 
-	 	 	 	 	 [set patch_Attractant_new (patch_Attractant_new + 1)] 
-	 	 	 	 	 pycor = max-pycor 
-	 	 	 	 	 [ask patch (pxcor - 1) (0)[set patch_Attractant_new (patch_Attractant_new + 1)]] 
-	 	 	 	 	 [ask patch (pxcor - 1) (pycor + 1)[set patch_Attractant_new (patch_Attractant_new + 1)]])] 
-	 	 	 (xchange < ( -0.5 * patchsize)) [ 
-	 	 	 	 (ifelse pxcor = 0 
-	 	 	 	 	 [set patch_Attractant_new (patch_Attractant_new + 1)] 
-	 	 	 	 	 [ask patch (pxcor - 1) (pycor)[set patch_Attractant_new (patch_Attractant_new + 1)]])] 
-	 	 	 (xchange > ( 0.5 * patchsize) and ychange > ( 0.5 * patchsize)) [ 
-	 	 	 	 (ifelse pxcor = max-pxcor 
-	 	 	 	 	 [] 
-	 	 	 	 	 pycor = max-pycor 
-	 	 	 	 	 [ask patch (pxcor + 1) (0)[set patch_Attractant_new (patch_Attractant_new + 1)]] 
-	 	 	 	 	 [ask patch (pxcor + 1) (pycor + 1)[set patch_Attractant_new (patch_Attractant_new + 1)]])] 
-	 	 	 (xchange > ( 0.5 * patchsize) and ychange < ( -0.5 * patchsize)) [ 
-	 	 	 	 (ifelse pxcor = max-pxcor 
-	 	 	 	 	 [] 
-	 	 	 	 	 pycor = 0 
-	 	 	 	 	 [ask patch (pxcor + 1) (max-pycor)[set patch_Attractant_new (patch_Attractant_new + 1)]] 
-	 	 	 	 	 [ask patch (pxcor + 1) (pycor - 1)[set patch_Attractant_new (patch_Attractant_new + 1)]])] 
-	 	 	 (xchange > ( 0.5 * patchsize)) [ 
-	 	 	 	 (ifelse pxcor = max-pxcor 
-	 	 	 	 	 [] 
-	 	 	 	 	 [ask patch (pxcor + 1) (pycor)[set patch_Attractant_new (patch_Attractant_new + 1)]])] 
-	 	 	 (ychange > ( 0.5 * patchsize)) [ 
-	 	 	 	 (ifelse pycor = max-pycor 
-	 	 	 	 	 [ask patch (pxcor) (0)[set patch_Attractant_new (patch_Attractant_new + 1)]] 
-	 	 	 	 	 [ask patch (pxcor) (pycor + 1)[set patch_Attractant_new (patch_Attractant_new + 1)]])] 
-	 	 	 (ychange < ( -0.5 * patchsize)) [ 
-	 	 	 	 (ifelse pycor = 0 
-	 	 	 	 	 [ask patch (pxcor) (max-pycor)[set patch_Attractant_new (patch_Attractant_new + 1)]] 
-	 	 	 	 	 [ask patch (pxcor) (pycor - 1)[set patch_Attractant_new (patch_Attractant_new + 1)]])] 
-	 	 	 [ 
-	 	 	 	 	 ask patch (pxcor) (pycor)[set patch_Attractant_new (patch_Attractant_new + 1)]]) 
-	 	 ] 
+	 	 	 ifelse (patch-at (xchange) (ychange) = nobody) 
+	 	 	 	 [] 
+	 	 	 	 [ask patch (pxcor + xchange) (pycor + ychange)[set patch_SCFA_new (patch_SCFA_new + 1)]] 
+	 	 	 ] 
+	 	 repeat patch_Nutrient1[ 
+	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.02 1.0 ) ) 
+	 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) ) 
+	 	 	 ifelse (patch-at (xchange) (ychange) = nobody) 
+	 	 	 	 [] 
+	 	 	 	 [ask patch (pxcor + xchange) (pycor + ychange)[set patch_Nutrient1_new (patch_Nutrient1_new + 1)]] 
+	 	 	 ] 
+	 	 repeat patch_Nutrient2[ 
+	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.02 1.0 ) ) 
+	 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) ) 
+	 	 	 ifelse (patch-at (xchange) (ychange) = nobody) 
+	 	 	 	 [] 
+	 	 	 	 [ask patch (pxcor + xchange) (pycor + ychange)[set patch_Nutrient2_new (patch_Nutrient2_new + 1)]] 
+	 	 	 ] 
 	 ] 
 	 ask patches [ 
-	 	 set patch_Attractant patch_Attractant_new 
-	 	 set patch_Attractant_new 0 
+	 	 set patch_SCFA patch_SCFA_new 
+	 	 set patch_SCFA_new 0 
+	 ] 
+	 ask patches [ 
+	 	 set patch_Nutrient1 patch_Nutrient1_new 
+	 	 set patch_Nutrient1_new 0 
+	 ] 
+	 ask patches [ 
+	 	 set patch_Nutrient2 patch_Nutrient2_new 
+	 	 set patch_Nutrient2_new 0 
 	 ] 
 end 
 to updateView 
 	 ask patches [ 
-	 	 if (patch_Attractant = 0) [set pcolor 5] 
-	 	 if (patch_Attractant > 0) [set pcolor 19] 
-	 	 if (patch_Attractant > 5) [set pcolor 18] 
-	 	 if (patch_Attractant > 10) [set pcolor 17] 
-	 	 if (patch_Attractant > 20) [set pcolor 16] 
-	 	 if (patch_Attractant > 35) [set pcolor 15] 
+	 	 if (patch_SCFA = 0) [set pcolor 5] 
+	 	 if (patch_SCFA > 0) [set pcolor 19] 
+	 	 if (patch_SCFA > 5) [set pcolor 18] 
+	 	 if (patch_SCFA > 10) [set pcolor 17] 
+	 	 if (patch_SCFA > 20) [set pcolor 16] 
+	 	 if (patch_SCFA > 35) [set pcolor 15] 
 	 ] 
 end 
 
@@ -203,34 +206,62 @@ to bacteria1_Move [ id ]
 	 	 ) 
 	 ] 
 end 
-to bacteria1_Tumble [ id ] 
+to bacteria1_Replication [ id ] 
 	 ask turtle id [ 
-	 	 set heading (heading + ((random-normal 1.0 26) * 68)) 
+	 	 hatch-bacteria1 1 [ 
+	 	 	 setxy xcor ycor 
+	 	 	 set heading (heading + random-float 360) 
+	 	 	 set size 1 
+	 	 	 set Beh_Move 0 
+	 	 	 set Beh_Replication 0 
+	 	 	 set Beh_Death 0 
+	 	 	 set color [0 0 255 ] 
+	 	 	 set local-color color 
+	 	 	 ask out-link-neighbors [set color local-color] 
+	 	 	 let tempList [] 
+	 	 	 set tempList lput 1 tempList 
+	 	 	 set tempList lput who tempList 
+	 	 	 set newIndividuals lput tempList newIndividuals 
+	 	 ] 
+	 	 set size 1 
 	 ] 
 end 
-to setBacteria1Beh [ id BehMove BehTumble ] 
+to bacteria1_Death [ id ] 
+	 ask turtle id [ 
+	 	 let tempList [] 
+	 	 set tempList lput 1 tempList 
+	 	 set tempList lput who tempList 
+	 	 set deadIndividuals lput tempList deadIndividuals 
+	 	 ask my-links [ die ] 
+	 	 die 
+	 ] 
+end 
+to setBacteria1Beh [ id BehMove BehReplication BehDeath ] 
 	 ask turtle id [ 
 	 	 set Beh_Move BehMove 
-	 	 set Beh_Tumble BehTumble 
+	 	 set Beh_Replication BehReplication 
+	 	 set Beh_Death BehDeath 
 	 ] 
 end 
 to setBacteria1BehAll [ listOfCommands ] 
 	 foreach listOfCommands [ 
 	 	 [content] -> 
-	 	 setBacteria1Beh (item 0 content) (item 1 content) (item 2 content)  
+	 	 setBacteria1Beh (item 0 content) (item 1 content) (item 2 content) (item 3 content)  
 	 ] 
 end 
-to setBacteria1Patch [ id Attractant ] 
+to setBacteria1Patch [ id SCFA Nutrient1 Nutrient2 ] 
 	 ask turtle id [ 
 	 	 ask patch-here [ 
-	 	 	 set patch_Attractant Attractant 
+	 	 	 set patch_SCFA SCFA 
+	 	 	 set patch_Nutrient1 Nutrient1 
+	 	 	 set patch_Nutrient2 Nutrient2 
 	 	 ] 
 	 ] 
 end 
 to setBacteria1PatchAll [ listOfCommands ] 
 	 foreach listOfCommands [ 
 	 	 [content] -> 
-	 	 setBacteria1Patch (item 0 content) (item 1 content)  
+	 	 setBacteria1Patch (item 0 content) (item 1 content) (item 2 content) (item 3 content)  
 	 ] 
 end 
 to doinflow [ molecule amount starty endy ] 
@@ -311,8 +342,20 @@ to-report intake
 	 	 ask patch-here [ 
  	 	 	 set tempList lput bacType tempList 
  	 	 	 set tempList lput tempID tempList
- 	 	 	 set tempList lput "\"Attractant\"" templist 
- 	 	 	 set tempList lput patch_Attractant templist 
+ 	 	 	 set tempList lput "\"SCFA\"" templist 
+ 	 	 	 set tempList lput patch_SCFA templist 
+ 	 	 	 set wholeList lput tempList wholeList 
+ 	 	 	 set tempList [] 
+ 	 	 	 set tempList lput bacType tempList 
+ 	 	 	 set tempList lput tempID tempList
+ 	 	 	 set tempList lput "\"Nutrient1\"" templist 
+ 	 	 	 set tempList lput patch_Nutrient1 templist 
+ 	 	 	 set wholeList lput tempList wholeList 
+ 	 	 	 set tempList [] 
+ 	 	 	 set tempList lput bacType tempList 
+ 	 	 	 set tempList lput tempID tempList
+ 	 	 	 set tempList lput "\"Nutrient2\"" templist 
+ 	 	 	 set tempList lput patch_Nutrient2 templist 
  	 	 	 set wholeList lput tempList wholeList 
  	 	 	 set tempList [] 
 	 	 ] 
@@ -321,11 +364,17 @@ to-report intake
 end 
 to-report patchvalues 
 	 let templist [] 
-	 let tempvalueAttractant 0 
+	 let tempvalueSCFA 0 
+	 let tempvalueNutrient1 0 
+	 let tempvalueNutrient2 0 
 	 ask patches [ 
-	 	 set tempvalueAttractant tempvalueAttractant + patch_Attractant 
+	 	 set tempvalueSCFA tempvalueSCFA + patch_SCFA 
+	 	 set tempvalueNutrient1 tempvalueNutrient1 + patch_Nutrient1 
+	 	 set tempvalueNutrient2 tempvalueNutrient2 + patch_Nutrient2 
 	 ] 
- 	 set templist lput tempvalueAttractant templist 
+ 	 set templist lput tempvalueSCFA templist 
+	 set templist lput tempvalueNutrient1 templist 
+	 set templist lput tempvalueNutrient2 templist 
 	 report templist 
 end 
 

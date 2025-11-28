@@ -58,5 +58,6 @@ class bacteria:
         self.listOfIndividuals.append(ID)
 
     def delIndividual(self, ID):
-        self.listOfIndividuals.remove(ID)
-        self.dictOfIndividuals.pop(ID)
+        if ID in self.listOfIndividuals:
+            self.listOfIndividuals.remove(ID)
+            self.dictOfIndividuals.pop(ID)

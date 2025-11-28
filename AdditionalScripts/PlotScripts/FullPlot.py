@@ -290,13 +290,18 @@ if heatmap:
             for currBac in processedData:
                 data[int(currBac[2]), int(currBac[3])] += 1
         data = np.swapaxes(data, 0, 1)
-        plt.imshow(data, cmap='hot', interpolation='quadric', origin="lower")
+        plt.imshow(data, cmap='hot', interpolation='quadric', origin="lower", vmin=30, vmax=350)
         plt.title("Heat map of bacteria using chemotaxis")
         plt.xlabel("x-axis")
         plt.ylabel("y-axis")
         plt.colorbar(shrink=0.75)
-        plt.savefig(newfolderdir + "\\" + "Heatmap" + header[-(1+currBacType)] + ".png", bbox_inches="tight")
-        plt.savefig(newfolderdir + "\\" + "Heatmap" + header[-(1+currBacType)] + ".svg", bbox_inches="tight")
+        plt.savefig(newfolderdir + "\\" + "ColorbarHeatmap" + header[-(1+currBacType)] + ".png", bbox_inches="tight")
+        plt.savefig(newfolderdir + "\\" + "ColorbarHeatmap" + header[-(1+currBacType)] + ".svg", bbox_inches="tight")
+        cb = plt.colorbar()
+        cb.remove()
+        plt.colorbar().remove()
+        plt.savefig(newfolderdir + "\\" + "Heatmap" + header[-(1 + currBacType)] + ".png", bbox_inches="tight")
+        plt.savefig(newfolderdir + "\\" + "Heatmap" + header[-(1 + currBacType)] + ".svg", bbox_inches="tight")
         plt.clf()
 
 

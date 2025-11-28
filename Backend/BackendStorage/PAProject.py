@@ -38,8 +38,14 @@ class petriAgentProject:
         #defaultCompartment = netLogoCompartment("Default", 0, 0, self.maxXCor, 0, self.maxYCor, self.lrCont, self.tbCont, self.diffRate, self.diffBool, self.flowDir, self. flowRate, self.flowBool)
         #self.listOfCompartmentIDs.append(0)
         #self.compartmentDict[0] = defaultCompartment
-        self.moleculeOutFlow = 0
-        self.bacteriaOutflow = 0
+        self.moleculeOutFlowNorth = 0
+        self.moleculeOutFlowEast = 0
+        self.moleculeOutFlowSouth = 0
+        self.moleculeOutFlowWest = 0
+        self.bacteriaOutflowNorth = 0
+        self.bacteriaOutflowEast = 0
+        self.bacteriaOutflowSouth = 0
+        self.bacteriaOutflowWest = 0
         # make these bacteriaspecific? if needed
         self.diffmode = 0
 

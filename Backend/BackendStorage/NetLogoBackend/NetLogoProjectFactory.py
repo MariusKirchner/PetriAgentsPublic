@@ -63,13 +63,15 @@ def createNetLogoProject(mainProject):
     tempnetlogoFile.write("\t reset-ticks \n")
     #set globals
     # for SCFA model:
-    #tempnetlogoFile.write("\t set timeinterval-per-tick 10 ; in s \n")
-    #tempnetlogoFile.write("\t set patchsize 0.5 ; in mm (sidelength) \n")
-    #tempnetlogoFile.write("\t set diffConstant 0.02 ; in mm^2/s\n")
+    tempnetlogoFile.write("\t set timeinterval-per-tick 10 ; in s \n")
+    tempnetlogoFile.write("\t set patchsize 2 ; in mm (sidelength) \n")
+    #tempnetlogoFile.write("\t set diffConstant 0.02 ; in mm^2/s \n")
+    #test
+    tempnetlogoFile.write("\t set diffConstant 1 ; in mm^2/s \n")
     # for chemotaxis model:
-    tempnetlogoFile.write("\t set timeinterval-per-tick 0.1 ; in s \n")
-    tempnetlogoFile.write("\t set patchsize 0.0025 ; in mm (sidelength) \n")
-    tempnetlogoFile.write("\t set diffConstant 0.001 ; in mm^2/s\n")
+    #tempnetlogoFile.write("\t set timeinterval-per-tick 0.1 ; in s \n")
+    #tempnetlogoFile.write("\t set patchsize 0.0025 ; in mm (sidelength) \n")
+    #tempnetlogoFile.write("\t set diffConstant 0.001 ; in mm^2/s \n")
     # for all models
     tempnetlogoFile.write("\t set bacteria-real-velocity 0.025 ; in mm/s \n")
     tempnetlogoFile.write("\t set bacteria-velocity (bacteria-real-velocity / patchsize ) ; in patches/s \n")
@@ -176,7 +178,38 @@ def createNetLogoProject(mainProject):
                 tempnetlogoFile.write("\t \t ] \n")
         tempnetlogoFile.write("\t \t let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal " + str(round((float(mainProject.bacFlowRate) / 100), 4)) + " " + str(round((float(mainProject.bacDiffRate) / 100), 4)) + " ) ) \n")
         tempnetlogoFile.write("\t \t let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 " + str(round((float(mainProject.bacDiffRate) / 100), 4)) + " ) ) \n")
-        tempnetlogoFile.write("\t \t (ifelse ((xcor + xchange < 0) or (xcor + xchange > max-pxcor)) \n")
+        tempString = "\t \t if ("
+        first = True
+        if mainProject.bacteriaOutflowNorth:
+            tempString += "(ycor + ychange > max-pycor) "
+            first = False
+        if mainProject.bacteriaOutflowEast:
+            if first:
+                tempString += "(xcor + xchange > max-pxcor) "
+                first = False
+            else:
+                tempString += "and (xcor + xchange > max-pxcor) "
+        if mainProject.bacteriaOutflowSouth:
+            if first:
+                tempString += "(ycor + ychange < 0) "
+                first = False
+            else:
+                tempString += "and (ycor + ychange < 0) "
+        if mainProject.bacteriaOutflowWest:
+            if first:
+                tempString += "(xcor + xchange < 0) "
+            else:
+                tempString += "and (xcor + xchange < 0) "
+        tempString += ") \n"
+        tempnetlogoFile.write(tempString)
+        if mainProject.bacteriaOutflowNorth or mainProject.bacteriaOutflowEast or mainProject.bacteriaOutflowSouth or mainProject.bacteriaOutflowWest:
+            tempnetlogoFile.write("\t \t \t [let tempList [] \n")
+            tempnetlogoFile.write("\t \t \t set tempList lput " + str(i) + " tempList \n")
+            tempnetlogoFile.write("\t \t \t set tempList lput who tempList \n")
+            tempnetlogoFile.write("\t \t \t set deadIndividuals lput tempList deadIndividuals \n")
+            tempnetlogoFile.write("\t \t \t ask my-links [ die ] \n")
+            tempnetlogoFile.write("\t \t \t die] \n")
+        tempnetlogoFile.write("\t \t (ifelse ((xcor + xchange < 0) or (xcor + xchange > max-pxcor) or (ycor + ychange < 0) or (ycor + ychange > max-pycor)) \n")
         tempnetlogoFile.write("\t \t \t [] \n")
         tempnetlogoFile.write("\t \t \t [ setxy (xcor + xchange) (ycor + ychange) ]) \n")
         tempnetlogoFile.write("\t ] \n")
@@ -202,8 +235,10 @@ def createNetLogoProject(mainProject):
             elif mainProject.diffBool:
                 #useList = [5, 10, 5, 10, 10, 5, 10, 5]
                 #stayProb = 40
-                useList = [6.25, 12.5, 6.25, 12.5, 12.5, 6.25, 12.5, 6.25]
-                stayProb = 25
+                #useList = [6.25, 12.5, 6.25, 12.5, 12.5, 6.25, 12.5, 6.25]
+                #stayProb = 25
+                useList = [4, 12, 4, 12, 4, 12, 4, 12]
+                stayProb = 36
             elif mainProject.flowBool:
                 directionalList = [0, 0, 0, 75, 0, 0, 0, 0]
                 stayProb = 25
@@ -297,7 +332,7 @@ def createNetLogoProject(mainProject):
                 tempnetlogoFile.write("\t \t repeat patch_" + i + "[ \n")
                 tempnetlogoFile.write("\t \t \t let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal " + str(round((float(mainProject.flowRate) / 100), 4)) + " " + str(round((float(mainProject.diffRate) / 100), 4)) + " ) ) \n")
                 tempnetlogoFile.write("\t \t \t let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 " + str(round((float(mainProject.diffRate) / 100), 4)) + " ) ) \n")
-                tempnetlogoFile.write("\t \t \t (ifelse (xchange < ( -0.5 * patchsize) and ychange < ( -0.5 * patchsize)) [ \n")
+                """tempnetlogoFile.write("\t \t \t (ifelse (xchange < ( -0.5 * patchsize) and ychange < ( -0.5 * patchsize)) [ \n")
                 tempnetlogoFile.write("\t \t \t \t (ifelse pxcor = 0 \n")
                 tempnetlogoFile.write("\t \t \t \t \t [set patch_" + i + "_new (patch_" + i + "_new + 1)] \n")
                 tempnetlogoFile.write("\t \t \t \t \t pycor = 0 \n")
@@ -339,7 +374,11 @@ def createNetLogoProject(mainProject):
                 tempnetlogoFile.write("\t \t \t \t \t [ask patch (pxcor) (pycor - 1)[set patch_" + i + "_new (patch_" + i + "_new + 1)]])] \n")
                 tempnetlogoFile.write("\t \t \t [ \n")
                 tempnetlogoFile.write("\t \t \t \t \t ask patch (pxcor) (pycor)[set patch_" + i + "_new (patch_" + i + "_new + 1)]]) \n")
-                tempnetlogoFile.write("\t \t ] \n")
+                tempnetlogoFile.write("\t \t ] \n")"""
+                tempnetlogoFile.write("\t \t \t ifelse (patch-at (xchange) (ychange) = nobody) \n")
+                tempnetlogoFile.write("\t \t \t \t [] \n")
+                tempnetlogoFile.write("\t \t \t \t [ask patch (pxcor + xchange) (pycor + ychange)[set patch_" + i + "_new (patch_" + i + "_new + 1)]] \n")
+                tempnetlogoFile.write("\t \t \t ] \n")
             tempnetlogoFile.write("\t ] \n")
             for i in mainProject.listOfEnvironmentMolecules:
                 tempnetlogoFile.write("\t ask patches [ \n")
@@ -385,6 +424,7 @@ def createNetLogoProject(mainProject):
                 tempnetlogoFile.write("\t ask turtle id [ \n")
                 tempnetlogoFile.write("\t \t (ifelse \n")
                 tempnetlogoFile.write("\t \t \t (patch-at dx 0 = nobody) \n")
+                #insert the check for directional outflow here, if outflow in that direction, then kill
                 tempnetlogoFile.write("\t \t \t [ \n")
                 tempnetlogoFile.write("\t \t \t \t set heading (- heading) \n")
                 tempnetlogoFile.write("\t \t \t \t forward dxy \n")
@@ -566,7 +606,7 @@ def createNetLogoProject(mainProject):
     tempnetlogoFile.write("end \n")
 
     #pushfunction
-    #TODO make it custom in GUI
+    #TODO make it custom in GUI (and functional)
     #TODO: add compartment detection for these spawns (and probably the normal repl as well) (for some reason normal repl seems to work)
     tempnetlogoFile.write("to pushfunction [ currBacID ] \n")
     tempnetlogoFile.write("\t ask turtle currBacID [ \n")

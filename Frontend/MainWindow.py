@@ -30,8 +30,15 @@ def updateProject(mainProject):
     mainProject.flowDir = flowDirectionDefault.get()
     mainProject.diffBool = diffusionCheck.get()
     mainProject.flowBool = flowCheck.get()
-    mainProject.moleculeOutflow = moleculeOutflow.get()
-    mainProject.bacteriaOutflow = bacteriaOutflow.get()
+    mainProject.moleculeOutflowNorth = moleculeOutflowNorth.get()
+    mainProject.moleculeOutflowEast = moleculeOutflowEast.get()
+    mainProject.moleculeOutflowSouth = moleculeOutflowSouth.get()
+    mainProject.moleculeOutflowWest = moleculeOutflowWest.get()
+    mainProject.bacteriaOutflowNorth = bacteriaOutflowNorth.get()
+    mainProject.bacteriaOutflowEast = bacteriaOutflowEast.get()
+    mainProject.bacteriaOutflowSouth = bacteriaOutflowSouth.get()
+    mainProject.bacteriaOutflowWest = bacteriaOutflowWest.get()
+
     mainProject.diffmode = compDiff.get()
     mainProject.bacFlowRate = bacFlowRateDefault.get()
     mainProject.bacDiffRate = bacDiffRateDefault.get()
@@ -160,7 +167,7 @@ def addBacteria(mainProject, bacteriaName, bacteriaTab, bacteriaTabDict):
         ttk.Label(newBacteriaTab, text="Change the MOI: ").grid(column=0, row=1)
         Entry(newBacteriaTab, textvariable=currMOIDefault, validate="focusout", validatecommand=changesOnBacteria).grid(column=1, row=1)
 
-        ttk.Label(newBacteriaTab, text="Change the color: ").grid(column=0, row=2)
+        ttk.Label(newBacteriaTab, text="Change the colour: ").grid(column=0, row=2)
         currColorDefault = StringVar(newBacteriaTab, value=newBacteria.colorRepresentation)
         style = ttk.Style()
         style.configure("colorButtonStyle.TFrame", background=currColorDefault)
@@ -170,8 +177,8 @@ def addBacteria(mainProject, bacteriaName, bacteriaTab, bacteriaTabDict):
         ttk.Label(newBacteriaTab, text="Change the shape: ").grid(column=0, row=3)
         OptionMenu(newBacteriaTab, currShapeDefault, *shapes, command=lambda x=None: changesOnBacteria()).grid(column=1, row=3)
 
-        ttk.Label(newBacteriaTab, text="Should this bacteria have a visual representation of flagella? ").grid(column=0, row=4)
-        ttk.Checkbutton(newBacteriaTab, variable=currFlagellaDefault, command= lambda x=None: changesOnBacteria()).grid(column=1, row=4)
+        #ttk.Label(newBacteriaTab, text="Should this bacteria have a visual representation of flagella? ").grid(column=0, row=4)
+        #ttk.Checkbutton(newBacteriaTab, variable=currFlagellaDefault, command= lambda x=None: changesOnBacteria()).grid(column=1, row=4)
 
         ttk.Label(newBacteriaTab, text="Environment molecules of this bacteria: ").grid(column=0, row=5)
         if (len(mainProject.bacteriaNameDict[currNameDefault.get()].listOfEnvPlaces) // 4) == 0:
@@ -207,8 +214,8 @@ def rgbToHex(rgb):
 
 
 def changeColorBacteria(mainProject, bacteriaName, style):
-    print("Changing color for a bacteria")
-    tempColor = askcolor(title="Change color for " + bacteriaName, initialcolor=rgbToHex(tuple(mainProject.bacteriaNameDict[bacteriaName].colorRepresentation)))
+    print("Changing colour for a bacteria")
+    tempColor = askcolor(title="Change colour for " + bacteriaName, initialcolor=rgbToHex(tuple(mainProject.bacteriaNameDict[bacteriaName].colorRepresentation)))
     tempList = list(tempColor[0])
     mainProject.bacteriaNameDict[bacteriaName].colorRepresentation = tempList
     style.configure("colorButtonStyle.TFrame", background=tempList)
@@ -421,26 +428,54 @@ def mainWindow(projectHolder):
     ttk.Label(settingsTab, text="Ticks").grid(column=0, row=2)
     tickAmount = StringVar(settingsTab, value="10000")
     Entry(settingsTab, textvariable=tickAmount).grid(column=1, row=2)
-    global bacteriaOutflow
-    ttk.Label(settingsTab, text="Bacteria Outflow?").grid(column=0, row=4)
-    bacteriaOutflow = IntVar(settingsTab, value=0)
-    Checkbutton(settingsTab, variable=bacteriaOutflow).grid(column=1, row=4)
-    global moleculeOutflow
-    ttk.Label(settingsTab, text="Molecule Outflow?").grid(column=0, row=5)
-    moleculeOutflow = IntVar(settingsTab, value=0)
-    Checkbutton(settingsTab, variable=moleculeOutflow).grid(column=1, row=5)
+    global bacteriaOutflowNorth
+    global bacteriaOutflowEast
+    global bacteriaOutflowSouth
+    global bacteriaOutflowWest
+    ttk.Label(settingsTab, text="Bacteria outflow possible at which borders?").grid(column=0, row=4)
+    ttk.Label(settingsTab, text="North").grid(column=1, row=4)
+    bacteriaOutflowNorth = IntVar(settingsTab, value=0)
+    Checkbutton(settingsTab, variable=bacteriaOutflowNorth).grid(column=2, row=4)
+    ttk.Label(settingsTab, text="East").grid(column=3, row=4)
+    bacteriaOutflowEast = IntVar(settingsTab, value=1)
+    Checkbutton(settingsTab, variable=bacteriaOutflowEast).grid(column=4, row=4)
+    ttk.Label(settingsTab, text="South").grid(column=5, row=4)
+    bacteriaOutflowSouth = IntVar(settingsTab, value=0)
+    Checkbutton(settingsTab, variable=bacteriaOutflowSouth).grid(column=6, row=4)
+    ttk.Label(settingsTab, text="West").grid(column=7, row=4)
+    bacteriaOutflowWest = IntVar(settingsTab, value=0)
+    Checkbutton(settingsTab, variable=bacteriaOutflowWest).grid(column=8, row=4)
+
+    global moleculeOutflowNorth
+    global moleculeOutflowEast
+    global moleculeOutflowSouth
+    global moleculeOutflowWest
+    ttk.Label(settingsTab, text="Molecule outflow possible at which borders?").grid(column=0, row=5)
+    ttk.Label(settingsTab, text="North").grid(column=1, row=5)
+    moleculeOutflowNorth = IntVar(settingsTab, value=0)
+    Checkbutton(settingsTab, variable=moleculeOutflowNorth).grid(column=2, row=5)
+    ttk.Label(settingsTab, text="East").grid(column=3, row=5)
+    moleculeOutflowEast = IntVar(settingsTab, value=1)
+    Checkbutton(settingsTab, variable=moleculeOutflowEast).grid(column=4, row=5)
+    ttk.Label(settingsTab, text="South").grid(column=5, row=5)
+    moleculeOutflowSouth = IntVar(settingsTab, value=0)
+    Checkbutton(settingsTab, variable=moleculeOutflowSouth).grid(column=6, row=5)
+    ttk.Label(settingsTab, text="West").grid(column=7, row=5)
+    moleculeOutflowWest = IntVar(settingsTab, value=0)
+    Checkbutton(settingsTab, variable=moleculeOutflowWest).grid(column=8, row=5)
+
     global compDiff
-    ttk.Label(settingsTab, text="Complex Diffusion? (Needs more computing, uses normal distribution. Enables Flow and DiffusionRate Usage)").grid(column=0, row=6)
-    compDiff = IntVar(settingsTab, value=0)
+    ttk.Label(settingsTab, text="Complex diffusion mode (Enables flows, outflows and rate changes)").grid(column=0, row=6)
+    compDiff = IntVar(settingsTab, value=1)
     Checkbutton(settingsTab, variable=compDiff).grid(column=1, row=6)
 
     global leftRightVar
-    ttk.Label(environmentTab, text="Left/Right Continuity?").grid(column=0, row=2)
+    ttk.Label(environmentTab, text="Left/Right Continuity").grid(column=0, row=2)
     leftRightVar = IntVar(value=0)
     Checkbutton(environmentTab, variable=leftRightVar).grid(column=1, row=2)
     global topBottomVar
     topBottomVar = IntVar(value=1)
-    ttk.Label(environmentTab, text="Top/Bottom Continuity?").grid(column=0, row=3)
+    ttk.Label(environmentTab, text="Top/Bottom Continuity").grid(column=0, row=3)
     Checkbutton(environmentTab, variable=topBottomVar).grid(column=1, row=3)
 
     ttk.Label(changeBacteriaTab, text="Add Bacteria with name: ").grid(column=0, row=4)
@@ -456,34 +491,34 @@ def mainWindow(projectHolder):
 
     global diffusionCheck
     diffusionCheck = IntVar(value=1)
-    Checkbutton(environmentTab, text="Diffusion?", variable=diffusionCheck, onvalue=1, offvalue=0, command=lambda: diffusionCheckboxChange(projectHolder.currProject, diffusionCheck)).grid(column=2, row=6)
+    Checkbutton(environmentTab, text="Diffusion", variable=diffusionCheck, onvalue=1, offvalue=0, command=lambda: diffusionCheckboxChange(projectHolder.currProject, diffusionCheck)).grid(column=2, row=6)
 
     #comment back in if diffusionrate implemented
     global diffusionRateDefault
-    ttk.Label(environmentTab, text='Diffusion rate (only changeable in complicated diffusionmode)').grid(column=0, row=6)
+    ttk.Label(environmentTab, text='Diffusion Rate (only changeable in complex diffusion mode)').grid(column=0, row=6)
     diffusionRateDefault = StringVar(environmentTab, value="100")
     Entry(environmentTab, textvariable=diffusionRateDefault).grid(column=1, row=6)
 
     #comment back in if flowrate implemented
     global flowRateDefault
-    ttk.Label(environmentTab, text="Flow rate (only changeable in complicated diffusionmode)").grid(column=0, row=7)
+    ttk.Label(environmentTab, text="Flow Rate (only changeable in complex diffusion mode)").grid(column=0, row=7)
     flowRateDefault = StringVar(environmentTab, value="100")
     Entry(environmentTab, textvariable=flowRateDefault).grid(column=1, row=7)
 
     # comment back in if flowrate implemented
     global bacFlowRateDefault
-    ttk.Label(environmentTab, text="Bacteria flow rate (only changeable in complicated diffusionmode)").grid(column=0, row=8)
+    ttk.Label(environmentTab, text="Bacteria Flow Rate (only changeable in complex diffusion mode)").grid(column=0, row=8)
     bacFlowRateDefault = StringVar(environmentTab, value="0")
     Entry(environmentTab, textvariable=bacFlowRateDefault).grid(column=1, row=8)
 
     global bacDiffRateDefault
-    ttk.Label(environmentTab, text="Bacteria diff rate (only changeable in complicated diffusionmode)").grid(column=0, row=9)
+    ttk.Label(environmentTab, text="Bacteria Diffusion Rate (only changeable in complex diffusion mode)").grid(column=0, row=9)
     bacDiffRateDefault = StringVar(environmentTab, value="0")
     Entry(environmentTab, textvariable=bacDiffRateDefault).grid(column=1, row=9)
 
     global flowCheck
     flowCheck = IntVar(value=1)
-    Checkbutton(environmentTab, text="Flow?", variable=flowCheck, onvalue=1, offvalue=0, command=lambda: flowCheckboxChange(projectHolder.currProject, flowCheck)).grid(column=2, row=7)
+    Checkbutton(environmentTab, text="Flow", variable=flowCheck, onvalue=1, offvalue=0, command=lambda: flowCheckboxChange(projectHolder.currProject, flowCheck)).grid(column=2, row=7)
 
     #comment back in if flowdirection implemented
     global flowDirectionDefault
@@ -491,10 +526,10 @@ def mainWindow(projectHolder):
     flowDirectionDefault = StringVar(environmentTab, value="E")
     #Entry(environmentTab, textvariable=flowDirectionDefault).grid(column=1, row=7)
 
-    ttk.Label(environmentTab, text="Diffusionrate and flowrate have Default 100, meaning standard diffusion and flow values").grid(column=0, row=10)
-    ttk.Label(environmentTab, text="For Diffusion: 0: No Diffusion, 100: Standard Diffusivity for Benzene (=1.02^-5 cm^2/s)").grid(column=0, row=11)
+    ttk.Label(environmentTab, text="Diffusion Rate and Flow Rate influence the standard deviation and the mean of the normal distribution").grid(column=0, row=10)
+    ttk.Label(environmentTab, text="For Diffusion: 0: No Diffusion (sigma = 0), 100: Default Diffusion (sigma = 1)").grid(column=0, row=11)
     ttk.Label(environmentTab, text="For Flow: Mean of Normal Distribution used in x-axis diffusion. 0: No Flow (my = 0), 100: Defaultflow (my = 1)").grid(column=0, row=12)
-    ttk.Label(environmentTab, text="Any other value scales accordingly as a multiplicator for the 100-default.").grid(column=0, row=13)
+    ttk.Label(environmentTab, text="Any other value scales accordingly into sigma and my by being divided by 100").grid(column=0, row=13)
 
 
     Button(settingsTab, text="Save this setup", command=lambda: createProjectFile(projectHolder.currProject)).grid(column=0, row=10)

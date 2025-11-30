@@ -38,10 +38,15 @@ def updateProject(mainProject):
     mainProject.bacteriaOutflowEast = bacteriaOutflowEast.get()
     mainProject.bacteriaOutflowSouth = bacteriaOutflowSouth.get()
     mainProject.bacteriaOutflowWest = bacteriaOutflowWest.get()
-
     mainProject.diffmode = compDiff.get()
     mainProject.bacFlowRate = bacFlowRateDefault.get()
     mainProject.bacDiffRate = bacDiffRateDefault.get()
+    mainProject.bacRotDiff = bacRotDiff.get()
+    mainProject.bacVelo = bacVelo.get()
+    mainProject.diffConstant = diffConstant.get()
+    mainProject.patchLength = patchLength.get()
+    mainProject.timePerTickDefault = timePerTickDefault.get()
+
 
 
     pass
@@ -469,6 +474,28 @@ def mainWindow(projectHolder):
     compDiff = IntVar(settingsTab, value=1)
     Checkbutton(settingsTab, variable=compDiff).grid(column=1, row=6)
 
+    global timePerTickDefault
+    ttk.Label(settingsTab, text="Time per Tick in ms").grid(column=0, row=7)
+    timePerTickDefault = StringVar(settingsTab, value="1000")
+    Entry(settingsTab, textvariable=timePerTickDefault).grid(column=1, row=7)
+    global patchLength
+    ttk.Label(settingsTab, text='Patch length and width in μm').grid(column=0, row=8)
+    patchLength = StringVar(settingsTab, value="2000")
+    Entry(settingsTab, textvariable=patchLength).grid(column=1, row=8)
+    global diffConstant
+    ttk.Label(settingsTab, text="Diffusion constant in in μm^2/s ").grid(column=0, row=9)
+    diffConstant = StringVar(settingsTab, value="1000000")
+    Entry(settingsTab, textvariable=diffConstant).grid(column=1, row=9)
+    global bacVelo
+    ttk.Label(settingsTab, text='Bacterial velocity in μm/s').grid(column=0, row=10)
+    bacVelo = StringVar(settingsTab, value="25")
+    Entry(settingsTab, textvariable=bacVelo).grid(column=1, row=10)
+    global bacRotDiff
+    ttk.Label(settingsTab, text="Bacterial rotational diffusion constant in degrees/s ").grid(column=0, row=11)
+    bacRotDiff = StringVar(settingsTab, value="9")
+    Entry(settingsTab, textvariable=bacRotDiff).grid(column=1, row=11)
+
+
     global leftRightVar
     ttk.Label(environmentTab, text="Left/Right Continuity").grid(column=0, row=2)
     leftRightVar = IntVar(value=0)
@@ -532,9 +559,9 @@ def mainWindow(projectHolder):
     ttk.Label(environmentTab, text="Any other value scales accordingly into sigma and my by being divided by 100").grid(column=0, row=13)
 
 
-    Button(settingsTab, text="Save this setup", command=lambda: createProjectFile(projectHolder.currProject)).grid(column=0, row=10)
-    Button(settingsTab, text="Start this setup", command=lambda: startSimulationQueue(projectHolder.currProject, root)).grid(column=1, row=10)
-    Button(settingsTab, text="Load a setup", command=lambda: loadProjectFile(projectHolder)).grid(column=2, row=10)
+    Button(settingsTab, text="Save this setup", command=lambda: createProjectFile(projectHolder.currProject)).grid(column=0, row=15)
+    Button(settingsTab, text="Start this setup", command=lambda: startSimulationQueue(projectHolder.currProject, root)).grid(column=1, row=15)
+    Button(settingsTab, text="Load a setup", command=lambda: loadProjectFile(projectHolder)).grid(column=2, row=15)
     # Comment for Compartment
     #Button(compartmentTab, text="Add a compartment", command=lambda: addCompartment(projectHolder.currProject, root)).grid(column=3, row=0)
 

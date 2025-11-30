@@ -7,8 +7,6 @@ bacteria1-own [
 	 ] 
  
 patches-own [ 
-	 patch_Molecule1
-	 patch_Molecule1_new 
 	 ] 
 
 directed-link-breed [connectors connector] 
@@ -37,17 +35,17 @@ to setup
 	 clear-drawing 
 	 clear-output 
 	 reset-ticks 
-	 set timeinterval-per-tick 10 ; in s 
-	 set patchsize 2 ; in mm (sidelength) 
-	 set diffConstant 1 ; in mm^2/s 
-	 set bacteria-real-velocity 0.025 ; in mm/s 
+	 set timeinterval-per-tick 1.0 ; in s/tick 
+	 set patchsize 2000 ; in micrometre  (sidelength of a patch) 
+	 set diffConstant 1000000 ; in micrometre^2/s 
+	 set bacteria-real-velocity 25 ; in micrometre/s 
 	 set bacteria-velocity (bacteria-real-velocity / patchsize ) ; in patches/s 
 	 set bacteria-rotational-diffusion 9 ; in degrees/s 
 	 set bacteria-real-rotational-diffusion (bacteria-rotational-diffusion * timeinterval-per-tick) ; in degrees/tick 
 	 set bacteria-real-rotational-diffusion-helper (bacteria-real-rotational-diffusion * 2) ; in degrees/tick 
 	 set newIndividuals [] 
 	 set deadIndividuals [] 
-	 create-bacteria1 1[ 
+	 create-bacteria1 20[ 
 	 	 setxy random-xcor random-ycor 
 	 	 set size 1 
 	 	 set Beh_Move 0 
@@ -60,9 +58,7 @@ to setup
 	 	 set local-color color 
 	 	 ask out-link-neighbors [set color local-color] 
 	 ] 
-	 ask patches with [pxcor >= 0 and pxcor <= 100 and pycor >= 0 and pycor <= 50][ 
-	 	 set patch_Molecule1 random 2 
-	 ]	 set flagella-size 1 
+	 set flagella-size 1 
 	 updateView 
 end 
 
@@ -87,9 +83,9 @@ to go
 	 	 if (Beh_Move != 0) [ 
 	 	 	 bacteria1_Move who 
 	 	 ] 
-	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.01 0.01 ) ) 
-	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.01 ) ) 
-	 	 if ((ycor + ychange > max-pycor) ) 
+	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.0 ) ) 
+	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.0 ) ) 
+	 	 if ((xcor + xchange > max-pxcor) ) 
 	 	 	 [let tempList [] 
 	 	 	 set tempList lput 1 tempList 
 	 	 	 set tempList lput who tempList 
@@ -109,34 +105,18 @@ end
 
 to patchdiffusion 
 	 ask patches [ 
-	 	 repeat patch_Molecule1[ 
-	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.1 0.1 ) ) 
-	 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.1 ) ) 
-	 	 	 ifelse (patch-at (xchange) (ychange) = nobody) 
-	 	 	 	 [ifelse ((pycor + ychange > max-pycor) ) [] [set patch_Molecule1_new (patch_Molecule1_new + 1)]]
-	 	 	 	 [ask patch (pxcor + xchange) (pycor + ychange)[set patch_Molecule1_new (patch_Molecule1_new + 1)]] 
-	 	 	 ] 
-	 ] 
-	 ask patches [ 
-	 	 set patch_Molecule1 patch_Molecule1_new 
-	 	 set patch_Molecule1_new 0 
 	 ] 
 end 
 to updateView 
 	 ask patches [ 
-	 	 if (patch_Molecule1 = 0) [set pcolor 5] 
-	 	 if (patch_Molecule1 > 0) [set pcolor 19] 
-	 	 if (patch_Molecule1 > 5) [set pcolor 18] 
-	 	 if (patch_Molecule1 > 10) [set pcolor 17] 
-	 	 if (patch_Molecule1 > 20) [set pcolor 16] 
-	 	 if (patch_Molecule1 > 35) [set pcolor 15] 
+	 	 set pcolor 5 
 	 ] 
 end 
 
 to bacteria1_Move [ id ] 
 	 ask turtle id [ 
 	 	 (ifelse 
-	 	 	 ((ycor + dy > max-pycor) ) 
+	 	 	 ((xcor + dx > max-pxcor) ) 
 	 	 	 [ 
 	 	 	 	 let tempList [] 
 	 	 	 	 set tempList lput 1 tempList 
@@ -186,17 +166,16 @@ to setBacteria1BehAll [ listOfCommands ]
 	 	 setBacteria1Beh (item 0 content) (item 1 content)  
 	 ] 
 end 
-to setBacteria1Patch [ id Molecule1 ] 
+to setBacteria1Patch [ id ] 
 	 ask turtle id [ 
 	 	 ask patch-here [ 
-	 	 	 set patch_Molecule1 Molecule1 
 	 	 ] 
 	 ] 
 end 
 to setBacteria1PatchAll [ listOfCommands ] 
 	 foreach listOfCommands [ 
 	 	 [content] -> 
-	 	 setBacteria1Patch (item 0 content) (item 1 content)  
+	 	 setBacteria1Patch (item 0 content)  
 	 ] 
 end 
 to doinflow [ molecule amount starty endy ] 
@@ -275,24 +254,15 @@ to-report intake
 	 ask bacteria1 [ 
 	 	 let tempID who 
 	 	 ask patch-here [ 
- 	 	 	 set tempList lput bacType tempList 
- 	 	 	 set tempList lput tempID tempList
- 	 	 	 set tempList lput "\"Molecule1\"" templist 
- 	 	 	 set tempList lput patch_Molecule1 templist 
- 	 	 	 set wholeList lput tempList wholeList 
- 	 	 	 set tempList [] 
 	 	 ] 
 	 ] 
 	 report wholeList 
 end 
 to-report patchvalues 
 	 let templist [] 
-	 let tempvalueMolecule1 0 
 	 ask patches [ 
-	 	 set tempvalueMolecule1 tempvalueMolecule1 + patch_Molecule1 
 	 ] 
- 	 set templist lput tempvalueMolecule1 templist 
-	 report templist 
+ 	 report templist 
 end 
 
 @#$#@#$#@

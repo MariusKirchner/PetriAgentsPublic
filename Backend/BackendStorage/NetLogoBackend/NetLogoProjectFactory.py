@@ -61,21 +61,33 @@ def createNetLogoProject(mainProject):
     tempnetlogoFile.write("\t clear-drawing \n")
     tempnetlogoFile.write("\t clear-output \n")
     tempnetlogoFile.write("\t reset-ticks \n")
+
+    #old fixed settings
     #set globals
     # for SCFA model:
-    tempnetlogoFile.write("\t set timeinterval-per-tick 10 ; in s \n")
-    tempnetlogoFile.write("\t set patchsize 2 ; in mm (sidelength) \n")
+    #tempnetlogoFile.write("\t set timeinterval-per-tick 10 ; in s \n")
+    #tempnetlogoFile.write("\t set patchsize 2 ; in mm (sidelength) \n")
     #tempnetlogoFile.write("\t set diffConstant 0.02 ; in mm^2/s \n")
     #test
-    tempnetlogoFile.write("\t set diffConstant 1 ; in mm^2/s \n")
+    #tempnetlogoFile.write("\t set diffConstant 1 ; in mm^2/s \n")
     # for chemotaxis model:
     #tempnetlogoFile.write("\t set timeinterval-per-tick 0.1 ; in s \n")
     #tempnetlogoFile.write("\t set patchsize 0.0025 ; in mm (sidelength) \n")
     #tempnetlogoFile.write("\t set diffConstant 0.001 ; in mm^2/s \n")
     # for all models
-    tempnetlogoFile.write("\t set bacteria-real-velocity 0.025 ; in mm/s \n")
+    #tempnetlogoFile.write("\t set bacteria-real-velocity 0.025 ; in mm/s \n")
+    #tempnetlogoFile.write("\t set bacteria-velocity (bacteria-real-velocity / patchsize ) ; in patches/s \n")
+    #tempnetlogoFile.write("\t set bacteria-rotational-diffusion 9 ; in degrees/s \n")
+
+    #new variable settings
+    newTimePerTick = float(mainProject.timePerTickDefault) / 1000
+    tempnetlogoFile.write("\t set timeinterval-per-tick " + str(newTimePerTick) + " ; in s/tick \n")
+    tempnetlogoFile.write("\t set patchsize " + str(mainProject.patchLength) + " ; in micrometre  (sidelength of a patch) \n")
+    tempnetlogoFile.write("\t set diffConstant " + str(mainProject.diffConstant) + " ; in micrometre^2/s \n")
+    tempnetlogoFile.write("\t set bacteria-real-velocity " + str(mainProject.bacVelo) + " ; in micrometre/s \n")
     tempnetlogoFile.write("\t set bacteria-velocity (bacteria-real-velocity / patchsize ) ; in patches/s \n")
-    tempnetlogoFile.write("\t set bacteria-rotational-diffusion 9 ; in degrees/s \n")
+    tempnetlogoFile.write("\t set bacteria-rotational-diffusion " + str(mainProject.bacRotDiff) + " ; in degrees/s \n")
+
     tempnetlogoFile.write("\t set bacteria-real-rotational-diffusion (bacteria-rotational-diffusion * timeinterval-per-tick) ; in degrees/tick \n")
     tempnetlogoFile.write("\t set bacteria-real-rotational-diffusion-helper (bacteria-real-rotational-diffusion * 2) ; in degrees/tick \n")
     tempnetlogoFile.write("\t set newIndividuals [] \n")

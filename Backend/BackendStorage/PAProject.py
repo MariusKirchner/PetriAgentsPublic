@@ -48,6 +48,11 @@ class petriAgentProject:
         self.bacteriaOutflowWest = 0
         # make these bacteriaspecific? if needed
         self.diffmode = 0
+        self.bacRotDiff = 9
+        self.bacVelo = 25
+        self.diffConstant = 1000000
+        self.patchLength = 2000
+        self.timePerTickDefault = 1000
 
     def addBacteria(self, bacteriaName, bacteriaPetri):
         # TODO: only if name not in there yet? or give individualIDs, change default of molnumber

@@ -190,31 +190,31 @@ def createNetLogoProject(mainProject):
                 tempnetlogoFile.write("\t \t ] \n")
         tempnetlogoFile.write("\t \t let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal " + str(round((float(mainProject.bacFlowRate) / 100), 4)) + " " + str(round((float(mainProject.bacDiffRate) / 100), 4)) + " ) ) \n")
         tempnetlogoFile.write("\t \t let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 " + str(round((float(mainProject.bacDiffRate) / 100), 4)) + " ) ) \n")
-        tempString = "\t \t if ("
-        first = True
-        if mainProject.bacteriaOutflowNorth:
-            tempString += "(ycor + ychange > max-pycor) "
-            first = False
-        if mainProject.bacteriaOutflowEast:
-            if first:
-                tempString += "(xcor + xchange > max-pxcor) "
-                first = False
-            else:
-                tempString += "or (xcor + xchange > max-pxcor) "
-        if mainProject.bacteriaOutflowSouth:
-            if first:
-                tempString += "(ycor + ychange < 0) "
-                first = False
-            else:
-                tempString += "or (ycor + ychange < 0) "
-        if mainProject.bacteriaOutflowWest:
-            if first:
-                tempString += "(xcor + xchange < 0) "
-            else:
-                tempString += "or (xcor + xchange < 0) "
-        tempString += ") \n"
-        tempnetlogoFile.write(tempString)
         if mainProject.bacteriaOutflowNorth or mainProject.bacteriaOutflowEast or mainProject.bacteriaOutflowSouth or mainProject.bacteriaOutflowWest:
+            tempString = "\t \t if ("
+            first = True
+            if mainProject.bacteriaOutflowNorth:
+                tempString += "(ycor + ychange > max-pycor) "
+                first = False
+            if mainProject.bacteriaOutflowEast:
+                if first:
+                    tempString += "(xcor + xchange > max-pxcor) "
+                    first = False
+                else:
+                    tempString += "or (xcor + xchange > max-pxcor) "
+            if mainProject.bacteriaOutflowSouth:
+                if first:
+                    tempString += "(ycor + ychange < 0) "
+                    first = False
+                else:
+                    tempString += "or (ycor + ychange < 0) "
+            if mainProject.bacteriaOutflowWest:
+                if first:
+                    tempString += "(xcor + xchange < 0) "
+                else:
+                    tempString += "or (xcor + xchange < 0) "
+            tempString += ") \n"
+            tempnetlogoFile.write(tempString)
             tempnetlogoFile.write("\t \t \t [let tempList [] \n")
             tempnetlogoFile.write("\t \t \t set tempList lput " + str(i) + " tempList \n")
             tempnetlogoFile.write("\t \t \t set tempList lput who tempList \n")
@@ -363,6 +363,8 @@ def createNetLogoProject(mainProject):
             if first:
                 tempString += "false"
             tempString += ")"
+            if tempString == "()":
+                tempString = "(false)"
             tempnetlogoFile.write("to patchdiffusion \n")
             tempnetlogoFile.write("\t ask patches [ \n")
             for i in mainProject.listOfEnvironmentMolecules:

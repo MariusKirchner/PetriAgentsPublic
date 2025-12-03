@@ -99,13 +99,6 @@ to go
 	 	 ] 
 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.0 ) ) 
 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.0 ) ) 
-	 	 if ((xcor + xchange > max-pxcor) ) 
-	 	 	 [let tempList [] 
-	 	 	 set tempList lput 1 tempList 
-	 	 	 set tempList lput who tempList 
-	 	 	 set deadIndividuals lput tempList deadIndividuals 
-	 	 	 ask my-links [ die ] 
-	 	 	 die] 
 	 	 (ifelse ((xcor + xchange < 0) or (xcor + xchange > max-pxcor) or (ycor + ychange < 0) or (ycor + ychange > max-pycor)) 
 	 	 	 [] 
 	 	 	 [ setxy (xcor + xchange) (ycor + ychange) ]) 
@@ -120,10 +113,10 @@ end
 to patchdiffusion 
 	 ask patches [ 
 	 	 repeat patch_Nutrient[ 
-	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.01 0.01 ) ) 
-	 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.01 ) ) 
+	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 1.0 1.0 ) ) 
+	 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) ) 
 	 	 	 ifelse (patch-at (xchange) (ychange) = nobody) 
-	 	 	 	 [ifelse ((pxcor + xchange > max-pxcor) ) [] [set patch_Nutrient_new (patch_Nutrient_new + 1)]]
+	 	 	 	 [ifelse (false) [] [set patch_Nutrient_new (patch_Nutrient_new + 1)]]
 	 	 	 	 [ask patch (pxcor + xchange) (pycor + ychange)[set patch_Nutrient_new (patch_Nutrient_new + 1)]] 
 	 	 	 ] 
 	 ] 
@@ -135,26 +128,17 @@ end
 to updateView 
 	 ask patches [ 
 	 	 if (patch_Nutrient = 0) [set pcolor 5] 
-	 	 if (patch_Nutrient > 0) [set pcolor 139] 
-	 	 if (patch_Nutrient > 50) [set pcolor 138] 
-	 	 if (patch_Nutrient > 5050) [set pcolor 137] 
-	 	 if (patch_Nutrient > 505050) [set pcolor 136] 
-	 	 if (patch_Nutrient > 50505050) [set pcolor 135] 
+	 	 if (patch_Nutrient > 0) [set pcolor 19] 
+	 	 if (patch_Nutrient > 5) [set pcolor 18] 
+	 	 if (patch_Nutrient > 55) [set pcolor 17] 
+	 	 if (patch_Nutrient > 555) [set pcolor 16] 
+	 	 if (patch_Nutrient > 5555) [set pcolor 15] 
 	 ] 
 end 
 
 to bacteria1_Move [ id ] 
 	 ask turtle id [ 
 	 	 (ifelse 
-	 	 	 ((xcor + dx > max-pxcor) ) 
-	 	 	 [ 
-	 	 	 	 let tempList [] 
-	 	 	 	 set tempList lput 1 tempList 
-	 	 	 	 set tempList lput who tempList 
-	 	 	 	 set deadIndividuals lput tempList deadIndividuals 
-	 	 	 	 ask my-links [ die ] 
-	 	 	 	 die 
-	 	 	 ] 
 	 	 	 (patch-at dx 0 = nobody) 
 	 	 	 [ 
 	 	 	 	 set heading (- heading) 
@@ -353,7 +337,7 @@ GRAPHICS-WINDOW
 1
 0
 0
-0
+1
 1
 0
 100

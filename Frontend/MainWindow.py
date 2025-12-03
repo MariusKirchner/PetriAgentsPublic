@@ -565,6 +565,15 @@ def mainWindow(projectHolder):
     Button(settingsTab, text="Save this setup", command=lambda: createProjectFile(projectHolder.currProject)).grid(column=0, row=15)
     Button(settingsTab, text="Start this setup", command=lambda: startSimulationQueue(projectHolder.currProject, root)).grid(column=1, row=15)
     Button(settingsTab, text="Load a setup", command=lambda: loadProjectFile(projectHolder)).grid(column=2, row=15)
+
+    ttk.Label(settingsTab, text=" ").grid(column=0, row=16)
+    ttk.Label(settingsTab, text=" ").grid(column=0, row=17)
+    ttk.Label(settingsTab, text=" ").grid(column=0, row=18)
+    ttk.Label(settingsTab, text=" ").grid(column=0, row=19)
+
+    ttk.Label(settingsTab, text="Version: 0.9.0").grid(column=0, row=20)
+    ttk.Label(settingsTab, text="Release Date: 3rd of December 2025").grid(column=0, row=21)
+
     # Comment for Compartment
     #Button(compartmentTab, text="Add a compartment", command=lambda: addCompartment(projectHolder.currProject, root)).grid(column=3, row=0)
 

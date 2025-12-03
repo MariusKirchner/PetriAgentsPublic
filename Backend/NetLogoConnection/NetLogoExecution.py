@@ -12,7 +12,7 @@ import os.path
 from multiprocessing import Pool
 import concurrent.futures
 
-def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpath, guimode, posmode, window):
+def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpath, guimode, posmode, window, config):
     # create inflow data
     window.destroy()
     global allflows
@@ -31,22 +31,23 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpat
 
     # TODO: make user choose their NetLogoLocation
     # linux
-    print(platform.platform()[0:7:])
-    if platform.platform()[0:7:] == "Windows":
-        if os.path.exists(r"D:\UniversityPrograms\NetLogo6.3.0"):
-            # homepc
-            nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
-        elif os.path.exists(r"C:\Program Files\NetLogo 6.3.0"):
-            # laptop
-            nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
-        elif os.path.exists(r"C:\Program Files\NetLogo6.2.2"):
-            # oldNLVersionTry
-            nl4py.initialize(r"C:\Program Files\NetLogo6.2.2")
-    else:
-        if os.path.exists(r'/home/MariusKirchner/Desktop/Randomstuff/NetLogo-6.2.2-64/NetLogo 6.2.2/'):
-            nl4py.initialize('/home/MariusKirchner/Desktop/Randomstuff/NetLogo-6.2.2-64/NetLogo 6.2.2/')
-        elif os.path.exists(r'/opt/NetLogo-6.4.0.64/'):
-            nl4py.initialize('/opt/Netlogo-6.4.0-64/lib/')
+    #print(platform.platform()[0:7:])
+    #if platform.platform()[0:7:] == "Windows":
+    #    if os.path.exists(r"D:\UniversityPrograms\NetLogo6.3.0"):
+    #        # homepc
+    #        nl4py.initialize(r"D:\UniversityPrograms\NetLogo6.3.0")
+    #    elif os.path.exists(r"C:\Program Files\NetLogo 6.3.0"):
+    #        # laptop
+    #        nl4py.initialize(r"C:\Program Files\NetLogo 6.3.0")
+    #    elif os.path.exists(r"C:\Program Files\NetLogo6.2.2"):
+    #        # oldNLVersionTry
+    #        nl4py.initialize(r"C:\Program Files\NetLogo6.2.2")
+    #else:
+    #    if os.path.exists(r'/home/MariusKirchner/Desktop/Randomstuff/NetLogo-6.2.2-64/NetLogo 6.2.2/'):
+    #        nl4py.initialize('/home/MariusKirchner/Desktop/Randomstuff/NetLogo-6.2.2-64/NetLogo 6.2.2/')
+    #    elif os.path.exists(r'/opt/NetLogo-6.4.0.64/'):
+    #        nl4py.initialize('/opt/Netlogo-6.4.0-64/lib/')
+    nl4py.initialize(config.netLogoPath)
 
     if guimode:
         n = nl4py.netlogo_app()

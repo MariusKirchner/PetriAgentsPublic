@@ -13,9 +13,10 @@ import nl4py
 import os
 
 from Backend.BackendStorage.NetLogoBackend.NetLogoProjectFactory import createNetLogoProject
-from Backend.Input import SBMLReadFactory, LoadProject
+from Backend.Input import SBMLReadFactory, LoadProject, OpenConfig
 from Backend.NetLogoConnection import NetLogoExecution
 from Backend.Output import SaveProject
+from Frontend import ConfigWindow
 
 
 def updateProject(mainProject):
@@ -63,7 +64,7 @@ def updateGUI(mainProject):
     updateTables(mainProject)
     pass
 
-def startSimulation(mainProject, amount, foldername, guimode, posmode, window):
+def startSimulation(mainProject, amount, foldername, guimode, posmode, window, config):
     updateProject(mainProject)
     print("Starting Simulation")
     print("Writing the NetLogoFile")
@@ -84,10 +85,10 @@ def startSimulation(mainProject, amount, foldername, guimode, posmode, window):
     tablefolderdir = os.path.join(newfolderdir, 'tables')
     if not os.path.isdir(tablefolderdir):
         os.makedirs(tablefolderdir)
-    NetLogoExecution.executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, tablefolderdir, guimode, posmode, window)
+    NetLogoExecution.executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, tablefolderdir, guimode, posmode, window, config)
     pass
 
-def startSimulationQueue(mainProject, root):
+def startSimulationQueue(mainProject, root, config):
     updateProject(mainProject)
     newWindow = Toplevel(root)
     tempFrame = ttk.Frame(newWindow, padding=10)
@@ -107,7 +108,7 @@ def startSimulationQueue(mainProject, root):
     posMode = BooleanVar(tempFrame)
     posMode.set(False)
     Checkbutton(tempFrame, variable=posMode, onvalue=True, offvalue=False).grid(column=1, row=3)
-    Button(tempFrame, text="Start this setup", command=lambda: startSimulation(mainProject, amount.get(), foldername.get(), guimode.get(), posMode.get(), root)).grid(column=0, row=4)
+    Button(tempFrame, text="Start this setup", command=lambda: startSimulation(mainProject, amount.get(), foldername.get(), guimode.get(), posMode.get(), root, config)).grid(column=0, row=4)
 
 
 
@@ -563,10 +564,15 @@ def mainWindow(projectHolder):
 
 
     Button(settingsTab, text="Save this setup", command=lambda: createProjectFile(projectHolder.currProject)).grid(column=0, row=15)
-    Button(settingsTab, text="Start this setup", command=lambda: startSimulationQueue(projectHolder.currProject, root)).grid(column=1, row=15)
+    Button(settingsTab, text="Start this setup", command=lambda: startSimulationQueue(projectHolder.currProject, root, projectHolder.config)).grid(column=1, row=15)
     Button(settingsTab, text="Load a setup", command=lambda: loadProjectFile(projectHolder)).grid(column=2, row=15)
 
-    ttk.Label(settingsTab, text=" ").grid(column=0, row=16)
+    #Button(settingsTab, text="Change Config", command=lambda: configHelper(projectHolder)).grid(column=0, row=16)
+
+    #def configHelper(projectHolder):
+    #    ConfigWindow.configWindow(projectHolder)
+    #    projectHolder.config = OpenConfig.openConfig(os.getcwd() + "/config.xml")
+
     ttk.Label(settingsTab, text=" ").grid(column=0, row=17)
     ttk.Label(settingsTab, text=" ").grid(column=0, row=18)
     ttk.Label(settingsTab, text=" ").grid(column=0, row=19)

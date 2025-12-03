@@ -1,5 +1,7 @@
 __author__ = "Marius Kirchner, Goethe University Frankfurt am Main"
 import copy
+import os
+from Backend.Input import OpenConfig
 import nl4py
 
 import ast
@@ -11,10 +13,15 @@ from Backend.BackendStorage.PAProject import petriAgentProject
 from Frontend import MainWindow
 from Backend.BackendStorage.Bacteria.PetriNet import PetriNetObject
 from IntermediateProject import intermediateProject
+from Frontend import ConfigWindow
+from Backend.BackendStorage import Config
 
 if __name__ == '__main__':
     mainProject = petriAgentProject()
-    projectHolder = intermediateProject(mainProject)
+    if not os.path.exists(os.getcwd() + "/config.xml"):
+        ConfigWindow.configWindow(Config.PetriAgentConfig("None"))
+    newConfig = OpenConfig.openConfig(os.getcwd() + "/config.xml")
+    projectHolder = intermediateProject(mainProject, newConfig)
     MainWindow.mainWindow(projectHolder)
 
 #quit to not open netlogo for every test of the GUI

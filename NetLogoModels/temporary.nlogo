@@ -2,15 +2,12 @@ breed [bacteria1 bacterium1]
 breed [flagella flagellum] 
  
 bacteria1-own [ 
-	 Beh_Move 
-	 Beh_Size 
-	 Beh_Replication 
 	 dxy 
 	 ] 
  
 patches-own [ 
-	 patch_Nutrient
-	 patch_Nutrient_new 
+	 patch_Molecule1
+	 patch_Molecule1_new 
 	 ] 
 
 directed-link-breed [connectors connector] 
@@ -52,9 +49,6 @@ to setup
 	 create-bacteria1 20[ 
 	 	 setxy random-xcor random-ycor 
 	 	 set size 1 
-	 	 set Beh_Move 0 
-	 	 set Beh_Size 0 
-	 	 set Beh_Replication 0 
 	 ] 
 	 set-default-shape bacteria1 "bacteria 1" 
 	 set-default-shape flagella "flagella" 
@@ -65,7 +59,7 @@ to setup
 	 	 ask out-link-neighbors [set color local-color] 
 	 ] 
 	 ask patches with [pxcor >= 0 and pxcor <= 100 and pycor >= 0 and pycor <= 50][ 
-	 	 set patch_Nutrient random 100 
+	 	 set patch_Molecule1 random 100 
 	 ]	 set flagella-size 1 
 	 updateView 
 end 
@@ -88,17 +82,15 @@ end
  
 to go 
 	 ask bacteria1 [ 
-	 	 if (Beh_Move != 0) [ 
-	 	 	 bacteria1_Move who 
-	 	 ] 
-	 	 if (Beh_Size != 0) [ 
-	 	 	 bacteria1_Size who 
-	 	 ] 
-	 	 if (Beh_Replication != 0) [ 
-	 	 	 bacteria1_Replication who 
-	 	 ] 
 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.0 ) ) 
 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.0 ) ) 
+	 	 if ((xcor + xchange > max-pxcor) ) 
+	 	 	 [let tempList [] 
+	 	 	 set tempList lput 1 tempList 
+	 	 	 set tempList lput who tempList 
+	 	 	 set deadIndividuals lput tempList deadIndividuals 
+	 	 	 ask my-links [ die ] 
+	 	 	 die] 
 	 	 (ifelse ((xcor + xchange < 0) or (xcor + xchange > max-pxcor) or (ycor + ychange < 0) or (ycor + ychange > max-pycor)) 
 	 	 	 [] 
 	 	 	 [ setxy (xcor + xchange) (ycor + ychange) ]) 
@@ -112,110 +104,44 @@ end
 
 to patchdiffusion 
 	 ask patches [ 
-	 	 repeat patch_Nutrient[ 
+	 	 repeat patch_Molecule1[ 
 	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 1.0 1.0 ) ) 
 	 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) ) 
 	 	 	 ifelse (patch-at (xchange) (ychange) = nobody) 
-	 	 	 	 [ifelse (false) [] [set patch_Nutrient_new (patch_Nutrient_new + 1)]]
-	 	 	 	 [ask patch (pxcor + xchange) (pycor + ychange)[set patch_Nutrient_new (patch_Nutrient_new + 1)]] 
+	 	 	 	 [ifelse ((pxcor + xchange > max-pxcor) ) [] [set patch_Molecule1_new (patch_Molecule1_new + 1)]]
+	 	 	 	 [ask patch (pxcor + xchange) (pycor + ychange)[set patch_Molecule1_new (patch_Molecule1_new + 1)]] 
 	 	 	 ] 
 	 ] 
 	 ask patches [ 
-	 	 set patch_Nutrient patch_Nutrient_new 
-	 	 set patch_Nutrient_new 0 
+	 	 set patch_Molecule1 patch_Molecule1_new 
+	 	 set patch_Molecule1_new 0 
 	 ] 
 end 
 to updateView 
 	 ask patches [ 
-	 	 if (patch_Nutrient = 0) [set pcolor 5] 
-	 	 if (patch_Nutrient > 0) [set pcolor 19] 
-	 	 if (patch_Nutrient > 5) [set pcolor 18] 
-	 	 if (patch_Nutrient > 55) [set pcolor 17] 
-	 	 if (patch_Nutrient > 555) [set pcolor 16] 
-	 	 if (patch_Nutrient > 5555) [set pcolor 15] 
+	 	 if (patch_Molecule1 = 0) [set pcolor 5] 
+	 	 if (patch_Molecule1 > 0) [set pcolor 29] 
+	 	 if (patch_Molecule1 > 5) [set pcolor 28] 
+	 	 if (patch_Molecule1 > 55) [set pcolor 27] 
+	 	 if (patch_Molecule1 > 555) [set pcolor 26] 
+	 	 if (patch_Molecule1 > 5555) [set pcolor 25] 
 	 ] 
 end 
 
-to bacteria1_Move [ id ] 
+to setBacteria1Beh [ id ] 
 	 ask turtle id [ 
-	 	 (ifelse 
-	 	 	 (patch-at dx 0 = nobody) 
-	 	 	 [ 
-	 	 	 	 set heading (- heading) 
-	 	 	 	 forward dxy 
-	 	 	 	 ask out-link-neighbors 
-	 	 	 	 [ 
-	 	 	 	 	 setxy ([xcor] of myself) ([ycor] of myself) 
-	 	 	 	 	 set heading ([heading] of myself)
-	 	 	 	 	 bk 2 
-	 	 	 	 ] 
-	 	 	 ] 
-	 	 	 (patch-at 0 dy) = nobody 
-	 	 	 [ 
-	 	 	 	 set heading (180 - heading) 
-	 	 	 	 forward dxy 
-	 	 	 	 ask out-link-neighbors 
-	 	 	 	 [ 
-	 	 	 	 	 setxy ([xcor] of myself) ([ycor] of myself) 
-	 	 	 	 	 set heading ([heading] of myself)
-	 	 	 	 	 bk 2 
-	 	 	 	 ] 
-	 	 	 ] 
-	 	 	 [ 
-	 	 	 	 forward dxy 
-	 	 	 	 right (bacteria-real-rotational-diffusion - (random-float bacteria-real-rotational-diffusion-helper)) 
-	 	 	 	 set Beh_Move (Beh_Move - 1) 
-	 	 	 ] 
-	 	 ) 
-	 ] 
-end 
-to bacteria1_Replication [ id ] 
-	 ask turtle id [ 
-	 	 hatch-bacteria1 1 [ 
-	 	 	 setxy xcor ycor 
-	 	 	 set heading (heading + random-float 360) 
-	 	 	 set size 1 
-	 	 	 set Beh_Move 0 
-	 	 	 set Beh_Size 0 
-	 	 	 set Beh_Replication 0 
-	 	 	 set color [0 0 0 ] 
-	 	 	 set local-color color 
-	 	 	 ask out-link-neighbors [set color local-color] 
-	 	 	 let tempList [] 
-	 	 	 set tempList lput 1 tempList 
-	 	 	 set tempList lput who tempList 
-	 	 	 set newIndividuals lput tempList newIndividuals 
-	 	 ] 
-	 	 set size 1 
-	 ] 
-end 
-to bacteria1_Size [ id ]  
-	 ask turtle id [ 
-	 	 if (Beh_Size > 5) [ 
-	 	 	 set size 2 
-	 	 ] 
-	 	 if (Beh_Size > 10) [ 
-	 	 	 set size 3 
-	 	 ] 
-	 ] 
-end 
-to setBacteria1Beh [ id BehMove BehSize BehReplication ] 
-	 ask turtle id [ 
-	 	 set Beh_Move BehMove 
-	 	 set Beh_Size BehSize 
-	 	 set Beh_Replication BehReplication 
 	 ] 
 end 
 to setBacteria1BehAll [ listOfCommands ] 
 	 foreach listOfCommands [ 
 	 	 [content] -> 
-	 	 setBacteria1Beh (item 0 content) (item 1 content) (item 2 content) (item 3 content)  
+	 	 setBacteria1Beh (item 0 content)  
 	 ] 
 end 
-to setBacteria1Patch [ id Nutrient ] 
+to setBacteria1Patch [ id Molecule1 ] 
 	 ask turtle id [ 
 	 	 ask patch-here [ 
-	 	 	 set patch_Nutrient Nutrient 
+	 	 	 set patch_Molecule1 Molecule1 
 	 	 ] 
 	 ] 
 end 
@@ -303,8 +229,8 @@ to-report intake
 	 	 ask patch-here [ 
  	 	 	 set tempList lput bacType tempList 
  	 	 	 set tempList lput tempID tempList
- 	 	 	 set tempList lput "\"Nutrient\"" templist 
- 	 	 	 set tempList lput patch_Nutrient templist 
+ 	 	 	 set tempList lput "\"Molecule1\"" templist 
+ 	 	 	 set tempList lput patch_Molecule1 templist 
  	 	 	 set wholeList lput tempList wholeList 
  	 	 	 set tempList [] 
 	 	 ] 
@@ -313,11 +239,11 @@ to-report intake
 end 
 to-report patchvalues 
 	 let templist [] 
-	 let tempvalueNutrient 0 
+	 let tempvalueMolecule1 0 
 	 ask patches [ 
-	 	 set tempvalueNutrient tempvalueNutrient + patch_Nutrient 
+	 	 set tempvalueMolecule1 tempvalueMolecule1 + patch_Molecule1 
 	 ] 
- 	 set templist lput tempvalueNutrient templist 
+ 	 set templist lput tempvalueMolecule1 templist 
 	 report templist 
 end 
 

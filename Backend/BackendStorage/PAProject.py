@@ -1,3 +1,5 @@
+__author__ = "Marius Kirchner, Goethe University Frankfurt am Main"
+
 from Backend.BackendStorage.NetLogoBackend.EnvironmentMolecule import EnvironmentMolecule
 from Backend.BackendStorage.NetLogoBackend.NetLogoCompartment import netLogoCompartment
 from Backend.BackendStorage.NetLogoBackend.NetLogoSettings import netLogoSettings
@@ -58,7 +60,6 @@ class petriAgentProject:
         self.patchColorMolecule = "No Coloring"
 
     def addBacteria(self, bacteriaName, bacteriaPetri):
-        # TODO: only if name not in there yet? or give individualIDs, change default of molnumber
         print("Adding Bacteria species")
         newID = len(self.listOfBacteriaIDs) + 1
         newBacteria = bacteria(newID, bacteriaName, bacteriaPetri, 20)

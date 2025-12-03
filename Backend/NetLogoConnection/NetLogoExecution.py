@@ -29,7 +29,7 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpat
     print("Executing NetLogoFile")
     print("Starting Netlogo from Python")
 
-    # TODO: make user choose their NetLogoLocation
+    # Old NetLogo Detection
     # linux
     #print(platform.platform()[0:7:])
     #if platform.platform()[0:7:] == "Windows":

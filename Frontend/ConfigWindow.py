@@ -1,3 +1,5 @@
+__author__ = "Marius Kirchner, Goethe University Frankfurt am Main"
+
 import os
 import tkinter
 from tkinter import *

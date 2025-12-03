@@ -1,3 +1,5 @@
+__author__ = "Marius Kirchner, Goethe University Frankfurt am Main"
+
 from xml.dom import minidom
 from Backend.BackendStorage import Config
 def openConfig(filepath):

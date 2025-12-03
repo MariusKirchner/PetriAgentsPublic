@@ -1,3 +1,5 @@
+__author__ = "Marius Kirchner, Goethe University Frankfurt am Main"
+
 class EnvironmentMolecule:
 
     def __init__(self, moleculeID, moleculeName, distMode, distArea, distAmount, involvedBacIDs):

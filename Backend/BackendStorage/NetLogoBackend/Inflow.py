@@ -1,3 +1,5 @@
+__author__ = "Marius Kirchner, Goethe University Frankfurt am Main"
+
 class Inflow:
 
     def __init__(self,  molecule, inout, time, starttime, endtime, amount, area, start, end):

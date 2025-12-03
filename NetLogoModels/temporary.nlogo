@@ -2,6 +2,7 @@ breed [bacteria1 bacterium1]
 breed [flagella flagellum] 
  
 bacteria1-own [ 
+	 Beh_Move 
 	 dxy 
 	 ] 
  
@@ -49,12 +50,13 @@ to setup
 	 create-bacteria1 20[ 
 	 	 setxy random-xcor random-ycor 
 	 	 set size 1 
+	 	 set Beh_Move 0 
 	 ] 
 	 set-default-shape bacteria1 "bacteria 1" 
 	 set-default-shape flagella "flagella" 
 	 ask bacteria1 [ 
 	 	 set dxy ( bacteria-velocity * timeinterval-per-tick ) 
-	 	 set color [0 0 0 ] 
+	 	 set color [255 0 0 ] 
 	 	 set local-color color 
 	 	 ask out-link-neighbors [set color local-color] 
 	 ] 
@@ -82,16 +84,19 @@ end
  
 to go 
 	 ask bacteria1 [ 
+	 	 if (Beh_Move != 0) [ 
+	 	 	 bacteria1_Move who 
+	 	 ] 
 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.0 ) ) 
 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.0 ) ) 
-	 	 if ((xcor + xchange > max-pxcor) ) 
+	 	 if ((xcor + xchange > max-pxcor + 0.5) ) 
 	 	 	 [let tempList [] 
 	 	 	 set tempList lput 1 tempList 
 	 	 	 set tempList lput who tempList 
 	 	 	 set deadIndividuals lput tempList deadIndividuals 
 	 	 	 ask my-links [ die ] 
 	 	 	 die] 
-	 	 (ifelse ((xcor + xchange < 0) or (xcor + xchange > max-pxcor) or (ycor + ychange < 0) or (ycor + ychange > max-pycor)) 
+	 	 (ifelse ((xcor + xchange < min-pxcor - 0.5) or (xcor + xchange > max-pxcor + 0.5) or (ycor + ychange < min-pycor - 0.5) or (ycor + ychange > max-pycor + 0.5)) 
 	 	 	 [] 
 	 	 	 [ setxy (xcor + xchange) (ycor + ychange) ]) 
 	 ] 
@@ -119,23 +124,61 @@ to patchdiffusion
 end 
 to updateView 
 	 ask patches [ 
-	 	 if (patch_Molecule1 = 0) [set pcolor 5] 
-	 	 if (patch_Molecule1 > 0) [set pcolor 29] 
-	 	 if (patch_Molecule1 > 5) [set pcolor 28] 
-	 	 if (patch_Molecule1 > 55) [set pcolor 27] 
-	 	 if (patch_Molecule1 > 555) [set pcolor 26] 
-	 	 if (patch_Molecule1 > 5555) [set pcolor 25] 
+	 	 set pcolor 5 
 	 ] 
 end 
 
-to setBacteria1Beh [ id ] 
+to bacteria1_Move [ id ] 
 	 ask turtle id [ 
+	 	 (ifelse 
+	 	 	 ((xcor + dx > max-pxcor + 0.5) ) 
+	 	 	 [ 
+	 	 	 	 let tempList [] 
+	 	 	 	 set tempList lput 1 tempList 
+	 	 	 	 set tempList lput who tempList 
+	 	 	 	 set deadIndividuals lput tempList deadIndividuals 
+	 	 	 	 ask my-links [ die ] 
+	 	 	 	 die 
+	 	 	 ] 
+	 	 	 (patch-at dx 0 = nobody) 
+	 	 	 [ 
+	 	 	 	 set heading (- heading) 
+	 	 	 	 forward dxy 
+	 	 	 	 ask out-link-neighbors 
+	 	 	 	 [ 
+	 	 	 	 	 setxy ([xcor] of myself) ([ycor] of myself) 
+	 	 	 	 	 set heading ([heading] of myself)
+	 	 	 	 	 bk 2 
+	 	 	 	 ] 
+	 	 	 ] 
+	 	 	 (patch-at 0 dy) = nobody 
+	 	 	 [ 
+	 	 	 	 set heading (180 - heading) 
+	 	 	 	 forward dxy 
+	 	 	 	 ask out-link-neighbors 
+	 	 	 	 [ 
+	 	 	 	 	 setxy ([xcor] of myself) ([ycor] of myself) 
+	 	 	 	 	 set heading ([heading] of myself)
+	 	 	 	 	 bk 2 
+	 	 	 	 ] 
+	 	 	 ] 
+	 	 	 [ 
+	 	 	 	 forward dxy 
+	 	 	 	 right (bacteria-real-rotational-diffusion - (random-float bacteria-real-rotational-diffusion-helper)) 
+	 	 	 	 set Beh_Move (Beh_Move - 1) 
+	 	 	 ] 
+	 	 ) 
+	 ] 
+end 
+to setBacteria1Beh [ id BehMove ] 
+	 ask turtle id [ 
+	 	 set Beh_Move BehMove 
 	 ] 
 end 
 to setBacteria1BehAll [ listOfCommands ] 
 	 foreach listOfCommands [ 
 	 	 [content] -> 
-	 	 setBacteria1Beh (item 0 content)  
+	 	 setBacteria1Beh (item 0 content) (item 1 content)  
 	 ] 
 end 
 to setBacteria1Patch [ id Molecule1 ] 

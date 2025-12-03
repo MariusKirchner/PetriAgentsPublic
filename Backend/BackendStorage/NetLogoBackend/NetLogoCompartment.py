@@ -1,3 +1,5 @@
+__author__ = "Marius Kirchner, Goethe University Frankfurt am Main"
+
 class netLogoCompartment:
     def __init__(self, name, id, minX, maxX, minY, maxY, lrCont, tbCont, diffRate, diffBool, flowDir, flowRate, flowBool):
         self.name = name

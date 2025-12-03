@@ -1,3 +1,5 @@
+__author__ = "Marius Kirchner, Goethe University Frankfurt am Main"
+
 from Backend.BackendStorage.PAProject import petriAgentProject
 
 

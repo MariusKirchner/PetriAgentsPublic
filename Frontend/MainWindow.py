@@ -1,4 +1,3 @@
-
 _author__ = "Marius Kirchner, Goethe University Frankfurt am Main"
 
 import time
@@ -20,7 +19,6 @@ from Frontend import ConfigWindow
 
 
 def updateProject(mainProject):
-    #todo fill this up
     mainProject.maxXCor = maxXCorDefault.get()
     mainProject.maxYCor = maxYCorDefault.get()
     mainProject.ticks = tickAmount.get()
@@ -52,17 +50,39 @@ def updateProject(mainProject):
     colorDict = {"Red":19, "Orange":29, "Brown":39, "Yellow":49, "Green":59, "Lime":69, "Turqouise":79, "Cyan":89, "LightBlue":99, "Blue":109, "Violet":119, "Magenta":129, "Pink":139}
     mainProject.patchColor = colorDict[patchColorOption.get()]
 
-    pass
 
 def updateGUI(mainProject):
-    #todo fill this up
     maxXCorDefault.set(mainProject.maxXCor)
     maxYCorDefault.set(mainProject.maxYCor)
+    tickAmount.set(mainProject.ticks)
     leftRightVar.set(mainProject.lrCont)
     topBottomVar.set(mainProject.tbCont)
     diffusionRateDefault.set(mainProject.diffRate)
+    bacteriaOutflowNorth.set(mainProject.bacOutFlowNorth)
+    bacteriaOutflowEast.set(mainProject.bacOutFlowEast)
+    bacteriaOutflowSouth.set(mainProject.bacOutFlowSouth)
+    bacteriaOutflowWest.set(mainProject.bacOutFlowWest)
+    moleculeOutflowNorth.set(mainProject.molOutFlowNorth)
+    moleculeOutflowEast.set(mainProject.molOutFlowEast)
+    moleculeOutflowSouth.set(mainProject.molOutFlowSouth)
+    moleculeOutflowWest.set(mainProject.molOutFlowWest)
+    compDiff.set(mainProject.diffmode)
+    timePerTickDefault.set(mainProject.timePerTickDefault)
+    patchLength.set(mainProject.patchLength)
+    diffConstant.set(mainProject.diffConstant)
+    bacVelo.set(mainProject.bacVelo)
+    bacRotDiff.set(mainProject.bacRotDiff)
+    diffusionCheck.set(mainProject.diffBool)
+    diffusionRateDefault.set(mainProject.diffRate)
+    flowRateDefault.set(mainProject.flowRate)
+    bacFlowRateDefault.set(mainProject.bacFlowRate)
+    bacDiffRateDefault.set(mainProject.bacDiffRate)
+    flowCheck.set(mainProject.flowBool)
+    flowDirectionDefault.set(mainProject.flowDir)
+    moleculeOption.set(mainProject.patchColorMolecule)
+    moleculeIncrement.set(mainProject.patchColorIncrement)
+    patchColorOption.set(mainProject.patchColor)
     updateTables(mainProject)
-    pass
 
 def startSimulation(mainProject, amount, foldername, guimode, posmode, window, config):
     updateProject(mainProject)
@@ -86,7 +106,6 @@ def startSimulation(mainProject, amount, foldername, guimode, posmode, window, c
     if not os.path.isdir(tablefolderdir):
         os.makedirs(tablefolderdir)
     NetLogoExecution.executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, tablefolderdir, guimode, posmode, window, config)
-    pass
 
 def startSimulationQueue(mainProject, root, config):
     updateProject(mainProject)
@@ -119,12 +138,13 @@ def createProjectFile(mainProject):
         filehandler += ".xml"
     print("Creating ProjectFile")
     SaveProject.saveProject(mainProject, filehandler)
-    pass
 
-def loadProjectFile(projectHolder):
+def loadProjectFile(projectHolder, bacteriaTab, bacteriaTabDict):
     updateProject(projectHolder.currProject)
     #TODO: ask if user really wants to load in a new one or wants to save the old project first
     print("Loading ProjectFile")
+    for bacName in projectHolder.currProject.listOfBacteriaNames:
+        delBacteria(projectHolder.currProject, bacName, bacteriaTab, bacteriaTabDict)
     filehandler = tkinter.filedialog.askopenfilename(title="Loading project from...", filetypes=(("paproject", ".xml"), ("All files", "*.*")))
     file = open(filehandler, 'r', encoding='utf8')
     newMainProject = LoadProject.loadProject(file)
@@ -133,15 +153,16 @@ def loadProjectFile(projectHolder):
     updateGUI(newMainProject)
     updateTables(newMainProject)
     updateProject(newMainProject)
+    for bacName in projectHolder.currProject.listOfBacteriaNames:
+        addBacteria(projectHolder.currProject, bacName, bacteriaTab, bacteriaTabDict, True)
 
-    pass
-
-def addBacteria(mainProject, bacteriaName, bacteriaTab, bacteriaTabDict):
-    if bacteriaName not in mainProject.listOfBacteriaNames:
-        filetypes = (("sbml files", "*.xml"), ("All files", "*.*"))
-        filename = tkinter.filedialog.askopenfilename(title="Open a SBML File", filetypes=filetypes)
-        newPetri = SBMLReadFactory.readSBML(filename)
-        mainProject.addBacteria(bacteriaName, newPetri)
+def addBacteria(mainProject, bacteriaName, bacteriaTab, bacteriaTabDict, loadinBool):
+    if bacteriaName not in mainProject.listOfBacteriaNames or loadinBool:
+        if not loadinBool:
+            filetypes = (("sbml files", "*.xml"), ("All files", "*.*"))
+            filename = tkinter.filedialog.askopenfilename(title="Open a SBML File", filetypes=filetypes)
+            newPetri = SBMLReadFactory.readSBML(filename)
+            mainProject.addBacteria(bacteriaName, newPetri)
         newBacteria = mainProject.bacteriaNameDict[bacteriaName]
         newBacteriaTab = ttk.Frame(bacteriaTab)
         bacteriaTabDict[bacteriaName] = newBacteriaTab
@@ -149,7 +170,7 @@ def addBacteria(mainProject, bacteriaName, bacteriaTab, bacteriaTabDict):
 
         currNameDefault = StringVar(newBacteriaTab, value=newBacteria.name)
         currMOIDefault = StringVar(newBacteriaTab, value=newBacteria.MOI)
-        currShapeDefault = StringVar(newBacteriaTab, value="bacteria 1")
+        currShapeDefault = StringVar(newBacteriaTab, value=newBacteria.shapeRepresentation)
         currFlagellaDefault = BooleanVar(newBacteriaTab, value=False)
 
         def changesOnBacteria():
@@ -198,7 +219,8 @@ def addBacteria(mainProject, bacteriaName, bacteriaTab, bacteriaTabDict):
 
         columnNames = ("BehaviourPlaceName", "CurrentBehaviour")
         behaviourTree = ttk.Treeview(newBacteriaTab, columns=columnNames, show="headings")
-        behaviourTree.bind("<Double-1>", lambda e: openBehaviourDetails(mainProject, behaviourTree, newBacteriaTab, currNameDefault))
+        #comment back in for variable behaviours
+        #behaviourTree.bind("<Double-1>", lambda e: openBehaviourDetails(mainProject, behaviourTree, newBacteriaTab, currNameDefault))
         for column in columnNames:
             behaviourTree.heading(column, text=column)
             behaviourTree.grid(column=2, row=0, rowspan=10)
@@ -291,7 +313,7 @@ def addFlowOption(newWindow, mainProject):
     #TODO: Once implemented comment this back in
     #ttk.Radiobutton(tempFrame, text="Outflow", variable=inOutVar, value=False, command= lambda: checkdisabled).grid(row=0, column=1)
     timeVar = IntVar()
-    ttk.Radiobutton(tempFrame, text="At all timesteps", variable=timeVar, value=0, command= lambda: checkdisabled).grid(row=1, column=0)
+    #ttk.Radiobutton(tempFrame, text="At all timesteps", variable=timeVar, value=0, command= lambda: checkdisabled).grid(row=1, column=0)
     ttk.Radiobutton(tempFrame, text="At an intervall", variable=timeVar, value=1, command= lambda: checkdisabled).grid(row=1, column=1)
     ttk.Radiobutton(tempFrame, text="At a single timestep", variable=timeVar, value=2, command= lambda: checkdisabled).grid(row=1, column=2)
     ttk.Label(tempFrame, text="StartTime:").grid(row=2, column=0)
@@ -304,7 +326,7 @@ def addFlowOption(newWindow, mainProject):
     amountDefault = IntVar(tempFrame, value=0)
     Entry(tempFrame, textvariable=amountDefault).grid(row=3, column=1)
     areaVar = IntVar()
-    ttk.Radiobutton(tempFrame, text="Entire axis", variable=areaVar, value=0, command= lambda: checkdisabled).grid(row=4, column=0)
+    #ttk.Radiobutton(tempFrame, text="Entire axis", variable=areaVar, value=0, command= lambda: checkdisabled).grid(row=4, column=0)
     ttk.Radiobutton(tempFrame, text="Part of axis", variable=areaVar, value=1, command= lambda: checkdisabled).grid(row=4, column=1)
     ttk.Radiobutton(tempFrame, text="Single position", variable=areaVar, value=2, command= lambda: checkdisabled).grid(row=4, column=2)
     ttk.Label(tempFrame, text="StartSpace:").grid(row=5, column=0)
@@ -357,7 +379,6 @@ def updateTables(mainProject):
         else:
             tempType = "Outflow";
         inOutMolTree.insert("", "end", values=(flow.molecule.moleculeName, tempType, flow.finalTime, flow.amount, flow.finalArea))
-    #TODO: add updateforflowTable
 
 def diffusionCheckboxChange(mainProject, checkboxVar):
     mainProject.diffBool = checkboxVar.get()
@@ -512,7 +533,7 @@ def mainWindow(projectHolder):
     ttk.Label(changeBacteriaTab, text="Add Bacteria with name: ").grid(column=0, row=4)
     addBacteriaName = StringVar(changeBacteriaTab)
     Entry(changeBacteriaTab, textvariable=addBacteriaName).grid(column=1, row=4)
-    Button(changeBacteriaTab, text="Add new bacteria species", command=lambda: addBacteria(projectHolder.currProject, addBacteriaName.get(), bacteriaTab, bacteriaTabDict)).grid(column=2, row=4)
+    Button(changeBacteriaTab, text="Add new bacteria species", command=lambda: addBacteria(projectHolder.currProject, addBacteriaName.get(), bacteriaTab, bacteriaTabDict, False)).grid(column=2, row=4)
 
     ttk.Label(changeBacteriaTab, text="Delete Bacteria with name: ").grid(column=0, row=5)
     delBacteriaName = StringVar(changeBacteriaTab)
@@ -530,7 +551,6 @@ def mainWindow(projectHolder):
     diffusionRateDefault = StringVar(environmentTab, value="100")
     Entry(environmentTab, textvariable=diffusionRateDefault).grid(column=1, row=6)
 
-    #comment back in if flowrate implemented
     global flowRateDefault
     ttk.Label(environmentTab, text="Flow Rate (only changeable in complex diffusion mode)").grid(column=0, row=7)
     flowRateDefault = StringVar(environmentTab, value="100")
@@ -565,7 +585,7 @@ def mainWindow(projectHolder):
 
     Button(settingsTab, text="Save this setup", command=lambda: createProjectFile(projectHolder.currProject)).grid(column=0, row=15)
     Button(settingsTab, text="Start this setup", command=lambda: startSimulationQueue(projectHolder.currProject, root, projectHolder.config)).grid(column=1, row=15)
-    Button(settingsTab, text="Load a setup", command=lambda: loadProjectFile(projectHolder)).grid(column=2, row=15)
+    Button(settingsTab, text="Load a setup", command=lambda: loadProjectFile(projectHolder, bacteriaTab, bacteriaTabDict)).grid(column=2, row=15)
 
     #Button(settingsTab, text="Change Config", command=lambda: configHelper(projectHolder)).grid(column=0, row=16)
 
@@ -595,9 +615,10 @@ def mainWindow(projectHolder):
 
     ttk.Label(environmentTab, text="Environment molecule used for coloring").grid(column=5, row=0)
     global moleculeOption
-    moleculeOption = ttk.Combobox(environmentTab, values=projectHolder.currProject.getListOfEnvironmentMolecules() + ["None"], state="readonly", postcommand=lambda: changeEnvs())
+    moleculeOption = ttk.Combobox(environmentTab, values=projectHolder.currProject.getListOfEnvironmentMolecules() + ["No Coloring"], state="readonly", postcommand=lambda: changeEnvs())
     def changeEnvs():
         moleculeOption["values"] = projectHolder.currProject.getListOfEnvironmentMolecules() + ["No Coloring"]
+    moleculeOption.current(0)
     moleculeOption.grid(column=6, row=0)
 
     ttk.Label(environmentTab, text="Discrete increment for molecule numbers that cause patch color").grid(column=5, row=1)
@@ -609,6 +630,7 @@ def mainWindow(projectHolder):
     global patchColorOption
     colorOptions = ["Red", "Orange", "Brown", "Yellow", "Green", "Lime", "Turqouise", "Cyan", "LightBlue", "Blue", "Violet", "Magenta", "Pink"]
     patchColorOption = ttk.Combobox(environmentTab, values=colorOptions, state="readonly")
+    patchColorOption.current(0)
     patchColorOption.grid(column=6, row=2)
     # Comment for Compartment
     #compartmentColumnNames = ("CompartmentName", "Corners in X1, X2, Y1, Y2", "RestrictionsFor")

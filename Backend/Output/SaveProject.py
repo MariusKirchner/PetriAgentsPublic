@@ -157,8 +157,8 @@ def saveProject(mainProject, filehandler):
             currid += 1
         bacteria.appendChild(tempBac)
 
-    doc = doc.toxml()
-    #doc = doc.toprettyxml()
+    #doc = doc.toxml()
+    doc = doc.toprettyxml()
     file = open(filehandler, mode="w")
     file.write(doc)
     file.close()

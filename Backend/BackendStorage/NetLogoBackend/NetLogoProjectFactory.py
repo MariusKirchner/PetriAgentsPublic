@@ -383,15 +383,14 @@ def createNetLogoProject(mainProject):
 
     #update View function (TODO: EXTEND, make it user dependant)
     tempnetlogoFile.write("to updateView \n")
-    if len(mainProject.listOfEnvironmentMolecules) > 0:
+    if mainProject.patchColorMolecule != "No Coloring":
         tempnetlogoFile.write("\t ask patches [ \n")
         tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " = 0) [set pcolor 5] \n")
-        tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > 0) [set pcolor 19] \n")
-        tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > 5) [set pcolor 18] \n")
-        tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > 10) [set pcolor 17] \n")
-        tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > 20) [set pcolor 16] \n")
-        tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > 35) [set pcolor 15] \n")
-        #tempnetlogoFile.write("\t \t \t set pcolor 5 \n ")
+        tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > 0) [set pcolor " + str(mainProject.patchColor) + "] \n")
+        tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > " + str(mainProject.patchColorIncrement * 1) + ") [set pcolor " + str(mainProject.patchColor - 1) + "] \n")
+        tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > " + str(mainProject.patchColorIncrement * 2) + ") [set pcolor " + str(mainProject.patchColor - 2) + "] \n")
+        tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > " + str(mainProject.patchColorIncrement * 3) + ") [set pcolor " + str(mainProject.patchColor - 3) + "] \n")
+        tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > " + str(mainProject.patchColorIncrement * 4) + ") [set pcolor " + str(mainProject.patchColor - 4) + "] \n")
         tempnetlogoFile.write("\t ] \n")
     else:
         tempnetlogoFile.write("\t ask patches [ \n")

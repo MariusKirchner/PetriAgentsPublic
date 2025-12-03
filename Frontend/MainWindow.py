@@ -46,8 +46,10 @@ def updateProject(mainProject):
     mainProject.diffConstant = diffConstant.get()
     mainProject.patchLength = patchLength.get()
     mainProject.timePerTickDefault = timePerTickDefault.get()
-
-
+    mainProject.patchColorMolecule = moleculeOption.get()
+    mainProject.patchColorIncrement = moleculeIncrement.get()
+    colorDict = {"Red":19, "Orange":29, "Brown":39, "Yellow":49, "Green":59, "Lime":69, "Turqouise":79, "Cyan":89, "LightBlue":99, "Blue":109, "Violet":119, "Magenta":129, "Pink":139}
+    mainProject.patchColor = colorDict[patchColorOption.get()]
 
     pass
 
@@ -395,6 +397,7 @@ def addNewCompartment(mainProject, newWindow, name, x1, y1, x2, y2):
     mainProject.addCompartment(name, x1, y1, x2, y2)
     updateTables(mainProject)
     newWindow.destroy()
+
 def mainWindow(projectHolder):
     root = Tk()
     root.title("PetriAgents MainWindow")
@@ -574,6 +577,24 @@ def mainWindow(projectHolder):
     for column in environmentColumnNames:
         environmentTree.heading(column, text=column)
     environmentTree.grid(column=4, row=0, rowspan=10)
+
+    ttk.Label(environmentTab, text="Environment molecule used for coloring").grid(column=5, row=0)
+    global moleculeOption
+    moleculeOption = ttk.Combobox(environmentTab, values=projectHolder.currProject.getListOfEnvironmentMolecules() + ["None"], state="readonly", postcommand=lambda: changeEnvs())
+    def changeEnvs():
+        moleculeOption["values"] = projectHolder.currProject.getListOfEnvironmentMolecules() + ["No Coloring"]
+    moleculeOption.grid(column=6, row=0)
+
+    ttk.Label(environmentTab, text="Discrete increment for molecule numbers that cause patch color").grid(column=5, row=1)
+    global moleculeIncrement
+    moleculeIncrement = StringVar(environmentTab, value="5")
+    Entry(environmentTab, textvariable=moleculeIncrement).grid(column=6, row=1)
+
+    ttk.Label(environmentTab, text="Color for patch coloring").grid(column=5, row=2)
+    global patchColorOption
+    colorOptions = ["Red", "Orange", "Brown", "Yellow", "Green", "Lime", "Turqouise", "Cyan", "LightBlue", "Blue", "Violet", "Magenta", "Pink"]
+    patchColorOption = ttk.Combobox(environmentTab, values=colorOptions, state="readonly")
+    patchColorOption.grid(column=6, row=2)
     # Comment for Compartment
     #compartmentColumnNames = ("CompartmentName", "Corners in X1, X2, Y1, Y2", "RestrictionsFor")
     #global compartmentTree
@@ -587,7 +608,7 @@ def mainWindow(projectHolder):
     inOutMolTree.bind("<Double-1>", lambda e: (projectHolder.currProject, root))  # TODO: add delete function for flows
     for column in inOutMolColumnNames:
         inOutMolTree.heading(column, text=column)
-    inOutMolTree.grid(column=4, row=11, rowspan=10)
+    inOutMolTree.grid(column=4, row=11, rowspan=10, columnspan=3)
     updateTables(projectHolder.currProject)
     root.mainloop()
 

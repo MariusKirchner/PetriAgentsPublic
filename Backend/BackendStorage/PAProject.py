@@ -53,6 +53,9 @@ class petriAgentProject:
         self.diffConstant = 1000000
         self.patchLength = 2000
         self.timePerTickDefault = 1000
+        self.patchColor = 19
+        self.patchColorIncrement = 5
+        self.patchColorMolecule = "No Coloring"
 
     def addBacteria(self, bacteriaName, bacteriaPetri):
         # TODO: only if name not in there yet? or give individualIDs, change default of molnumber
@@ -117,3 +120,5 @@ class petriAgentProject:
             endtime = self.ticks
         self.flows.append(Inflow(molecule, inout, time, starttime, endtime, amount, area, start, end))
 
+    def getListOfEnvironmentMolecules(self):
+        return self.listOfEnvironmentMolecules

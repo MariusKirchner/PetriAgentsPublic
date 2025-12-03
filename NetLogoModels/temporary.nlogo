@@ -3,10 +3,14 @@ breed [flagella flagellum]
  
 bacteria1-own [ 
 	 Beh_Move 
+	 Beh_Size 
+	 Beh_Replication 
 	 dxy 
 	 ] 
  
 patches-own [ 
+	 patch_Nutrient
+	 patch_Nutrient_new 
 	 ] 
 
 directed-link-breed [connectors connector] 
@@ -49,6 +53,8 @@ to setup
 	 	 setxy random-xcor random-ycor 
 	 	 set size 1 
 	 	 set Beh_Move 0 
+	 	 set Beh_Size 0 
+	 	 set Beh_Replication 0 
 	 ] 
 	 set-default-shape bacteria1 "bacteria 1" 
 	 set-default-shape flagella "flagella" 
@@ -58,7 +64,9 @@ to setup
 	 	 set local-color color 
 	 	 ask out-link-neighbors [set color local-color] 
 	 ] 
-	 set flagella-size 1 
+	 ask patches with [pxcor >= 0 and pxcor <= 100 and pycor >= 0 and pycor <= 50][ 
+	 	 set patch_Nutrient random 100 
+	 ]	 set flagella-size 1 
 	 updateView 
 end 
 
@@ -83,6 +91,12 @@ to go
 	 	 if (Beh_Move != 0) [ 
 	 	 	 bacteria1_Move who 
 	 	 ] 
+	 	 if (Beh_Size != 0) [ 
+	 	 	 bacteria1_Size who 
+	 	 ] 
+	 	 if (Beh_Replication != 0) [ 
+	 	 	 bacteria1_Replication who 
+	 	 ] 
 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.0 ) ) 
 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.0 ) ) 
 	 	 if ((xcor + xchange > max-pxcor) ) 
@@ -105,11 +119,27 @@ end
 
 to patchdiffusion 
 	 ask patches [ 
+	 	 repeat patch_Nutrient[ 
+	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.01 0.01 ) ) 
+	 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.01 ) ) 
+	 	 	 ifelse (patch-at (xchange) (ychange) = nobody) 
+	 	 	 	 [ifelse ((pxcor + xchange > max-pxcor) ) [] [set patch_Nutrient_new (patch_Nutrient_new + 1)]]
+	 	 	 	 [ask patch (pxcor + xchange) (pycor + ychange)[set patch_Nutrient_new (patch_Nutrient_new + 1)]] 
+	 	 	 ] 
+	 ] 
+	 ask patches [ 
+	 	 set patch_Nutrient patch_Nutrient_new 
+	 	 set patch_Nutrient_new 0 
 	 ] 
 end 
 to updateView 
 	 ask patches [ 
-	 	 set pcolor 5 
+	 	 if (patch_Nutrient = 0) [set pcolor 5] 
+	 	 if (patch_Nutrient > 0) [set pcolor 139] 
+	 	 if (patch_Nutrient > 50) [set pcolor 138] 
+	 	 if (patch_Nutrient > 5050) [set pcolor 137] 
+	 	 if (patch_Nutrient > 505050) [set pcolor 136] 
+	 	 if (patch_Nutrient > 50505050) [set pcolor 135] 
 	 ] 
 end 
 
@@ -155,27 +185,60 @@ to bacteria1_Move [ id ]
 	 	 ) 
 	 ] 
 end 
-to setBacteria1Beh [ id BehMove ] 
+to bacteria1_Replication [ id ] 
+	 ask turtle id [ 
+	 	 hatch-bacteria1 1 [ 
+	 	 	 setxy xcor ycor 
+	 	 	 set heading (heading + random-float 360) 
+	 	 	 set size 1 
+	 	 	 set Beh_Move 0 
+	 	 	 set Beh_Size 0 
+	 	 	 set Beh_Replication 0 
+	 	 	 set color [0 0 0 ] 
+	 	 	 set local-color color 
+	 	 	 ask out-link-neighbors [set color local-color] 
+	 	 	 let tempList [] 
+	 	 	 set tempList lput 1 tempList 
+	 	 	 set tempList lput who tempList 
+	 	 	 set newIndividuals lput tempList newIndividuals 
+	 	 ] 
+	 	 set size 1 
+	 ] 
+end 
+to bacteria1_Size [ id ]  
+	 ask turtle id [ 
+	 	 if (Beh_Size > 5) [ 
+	 	 	 set size 2 
+	 	 ] 
+	 	 if (Beh_Size > 10) [ 
+	 	 	 set size 3 
+	 	 ] 
+	 ] 
+end 
+to setBacteria1Beh [ id BehMove BehSize BehReplication ] 
 	 ask turtle id [ 
 	 	 set Beh_Move BehMove 
+	 	 set Beh_Size BehSize 
+	 	 set Beh_Replication BehReplication 
 	 ] 
 end 
 to setBacteria1BehAll [ listOfCommands ] 
 	 foreach listOfCommands [ 
 	 	 [content] -> 
-	 	 setBacteria1Beh (item 0 content) (item 1 content)  
+	 	 setBacteria1Beh (item 0 content) (item 1 content) (item 2 content) (item 3 content)  
 	 ] 
 end 
-to setBacteria1Patch [ id ] 
+to setBacteria1Patch [ id Nutrient ] 
 	 ask turtle id [ 
 	 	 ask patch-here [ 
+	 	 	 set patch_Nutrient Nutrient 
 	 	 ] 
 	 ] 
 end 
 to setBacteria1PatchAll [ listOfCommands ] 
 	 foreach listOfCommands [ 
 	 	 [content] -> 
-	 	 setBacteria1Patch (item 0 content)  
+	 	 setBacteria1Patch (item 0 content) (item 1 content)  
 	 ] 
 end 
 to doinflow [ molecule amount starty endy ] 
@@ -254,15 +317,24 @@ to-report intake
 	 ask bacteria1 [ 
 	 	 let tempID who 
 	 	 ask patch-here [ 
+ 	 	 	 set tempList lput bacType tempList 
+ 	 	 	 set tempList lput tempID tempList
+ 	 	 	 set tempList lput "\"Nutrient\"" templist 
+ 	 	 	 set tempList lput patch_Nutrient templist 
+ 	 	 	 set wholeList lput tempList wholeList 
+ 	 	 	 set tempList [] 
 	 	 ] 
 	 ] 
 	 report wholeList 
 end 
 to-report patchvalues 
 	 let templist [] 
+	 let tempvalueNutrient 0 
 	 ask patches [ 
+	 	 set tempvalueNutrient tempvalueNutrient + patch_Nutrient 
 	 ] 
- 	 report templist 
+ 	 set templist lput tempvalueNutrient templist 
+	 report templist 
 end 
 
 @#$#@#$#@

@@ -18,10 +18,10 @@ patches-own [
 	 patch_SCFA_new 
 	 patch_Nutrient1
 	 patch_Nutrient1_new 
-	 patch_Nutrient2
-	 patch_Nutrient2_new 
 	 patch_Nutrient3
 	 patch_Nutrient3_new 
+	 patch_Nutrient2
+	 patch_Nutrient2_new 
 	 ] 
 
 directed-link-breed [connectors connector] 
@@ -52,7 +52,7 @@ to setup
 	 reset-ticks 
 	 set timeinterval-per-tick 10.0 ; in s/tick 
 	 set patchsize 1000 ; in micrometre  (sidelength of a patch) 
-	 set diffConstant 200000 ; in micrometre^2/s 
+	 set diffConstant 1000000 ; in micrometre^2/s 
 	 set bacteria-real-velocity 25 ; in micrometre/s 
 	 set bacteria-velocity (bacteria-real-velocity / patchsize ) ; in patches/s 
 	 set bacteria-rotational-diffusion 9 ; in degrees/s 
@@ -90,11 +90,11 @@ to setup
 	 ask patches with [pxcor >= 0 and pxcor <= 200 and pycor >= 0 and pycor <= 60][ 
 	 	 set patch_SCFA random 2 
 	 ]	 ask patches with [pxcor >= 0 and pxcor <= 200 and pycor >= 0 and pycor <= 60][ 
-	 	 set patch_Nutrient1 random 5 
+	 	 set patch_Nutrient1 random 2 
 	 ]	 ask patches with [pxcor >= 0 and pxcor <= 200 and pycor >= 0 and pycor <= 60][ 
-	 	 set patch_Nutrient2 random 5 
+	 	 set patch_Nutrient3 random 2 
 	 ]	 ask patches with [pxcor >= 0 and pxcor <= 200 and pycor >= 0 and pycor <= 60][ 
-	 	 set patch_Nutrient3 random 5 
+	 	 set patch_Nutrient2 random 2 
 	 ]	 set flagella-size 1 
 	 updateView 
 end 
@@ -123,7 +123,7 @@ to go
 	 	 if (Beh_Replication != 0) [ 
 	 	 	 bacteria1_Replication who 
 	 	 ] 
-	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.07 1.0 ) / patchsize ) 
+	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.04 1.0 ) / patchsize ) 
 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) / patchsize ) 
 	 	 if ((xcor + xchange > max-pxcor + 0.5) ) 
 	 	 	 [let tempList [] 
@@ -143,7 +143,7 @@ to go
 	 	 if (Beh_Replication != 0) [ 
 	 	 	 bacteria2_Replication who 
 	 	 ] 
-	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.07 1.0 ) / patchsize ) 
+	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.04 1.0 ) / patchsize ) 
 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) / patchsize ) 
 	 	 if ((xcor + xchange > max-pxcor + 0.5) ) 
 	 	 	 [let tempList [] 
@@ -166,32 +166,32 @@ end
 to patchdiffusion 
 	 ask patches [ 
 	 	 repeat patch_SCFA[ 
-	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.07 1.0 ) / patchsize ) 
+	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.04 1.0 ) / patchsize ) 
 	 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) / patchsize ) 
 	 	 	 ifelse (patch-at (xchange) (ychange) = nobody) 
 	 	 	 	 [ifelse ((pxcor + xchange > max-pxcor) ) [] [set patch_SCFA_new (patch_SCFA_new + 1)]]
 	 	 	 	 [ask patch (pxcor + xchange) (pycor + ychange)[set patch_SCFA_new (patch_SCFA_new + 1)]] 
 	 	 	 ] 
 	 	 repeat patch_Nutrient1[ 
-	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.07 1.0 ) / patchsize ) 
+	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.04 1.0 ) / patchsize ) 
 	 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) / patchsize ) 
 	 	 	 ifelse (patch-at (xchange) (ychange) = nobody) 
 	 	 	 	 [ifelse ((pxcor + xchange > max-pxcor) ) [] [set patch_Nutrient1_new (patch_Nutrient1_new + 1)]]
 	 	 	 	 [ask patch (pxcor + xchange) (pycor + ychange)[set patch_Nutrient1_new (patch_Nutrient1_new + 1)]] 
 	 	 	 ] 
-	 	 repeat patch_Nutrient2[ 
-	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.07 1.0 ) / patchsize ) 
-	 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) / patchsize ) 
-	 	 	 ifelse (patch-at (xchange) (ychange) = nobody) 
-	 	 	 	 [ifelse ((pxcor + xchange > max-pxcor) ) [] [set patch_Nutrient2_new (patch_Nutrient2_new + 1)]]
-	 	 	 	 [ask patch (pxcor + xchange) (pycor + ychange)[set patch_Nutrient2_new (patch_Nutrient2_new + 1)]] 
-	 	 	 ] 
 	 	 repeat patch_Nutrient3[ 
-	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.07 1.0 ) / patchsize ) 
+	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.04 1.0 ) / patchsize ) 
 	 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) / patchsize ) 
 	 	 	 ifelse (patch-at (xchange) (ychange) = nobody) 
 	 	 	 	 [ifelse ((pxcor + xchange > max-pxcor) ) [] [set patch_Nutrient3_new (patch_Nutrient3_new + 1)]]
 	 	 	 	 [ask patch (pxcor + xchange) (pycor + ychange)[set patch_Nutrient3_new (patch_Nutrient3_new + 1)]] 
+	 	 	 ] 
+	 	 repeat patch_Nutrient2[ 
+	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.04 1.0 ) / patchsize ) 
+	 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) / patchsize ) 
+	 	 	 ifelse (patch-at (xchange) (ychange) = nobody) 
+	 	 	 	 [ifelse ((pxcor + xchange > max-pxcor) ) [] [set patch_Nutrient2_new (patch_Nutrient2_new + 1)]]
+	 	 	 	 [ask patch (pxcor + xchange) (pycor + ychange)[set patch_Nutrient2_new (patch_Nutrient2_new + 1)]] 
 	 	 	 ] 
 	 ] 
 	 ask patches [ 
@@ -203,22 +203,22 @@ to patchdiffusion
 	 	 set patch_Nutrient1_new 0 
 	 ] 
 	 ask patches [ 
-	 	 set patch_Nutrient2 patch_Nutrient2_new 
-	 	 set patch_Nutrient2_new 0 
-	 ] 
-	 ask patches [ 
 	 	 set patch_Nutrient3 patch_Nutrient3_new 
 	 	 set patch_Nutrient3_new 0 
+	 ] 
+	 ask patches [ 
+	 	 set patch_Nutrient2 patch_Nutrient2_new 
+	 	 set patch_Nutrient2_new 0 
 	 ] 
 end 
 to updateView 
 	 ask patches [ 
 	 	 if (patch_SCFA = 0) [set pcolor 5] 
-	 	 if (patch_SCFA > 0) [set pcolor 19] 
-	 	 if (patch_SCFA > 1) [set pcolor 18] 
-	 	 if (patch_SCFA > 2) [set pcolor 17] 
-	 	 if (patch_SCFA > 3) [set pcolor 16] 
-	 	 if (patch_SCFA > 4) [set pcolor 15] 
+	 	 if (patch_SCFA > 0) [set pcolor 59] 
+	 	 if (patch_SCFA > 1) [set pcolor 58] 
+	 	 if (patch_SCFA > 2) [set pcolor 57] 
+	 	 if (patch_SCFA > 3) [set pcolor 56] 
+	 	 if (patch_SCFA > 4) [set pcolor 55] 
 	 ] 
 end 
 
@@ -368,21 +368,21 @@ to setBacteria2BehAll [ listOfCommands ]
 	 	 setBacteria2Beh (item 0 content) (item 1 content) (item 2 content)  
 	 ] 
 end 
-to setBacteria1Patch [ id SCFA Nutrient1 Nutrient2 ] 
-	 ask turtle id [ 
-	 	 ask patch-here [ 
-	 	 	 set patch_SCFA SCFA 
-	 	 	 set patch_Nutrient1 Nutrient1 
-	 	 	 set patch_Nutrient2 Nutrient2 
-	 	 ] 
-	 ] 
-end 
-to setBacteria2Patch [ id SCFA Nutrient1 Nutrient3 ] 
+to setBacteria1Patch [ id SCFA Nutrient1 Nutrient3 ] 
 	 ask turtle id [ 
 	 	 ask patch-here [ 
 	 	 	 set patch_SCFA SCFA 
 	 	 	 set patch_Nutrient1 Nutrient1 
 	 	 	 set patch_Nutrient3 Nutrient3 
+	 	 ] 
+	 ] 
+end 
+to setBacteria2Patch [ id SCFA Nutrient1 Nutrient2 ] 
+	 ask turtle id [ 
+	 	 ask patch-here [ 
+	 	 	 set patch_SCFA SCFA 
+	 	 	 set patch_Nutrient1 Nutrient1 
+	 	 	 set patch_Nutrient2 Nutrient2 
 	 	 ] 
 	 ] 
 end 
@@ -506,8 +506,8 @@ to-report intake
  	 	 	 set tempList [] 
  	 	 	 set tempList lput bacType tempList 
  	 	 	 set tempList lput tempID tempList
- 	 	 	 set tempList lput "\"Nutrient2\"" templist 
- 	 	 	 set tempList lput patch_Nutrient2 templist 
+ 	 	 	 set tempList lput "\"Nutrient3\"" templist 
+ 	 	 	 set tempList lput patch_Nutrient3 templist 
  	 	 	 set wholeList lput tempList wholeList 
  	 	 	 set tempList [] 
 	 	 ] 
@@ -530,8 +530,8 @@ to-report intake
  	 	 	 set tempList [] 
  	 	 	 set tempList lput bacType tempList 
  	 	 	 set tempList lput tempID tempList
- 	 	 	 set tempList lput "\"Nutrient3\"" templist 
- 	 	 	 set tempList lput patch_Nutrient3 templist 
+ 	 	 	 set tempList lput "\"Nutrient2\"" templist 
+ 	 	 	 set tempList lput patch_Nutrient2 templist 
  	 	 	 set wholeList lput tempList wholeList 
  	 	 	 set tempList [] 
 	 	 ] 
@@ -542,18 +542,18 @@ to-report patchvalues
 	 let templist [] 
 	 let tempvalueSCFA 0 
 	 let tempvalueNutrient1 0 
-	 let tempvalueNutrient2 0 
 	 let tempvalueNutrient3 0 
+	 let tempvalueNutrient2 0 
 	 ask patches [ 
 	 	 set tempvalueSCFA tempvalueSCFA + patch_SCFA 
 	 	 set tempvalueNutrient1 tempvalueNutrient1 + patch_Nutrient1 
-	 	 set tempvalueNutrient2 tempvalueNutrient2 + patch_Nutrient2 
 	 	 set tempvalueNutrient3 tempvalueNutrient3 + patch_Nutrient3 
+	 	 set tempvalueNutrient2 tempvalueNutrient2 + patch_Nutrient2 
 	 ] 
  	 set templist lput tempvalueSCFA templist 
 	 set templist lput tempvalueNutrient1 templist 
-	 set templist lput tempvalueNutrient2 templist 
 	 set templist lput tempvalueNutrient3 templist 
+	 set templist lput tempvalueNutrient2 templist 
 	 report templist 
 end 
 

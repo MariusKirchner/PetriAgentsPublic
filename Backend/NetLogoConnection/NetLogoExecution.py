@@ -173,8 +173,7 @@ def executeNetLogoProject(mainProject, netLogoProjectFilepath, amount, folderpat
                     for behplace in mainProject.bacteriaIDDict[k].listOfBehPlaceIDs:
                         counter = 0
                         for bac in mainProject.bacteriaIDDict[k].listOfIndividuals:
-                            if mainProject.bacteriaIDDict[k].dictOfIndividuals[bac].petriNet.placeDict[
-                                behplace].tokens >= 1:
+                            if mainProject.bacteriaIDDict[k].dictOfIndividuals[bac].petriNet.placeDict[behplace].tokens >= 1:
                                 counter += 1
                         newcsvline.append(counter)
                 patchreport = n.report("patchvalues")

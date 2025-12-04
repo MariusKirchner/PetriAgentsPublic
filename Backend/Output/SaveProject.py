@@ -181,7 +181,7 @@ def saveProject(mainProject, filehandler):
         edges = doc.createElement("edges")
         tempBac.appendChild(edges)
         for edgeID in tempPetri.edgeIDList:
-            tempEdge = doc.createElement("ID" + str(currid))
+            tempEdge = doc.createElement("Edge")
             tempEdgeID = doc.createElement("EdgeID")
             tempEdge.appendChild(tempEdgeID)
             tempEdgeID.appendChild(doc.createTextNode(str(currid)))
@@ -217,7 +217,6 @@ def saveProject(mainProject, filehandler):
         distributionArea.appendChild(doc.createTextNode(fixedString))
         newenvMol.appendChild(distributionArea)
         distributionAmount = doc.createElement("DistributionAmount")
-        print(mainProject.dictOfEnvironmentMolecules[envMol].distAmount)
         distributionAmount.appendChild(doc.createTextNode(str(mainProject.dictOfEnvironmentMolecules[envMol].distAmount)))
         newenvMol.appendChild(distributionAmount)
 

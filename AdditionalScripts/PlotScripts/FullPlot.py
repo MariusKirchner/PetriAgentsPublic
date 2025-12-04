@@ -20,9 +20,14 @@ listOfData = []
 xaxis = []
 numberOfSims = 0
 tabledir = os.path.join(directory, 'tables')
-# checkStable = True
-checkStable = False
-numberOfBacs = 1
+checkStable = True
+numberOfBacs = 2
+combine = True
+heatmap = False
+minx = 0
+maxx = 101
+miny = 0
+maxy = 51
 for filename in os.listdir(tabledir):
     filepath = os.path.join(tabledir, filename)
     if os.path.isfile(filepath):
@@ -43,7 +48,7 @@ for filename in os.listdir(tabledir):
     if checkStable:
         series = read_csv(filepath, header=1, index_col=0)
         series = series.transpose()
-        X = series.values[0][0000:20000:]
+        X = series.values[0][00000:15000:]
         result = adfuller(X)
         stable = True
         if result[1] > 0.01:
@@ -51,7 +56,7 @@ for filename in os.listdir(tabledir):
             stable = False
         series = read_csv(filepath, header=1, index_col=0)
         series = series.transpose()
-        X = series.values[4][0000:20000:]
+        X = series.values[4][00000:15000:]
         result = adfuller(X)
         if result[1] > 0.01:
             print("Firm:" + str(result[1]))
@@ -225,7 +230,6 @@ for x in range(0, len(listOfData[0]) - numberOfBacs):
     print("done")
     counter += 1
     plt.clf()
-combine = False
 if combine:
     combinedPlots = [1, 5]
     for x in combinedPlots:
@@ -277,11 +281,7 @@ if combine:
             print("done")
         #plt.clf()
     plt.clf()
-heatmap = True
-minx = 0
-maxx = 101
-miny = 0
-maxy = 51
+
 if heatmap:
     for currBacType in range(0, numberOfBacs):
         data = np.zeros((maxx, maxy))

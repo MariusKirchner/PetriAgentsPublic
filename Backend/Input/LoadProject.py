@@ -22,14 +22,14 @@ def loadProject(filehandler):
     newProject.flowRate = doc.getElementsByTagName("flowRate")[0].childNodes[0].data
     newProject.flowDir = doc.getElementsByTagName("flowDir")[0].childNodes[0].data
     newProject.flowBool = doc.getElementsByTagName("flowBool")[0].childNodes[0].data
-    newProject.molOutFlowNorth = doc.getElementsByTagName("molOutFlowNorth")[0].childNodes[0].data
-    newProject.molOutFlowEast = doc.getElementsByTagName("molOutFlowEast")[0].childNodes[0].data
-    newProject.molOutFlowSouth = doc.getElementsByTagName("molOutFlowSouth")[0].childNodes[0].data
-    newProject.molOutFlowWest = doc.getElementsByTagName("molOutFlowWest")[0].childNodes[0].data
-    newProject.bacOutFlowNorth = doc.getElementsByTagName("bacOutFlowNorth")[0].childNodes[0].data
-    newProject.bacOutFlowEast = doc.getElementsByTagName("bacOutFlowEast")[0].childNodes[0].data
-    newProject.bacOutFlowSouth = doc.getElementsByTagName("bacOutFlowSouth")[0].childNodes[0].data
-    newProject.bacOutFlowWest = doc.getElementsByTagName("bacOutFlowWest")[0].childNodes[0].data
+    newProject.moleculeOutFlowNorth = doc.getElementsByTagName("molOutFlowNorth")[0].childNodes[0].data
+    newProject.moleculeOutFlowEast = doc.getElementsByTagName("molOutFlowEast")[0].childNodes[0].data
+    newProject.moleculeOutFlowSouth = doc.getElementsByTagName("molOutFlowSouth")[0].childNodes[0].data
+    newProject.moleculeOutFlowWest = doc.getElementsByTagName("molOutFlowWest")[0].childNodes[0].data
+    newProject.bacteriaOutflowNorth = doc.getElementsByTagName("bacOutFlowNorth")[0].childNodes[0].data
+    newProject.bacteriaOutflowEast = doc.getElementsByTagName("bacOutFlowEast")[0].childNodes[0].data
+    newProject.bacteriaOutflowSouth = doc.getElementsByTagName("bacOutFlowSouth")[0].childNodes[0].data
+    newProject.bacteriaOutflowWest = doc.getElementsByTagName("bacOutFlowWest")[0].childNodes[0].data
     newProject.bacFlowRate = doc.getElementsByTagName("bacFlowRate")[0].childNodes[0].data
     newProject.bacDiffRate = doc.getElementsByTagName("bacDiffRate")[0].childNodes[0].data
     newProject.diffmode = doc.getElementsByTagName("diffmode")[0].childNodes[0].data
@@ -45,16 +45,16 @@ def loadProject(filehandler):
     for bac in doc.getElementsByTagName("Bacteria"):
         tempPetri = PetriNet()
         for place in bac.getElementsByTagName("Place"):
-            tempPetri.addPlace(place.childNodes[1].childNodes[0].data, place.childNodes[3].childNodes[0].data, place.childNodes[5].childNodes[0].data, [], [])
+            tempPetri.addPlace(place.childNodes[1].childNodes[0].data, place.childNodes[3].childNodes[0].data, int(float(place.childNodes[5].childNodes[0].data)), [], [])
             #print(place.toxml())
         for transition in bac.getElementsByTagName("Transition"):
             tempPetri.addTransition(transition.childNodes[1].childNodes[0].data, transition.childNodes[3].childNodes[0].data, [], [])
             #print(transition.toxml())
         for edge in bac.getElementsByTagName("Edge"):
-            if edge.childNodes[4].childNodes[0].data == "PT":
-                tempPetri.addEdge(edge.childNodes[1].childNodes[0].data, tempPetri.placeDict[edge.childNodes[3].childNodes[0].data], tempPetri.transitionDict[edge.childNodes[5].childNodes[0].data], edge.childNodes[7].childNodes[0].data)
+            if edge.childNodes[9].childNodes[0].data == "PT":
+                tempPetri.addEdge(int(float(edge.childNodes[3].childNodes[0].data)), tempPetri.placeDict[edge.childNodes[5].childNodes[0].data], tempPetri.transitionDict[edge.childNodes[7].childNodes[0].data], edge.childNodes[9].childNodes[0].data)
             else:
-                tempPetri.addEdge(edge.childNodes[1].childNodes[0].data, tempPetri.transitionDict[edge.childNodes[3].childNodes[0].data], tempPetri.placeDict[edge.childNodes[5].childNodes[0].data], edge.childNodes[7].childNodes[0].data)
+                tempPetri.addEdge(int(float(edge.childNodes[3].childNodes[0].data)), tempPetri.transitionDict[edge.childNodes[5].childNodes[0].data], tempPetri.placeDict[edge.childNodes[7].childNodes[0].data], edge.childNodes[9].childNodes[0].data)
             #print(edge.toxml())
         print(bac.childNodes)
         newProject.addBacteria(bac.childNodes[1].childNodes[0].data, tempPetri)

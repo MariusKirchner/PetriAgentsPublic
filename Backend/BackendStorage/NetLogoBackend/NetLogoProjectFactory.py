@@ -190,8 +190,8 @@ def createNetLogoProject(mainProject):
                 #tempnetlogoFile.write("\t \t \t set tempList lput who tempList \n")
                 tempnetlogoFile.write("\t \t \t bacteria" + str(i) + "_" + mainProject.bacteriaIDDict[i].dictOfBehPlaces[j] + " who \n")
                 tempnetlogoFile.write("\t \t ] \n")
-        tempnetlogoFile.write("\t \t let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal " + str(round((float(mainProject.bacFlowRate) / 100), 4)) + " " + str(round((float(mainProject.bacDiffRate) / 100), 4)) + " ) ) \n")
-        tempnetlogoFile.write("\t \t let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 " + str(round((float(mainProject.bacDiffRate) / 100), 4)) + " ) ) \n")
+        tempnetlogoFile.write("\t \t let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal " + str(round((float(mainProject.bacFlowRate) / 100), 4)) + " " + str(round((float(mainProject.bacDiffRate) / 100), 4)) + " ) / patchsize ) \n")
+        tempnetlogoFile.write("\t \t let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 " + str(round((float(mainProject.bacDiffRate) / 100), 4)) + " ) / patchsize ) \n")
         if mainProject.bacteriaOutflowNorth or mainProject.bacteriaOutflowEast or mainProject.bacteriaOutflowSouth or mainProject.bacteriaOutflowWest:
             tempString = "\t \t if ("
             first = True
@@ -342,22 +342,22 @@ def createNetLogoProject(mainProject):
         else:
             tempString = "("
             first = True
-            if mainProject.moleculeOutflowNorth:
+            if mainProject.moleculeOutFlowNorth:
                 tempString += "(pycor + ychange > max-pycor) "
                 first = False
-            if mainProject.moleculeOutflowEast:
+            if mainProject.moleculeOutFlowEast:
                 if first:
                     tempString += "(pxcor + xchange > max-pxcor) "
                     first = False
                 else:
                     tempString += "or (pxcor + xchange > max-pxcor) "
-            if mainProject.moleculeOutflowSouth:
+            if mainProject.moleculeOutFlowSouth:
                 if first:
                     tempString += "(pycor + ychange < min-pycor) "
                     first = False
                 else:
                     tempString += "or (pycor + ychange < min-pycor) "
-            if mainProject.moleculeOutflowWest:
+            if mainProject.moleculeOutFlowWest:
                 if first:
                     tempString += "(pxcor + xchange < min-pxcor) "
                 else:
@@ -371,8 +371,8 @@ def createNetLogoProject(mainProject):
             tempnetlogoFile.write("\t ask patches [ \n")
             for i in mainProject.listOfEnvironmentMolecules:
                 tempnetlogoFile.write("\t \t repeat patch_" + i + "[ \n")
-                tempnetlogoFile.write("\t \t \t let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal " + str(round((float(mainProject.flowRate) / 100), 4)) + " " + str(round((float(mainProject.diffRate) / 100), 4)) + " ) ) \n")
-                tempnetlogoFile.write("\t \t \t let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 " + str(round((float(mainProject.diffRate) / 100), 4)) + " ) ) \n")
+                tempnetlogoFile.write("\t \t \t let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal " + str(round((float(mainProject.flowRate) / 100), 4)) + " " + str(round((float(mainProject.diffRate) / 100), 4)) + " ) / patchsize ) \n")
+                tempnetlogoFile.write("\t \t \t let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 " + str(round((float(mainProject.diffRate) / 100), 4)) + " ) / patchsize ) \n")
                 tempnetlogoFile.write("\t \t \t ifelse (patch-at (xchange) (ychange) = nobody) \n")
                 tempnetlogoFile.write("\t \t \t \t [ifelse " + tempString + " [] [set patch_" + i + "_new (patch_" + i + "_new + 1)]]\n")
                 tempnetlogoFile.write("\t \t \t \t [ask patch (pxcor + xchange) (pycor + ychange)[set patch_" + i + "_new (patch_" + i + "_new + 1)]] \n")
@@ -389,12 +389,12 @@ def createNetLogoProject(mainProject):
     tempnetlogoFile.write("to updateView \n")
     if mainProject.patchColorMolecule != "No Coloring":
         tempnetlogoFile.write("\t ask patches [ \n")
-        tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " = 0) [set pcolor 5] \n")
-        tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > 0) [set pcolor " + str(mainProject.patchColor) + "] \n")
-        tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > " + str(mainProject.patchColorIncrement * 1) + ") [set pcolor " + str(mainProject.patchColor - 1) + "] \n")
-        tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > " + str(mainProject.patchColorIncrement * 2) + ") [set pcolor " + str(mainProject.patchColor - 2) + "] \n")
-        tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > " + str(mainProject.patchColorIncrement * 3) + ") [set pcolor " + str(mainProject.patchColor - 3) + "] \n")
-        tempnetlogoFile.write("\t \t if (patch_" + mainProject.listOfEnvironmentMolecules[0] + " > " + str(mainProject.patchColorIncrement * 4) + ") [set pcolor " + str(mainProject.patchColor - 4) + "] \n")
+        tempnetlogoFile.write("\t \t if (patch_" + mainProject.patchColorMolecule + " = 0) [set pcolor 5] \n")
+        tempnetlogoFile.write("\t \t if (patch_" + mainProject.patchColorMolecule + " > 0) [set pcolor " + str(mainProject.patchColor) + "] \n")
+        tempnetlogoFile.write("\t \t if (patch_" + mainProject.patchColorMolecule + " > " + str((int(mainProject.patchColorIncrement) * 1)) + ") [set pcolor " + str(mainProject.patchColor - 1) + "] \n")
+        tempnetlogoFile.write("\t \t if (patch_" + mainProject.patchColorMolecule + " > " + str((int(mainProject.patchColorIncrement) * 2)) + ") [set pcolor " + str(mainProject.patchColor - 2) + "] \n")
+        tempnetlogoFile.write("\t \t if (patch_" + mainProject.patchColorMolecule + " > " + str((int(mainProject.patchColorIncrement) * 3)) + ") [set pcolor " + str(mainProject.patchColor - 3) + "] \n")
+        tempnetlogoFile.write("\t \t if (patch_" + mainProject.patchColorMolecule + " > " + str((int(mainProject.patchColorIncrement) * 4)) + ") [set pcolor " + str(mainProject.patchColor - 4) + "] \n")
         tempnetlogoFile.write("\t ] \n")
     else:
         tempnetlogoFile.write("\t ask patches [ \n")

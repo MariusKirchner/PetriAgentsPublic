@@ -1,3 +1,4 @@
 /results/*
 !results/.gitkeep.txt
 /config.xml
+/pycache/*

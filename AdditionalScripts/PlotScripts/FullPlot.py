@@ -21,9 +21,9 @@ xaxis = []
 numberOfSims = 0
 tabledir = os.path.join(directory, 'tables')
 checkStable = False
-numberOfBacs = 2
-combine = True
-heatmap = False
+numberOfBacs = 1
+combine = False
+heatmap = True
 minx = 0
 maxx = 101
 miny = 0
@@ -79,11 +79,10 @@ for i in range(0, minticks):
 xnew = np.linspace(min(xaxis), max(xaxis), 300)
 #start for single plots
 singlePlots = False
-# singlePlots = True
 if singlePlots:
     for currsim in range(0, numberOfSims):
         # print(listOfData)
-        xposs = [1, 5]
+        xposs = [1, 4]
         for x in xposs:
             plot = []
             # print(len(listOfData[0][x]))
@@ -142,6 +141,7 @@ for x in range(0, len(listOfData[0]) - numberOfBacs):
     plt.xlabel("Simulation time (ticks)")
     plt.ylabel("Number of bacteria")
     plt.title("Population of " + header[counter+1])
+    #plt.ylim(bottom=90, top=525)
     plt.savefig(newfolderdir + "\\" + "Total" + header[counter+1] + ".png", bbox_inches="tight")
     plt.savefig(newfolderdir + "\\" + "Total" + header[counter+1] + ".svg", bbox_inches="tight")
     print("done")
@@ -231,7 +231,7 @@ for x in range(0, len(listOfData[0]) - numberOfBacs):
     counter += 1
     plt.clf()
 if combine:
-    combinedPlots = [1, 5]
+    combinedPlots = [1, 4]
     for x in combinedPlots:
         maxplot = []
         minplot = []
@@ -290,7 +290,7 @@ if heatmap:
             for currBac in processedData:
                 data[int(currBac[2]), int(currBac[3])] += 1
         data = np.swapaxes(data, 0, 1)
-        plt.imshow(data, cmap='hot', interpolation='quadric', origin="lower", vmin=30, vmax=350)
+        plt.imshow(data, cmap='hot', interpolation='quadric', origin="lower", vmin=50, vmax=400)
         plt.title("Heat map of bacteria using chemotaxis")
         plt.xlabel("x-axis")
         plt.ylabel("y-axis")

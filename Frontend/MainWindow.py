@@ -123,7 +123,7 @@ def startSimulationQueue(mainProject, root, config):
     guimode = BooleanVar(tempFrame)
     guimode.set(True)
     Checkbutton(tempFrame, variable=guimode, onvalue=True, offvalue=False).grid(column=1, row=2)
-    ttk.Label(tempFrame, text="Save position of turtles (LARGE FILES! Currently only in nonguimode)").grid(column=0, row=3)
+    ttk.Label(tempFrame, text="Save position of bacteria (LARGE FILES! Currently only in nonguimode)").grid(column=0, row=3)
     posMode = BooleanVar(tempFrame)
     posMode.set(False)
     Checkbutton(tempFrame, variable=posMode, onvalue=True, offvalue=False).grid(column=1, row=3)
@@ -613,25 +613,25 @@ def mainWindow(projectHolder):
         environmentTree.heading(column, text=column)
     environmentTree.grid(column=4, row=0, rowspan=10)
 
-    ttk.Label(environmentTab, text="Environment molecule used for coloring").grid(column=5, row=0)
+    ttk.Label(environmentTab, text="Environment molecule used for coloring").grid(column=0, row=14)
     global moleculeOption
     moleculeOption = ttk.Combobox(environmentTab, values=projectHolder.currProject.getListOfEnvironmentMolecules() + ["No Coloring"], state="readonly", postcommand=lambda: changeEnvs())
     def changeEnvs():
         moleculeOption["values"] = projectHolder.currProject.getListOfEnvironmentMolecules() + ["No Coloring"]
     moleculeOption.current(0)
-    moleculeOption.grid(column=6, row=0)
+    moleculeOption.grid(column=1, row=14)
 
-    ttk.Label(environmentTab, text="Discrete increment for molecule numbers that cause patch color").grid(column=5, row=1)
+    ttk.Label(environmentTab, text="Discrete increment for molecule numbers that cause patch color").grid(column=0, row=15)
     global moleculeIncrement
     moleculeIncrement = StringVar(environmentTab, value="5")
-    Entry(environmentTab, textvariable=moleculeIncrement).grid(column=6, row=1)
+    Entry(environmentTab, textvariable=moleculeIncrement).grid(column=1, row=15)
 
-    ttk.Label(environmentTab, text="Color for patch coloring").grid(column=5, row=2)
+    ttk.Label(environmentTab, text="Color for patch coloring").grid(column=0, row=16)
     global patchColorOption
     colorOptions = ["Red", "Orange", "Brown", "Yellow", "Green", "Lime", "Turqouise", "Cyan", "LightBlue", "Blue", "Violet", "Magenta", "Pink"]
     patchColorOption = ttk.Combobox(environmentTab, values=colorOptions, state="readonly")
     patchColorOption.current(0)
-    patchColorOption.grid(column=6, row=2)
+    patchColorOption.grid(column=1, row=16)
     # Comment for Compartment
     #compartmentColumnNames = ("CompartmentName", "Corners in X1, X2, Y1, Y2", "RestrictionsFor")
     #global compartmentTree

@@ -242,15 +242,9 @@ def createNetLogoProject(mainProject):
             #diffusion and flow function
             #TODO: include flow and diffusion rates
             if mainProject.diffBool and mainProject.flowBool:
-                #directionalList = [3, 7, 15, 25, 15, 7, 3, 5]
-                #stayProb = 20
-                directionalList = [3, 7, 15, 30, 15, 7, 3, 6]
-                stayProb = 14
+                directionalList = [2, 8, 10, 30, 10, 8, 2, 6]
+                stayProb = 24
             elif mainProject.diffBool:
-                #useList = [5, 10, 5, 10, 10, 5, 10, 5]
-                #stayProb = 40
-                #useList = [6.25, 12.5, 6.25, 12.5, 12.5, 6.25, 12.5, 6.25]
-                #stayProb = 25
                 useList = [4, 12, 4, 12, 4, 12, 4, 12]
                 stayProb = 36
             elif mainProject.flowBool:

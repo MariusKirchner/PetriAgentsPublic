@@ -4,6 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+NL4PY = "https://pypi.org/project/NL4Py/"
+python-libsbml = "https://pypi.org/project/python-libsbml/"
+statsmodels = "https://pypi.org/project/statsmodels/"
 
 [dev-packages]
 

@@ -597,7 +597,7 @@ def mainWindow(projectHolder):
     ttk.Label(settingsTab, text=" ").grid(column=0, row=18)
     ttk.Label(settingsTab, text=" ").grid(column=0, row=19)
 
-    ttk.Label(settingsTab, text="Version: 0.9.0").grid(column=0, row=20)
+    ttk.Label(settingsTab, text="Version: 1.0.0").grid(column=0, row=20)
     ttk.Label(settingsTab, text="Release Date: 3rd of December 2025").grid(column=0, row=21)
 
     # Comment for Compartment

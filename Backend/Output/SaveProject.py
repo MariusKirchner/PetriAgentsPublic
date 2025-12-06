@@ -3,7 +3,7 @@ __author__ = "Marius Kirchner, Goethe University Frankfurt am Main"
 from xml.dom import minidom, Node
 def saveProject(mainProject, filehandler):
     doc = minidom.Document()
-    doc.appendChild(doc.createComment("PetriAgent Project created with PetriAgents Version 0.9.0, Release Date: 3rd of December 2025"))
+    doc.appendChild(doc.createComment("PetriAgent Project created with PetriAgents Version 1.0.0, Release Date: 3rd of December 2025"))
     project = doc.createElement("Project")
     doc.appendChild(project)
 

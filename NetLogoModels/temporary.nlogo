@@ -38,9 +38,9 @@ to setup
 	 clear-drawing 
 	 clear-output 
 	 reset-ticks 
-	 set timeinterval-per-tick 0.1 ; in s/tick 
+	 set timeinterval-per-tick 1.0 ; in s/tick 
 	 set patchsize 25 ; in micrometre  (sidelength of a patch) 
-	 set diffConstant 1000 ; in micrometre^2/s 
+	 set diffConstant 670 ; in micrometre^2/s 
 	 set bacteria-real-velocity 25 ; in micrometre/s 
 	 set bacteria-velocity (bacteria-real-velocity / patchsize ) ; in patches/s 
 	 set bacteria-rotational-diffusion 9 ; in degrees/s 
@@ -94,13 +94,6 @@ to go
 	 	 ] 
 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.0 ) / patchsize ) 
 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 0.0 ) / patchsize ) 
-	 	 if ((xcor + xchange > max-pxcor + 0.5) ) 
-	 	 	 [let tempList [] 
-	 	 	 set tempList lput 1 tempList 
-	 	 	 set tempList lput who tempList 
-	 	 	 set deadIndividuals lput tempList deadIndividuals 
-	 	 	 ask my-links [ die ] 
-	 	 	 die] 
 	 	 (ifelse ((xcor + xchange < min-pxcor - 0.5) or (xcor + xchange > max-pxcor + 0.5) or (ycor + ychange < min-pycor - 0.5) or (ycor + ychange > max-pycor + 0.5)) 
 	 	 	 [] 
 	 	 	 [ setxy (xcor + xchange) (ycor + ychange) ]) 
@@ -129,22 +122,18 @@ to patchdiffusion
 end 
 to updateView 
 	 ask patches [ 
-	 	 set pcolor 5 
+	 	 if (patch_Attractant = 0) [set pcolor 5] 
+	 	 if (patch_Attractant > 0) [set pcolor 19] 
+	 	 if (patch_Attractant > 5) [set pcolor 18] 
+	 	 if (patch_Attractant > 10) [set pcolor 17] 
+	 	 if (patch_Attractant > 15) [set pcolor 16] 
+	 	 if (patch_Attractant > 20) [set pcolor 15] 
 	 ] 
 end 
 
 to bacteria1_Move [ id ] 
 	 ask turtle id [ 
 	 	 (ifelse 
-	 	 	 ((xcor + dx > max-pxcor + 0.5) ) 
-	 	 	 [ 
-	 	 	 	 let tempList [] 
-	 	 	 	 set tempList lput 1 tempList 
-	 	 	 	 set tempList lput who tempList 
-	 	 	 	 set deadIndividuals lput tempList deadIndividuals 
-	 	 	 	 ask my-links [ die ] 
-	 	 	 	 die 
-	 	 	 ] 
 	 	 	 (patch-at dx 0 = nobody) 
 	 	 	 [ 
 	 	 	 	 set heading (- heading) 

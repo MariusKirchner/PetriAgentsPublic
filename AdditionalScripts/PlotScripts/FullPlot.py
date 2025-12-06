@@ -285,12 +285,14 @@ if combine:
 if heatmap:
     for currBacType in range(0, numberOfBacs):
         data = np.zeros((maxx, maxy))
-        for ticks in listOfData[-1][-(1+currBacType)]:
-            processedData = json.loads(ticks)
-            for currBac in processedData:
-                data[int(currBac[2]), int(currBac[3])] += 1
-        data = np.swapaxes(data, 0, 1)
-        plt.imshow(data, cmap='hot', interpolation='quadric', origin="lower", vmin=50, vmax=400)
+        for currSim in range(0, numberOfSims):
+            print("Sim: " + str(currSim))
+            for ticks in listOfData[currSim][-(1+currBacType)]:
+                processedData = json.loads(ticks)
+                for currBac in processedData:
+                    data[int(currBac[2]), int(currBac[3])] += 1
+        data = np.swapaxes(data[1:-1,], 0, 1)
+        plt.imshow(data, cmap='hot', interpolation='quadric', origin="lower") #vminvmax
         plt.title("Heat map of bacteria using chemotaxis")
         plt.xlabel("x-axis")
         plt.ylabel("y-axis")
@@ -302,6 +304,14 @@ if heatmap:
         plt.colorbar().remove()
         plt.savefig(newfolderdir + "\\" + "Heatmap" + header[-(1 + currBacType)] + ".png", bbox_inches="tight")
         plt.savefig(newfolderdir + "\\" + "Heatmap" + header[-(1 + currBacType)] + ".svg", bbox_inches="tight")
+        plt.clf()
+        plt.imshow(data, cmap='hot', origin="lower", vmin=200, vmax=400)
+        plt.title("Heat map of bacteria using chemotaxis")
+        plt.xlabel("x-axis")
+        plt.ylabel("y-axis")
+        plt.colorbar(shrink=0.75)
+        plt.savefig(newfolderdir + "\\" + "NotInterpolatedHeatmap" + header[-(1 + currBacType)] + ".png", bbox_inches="tight")
+        plt.savefig(newfolderdir + "\\" + "NotInterpolatedHeatmap" + header[-(1 + currBacType)] + ".svg", bbox_inches="tight")
         plt.clf()
 
 

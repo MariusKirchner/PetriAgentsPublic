@@ -18,7 +18,6 @@ class PetriNet:
         self.transitionDict = {}
         self.edgeDict = {}
 
-    #this is wrong/problematic when it comes to ids, see below, NEEDS FIX
     def addPlace(self, id, name, tokens, preTransitionIDs, postTransitionIDs):
         self.placeIDList.append(id)
         self.placeDict[id] = Place(id, name, tokens, preTransitionIDs, postTransitionIDs)

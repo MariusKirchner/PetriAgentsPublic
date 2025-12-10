@@ -48,7 +48,10 @@ def loadProject(filehandler):
             tempPetri.addPlace(place.childNodes[1].childNodes[0].data, place.childNodes[3].childNodes[0].data, int(float(place.childNodes[5].childNodes[0].data)), [], [])
             #print(place.toxml())
         for transition in bac.getElementsByTagName("Transition"):
-            tempPetri.addTransition(transition.childNodes[1].childNodes[0].data, transition.childNodes[3].childNodes[0].data, [], [])
+            if transition.childNodes[3].childNodes[0].data.split("_")[0].isdigit():
+                tempPetri.addTransition(transition.childNodes[1].childNodes[0].data, transition.childNodes[3].childNodes[0].data, [], [], int(transition.childNodes[3].childNodes[0].data.split("_")[0]))
+            else:
+                tempPetri.addTransition(transition.childNodes[1].childNodes[0].data, transition.childNodes[3].childNodes[0].data, [], [])
             #print(transition.toxml())
         for edge in bac.getElementsByTagName("Edge"):
             if edge.childNodes[9].childNodes[0].data == "PT":

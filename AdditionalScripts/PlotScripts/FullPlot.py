@@ -25,9 +25,9 @@ numberOfBacs = 1
 combine = False
 heatmap = True
 minx = 0
-maxx = 101
+maxx = 201
 miny = 0
-maxy = 51
+maxy = 101
 for filename in os.listdir(tabledir):
     filepath = os.path.join(tabledir, filename)
     if os.path.isfile(filepath):
@@ -294,8 +294,8 @@ if heatmap:
         data = np.swapaxes(data[1:-1,], 0, 1)
         plt.imshow(data, cmap='hot', interpolation='quadric', origin="lower") #vminvmax
         plt.title("Heat map of bacteria using chemotaxis")
-        plt.xlabel("x-axis")
-        plt.ylabel("y-axis")
+        plt.xlabel("x-axis [patches]")
+        plt.ylabel("y-axis [patches]")
         plt.colorbar(shrink=0.75)
         plt.savefig(newfolderdir + "\\" + "ColorbarHeatmap" + header[-(1+currBacType)] + ".png", bbox_inches="tight")
         plt.savefig(newfolderdir + "\\" + "ColorbarHeatmap" + header[-(1+currBacType)] + ".svg", bbox_inches="tight")
@@ -307,8 +307,8 @@ if heatmap:
         plt.clf()
         plt.imshow(data, cmap='hot', origin="lower", vmin=200, vmax=400)
         plt.title("Heat map of bacteria using chemotaxis")
-        plt.xlabel("x-axis")
-        plt.ylabel("y-axis")
+        plt.xlabel("x-axis [patches]")
+        plt.ylabel("y-axis [patches]")
         plt.colorbar(shrink=0.75)
         plt.savefig(newfolderdir + "\\" + "NotInterpolatedHeatmap" + header[-(1 + currBacType)] + ".png", bbox_inches="tight")
         plt.savefig(newfolderdir + "\\" + "NotInterpolatedHeatmap" + header[-(1 + currBacType)] + ".svg", bbox_inches="tight")

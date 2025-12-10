@@ -38,8 +38,8 @@ to setup
 	 clear-drawing 
 	 clear-output 
 	 reset-ticks 
-	 set timeinterval-per-tick 1.0 ; in s/tick 
-	 set patchsize 25 ; in micrometre  (sidelength of a patch) 
+	 set timeinterval-per-tick 0.1 ; in s/tick 
+	 set patchsize 5 ; in micrometre  (sidelength of a patch) 
 	 set diffConstant 670 ; in micrometre^2/s 
 	 set bacteria-real-velocity 25 ; in micrometre/s 
 	 set bacteria-velocity (bacteria-real-velocity / patchsize ) ; in patches/s 
@@ -48,7 +48,7 @@ to setup
 	 set bacteria-real-rotational-diffusion-helper (bacteria-real-rotational-diffusion * 2) ; in degrees/tick 
 	 set newIndividuals [] 
 	 set deadIndividuals [] 
-	 create-bacteria1 100[ 
+	 create-bacteria1 200[ 
 	 	 setxy random-xcor random-ycor 
 	 	 set size 1 
 	 	 set Beh_Move 0 
@@ -108,7 +108,7 @@ end
 to patchdiffusion 
 	 ask patches [ 
 	 	 repeat patch_Attractant[ 
-	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 1.0 1.0 ) / patchsize ) 
+	 	 	 let xchange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.86 1.0 ) / patchsize ) 
 	 	 	 let ychange (sqrt (2 * diffConstant * timeinterval-per-tick) * (random-normal 0.0 1.0 ) / patchsize ) 
 	 	 	 ifelse (patch-at (xchange) (ychange) = nobody) 
 	 	 	 	 [ifelse ((pxcor + xchange > max-pxcor) ) [] [set patch_Attractant_new (patch_Attractant_new + 1)]]
@@ -309,9 +309,9 @@ GRAPHICS-WINDOW
 1
 1
 0
-100
+200
 0
-50
+100
 0
 0
 1

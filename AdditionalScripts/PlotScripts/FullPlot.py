@@ -21,7 +21,7 @@ xaxis = []
 numberOfSims = 0
 tabledir = os.path.join(directory, 'tables')
 checkStable = False
-numberOfBacs = 1
+numberOfBacs = 2
 combine = False
 heatmap = True
 minx = 0
@@ -30,6 +30,7 @@ miny = 0
 maxy = 101
 for filename in os.listdir(tabledir):
     filepath = os.path.join(tabledir, filename)
+    print(numberOfSims)
     if os.path.isfile(filepath):
         templist = []
         csvfile = open(filepath, newline="")
@@ -293,7 +294,10 @@ if heatmap:
                     data[int(currBac[2]), int(currBac[3])] += 1
         data = np.swapaxes(data[1:-1,], 0, 1)
         plt.imshow(data, cmap='hot', interpolation='quadric', origin="lower") #vminvmax
-        plt.title("Heat map of bacteria using chemotaxis")
+        if currBacType == 0:
+            plt.title("Heat map of bacteria moving randomly")
+        else:
+            plt.title("Heat map of bacteria using chemotaxis")
         plt.xlabel("x-axis [patches]")
         plt.ylabel("y-axis [patches]")
         plt.colorbar(shrink=0.75)
